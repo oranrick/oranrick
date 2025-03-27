@@ -11746,12 +11746,12 @@ html {
 .profile .dots-4 path {
   fill: #FF6600 !important;
 }
-
-.text-secondary {
-  color: #FF6600 !important;
-}
+  
 .text-primary {
-  color: #FF6600 !important;
+  color: #FF6600 !important; /* o el que quieras */
+}
+.text-secondary {
+  color: #FFA500 !important;
 }
   
 }
