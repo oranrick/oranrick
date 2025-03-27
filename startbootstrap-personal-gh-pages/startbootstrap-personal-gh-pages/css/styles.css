@@ -42,8 +42,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 30, 48, 243;
-  --bs-secondary-rgb: 226, 30, 128;
+  --bs-primary-rgb: 255, 102, 0;
+  --bs-secondary-rgb: 255, 165, 0;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -11750,7 +11750,7 @@ html {
   fill: #FF6600 !important;
 }
 
-.text-pink {
+.text-secondary {
   color: #FF6600 !important;
 }
 .text-primary {
