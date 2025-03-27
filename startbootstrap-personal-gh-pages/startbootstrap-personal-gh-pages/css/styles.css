@@ -11753,5 +11753,14 @@ html {
 .text-secondary {
   color: #FFA500 !important;
 }
-  
+
+.btn-primary {
+  background-color: #FF6600 !important; /* Naranja intenso */
+  border-color: #FF6600 !important;
+}
+.btn-primary:hover {
+  background-color: #FF7B1A !important; /* Hover un poco más claro */
+  border-color: #FF7B1A !important;
+}
+
 }
