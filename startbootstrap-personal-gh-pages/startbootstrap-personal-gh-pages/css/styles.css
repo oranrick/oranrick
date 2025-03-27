@@ -11555,14 +11555,14 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(to right, #FF6600, #FFA500) !important;
+  /* Ajusta #FF6600 y #FFA500 a tus naranjas favoritos */
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #FF6600, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .rounded-4 {
