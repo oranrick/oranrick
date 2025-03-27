@@ -11731,4 +11731,23 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+
+  /* Sobrescribir el color del botón primario */
+.btn-primary {
+  background-color: #FF6600 !important; /* Naranja */
+  border-color: #FF6600 !important;
+}
+.btn-primary:hover {
+  background-color: #FF7B1A !important; /* Hover un poco más claro */
+  border-color: #FF7B1A !important;
+}
+
+/* Cambiar puntitos azules a naranja */
+.profile .dots-1 path,
+.profile .dots-2 path,
+.profile .dots-3 path,
+.profile .dots-4 path {
+  fill: #FF6600 !important;
+}
+
 }
