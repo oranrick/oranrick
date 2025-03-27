@@ -8184,13 +8184,10 @@ textarea.form-control-lg {
 
 /* rtl:end:remove */
 .text-primary {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #FF6600 !important; /* Pon tu naranja favorito */
 }
-
 .text-secondary {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  color: #FFA500 !important; /* Otro naranja, si gustas */
 }
 
 .text-success {
