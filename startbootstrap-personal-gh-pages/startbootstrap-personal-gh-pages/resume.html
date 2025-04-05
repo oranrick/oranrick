@@ -1,240 +1,332 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>CV - Rick Grisales</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <style>
-    :root {
-        --bg-color: #ffffff;
-        --text-color: #000000;
-    }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CV - Rick Grisales</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 
-    [data-theme="dark"] {
-        --bg-color: #121212;
-        --text-color: #ffffff;
-    }
+    <!-- ========== INCLUYO MISMO BLOQUE DE VARIABLES/ESTILOS QUE EN INDEX ========== -->
+    <style>
+        /* Variables de color */
+        :root {
+            --bg-color: #ffffff;  /* Fondo claro */
+            --text-color: #000000; /* Texto oscuro */
+            --muted-text-color: #6c757d; /* Texto muted en modo claro */
+            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
+            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
+            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212;   /* Fondo oscuro */
+            --text-color: #ffffff; /* Texto claro */
+            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
+            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
+            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
+            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
+        }
 
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        transition: background-color 0.3s, color 0.3s;
-    }
+        /* Reset de fondos y colores */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar, .footer {
+            background-color: var(--bg-color) !important;
+        }
+        .bg-light {
+            background-color: var(--section-bg-light) !important;
+        }
 
-    .theme-toggle {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        background: transparent;
-        border: 2px solid var(--text-color);
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        font-size: 1.2rem;
-        color: var(--text-color);
-        cursor: pointer;
-        z-index: 999;
-    }
-</style>
-    </head>
-    <body class="d-flex flex-column h-100 bg-light">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resumen - CV</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                        </ul>
-                    </div>
+        /* Estilo del botón de cambio de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem; /* Ajusta según prefieras */
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .theme-toggle {
+                top: 4rem;
+                right: 1rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+        .nav-link {
+            color: var(--nav-link-color) !important;
+        }
+        .btn-outline-dark {
+            color: var(--text-color);
+            border-color: var(--btn-outline-border);
+        }
+        .btn-outline-dark:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        .card {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+    </style>
+
+    <!-- ========== AQUÍ ESTÁ TU BLOQUE ORIGINAL PARA NO BORRAR NADA ========== -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 1.5rem; /* Ojo: en el index estaba top: 1.5rem, aquí dice bottom */
+            right: 1.5rem;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 999;
+        }
+    </style>
+
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resumen - CV</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    </ul>
                 </div>
-            </nav>
-            <!-- Page Content-->
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resumen - CV</span></h1>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <!-- Experience Section-->
-                        <section>
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h2 class="text-primary fw-bolder mb-0">Experiencia</h2>
-                                <!-- Download resume button-->
-                                <!-- Note: Set the link href target to a PDF file within your project-->
-                                <a class="btn btn-primary px-4 py-3" href="#!">
-                                    <div class="d-inline-block bi bi-download me-2"></div>
-                                    Descargar CV
-                                </a>
-                            </div>
-                            <!-- Experience Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">¡Sin experiencia en el sector de la comunicación!</div>
-                                                <div class="small fw-bolder">
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resumen - CV</span></h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <!-- Experience Section-->
+                    <section>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h2 class="text-primary fw-bolder mb-0">Experiencia</h2>
+                            <!-- Download resume button-->
+                            <!-- Note: Set the link href target to a PDF file within your project-->
+                            <a class="btn btn-primary px-4 py-3" href="#!">
+                                <div class="d-inline-block bi bi-download me-2"></div>
+                                Descargar CV
+                            </a>
+                        </div>
+                        <!-- Experience Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">¡Sin experiencia en el sector de la comunicación!</div>
+                                            <div class="small fw-bolder">
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>Debido a mi independencia y mi estilo de vida ajetreado, no he tenido la posibilidad de trabajar en una empresa especializada en comunicacion. Estaré encantado de formar parte de tu empresa, mi inexperiencia no resta mis capacidades y mi talento.</div></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div>Debido a mi independencia y mi estilo de vida ajetreado, no he tenido la posibilidad de trabajar en una empresa especializada en comunicacion. Estaré encantado de formar parte de tu empresa, mi inexperiencia no resta mis capacidades y mi talento.</div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card 2-->
-                            <div class="card border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2023 - 2025</div>
-                                                <div class="small fw-bolder">Honest Greens</div>
-                                                <div class="small text-muted">Camarero / Host</div>
+                        </div>
+                        <!-- Experience Card 2-->
+                        <div class="card border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">2023 - 2025</div>
+                                            <div class="small fw-bolder">Honest Greens</div>
+                                            <div class="small text-muted">Camarero / Host</div>
+                                            <div class="small text-muted">Madrid, ES</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div>Visto desde el ángulo desde la comunicación, todos los trabajos enseñan algo. Ser camarero, más aún en Gran Vía, me ha proporcionado grandes skills comunicativas oportunas para cualquier trabajo.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Education Section-->
+                    <section>
+                        <h2 class="text-secondary fw-bolder mb-4">Educación</h2>
+                        <!-- Education Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2021 - 2025</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">Universidad Complutense de Madrid</div>
                                                 <div class="small text-muted">Madrid, ES</div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>Visto desde el ángulo desde la comunicación, todos los trabajos enseñan algo. Ser camarero, más aún en Gran Vía, me ha proporcionado grandes skills comunicativas oportunas para cualquier trabajo.</div></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Education Section-->
-                        <section>
-                            <h2 class="text-secondary fw-bolder mb-4">Educación</h2>
-                            <!-- Education Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2021 - 2025</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">Universidad Complutense de Madrid</div>
-                                                    <div class="small text-muted">Madrid, ES</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Grado universitario</div>
-                                                    <div class="small text-muted">Periodista</div>
-                                                </div>
+                                            <div class="fst-italic">
+                                                <div class="small text-muted">Grado universitario</div>
+                                                <div class="small text-muted">Periodista</div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>Sin duda alguna, lo más valioso que me ha proporcionado la carrera es entender el lenguaje de una forma multidimensional. Saber leer el mundo y cómo vivirlo mediante las palabras ha sido mi mayor aprendizaje, y, además, mi propósito de vida.</div></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div>Sin duda alguna, lo más valioso que me ha proporcionado la carrera es entender el lenguaje de una forma multidimensional. Saber leer el mundo y cómo vivirlo mediante las palabras ha sido mi mayor aprendizaje, y, además, mi propósito de vida.</div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Education Card 2-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2011 - 2015</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">ULA</div>
-                                                    <div class="small text-muted">Los Angeles, CA</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Undergraduate</div>
-                                                    <div class="small text-muted">Computer Science</div>
-                                                </div>
+                        </div>
+                        <!-- Education Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2011 - 2015</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">ULA</div>
+                                                <div class="small text-muted">Los Angeles, CA</div>
+                                            </div>
+                                            <div class="fst-italic">
+                                                <div class="small text-muted">Undergraduate</div>
+                                                <div class="small text-muted">Computer Science</div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
                                     </div>
+                                    <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
                                 </div>
                             </div>
-                        </section>
-                        <!-- Divider-->
-                        <div class="pb-5"></div>
-                        <!-- Skills Section-->
-                        <!-- Skills Section-->
-<!-- Skills Section -->
-<section>
-  <!-- Skillset Card -->
-  <div class="card shadow border-0 rounded-4 mb-5">
-    <div class="card-body p-5">
-      <!-- Título de la sección con ícono -->
-      <div class="d-flex align-items-center mb-4">
-        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-          <i class="bi bi-stars"></i>
+                        </div>
+                    </section>
+                    <!-- Divider-->
+                    <div class="pb-5"></div>
+                    <!-- Skills Section-->
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <!-- Título de la sección con ícono -->
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                        <i class="bi bi-stars"></i>
+                                    </div>
+                                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Skills</span></h3>
+                                </div>
+
+                                <!-- Grupo 1: Comunicación y pensamiento -->
+                                <h5 class="fw-bold mt-4">🧩 Comunicación y pensamiento</h5>
+                                <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
+                                    <li class="col"><div class="skill-card">Pensamiento crítico</div></li>
+                                    <li class="col"><div class="skill-card">Redacción periodística</div></li>
+                                    <li class="col"><div class="skill-card">Narrativa analítica</div></li>
+                                    <li class="col"><div class="skill-card">Creatividad discursiva</div></li>
+                                    <li class="col"><div class="skill-card">Comunicación interpersonal</div></li>
+                                </ul>
+
+                                <!-- Grupo 2: Entorno digital -->
+                                <h5 class="fw-bold mt-4">💻 Entorno digital y herramientas</h5>
+                                <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
+                                    <li class="col"><div class="skill-card">Adaptabilidad digital</div></li>
+                                    <li class="col"><div class="skill-card">Alfabetización mediática</div></li>
+                                    <li class="col"><div class="skill-card">Manejo básico de HTML y CSS</div></li>
+                                    <li class="col"><div class="skill-card">Optimización de contenidos (SEO)</div></li>
+                                </ul>
+
+                                <!-- Grupo 3: Formación y sensibilidad -->
+                                <h5 class="fw-bold mt-4">🌱 Formación y sensibilidad</h5>
+                                <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
+                                    <li class="col"><div class="skill-card">Curso de nutrición y salud</div></li>
+                                    <li class="col"><div class="skill-card">Curso de arte y estética visual</div></li>
+                                    <li class="col"><div class="skill-card">Atención al detalle (hostelería)</div></li>
+                                    <li class="col"><div class="skill-card">Gestión de tiempo bajo presión</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Skills</span></h3>
-      </div>
-
-      <!-- Grupo 1: Comunicación y pensamiento -->
-      <h5 class="fw-bold mt-4">🧩 Comunicación y pensamiento</h5>
-      <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
-        <li class="col"><div class="skill-card">Pensamiento crítico</div></li>
-        <li class="col"><div class="skill-card">Redacción periodística</div></li>
-        <li class="col"><div class="skill-card">Narrativa analítica</div></li>
-        <li class="col"><div class="skill-card">Creatividad discursiva</div></li>
-        <li class="col"><div class="skill-card">Comunicación interpersonal</div></li>
-      </ul>
-
-      <!-- Grupo 2: Entorno digital -->
-      <h5 class="fw-bold mt-4">💻 Entorno digital y herramientas</h5>
-      <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
-        <li class="col"><div class="skill-card">Adaptabilidad digital</div></li>
-        <li class="col"><div class="skill-card">Alfabetización mediática</div></li>
-        <li class="col"><div class="skill-card">Manejo básico de HTML y CSS</div></li>
-        <li class="col"><div class="skill-card">Optimización de contenidos (SEO)</div></li>
-      </ul>
-
-      <!-- Grupo 3: Formación y sensibilidad -->
-      <h5 class="fw-bold mt-4">🌱 Formación y sensibilidad</h5>
-      <ul class="list-unstyled row row-cols-1 row-cols-md-2 g-3">
-        <li class="col"><div class="skill-card">Curso de nutrición y salud</div></li>
-        <li class="col"><div class="skill-card">Curso de arte y estética visual</div></li>
-        <li class="col"><div class="skill-card">Atención al detalle (hostelería)</div></li>
-        <li class="col"><div class="skill-card">Gestión de tiempo bajo presión</div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-                    </div>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright &copy; Rick 2025</div></div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacidad</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Términos</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Contacto</a>
                 </div>
             </div>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Rick 2025</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacidad</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Términos</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contacto</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-    <span id="theme-icon">🌙</span>
-</button>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 
-        <script src="js/dark-mode.js"></script>
-    </body>
+    <!-- El botón flotante -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+
+    <!-- Script que tienes en dark-mode.js (o inline) -->
+    <script src="js/dark-mode.js"></script>
+</body>
 </html>
