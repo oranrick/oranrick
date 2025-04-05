@@ -1,23 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>La abnegación más pura - Rick Grisales</title>
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Tu CSS base -->
     <link href="css/styles.css" rel="stylesheet" />
 
+    <!-- Variables y modo oscuro -->
     <style>
-        body {
-            background-color: white !important;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        /* VARIABLES DE COLOR */
+        :root {
+            --bg-color: #ffffff;  /* Fondo claro */
+            --text-color: #000000; /* Texto oscuro */
+            --caption-color: #555; /* Color de los pies de página en modo claro */
         }
+        [data-theme="dark"] {
+            --bg-color: #121212;   /* Fondo oscuro */
+            --text-color: #ffffff; /* Texto claro */
+            --caption-color: #bbb; /* Color de los pies de página en modo oscuro */
+        }
+
+        /* RESET DE FONDOS FIJOS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar, .footer {
+            background-color: var(--bg-color);
+        }
+
+        /* BOTÓN DE MODO OSCURO ARRIBA */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        /* SECCIÓN PRINCIPAL DEL ARTÍCULO */
         .custom-article {
-            background-color: white;
+            background-color: var(--bg-color);
             padding: 2rem;
         }
         @media (min-width: 768px) {
@@ -28,7 +73,7 @@
             }
         }
         .gradient-title {
-            color: #111;
+            color: var(--text-color);
             font-weight: 700;
             display: inline-block;
             border-bottom: 4px solid #ffa94d;
@@ -40,9 +85,6 @@
             width: 100%;
             height: auto;
         }
-        .navbar, .footer {
-            background-color: white !important;
-        }
         .highlight-quote {
             display: block;
             font-style: italic;
@@ -51,8 +93,8 @@
             margin: 1.5rem 0;
             text-align: center;
             position: relative;
-            color: #111 !important;
-            text-shadow: 0 0 5px rgba(255, 169, 77, 0.5); /* Efecto de resplandor naranja */
+            color: var(--text-color);
+            text-shadow: 0 0 5px rgba(255, 169, 77, 0.5);
         }
         .highlight-quote::after {
             content: '';
@@ -87,7 +129,7 @@
         }
         .image-container figcaption {
             font-size: 0.9rem;
-            color: #555;
+            color: var(--caption-color);
             margin-top: 0.5rem;
             text-align: center;
         }
@@ -98,43 +140,13 @@
             .image-container figure {
                 max-width: 100%;
             }
-
-    :root {
-        --bg-color: #ffffff;
-        --text-color: #000000;
-    }
-
-    [data-theme="dark"] {
-        --bg-color: #121212;
-        --text-color: #ffffff;
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .theme-toggle {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        background: transparent;
-        border: 2px solid var(--text-color);
-        border-radius: 50%;
-        width: 44px;
-        height: 44px;
-        font-size: 1.2rem;
-        color: var(--text-color);
-        cursor: pointer;
-        z-index: 999;
-    }
-
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
@@ -151,6 +163,7 @@
         </div>
     </nav>
 
+    <!-- CONTENIDO DEL ARTÍCULO -->
     <section class="py-5">
         <div class="container px-5 custom-article">
             <h1 class="fw-bolder mb-4"><span class="gradient-title">La abnegación más pura: maternidad</span></h1>
@@ -204,10 +217,13 @@
     </section>
 </main>
 
-<footer class="bg-white py-4 mt-auto">
+<!-- FOOTER -->
+<footer class="footer py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
+            <div class="col-auto">
+                <div class="small m-0">Copyright © Rick 2025</div>
+            </div>
             <div class="col-auto">
                 <a class="small" href="#!">Privacidad</a>
                 <span class="mx-1">·</span>
@@ -219,19 +235,25 @@
     </div>
 </footer>
 
+<!-- Bootstrap core JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // Detecta el modo del sistema
+
+<!-- SCRIPT PARA MODO OSCURO -->
+<script>
+    // 1. Detecta si el sistema del usuario prefiere modo oscuro
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // 2. Revisa si el usuario ya eligió un tema en 'localStorage'
     const userTheme = localStorage.getItem('theme');
 
     if (userTheme) {
+        // Si el usuario guardó 'dark' o 'light', lo aplicamos
         document.documentElement.setAttribute('data-theme', userTheme);
     } else if (prefersDark) {
+        // Si no hay preferencia guardada, pero el sistema es oscuro
         document.documentElement.setAttribute('data-theme', 'dark');
     }
 
-    // Botón para cambiar el tema
+    // Alternar el tema (cuando se hace click en el botón)
     function toggleTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -240,20 +262,27 @@
         updateIcon(newTheme);
     }
 
+    // Actualizar el iconito según el tema
     function updateIcon(theme) {
         const icon = document.getElementById('theme-icon');
-        if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        if (!icon) return;
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
 
+    // Espera a que cargue el DOM para asociar el evento de click
     document.addEventListener('DOMContentLoaded', () => {
         const button = document.getElementById('theme-toggle');
         if (button) {
             button.addEventListener('click', toggleTheme);
-            updateIcon(document.documentElement.getAttribute('data-theme'));
+            // Sincroniza el icono actual
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            updateIcon(current);
         }
     });
 </script>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+
+<!-- BOTÓN DE TEMA (arriba a la derecha) -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
     <span id="theme-icon">🌙</span>
 </button>
 
