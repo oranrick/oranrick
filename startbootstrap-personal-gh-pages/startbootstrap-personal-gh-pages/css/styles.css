@@ -12007,5 +12007,61 @@ html {
     max-width: 100%;
   }
 }
+
+/* ======================
+   MODO OSCURO GLOBAL
+   ====================== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --muted-text-color: #6c757d;
+  --nav-link-color: #000000;
+  --section-bg-light: #f8f9fa;
+  --btn-outline-border: #000000;
+}
+
+/* Cuando es dark mode */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --muted-text-color: #adb5bd;
+  --nav-link-color: #ffa94d;
+  --section-bg-light: #1e1e1e;
+  --btn-outline-border: #ffffff;
+}
+
+/* Estilos genéricos que usan las variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar, .footer {
+  background-color: var(--bg-color) !important;
+}
+
+.bg-light {
+  background-color: var(--section-bg-light) !important;
+}
+
+/* Si usas un botón flotante */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   
 }
