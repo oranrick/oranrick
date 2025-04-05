@@ -11767,7 +11767,38 @@ html {
     a.btn.btn-primary.btn-lg.px-5.py-3.me-sm-3.fs-6.fw-bolder {
         background-color: #FF6600 !important;
         border-color: #FF6600 !important;
-    }
+
 }
+
+  .project-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-text {
+  flex: 1 1 50%;
+  padding: 2rem;
+}
+
+.project-image-wrapper {
+  flex: 1 1 50%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
   
 }
