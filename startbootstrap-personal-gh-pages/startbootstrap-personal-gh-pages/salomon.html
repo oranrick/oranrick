@@ -24,11 +24,13 @@
             --bg-color: #ffffff;  /* Fondo claro */
             --text-color: #000000; /* Texto oscuro */
             --caption-color: #555; /* Color de los pies de página en modo claro */
+            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
         }
         [data-theme="dark"] {
             --bg-color: #121212;   /* Fondo oscuro */
             --text-color: #ffffff; /* Texto claro */
             --caption-color: #bbb; /* Color de los pies de página en modo oscuro */
+            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
         }
 
         /* RESET DE FONDOS FIJOS */
@@ -44,20 +46,47 @@
             background-color: var(--bg-color);
         }
 
-        /* BOTÓN DE MODO OSCURO ARRIBA */
+        /* Estilo del botón de cambio de tema */
         .theme-toggle {
             position: fixed;
             top: 1.5rem;
             right: 1.5rem;
-            background: transparent;
-            border: 2px solid var(--text-color);
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
+            background: rgba(255, 255, 255, 0.1); /* Fondo sutil para mejor visibilidad */
+            border: none; /* Eliminamos el borde circular */
+            border-radius: 8px; /* Bordes ligeramente redondeados */
+            width: 36px;
+            height: 36px;
             font-size: 1.2rem;
             color: var(--text-color);
             cursor: pointer;
             z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .theme-toggle {
+                top: 4rem; /* Bajamos el botón en pantallas pequeñas para evitar solapamiento con el menú */
+                right: 1rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Ajustes para el menú desplegable */
+        .navbar-collapse {
+            z-index: 1000; /* Aseguramos que el menú esté por encima del botón de tema */
+        }
+        .nav-link {
+            color: var(--nav-link-color) !important; /* Color naranja en modo oscuro */
+        }
+        .navbar-toggler {
+            border-color: var(--text-color); /* Borde del botón hamburguesa visible */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            /* Ícono hamburguesa en naranja */
         }
         
         /* SECCIÓN PRINCIPAL DEL ARTÍCULO */
