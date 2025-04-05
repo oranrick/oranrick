@@ -19,19 +19,12 @@
         .custom-article {
             background-color: white;
             padding: 2rem;
-            overflow: auto; /* Añadido para manejar elementos flotantes */
         }
         @media (min-width: 768px) {
             .custom-article {
                 max-width: 750px;
                 margin-left: auto;
                 margin-right: auto;
-            }
-            .obra-lateral {
-                float: right;
-                margin-left: 1.5rem;
-                margin-bottom: 1rem;
-                max-width: 300px;
             }
         }
         .gradient-title {
@@ -58,11 +51,8 @@
             margin: 1.5rem 0;
             text-align: center;
             position: relative;
-            color: #111; /* Color de respaldo para navegadores no compatibles */
-            background: linear-gradient(to right, #ffa94d, #111);
-            -webkit-background-clip: text;
-            background-clip: text; /* Añadido para compatibilidad con navegadores modernos */
-            -webkit-text-fill-color: transparent;
+            color: #111 !important;
+            text-shadow: 0 0 5px rgba(255, 169, 77, 0.5); /* Efecto de resplandor naranja */
         }
         .highlight-quote::after {
             content: '';
@@ -71,6 +61,43 @@
             height: 2px;
             background-color: #ffa94d;
             margin: 0.5rem auto 0;
+        }
+        .image-container {
+            display: flex;
+            margin: 1.5rem 0;
+        }
+        .image-container.left {
+            justify-content: flex-start;
+        }
+        .image-container.right {
+            justify-content: flex-end;
+        }
+        .image-container.center {
+            justify-content: center;
+        }
+        .image-container figure {
+            margin: 0;
+            max-width: 300px;
+            width: 100%;
+        }
+        .image-container img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+        .image-container figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        @media (max-width: 767px) {
+            .image-container {
+                justify-content: center !important;
+            }
+            .image-container figure {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -105,26 +132,38 @@
             
             <p>El juicio de Salomón cuenta la historia de dos mujeres que recurren al rey Salomón debido a que tienen una disputa: ambas argumentan ser madres de un niño con pocos días de nacido. Las dos exponen sus motivos y se culpabilizan mutuamente de haber robado a su bebé. Tras escuchar los puntos de vista, el rey indica a un guardia que traiga una espada y corte al niño a la mitad, de esta forma, ambas madres recibirán una parte del bebé. Cuando la primera mujer escucha esto, empieza a llorar y le suplica desconsoladamente que por favor le entregue el bebé a la otra mujer, a cambio de que no lo corte. En respuesta, el rey le indica al guardia que le devuelva el bebé a la primera mujer, la verdadera madre. Mientras que la otra fue castigada.</p>
             
-            <div class="obra-lateral">
-                <img src="assets/salo-2.jpg" alt="La primera y verdadera madre del bebé. El punto suroccidental del triángulo. Imagen 2." class="obra" />
+            <div class="image-container left">
+                <figure>
+                    <img src="assets/salo-2.jpg" alt="La primera y verdadera madre del bebé. El punto suroccidental del triángulo. Imagen 2." />
+                    <figcaption>La primera y verdadera madre del bebé. El punto suroccidental del triángulo. Imagen 2.</figcaption>
+                </figure>
             </div>
             <p>En la obra, podemos observar a la verdadera madre arrodillada (imagen 2) en el centro de la pintura. Podemos notar su sufrimiento. Pareciera que estuviese en movimiento. Sus ojos están llenos de lágrimas y su expresión grita misericordia: la abnegación más profunda, el amor maternal. Incluso en su vestimenta, con un desorden desesperado, podemos ver una señal más que muestra la maestría de Giordano en la pintura. Otro elemento precioso son sus manos: abiertas, pidiendo el fin del mundo a cambio de la vida de su primogénito.</p>
             <p class="highlight-quote">La abnegación más profunda, el amor maternal.</p>
             
-            <div class="obra-lateral">
-                <img src="assets/salo-3.jpg" alt="El bebé con vida. Punto centro-norte del triángulo. Imagen 3." class="obra" />
+            <div class="image-container right">
+                <figure>
+                    <img src="assets/salo-3.jpg" alt="El bebé con vida. Punto centro-norte del triángulo. Imagen 3." />
+                    <figcaption>El bebé con vida. Punto centro-norte del triángulo. Imagen 3.</figcaption>
+                </figure>
             </div>
             <p>La iluminación de la obra está uniformemente repartida, aunque se centra adicionalmente en un triángulo fácilmente observable. Uno de los extremos del triángulo lo conforma la verdadera madre. Otro de los puntos de la figura es el bebé (imagen 3), que, aunque inconsciente y poco participativo, es el centro de la historia, el meollo de la disputa, las lágrimas de la madre, la decisión del rey. De cabeza, con un pie coleando y el otro sostenido por un guardia que envaina nuevamente su espada, el bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
             <p class="highlight-quote">El bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
             
-            <div class="obra-lateral">
-                <img src="assets/salo-4.jpg" alt="El rey Salomón. Punto oriental del triángulo. Imagen 4." class="obra" />
+            <div class="image-container left">
+                <figure>
+                    <img src="assets/salo-4.jpg" alt="El rey Salomón. Punto oriental del triángulo. Imagen 4." />
+                    <figcaption>El rey Salomón. Punto oriental del triángulo. Imagen 4.</figcaption>
+                </figure>
             </div>
             <p>El último elemento de este triángulo está representado por el rey Salomón (imagen 4), tan sereno, sabio, prudente y bohemio. Exalta la sabiduría y la justicia que caracteriza el poder político legítimo. Su cuerpo y sus brazos generan movimientos pacíficos y deliberados, muy bien pensados, grandes ejemplos comunicativos. Todos –y todo– lo que está alrededor del rey expresa confianza y esperanza en el monarca.</p>
             <p class="highlight-quote">El rey Salomón, tan sereno, sabio, prudente y bohemio.</p>
             
-            <div class="obra-lateral">
-                <img src="assets/salo-5.jpg" alt="El bebé muerto, hijo de la segunda mujer. Imagen 5." class="obra" />
+            <div class="image-container center">
+                <figure>
+                    <img src="assets/salo-5.jpg" alt="El bebé muerto, hijo de la segunda mujer. Imagen 5." />
+                    <figcaption>El bebé muerto, hijo de la segunda mujer. Imagen 5.</figcaption>
+                </figure>
             </div>
             <p>Fuera de este triángulo de personajes, el autor incorpora detalles significativos que dotan la obra de complejidad y personalidad. Uno de estos elementos puede ser el bebé que aparece muerto en la parte inferior de la pintura (imagen 5). El recién nacido era hijo de la segunda mujer. En aquella época sería su única esperanza de tener una vida autónoma. En la antigüedad la ley del levirato aún imperaba, esta norma condiciona a las mujeres viudas sin hijos a casarse con el hermano de su difunto esposo. Por una parte, la madre falsa recibiría un castigo por sus mentiras. Por otra, tendría que casarse con el hermano de su difunto marido, incluso si no lo deseaba. El bebé muerto en la obra no es un detalle más que adorna la pintura, es un elemento lleno de significado que explica profundamente parte de la causalidad de la situación, que en un contexto normal puede ser irracional.</p>
             <p class="highlight-quote">El bebé muerto en la obra no es un detalle más que adorna la pintura, es un elemento lleno de significado.</p>
