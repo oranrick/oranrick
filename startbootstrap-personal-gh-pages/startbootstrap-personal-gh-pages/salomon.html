@@ -19,6 +19,7 @@
         .custom-article {
             background-color: white;
             padding: 2rem;
+            overflow: auto; /* Añadido para manejar elementos flotantes */
         }
         @media (min-width: 768px) {
             .custom-article {
@@ -57,8 +58,10 @@
             margin: 1.5rem 0;
             text-align: center;
             position: relative;
+            color: #111; /* Color de respaldo para navegadores no compatibles */
             background: linear-gradient(to right, #ffa94d, #111);
             -webkit-background-clip: text;
+            background-clip: text; /* Añadido para compatibilidad con navegadores modernos */
             -webkit-text-fill-color: transparent;
         }
         .highlight-quote::after {
