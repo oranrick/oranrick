@@ -12065,8 +12065,16 @@ body {
 }
 
 .subtag {
-    border-bottom: 2px solid #FF6600; /* Subrayado naranja usando el color primario */
-    padding-bottom: 2px; /* Espacio entre el texto y el subrayado */
+    border-bottom: 2px solid var(--bs-primary);
+    padding-bottom: 2px;
+    color: var(--bs-gray-600);
+}
+
+/* Soporte para modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .subtag {
+        color: var(--bs-gray-400);
+    }
 }
   
 }
