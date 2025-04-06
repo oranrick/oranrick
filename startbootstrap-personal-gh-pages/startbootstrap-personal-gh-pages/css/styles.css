@@ -12063,5 +12063,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.subtag {
+    border-bottom: 2px solid #FF6600; /* Subrayado naranja usando el color primario */
+    padding-bottom: 2px; /* Espacio entre el texto y el subrayado */
+}
   
 }
