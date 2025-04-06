@@ -12067,13 +12067,13 @@ body {
 .subtag {
     border-bottom: 2px solid var(--bs-primary);
     padding-bottom: 2px;
-    color: var(--bs-gray-600);
+    color: var(--bs-gray-600); !important;
 }
 
 /* Soporte para modo oscuro */
 @media (prefers-color-scheme: dark) {
     .subtag {
-        color: var(--bs-gray-400);
+        color: var(--bs-gray-400); !important;
     }
 }
   
