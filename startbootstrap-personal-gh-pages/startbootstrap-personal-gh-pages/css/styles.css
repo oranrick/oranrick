@@ -11807,19 +11807,29 @@ html {
 }
 
 .btn-primary {
-  background-color: #FF6600 !important; /* Naranja intenso */
-  border-color: #FF6600 !important;
+    background-color: #FF6600 !important;
+    border-color: #FF6600 !important;
 }
-.btn-primary:hover {
-  background-color: #FF7B1A !important; /* Hover un poco más claro */
-  border-color: #FF7B1A !important;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #FF7B1A !important;
+    border-color: #FF7B1A !important;
 }
 
-@media (max-width: 767.98px) {
-    a.btn.btn-primary.btn-lg.px-5.py-3.me-sm-3.fs-6.fw-bolder {
+@media (min-width: 1200px) {
+    .btn-primary {
         background-color: #FF6600 !important;
         border-color: #FF6600 !important;
-
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active {
+        background-color: #FF7B1A !important;
+        border-color: #FF7B1A !important;
+    }
 }
 
   .project-card {
