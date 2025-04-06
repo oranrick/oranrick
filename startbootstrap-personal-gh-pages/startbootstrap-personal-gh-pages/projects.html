@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,12 +13,115 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <style>
+        /* Variables de color */
+        :root {
+            --bg-color: #ffffff;  /* Fondo claro */
+            --text-color: #000000; /* Texto oscuro */
+            --muted-text-color: #6c757d; /* Texto muted en modo claro */
+            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
+            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
+            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
+            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212;   /* Fondo oscuro */
+            --text-color: #ffffff; /* Texto claro */
+            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
+            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
+            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
+            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
+            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
+        }
+
+        /* Reset de fondos y colores */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar, .footer {
+            background-color: var(--bg-color) !important;
+        }
+        .bg-light {
+            background-color: var(--section-bg-light) !important;
+        }
+
+        /* Estilo del botón de cambio de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .theme-toggle {
+                top: 4rem;
+                right: 1rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Ajustes para el menú desplegable */
+        .navbar-collapse {
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--nav-link-color) !important;
+        }
+        .navbar-toggler {
+            border-color: var(--text-color);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Ajustes para elementos específicos */
+        .text-muted {
+            color: var(--muted-text-color) !important;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-outline-dark {
+            color: var(--text-color);
+            border-color: var(--btn-outline-border);
+        }
+        .btn-outline-dark:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        .btn-outline-light {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
         .project-card {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            background-color: white;
+            background-color: var(--bg-color);
             border-radius: 1rem;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             overflow: hidden;
@@ -27,6 +130,13 @@
         .project-text {
             flex: 1;
             padding: 2rem;
+        }
+        .project-text a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .project-text a:hover {
+            color: var(--nav-link-color);
         }
         .project-image-wrapper {
             flex: 0 0 50%;
@@ -45,6 +155,13 @@
                 flex: none;
                 width: 100%;
             }
+        }
+        .footer a {
+            color: var(--caption-color);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--nav-link-color);
         }
     </style>
 </head>
@@ -72,10 +189,9 @@
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-11 col-xl-9 col-xxl-8">
-
                     <div class="project-card">
                         <div class="project-text">
-                            <a href="arte-naturaleza.html" style="text-decoration: none; color: inherit;">
+                            <a href="arte-naturaleza.html">
                                 <h2 class="fw-bolder">Del surrealismo a la crisis ecológica: Arte y naturaleza en diálogo</h2>
                                 <p>Madrid se convierte en un oasis de vitalismo con la exposición “Arte y naturaleza. Un siglo de biomorfismo”...</p>
                             </a>
@@ -86,29 +202,28 @@
                     </div>
 
                     <div class="project-card">
-    <div class="project-text">
-        <a href="poder-mentira.html" style="text-decoration: none; color: inherit;">
-            <h2 class="fw-bolder">La política del engaño</h2>
-            <p>¿Puede sobrevivir la democracia cuando la desinformación se convierte en una experiencia emocional más poderosa que la verdad?</p>
-        </a>
-    </div>
-    <div class="project-image-wrapper">
-        <img src="assets/trump.jpg" alt="La política del engaño portada" class="project-image" />
-    </div>
-</div>
+                        <div class="project-text">
+                            <a href="poder-mentira.html">
+                                <h2 class="fw-bolder">La política del engaño</h2>
+                                <p>¿Puede sobrevivir la democracia cuando la desinformación se convierte en una experiencia emocional más poderosa que la verdad?</p>
+                            </a>
+                        </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/trump.jpg" alt="La política del engaño portada" class="project-image" />
+                        </div>
+                    </div>
+
                     <div class="project-card">
-    <div class="project-text">
-        <a href="salomon.html" style="text-decoration: none; color: inherit;">
-            <h2 class="fw-bolder">La abnegación más pura: la maternidad</h2>
-            <p>Es difícil recorrer los pasillos del Thyssen sin detenerse a ver esta dramática escena...</p>
-        </a>
-    </div>
-    <div class="project-image-wrapper">
-        <img src="assets/portada-salo.jpg" alt="El juicio de Salomón" class="project-image" />
-    </div>
-</div>
-
-
+                        <div class="project-text">
+                            <a href="salomon.html">
+                                <h2 class="fw-bolder">La abnegación más pura: la maternidad</h2>
+                                <p>Es difícil recorrer los pasillos del Thyssen sin detenerse a ver esta dramática escena...</p>
+                            </a>
+                        </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/portada-salo.jpg" alt="El juicio de Salomón" class="project-image" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,15 +239,15 @@
     </section>
 </main>
 
-<footer class="bg-white py-4 mt-auto">
+<footer class="py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
             <div class="col-auto">
                 <a class="small" href="#">Privacidad</a>
-                <span class="mx-1">&middot;</span>
+                <span class="mx-1">·</span>
                 <a class="small" href="#">Términos</a>
-                <span class="mx-1">&middot;</span>
+                <span class="mx-1">·</span>
                 <a class="small" href="#">Contacto</a>
             </div>
         </div>
@@ -140,5 +255,11 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
+<!-- Theme toggle button -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+    <span id="theme-icon">🌙</span>
+</button>
+<!-- Dark mode script -->
+<script src="js/dark-mode.js"></script>
 </body>
 </html>
