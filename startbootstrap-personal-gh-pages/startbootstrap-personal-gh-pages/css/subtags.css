@@ -1,11 +1,12 @@
 .subtag {
     display: inline-block;
+    background-color: var(--subtitle-bg); /* Use the same background as .custom-subtitle */
+    color: var(--subtitle-text); /* Use the same text color as .custom-subtitle */
     font-size: 0.9rem;
-    font-weight: bold;
-    color: #ffa94d;
-    border-bottom: 2px solid #ffa94d;
-    padding-bottom: 2px;
-    margin-top: 0.5rem;
+    font-weight: 600; /* Match .custom-subtitle */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    padding: 0.3em 0.8em; /* Match .custom-subtitle */
+    border-radius: 5px; /* Match .custom-subtitle */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
