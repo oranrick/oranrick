@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,16 +10,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-
     <style>
+        /* Variables de color */
+        :root {
+            --bg-color: #ffffff;  /* Fondo claro */
+            --text-color: #000000; /* Texto oscuro */
+            --muted-text-color: #6c757d; /* Texto muted en modo claro */
+            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
+            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
+            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
+            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
+            --subtitle-bg: #ffd6a5; /* Fondo del subtítulo en modo claro */
+            --subtitle-text: #111; /* Texto del subtítulo en modo claro */
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212;   /* Fondo oscuro */
+            --text-color: #ffffff; /* Texto claro */
+            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
+            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
+            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
+            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
+            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
+            --subtitle-bg: #2a2a2a; /* Fondo del subtítulo en modo oscuro */
+            --subtitle-text: #ffffff; /* Texto del subtítulo en modo oscuro */
+        }
+
+        /* Reset de fondos y colores */
         body {
-            background-color: white !important;
+            margin: 0;
+            padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar, .footer {
+            background-color: var(--bg-color) !important;
         }
         .custom-article {
-            background-color: white;
+            background-color: var(--bg-color);
             padding: 2rem;
         }
+
+        /* Estilo del botón de cambio de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .theme-toggle {
+                top: 4rem;
+                right: 1rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Ajustes para el menú desplegable */
+        .navbar-collapse {
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--nav-link-color) !important;
+        }
+        .navbar-toggler {
+            border-color: var(--text-color);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Estilos específicos del artículo */
         @media (min-width: 768px) {
             .custom-article {
                 max-width: 750px;
@@ -34,7 +109,7 @@
             }
         }
         .gradient-title {
-            color: #111;
+            color: var(--text-color);
             font-weight: 700;
             display: inline-block;
             border-bottom: 4px solid #ffa94d;
@@ -46,13 +121,10 @@
             width: 100%;
             height: auto;
         }
-        .navbar, .footer {
-            background-color: white !important;
-        }
         .custom-subtitle {
             display: inline-block;
-            background-color: #ffd6a5;
-            color: #111;
+            background-color: var(--subtitle-bg);
+            color: var(--subtitle-text);
             font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -81,6 +153,13 @@
             background-color: #ffa94d;
             margin: 0.5rem auto 0;
         }
+        .footer a {
+            color: var(--caption-color);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--nav-link-color);
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -88,7 +167,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -145,7 +224,7 @@
     </section>
 </main>
 
-<footer class="bg-white py-4 mt-auto">
+<footer class="py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
@@ -154,12 +233,18 @@
                 <span class="mx-1">·</span>
                 <a class="small" href="#!">Términos</a>
                 <span class="mx-1">·</span>
-                <a class="small" href="#!">Contacto</a>
+                <a class="small" href="contact.html">Contacto</a>
             </div>
         </div>
     </div>
 </footer>
 
+<!-- Theme toggle button -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+    <span id="theme-icon">🌙</span>
+</button>
+<!-- Dark mode script -->
+<script src="js/dark-mode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
