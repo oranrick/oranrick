@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Proyectos - Rick Grisales</title>
+    <title>Contacta - Rick Grisales</title>
+    <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
+    <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         /* Variables de color */
@@ -95,66 +99,19 @@
         .text-muted {
             color: var(--muted-text-color) !important;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-outline-dark {
+        .form-control {
+            background-color: var(--bg-color);
             color: var(--text-color);
             border-color: var(--btn-outline-border);
         }
-        .btn-outline-dark:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-        .btn-outline-light {
-            color: #ffffff;
-            border-color: #ffffff;
-        }
-        .btn-outline-light:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .project-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+        .form-control:focus {
             background-color: var(--bg-color);
-            border-radius: 1rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-        .project-text {
-            flex: 1;
-            padding: 2rem;
-        }
-        .project-text a {
             color: var(--text-color);
-            text-decoration: none;
+            border-color: var(--nav-link-color);
+            box-shadow: 0 0 0 0.2rem rgba(255, 169, 77, 0.25);
         }
-        .project-text a:hover {
-            color: var(--nav-link-color);
-        }
-        .project-image-wrapper {
-            flex: 0 0 50%;
-            padding: 1rem;
-        }
-        .project-image {
-            width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            .project-card {
-                flex-direction: column;
-            }
-            .project-image-wrapper {
-                flex: none;
-                width: 100%;
-            }
+        .form-floating label {
+            color: var(--muted-text-color);
         }
         .footer a {
             color: var(--caption-color);
@@ -165,101 +122,97 @@
         }
     </style>
 </head>
-<body class="d-flex flex-column h-100 bg-light">
-<main class="flex-shrink-0">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Resumen - CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                </ul>
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resumen - CV</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <section class="py-5">
-        <div class="container px-5 mb-5">
-            <div class="text-center mb-5">
-                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Proyectos</span></h1>
-            </div>
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
-                    <div class="project-card">
-                        <div class="project-text">
-                            <a href="arte-naturaleza.html">
-                                <h2 class="fw-bolder">Del surrealismo a la crisis ecológica: Arte y naturaleza en diálogo</h2>
-                                <p>Madrid se convierte en un oasis de vitalismo con la exposición “Arte y naturaleza. Un siglo de biomorfismo”...</p>
-                            </a>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="assets/portadaarte.jpg" alt="Arte y naturaleza portada" class="project-image" />
-                        </div>
+        </nav>
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                        <h1 class="fw-bolder">Ponte en contacto</h1>
+                        <p class="lead fw-normal text-muted mb-0">¡Trabajemos juntos!</p>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-text">
-                            <a href="poder-mentira.html">
-                                <h2 class="fw-bolder">La política del engaño</h2>
-                                <p>¿Puede sobrevivir la democracia cuando la desinformación se convierte en una experiencia emocional más poderosa que la verdad?</p>
-                            </a>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="assets/trump.jpg" alt="La política del engaño portada" class="project-image" />
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-text">
-                            <a href="salomon.html">
-                                <h2 class="fw-bolder">La abnegación más pura: la maternidad</h2>
-                                <p>Es difícil recorrer los pasillos del Thyssen sin detenerse a ver esta dramática escena...</p>
-                            </a>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="assets/portada-salo.jpg" alt="El juicio de Salomón" class="project-image" />
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <form action="https://formsubmit.co/oranrick@gmail.com" method="POST">
+                                <!-- Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Tu nombre" required />
+                                    <label for="name">Nombre</label>
+                                </div>
+                                <!-- Email address input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="tu@email.com" required />
+                                    <label for="email">Correo electrónico</label>
+                                </div>
+                                <!-- Phone number input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu número" />
+                                    <label for="phone">Número de teléfono</label>
+                                </div>
+                                <!-- Message input-->
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Tu mensaje" style="height: 10rem" required></textarea>
+                                    <label for="message">Mensaje</label>
+                                </div>
+                                <!-- Hidden input for redirect (opcional) -->
+                                <input type="hidden" name="_next" value="https://oranrick.netlify.app/gracias.html">
+                                <!-- Ocultar captcha de FormSubmit -->
+                                <input type="hidden" name="_captcha" value="false">
+                                <!-- Submit Button -->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-gradient-primary-to-secondary text-white">
-        <div class="container px-5 my-5">
-            <div class="text-center">
-                <h2 class="display-4 fw-bolder mb-4">¡Creemos algo juntos!</h2>
-                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contáctame</a>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacidad</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Términos</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Contacto</a>
+                </div>
             </div>
         </div>
-    </section>
-</main>
-
-<footer class="py-4 mt-auto">
-    <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
-            <div class="col-auto">
-                <a class="small" href="#">Privacidad</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="#">Términos</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="#">Contacto</a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/scripts.js"></script>
-<!-- Theme toggle button -->
-<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-    <span id="theme-icon">🌙</span>
-</button>
-<!-- Dark mode script -->
-<script src="js/dark-mode.js"></script>
+    </footer>
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+    <!-- Dark mode script -->
+    <script src="js/dark-mode.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- SB Forms JS -->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
