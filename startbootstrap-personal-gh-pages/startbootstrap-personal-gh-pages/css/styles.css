@@ -2896,20 +2896,17 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #1e30f3;
-  --bs-btn-border-color: #1e30f3;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #1a29cf;
-  --bs-btn-hover-border-color: #1826c2;
-  --bs-btn-focus-shadow-rgb: 64, 79, 245;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #1826c2;
-  --bs-btn-active-border-color: #1724b6;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #1e30f3;
-  --bs-btn-disabled-border-color: #1e30f3;
+    background-color: #FF6600 !important;
+    border-color: #FF6600 !important;
+    color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #FF7B1A !important;
+    border-color: #FF7B1A !important;
+    color: #fff !important;
 }
 
 .btn-secondary {
@@ -11780,57 +11777,6 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
-
-  /* Sobrescribir el color del botón primario */
-.btn-primary {
-  background-color: #FF6600 !important; /* Naranja */
-  border-color: #FF6600 !important;
-}
-.btn-primary:hover {
-  background-color: #FF7B1A !important; /* Hover un poco más claro */
-  border-color: #FF7B1A !important;
-}
-
-/* Cambiar puntitos azules a naranja */
-.profile .dots-1 path,
-.profile .dots-2 path,
-.profile .dots-3 path,
-.profile .dots-4 path {
-  fill: #FF6600 !important;
-}
-  
-.text-primary {
-  color: #FF6600 !important; /* o el que quieras */
-}
-.text-secondary {
-  color: #FFA500 !important;
-}
-
-.btn-primary {
-    background-color: #FF6600 !important;
-    border-color: #FF6600 !important;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active {
-    background-color: #FF7B1A !important;
-    border-color: #FF7B1A !important;
-}
-
-@media (min-width: 1200px) {
-    .btn-primary {
-        background-color: #FF6600 !important;
-        border-color: #FF6600 !important;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active {
-        background-color: #FF7B1A !important;
-        border-color: #FF7B1A !important;
-    }
-}
 
   .project-card {
   display: flex;
