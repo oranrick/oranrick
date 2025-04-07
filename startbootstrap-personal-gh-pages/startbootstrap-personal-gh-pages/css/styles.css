@@ -11863,18 +11863,30 @@ html {
 }
 
 .skill-card {
-  background-color: #f8f9fa;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 0.75rem;
-  padding: 1rem 1.5rem;
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
-  text-align: center;
+    background-color: var(--section-bg-light); /* Usa la variable para el fondo */
+    color: var(--text-color); /* Usa la variable para el texto */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Borde claro por defecto */
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    text-align: center;
 }
+
 .skill-card:hover {
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    background-color: var(--bg-color); /* Fondo un poco más claro/oscuro según el tema */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Ajustes para modo oscuro */
+[data-theme="dark"] .skill-card {
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde más claro en modo oscuro */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en modo oscuro */
+}
+
+[data-theme="dark"] .skill-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
 }
 
 /* Estilo del botón de cambio de tema */
