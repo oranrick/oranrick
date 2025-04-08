@@ -129,7 +129,10 @@
         .card-body div {
         text-align: justify;
         }
-    </style>
+
+        .card-body div:not(:last-child) {
+        margin-bottom: 1rem; /* Esto agrega un espacio de 1rem (16px por defecto) entre los párrafos */
+        </style>
 </head>
 <body class="d-flex flex-column h-100 bg-light">
     <main class="flex-shrink-0">
