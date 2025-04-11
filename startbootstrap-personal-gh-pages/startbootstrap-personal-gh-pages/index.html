@@ -17,6 +17,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Estilos para modo oscuro -->
     <style>
@@ -140,10 +142,16 @@
         object-fit: cover;
         }
 
-        /* Estilos para el carrusel de proyectos */
+/* Estilos para el carrusel de proyectos */
 .swiper {
   width: 100%;
   padding: 20px 0;
+  overflow: hidden; /* Evita desbordamientos */
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .swiper-slide {
@@ -153,6 +161,7 @@
   transition: all 0.3s ease;
   opacity: 0.6; /* Los slides laterales son menos visibles */
   transform: scale(0.7); /* Los slides laterales son más pequeños */
+  width: auto !important; /* Asegura que Swiper no fuerce un ancho fijo */
 }
 
 .swiper-slide-active {
@@ -227,6 +236,11 @@
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 767px) {
+  .swiper-slide {
+    opacity: 1; /* En móvil, todos los slides son visibles */
+    transform: scale(1); /* En móvil, todos los slides tienen el mismo tamaño */
+  }
+
   .project-card {
     max-width: 300px;
   }
@@ -242,6 +256,8 @@
   .project-text {
     font-size: 0.9rem;
   }
+}
+        
 }
     </style>
 </head>
@@ -418,8 +434,7 @@
                     </div>
                 </div>
             </div>
-        </section>
-<!-- Sección de Proyectos destacados con animación -->
+      <!-- Sección de Proyectos destacados con animación -->
 <section class="py-5 bg-light">
   <div class="container px-5">
     <div class="text-center mb-5" data-aos="fade-up">
