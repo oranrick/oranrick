@@ -240,6 +240,16 @@
             font-size: 20px;
         }
 
+        /* Ajustes para pantallas pequeñas */
+         @media (max-width: 767px) {
+             /* En móviles, solemos mostrar 1 tarjeta al centro y cambiar sus escalas si quieres */
+             .swiper-slide {
+                 opacity: 1;
+                 transform: scale(1);
+             }
+             .project-card {
+                 max-width: 300px;
+             }
         }
     </style>
 </head>
