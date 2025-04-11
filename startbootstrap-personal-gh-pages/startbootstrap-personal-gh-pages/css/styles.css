@@ -12061,27 +12061,34 @@ body {
 
 }
 
-/* -- Etiqueta de género: solo texto naranja, negrita, tamaño un poco grande -- */
+/* ====== Etiqueta de género ====== */
 .genre-label {
-  display: inline-block;
-  color: #ff8a00;        /* naranja */
-  font-size: 1rem;       /* súbele un poco si lo quieres más grande */
-  font-weight: 700;      /* negrita */
+  /* Para que sea texto naranja con más prioridad, en cualquier modo */
+  color: #ff8a00 !important; 
+  font-size: 1rem;      /* Ajusta según tu gusto */
+  font-weight: 700;     /* Negrita */
   cursor: default;
   pointer-events: none;
-  /* Agrega más si deseas sombra de texto
-     text-shadow: 1px 1px 2px rgba(0,0,0,0.7); */
+  text-shadow: none;    /* Si no quieres sombra, quítalo o pon la que prefieras */
 }
 
-/* -- Botón "Leer más" en un naranja menos chillón -- */
+/* ====== Botón "Leer más" ====== */
 .btn-leermas {
-  background-color: #ff9800; /* naranja un poco más oscuro */
-  color: #fff;
-  border: none;
+  /* Forzamos color de fondo y texto en todos los modos */
+  background-color: #ff9800 !important; /* naranja menos chillón */
+  color: #fff !important;
+  border: none !important;
+  /* Para que se note que es botón */
+  display: inline-block;  /* Asegura la forma de botón */
+  text-align: center;
+  padding: 0.5rem 1rem;   /* Espaciado interno */
+  border-radius: 0.25rem; /* Esquinas redondeadas, si quieres */
+  transition: background-color 0.3s ease;
 }
+
 .btn-leermas:hover {
-  background-color: #ff8a00; /* más oscuro al hover */
-  color: #fff;
+  background-color: #ff8a00 !important; /* un tono más oscuro al hover */
+  color: #fff !important;
 }
 
 /* -- Ajustes para la escala de los slides -- */
