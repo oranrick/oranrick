@@ -12058,21 +12058,7 @@ body {
 .swiper-slide-prev, .swiper-slide-next {
   opacity: 0.8 !important;
   transform: scale(0.85) !important;
-}
 
-/* ----- Etiqueta de género ----- */
-.genre-label {
-  display: inline-block;
-  background-color: #ffc107; /* color 'warning' */
-  color: #fff;
-  font-size: 1rem;       /* un poco más grande que el .9rem usual */
-  font-weight: 800;      /* más negrita */
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* contorno/sombra al texto */
-  cursor: default;
-  pointer-events: none;
-  /* Ajustes opcionales: letter-spacing, etc. */
 }
 
 /* -- Etiqueta de género: solo texto naranja, negrita, tamaño un poco grande -- */
