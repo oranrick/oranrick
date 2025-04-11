@@ -141,6 +141,110 @@
         height: 240px;
         object-fit: cover;
         }
+
+        /* Estilos para el carrusel de proyectos */
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0.6; /* Los slides laterales son menos visibles */
+  transform: scale(0.7); /* Los slides laterales son más pequeños */
+}
+
+.swiper-slide-active {
+  opacity: 1; /* El slide central es completamente visible */
+  transform: scale(1); /* El slide central es más grande */
+}
+
+/* Estilo de las tarjetas de proyecto */
+.project-card {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px; /* Tamaño máximo del proyecto central */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5; /* Reducimos la opacidad de la imagen para que no se vea "sucio" */
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  opacity: 0.7; /* Al pasar el mouse, la imagen se ve un poco más clara */
+}
+
+.project-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--muted-text-color);
+}
+
+/* Flechas de navegación */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .project-card {
+    max-width: 300px;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-text {
+    font-size: 0.9rem;
+  }
+}
     </style>
 </head>
 <body class="d-flex flex-column h-100">
