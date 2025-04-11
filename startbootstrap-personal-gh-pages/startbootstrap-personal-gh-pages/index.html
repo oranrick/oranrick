@@ -359,8 +359,10 @@
       </h2>
     </div>
 
+    <!-- Carrusel Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
+        
         <!-- Slide 1 -->
         <div class="swiper-slide">
           <div class="project-card">
@@ -369,14 +371,11 @@
             </div>
             <div class="project-content">
               <h5 class="project-title fw-bold">La política del engaño</h5>
-              <span 
-                class="btn btn-warning text-white fw-bold mb-2"
-                style="cursor: default; pointer-events: none; font-size: 0.8rem;"
-              >
-                Reportaje - Opinión
-              </span>
+              <!-- Etiqueta de género: texto naranja, negrita -->
+              <span class="genre-label mb-2">Reportaje - Opinión</span>
               <p class="project-text">La desinformación como estrategia emocional en la política moderna.</p>
-              <a href="poder-mentira.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+              <!-- Botón "Leer más" (naranja menos chillón) -->
+              <a href="poder-mentira.html" class="btn btn-leermas fw-bold">Leer más</a>
             </div>
           </div>
         </div>
@@ -389,14 +388,9 @@
             </div>
             <div class="project-content">
               <h5 class="project-title fw-bold">Arte y naturaleza</h5>
-              <span 
-                class="btn btn-warning text-white fw-bold mb-2"
-                style="cursor: default; pointer-events: none; font-size: 0.8rem;"
-              >
-                Reseña
-              </span>
+              <span class="genre-label mb-2">Reseña</span>
               <p class="project-text">Diálogo entre surrealismo y crisis ecológica. Un paseo por la biomorfología del siglo XX.</p>
-              <a href="arte-naturaleza.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+              <a href="arte-naturaleza.html" class="btn btn-leermas fw-bold">Leer más</a>
             </div>
           </div>
         </div>
@@ -409,19 +403,14 @@
             </div>
             <div class="project-content">
               <h5 class="project-title fw-bold">La maternidad en el arte</h5>
-              <span 
-                class="btn btn-warning text-white fw-bold mb-2"
-                style="cursor: default; pointer-events: none; font-size: 0.8rem;"
-              >
-                Reseña
-              </span>
+              <span class="genre-label mb-2">Reseña</span>
               <p class="project-text">Interpretación crítica del juicio de Salomón desde lo humano y lo ético.</p>
-              <a href="salomon.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+              <a href="salomon.html" class="btn btn-leermas fw-bold">Leer más</a>
             </div>
           </div>
         </div>
 
-        <!-- Slide 4 (nuevo) -->
+        <!-- Slide 4 -->
         <div class="swiper-slide">
           <div class="project-card">
             <div class="project-image">
@@ -429,17 +418,13 @@
             </div>
             <div class="project-content">
               <h5 class="project-title fw-bold">Otro proyecto</h5>
-              <span 
-                class="btn btn-warning text-white fw-bold mb-2"
-                style="cursor: default; pointer-events: none; font-size: 0.8rem;"
-              >
-                Columnas de opinión
-              </span>
-              <p class="project-text">Descripción o introducción de tu cuarto proyecto.</p>
-              <a href="#" class="btn btn-warning text-white fw-bold">Leer más</a>
+              <span class="genre-label mb-2">Crónica</span>
+              <p class="project-text">Descripción o introducción de tu cuarto proyecto...</p>
+              <a href="#" class="btn btn-leermas fw-bold">Leer más</a>
             </div>
           </div>
         </div>
+
       </div>
 
       <!-- Flechas -->
@@ -448,6 +433,30 @@
     </div>
   </div>
 </section>
+
+<!-- Config Swiper al final, antes del </body> -->
+<script>
+  var swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3,
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+</script>
     </main>
 
     <!-- Footer-->
