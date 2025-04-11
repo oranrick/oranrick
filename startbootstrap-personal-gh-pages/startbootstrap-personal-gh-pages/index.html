@@ -524,5 +524,29 @@
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+  var swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3, // Muestra 3 slides a la vez (el central y uno a cada lado)
+    centeredSlides: true, // El slide activo estará centrado
+    spaceBetween: 20, // Espacio entre los slides
+    loop: true, // Permite un desplazamiento infinito
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      // Ajustes para pantallas pequeñas
+      0: {
+        slidesPerView: 1, // En móvil, muestra solo 1 slide a la vez
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3, // En pantallas más grandes, muestra 3 slides
+        spaceBetween: 20,
+      },
+    },
+  });
+</script>
 </body>
 </html>
