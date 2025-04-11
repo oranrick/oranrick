@@ -12088,6 +12088,25 @@ body {
   color: #fff !important;
 }
 
+html body .genre-label {
+  color: #ff8a00 !important;
+  font-weight: 900 !important;
+  font-size: 1rem !important;
+}
 
+html body .btn-leermas {
+  background-color: #ff9800 !important;
+  color: #ffffff !important;
+  border: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 0.3s ease !important;
+}
+html body .btn-leermas:hover {
+  background-color: #ff8a00 !important;
+  color: #fff !important;
+}
   
 }
