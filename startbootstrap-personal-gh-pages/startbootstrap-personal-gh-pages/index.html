@@ -18,9 +18,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Estilos para modo oscuro -->
+    <!-- Estilos para modo oscuro y carrusel -->
     <style>
         /* Variables de color */
         :root {
@@ -31,6 +31,7 @@
             --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
             --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
             --caption-color: #6c757d; /* Color de los pies de página en modo claro */
+            --image-opacity: 0.7; /* Opacidad en modo claro */
         }
         [data-theme="dark"] {
             --bg-color: #121212;   /* Fondo oscuro */
@@ -40,6 +41,7 @@
             --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
             --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
             --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
+            --image-opacity: 0.5; /* Opacidad en modo oscuro */
         }
 
         /* Reset de fondos y colores */
@@ -138,89 +140,126 @@
             color: var(--nav-link-color);
         }
         .card-img-top {
-        height: 240px;
-        object-fit: cover;
+            height: 240px;
+            object-fit: cover;
         }
 
-/* Estilos para el carrusel de proyectos */
-.swiper {
-  width: 100%;
-  padding: 20px 0;
-  overflow: hidden; /* Evita desbordamientos */
-}
+        /* Estilos para el carrusel de proyectos */
+        .swiper {
+            width: 100%;
+            padding: 20px 0;
+            overflow: visible; /* Permite que los slides laterales se vean */
+        }
 
-.swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  opacity: 0.4; /* Reducimos la opacidad para un efecto más difuso */
-  transform: scale(0.5); /* Hacemos los slides laterales más pequeños */
-  width: auto !important;
-}
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            opacity: 0.4; /* Más difuso para los slides laterales */
+            transform: scale(0.5); /* Más pequeños */
+            width: auto !important;
+        }
 
-.swiper-slide-active {
-  opacity: 1; /* El slide central es completamente visible */
-  transform: scale(1); /* El slide central sigue siendo más grande */
-}
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-/* Estilo de las tarjetas de proyecto */
-.project-card {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 400px; /* Tamaño máximo del proyecto central */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
+        /* Estilo de las tarjetas de proyecto */
+        .project-card {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-.project-image {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
+        .project-image {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #333; /* Fondo oscuro para evitar el "filtro blanco" */
+        }
 
-.project-image {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background-color: #333; /* Fondo oscuro detrás de la imagen para evitar el "filtro blanco" */
-}
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: var(--image-opacity);
+            transition: opacity 0.3s ease;
+        }
 
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7; /* Aumentamos un poco la opacidad para que la imagen sea más visible */
-  transition: opacity 0.3s ease;
-}
+        .project-card:hover .project-image img {
+            opacity: 1;
+        }
 
-.project-card:hover .project-image img {
-  opacity: 1; /* Al pasar el mouse, la imagen se ve completamente clara */
-}
+        .project-content {
+            padding: 20px;
+            text-align: center;
+        }
 
-/* Ajuste específico para modo claro */
-:root {
-  --image-opacity: 0.7; /* Opacidad en modo claro */
-}
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-[data-theme="dark"] {
-  --image-opacity: 0.5; /* Opacidad en modo oscuro, como te gusta */
-}
+        .project-text {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--muted-text-color);
+        }
 
-.project-image img {
-  opacity: var(--image-opacity);
-}
-        
+        /* Flechas de navegación */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--text-color);
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px;
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 767px) {
+            .swiper-slide {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .project-card {
+                max-width: 300px;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-text {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -396,64 +435,65 @@
                     </div>
                 </div>
             </div>
-      <!-- Sección de Proyectos destacados con animación -->
-<section class="py-5 bg-light">
-  <div class="container px-5">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Mis proyectos</span></h2>
-    </div>
+        </section>
+        <!-- Sección de Proyectos destacados con animación -->
+        <section class="py-5 bg-light">
+            <div class="container px-5">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Mis proyectos</span></h2>
+                </div>
 
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Proyecto 1 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/portadaarte.jpg" alt="Arte y naturaleza">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">Arte y naturaleza</h5>
-              <p class="project-text">Diálogo entre surrealismo y crisis ecológica. Un paseo por la biomorfología del siglo XX.</p>
-              <a href="arte-naturaleza.html" class="btn btn-warning text-white fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Proyecto 1 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/portadaarte.jpg" alt="Arte y naturaleza">
+                                </div>
+                                <div class="project-content">
+                                    <h5 class="project-title fw-bold">Arte y naturaleza</h5>
+                                    <p class="project-text">Diálogo entre surrealismo y crisis ecológica. Un paseo por la biomorfología del siglo XX.</p>
+                                    <a href="arte-naturaleza.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Proyecto 2 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/trump.jpg" alt="La política del engaño">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">La política del engaño</h5>
-              <p class="project-text">La desinformación como estrategia emocional en la política moderna.</p>
-              <a href="poder-mentira.html" class="btn btn-warning text-white fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
+                        <!-- Proyecto 2 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/trump.jpg" alt="La política del engaño">
+                                </div>
+                                <div class="project-content">
+                                    <h5 class="project-title fw-bold">La política del engaño</h5>
+                                    <p class="project-text">La desinformación como estrategia emocional en la política moderna.</p>
+                                    <a href="poder-mentira.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Proyecto 3 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/portada-salo.jpg" alt="La maternidad en el arte">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">La maternidad en el arte</h5>
-              <p class="project-text">Interpretación crítica del juicio de Salomón desde lo humano y lo ético.</p>
-              <a href="salomon.html" class="btn btn-warning text-white fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
-      </div>
+                        <!-- Proyecto 3 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="assets/portada-salo.jpg" alt="La maternidad en el arte">
+                                </div>
+                                <div class="project-content">
+                                    <h5 class="project-title fw-bold">La maternidad en el arte</h5>
+                                    <p class="project-text">Interpretación crítica del juicio de Salomón desde lo humano y lo ético.</p>
+                                    <a href="salomon.html" class="btn btn-warning text-white fw-bold">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-      <!-- Flechas -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-</section>
+                    <!-- Flechas -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer-->
     <footer class="py-4 mt-auto">
@@ -485,37 +525,38 @@
     </button>
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-   <script>
-  var swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3, // Muestra 3 slides a la vez (el central y uno a cada lado)
-    centeredSlides: true, // El slide activo estará centrado
-    spaceBetween: 20, // Espacio entre los slides
-    loop: true, // Permite un desplazamiento infinito
-    initialSlide: 1, // Comienza en el segundo slide (índice 1) para que el central sea el inicial
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1, // En móvil, muestra solo 1 slide a la vez
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 3, // En pantallas más grandes, muestra 3 slides
-        spaceBetween: 20,
-      },
-    },
-    on: {
-      init: function () {
-        this.update(); // Forza una actualización al inicializar para evitar problemas de renderizado
-      },
-      resize: function () {
-        this.update(); // Actualiza el carrusel al cambiar el tamaño de la ventana
-      },
-    },
-  });
-</script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.mySwiper', {
+            slidesPerView: 3,
+            centeredSlides: true,
+            spaceBetween: 20,
+            loop: true,
+            initialSlide: 1,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            on: {
+                init: function () {
+                    this.update();
+                },
+                resize: function () {
+                    this.update();
+                },
+            },
+        });
+    </script>
 </body>
 </html>
