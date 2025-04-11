@@ -162,7 +162,7 @@
             align-items: center;
             transition: all 0.3s ease;
             opacity: 0.5; /* <-- cambio */
-            transform: scale(0.6); !important/* <-- cambio (más pequeño) */ 
+            transform: scale(0.6); !important;/* <-- cambio (más pequeño) */ 
             width: auto !important;
         }
 
@@ -242,11 +242,6 @@
 
         /* Ajustes para pantallas pequeñas */
         @media (max-width: 767px) {
-            /* En móviles, solemos mostrar 1 tarjeta al centro y cambiar sus escalas si quieres */
-            .swiper-slide {
-                opacity: 1;
-                transform: scale(1);
-            }
             .project-card {
                 max-width: 300px;
             }
