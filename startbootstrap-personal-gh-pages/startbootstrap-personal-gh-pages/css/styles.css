@@ -11990,8 +11990,9 @@ html {
 }
 
 /* ======================
-   MODO OSCURO GLOBAL
+   MODO CLARO/OSCURO GLOBAL
    ====================== */
+/* Variables para modo claro */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -12001,7 +12002,7 @@ html {
   --btn-outline-border: #000000;
 }
 
-/* Cuando es dark mode */
+/* Variables para modo oscuro */
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
@@ -12011,14 +12012,14 @@ html {
   --btn-outline-border: #ffffff;
 }
 
-/* Estilos genéricos que usan las variables */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar, .footer {
+.navbar,
+.footer {
   background-color: var(--bg-color) !important;
 }
 
@@ -12026,7 +12027,7 @@ body {
   background-color: var(--section-bg-light) !important;
 }
 
-/* Si usas un botón flotante */
+/* (Si usas un botón flotante para tema) */
 .theme-toggle {
   position: fixed;
   top: 1.5rem;
@@ -12045,81 +12046,126 @@ body {
   justify-content: center;
 }
 
+/* ======================
+   SUBTAG (opcional)
+   ====================== */
 .subtag {
-    border-bottom: 2px solid var(--bs-primary);
-    padding-bottom: 2px;
-    color: var(--bs-gray-600); !important;
+  border-bottom: 2px solid var(--bs-primary);
+  padding-bottom: 2px;
+  /* ¡CUIDADO con la sintaxis! */
+  color: var(--bs-gray-600) !important;
 }
 
-/* Soporte para modo oscuro */
-@media (prefers-color-scheme: dark) {
-    .subtag {
-        color: var(--bs-gray-400); !important;
-    }
+/* Si quieres forzar en modo oscuro, usa:
+   [data-theme="dark"] .subtag {
+     color: var(--bs-gray-400) !important;
+   }
+*/
+
+/* ======================
+   SWIPER SLIDES
+   ====================== */
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+  overflow: visible; /* Mantiene visibles los laterales */
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-/* -- Ajustes para la escala de los slides -- */
+/* Por defecto, todos los slides menos el 'active' se verán más pequeños/tenues */
 .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
   opacity: 0.5 !important;
   transform: scale(0.7) !important;
-  transition: all 0.3s ease;
+  width: auto !important;
 }
+
 .swiper-slide-active {
   opacity: 1 !important;
   transform: scale(1) !important;
 }
-.swiper-slide-prev, .swiper-slide-next {
+
+.swiper-slide-prev,
+.swiper-slide-next {
   opacity: 0.8 !important;
   transform: scale(0.85) !important;
 }
 
-/* ====== Etiqueta de género ====== */
-.genre-label {
-  /* Texto naranja con prioridad, modo claro u oscuro */
-  color: #ff8a00 !important; 
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: default;
-  pointer-events: none;
-  text-shadow: none; /* o pon tu preferida */
+/* Flechas de navegación de Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
 }
 
-/* ====== Botón "Leer más" ====== */
-.btn-leermas {
-  background-color: #ff9800 !important; /* naranja menos chillón */
-  color: #fff !important;
-  border: none !important;
-  display: inline-block;
+/* Ajustes en móvil: 
+   Si quieres que en móvil se siga viendo la escala, 
+   NO definas .swiper-slide { transform: scale(1) } en la media query. */
+
+/* ======================
+   TARJETAS DE PROYECTO
+   ====================== */
+.project-card {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #333;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: var(--image-opacity, 1);
+  transition: opacity 0.3s ease;
+}
+.project-card:hover .project-image img {
+  opacity: 1;
+}
+.project-content {
+  padding: 20px;
   text-align: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+}
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.project-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--muted-text-color);
 }
 
-.btn-leermas:hover {
-  background-color: #ff8a00 !important;
-  color: #fff !important;
-}
+/* ======================
+   ETIQUETA DE GÉNERO
+   ====================== */
+.genre-label {
 
-html body .genre-label {
-  color: #ff8a00 !important;
-  font-weight: 900 !important;
-  font-size: 1rem !important;
-}
-
-html body .btn-leermas {
-  background-color: #ff9800 !important;
-  color: #ffffff !important;
-  border: none !important;
-  display: inline-block !important;
-  text-align: center !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 0.25rem !important;
-  transition: background-color 0.3s ease !important;
-}
-html body .btn-leermas:hover {
-  background-color: #ff8a00 !important;
-  color: #fff !important;
-}
   
 }
