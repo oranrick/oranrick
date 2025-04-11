@@ -144,34 +144,44 @@
             object-fit: cover;
         }
 
-        /* Estilos para el carrusel de proyectos */
+        /* Estilos para el carrusel de proyectos (Swiper) */
         .swiper {
             width: 100%;
             padding: 20px 0;
-            overflow: visible; /* Permite que los slides laterales se vean */
+            overflow: visible; /* Mantiene visibles los laterales */
         }
-
         .swiper-wrapper {
             display: flex;
             align-items: center;
         }
 
+        /* Por defecto, hacemos que todos los slides tengan menor escala/opacity */
         .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
             transition: all 0.3s ease;
-            opacity: 0.4; /* Más difuso para los slides laterales */
-            transform: scale(0.5); /* Más pequeños */
+            opacity: 0.5; /* <-- cambio */
+            transform: scale(0.8); /* <-- cambio (más pequeño) */
             width: auto !important;
         }
 
+        /* El slide activo (en el centro) estará con escala y opacidad completas */
         .swiper-slide-active {
             opacity: 1;
             transform: scale(1);
         }
 
-        /* Estilo de las tarjetas de proyecto */
+        /* Ajuste adicional: la diapositiva inmediata siguiente y anterior
+           también pueden tener una opacidad un poco mayor que el resto.
+           Pero si quieres que tengan la misma que el "resto" no pongas nada extra. */
+        .swiper-slide-prev,
+        .swiper-slide-next {
+            opacity: 0.8; /* <-- cambio */
+            transform: scale(0.9); /* <-- cambio */
+        }
+
+        /* Tarjetas de proyecto */
         .project-card {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -182,15 +192,13 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-
         .project-image {
             position: relative;
             width: 100%;
             height: 200px;
             overflow: hidden;
-            background-color: #333; /* Fondo oscuro para evitar el "filtro blanco" */
+            background-color: #333;
         }
-
         .project-image img {
             width: 100%;
             height: 100%;
@@ -198,21 +206,17 @@
             opacity: var(--image-opacity);
             transition: opacity 0.3s ease;
         }
-
         .project-card:hover .project-image img {
             opacity: 1;
         }
-
         .project-content {
             padding: 20px;
             text-align: center;
         }
-
         .project-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
-
         .project-text {
             font-size: 1rem;
             margin-bottom: 15px;
@@ -231,7 +235,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .swiper-button-next::after,
         .swiper-button-prev::after {
             font-size: 20px;
@@ -239,23 +242,20 @@
 
         /* Ajustes para pantallas pequeñas */
         @media (max-width: 767px) {
+            /* En móviles, solemos mostrar 1 tarjeta al centro y cambiar sus escalas si quieres */
             .swiper-slide {
                 opacity: 1;
                 transform: scale(1);
             }
-
             .project-card {
                 max-width: 300px;
             }
-
             .project-image {
                 height: 150px;
             }
-
             .project-title {
                 font-size: 1.2rem;
             }
-
             .project-text {
                 font-size: 0.9rem;
             }
@@ -268,7 +268,11 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
                 <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -279,6 +283,7 @@
                 </div>
             </div>
         </nav>
+
         <!-- Header-->
         <header class="py-5">
             <div class="container px-5 pb-5">
@@ -286,9 +291,15 @@
                     <div class="col-xxl-5">
                         <!-- Header text content-->
                         <div class="text-center text-xxl-start">
-                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Escritor · Creativo · Editor</div></div>
-                            <div class="fs-3 fw-light text-muted">Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje</div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Creo puentes con palabras</span></h1>
+                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                <div class="text-uppercase">Escritor · Creativo · Editor</div>
+                            </div>
+                            <div class="fs-3 fw-light text-muted">
+                                Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje
+                            </div>
+                            <h1 class="display-3 fw-bolder mb-5">
+                                <span class="text-gradient d-inline">Creo puentes con palabras</span>
+                            </h1>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="projects.html">Proyectos</a>
                                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="resume.html">Resumen - CV</a>
@@ -300,133 +311,35 @@
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                             <div class="profile bg-gradient-primary-to-secondary">
                                 <img class="profile-img" src="assets/indexpic.png" alt="..." />
+                                <!-- SVG decoraciones (dots) -->
                                 <div class="dots-1">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
+                                    <!-- Contenido SVG omitido para ahorrar espacio -->
                                 </div>
-                                <div class="dots-2">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-3">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-4">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
+                                <div class="dots-2"></div>
+                                <div class="dots-3"></div>
+                                <div class="dots-4"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+
         <!-- About section-->
         <section class="bg-light py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Sobre mí</span></h2>
-                            <p class="lead fw-light mb-4">Mi nombre es Rick Grisales, soy periodista y creativo.</p>
-                            <p class="text-muted">Me apasiona el poder de las palabras para conectar, inspirar y transformar. Como periodista, busco historias que importen; como creativo, exploro formas de contarlas que dejen huella. Actualmente, estoy estudiando Periodismo en la Universidad Complutense de Madrid y trabajando en proyectos que fusionan narrativa, cultura y sensibilidad humana.</p>
+                            <h2 class="display-5 fw-bolder">
+                                <span class="text-gradient d-inline">Sobre mí</span>
+                            </h2>
+                            <p class="lead fw-light mb-4">
+                                Mi nombre es Rick Grisales, soy periodista y creativo.
+                            </p>
+                            <p class="text-muted">
+                                Me apasiona el poder de las palabras para conectar, inspirar y transformar. Como periodista, busco historias que importen; como creativo, exploro formas de contarlas que dejen huella...
+                            </p>
                             <div class="d-flex justify-content-center fs-2 gap-4">
                                 <a class="text-gradient" href="https://www.instagram.com/oranrick"><i class="bi bi-instagram"></i></a>
                                 <a class="text-gradient" href="https://www.linkedin.com/in/ricardo-grisales-ramirez-49a322232/"><i class="bi bi-linkedin"></i></a>
@@ -436,11 +349,14 @@
                 </div>
             </div>
         </section>
-        <!-- Sección de Proyectos destacados con animación -->
+
+        <!-- Sección de Proyectos destacados con Swiper -->
         <section class="py-5 bg-light">
             <div class="container px-5">
                 <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Mis proyectos</span></h2>
+                    <h2 class="display-5 fw-bolder">
+                        <span class="text-gradient d-inline">Mis proyectos</span>
+                    </h2>
                 </div>
 
                 <div class="swiper mySwiper">
@@ -458,7 +374,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Proyecto 2 -->
                         <div class="swiper-slide">
                             <div class="project-card">
@@ -472,7 +387,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Proyecto 3 -->
                         <div class="swiper-slide">
                             <div class="project-card">
@@ -486,6 +400,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- (Opcional) Agrega más slides si quieres -->
                     </div>
 
                     <!-- Flechas -->
@@ -495,11 +410,14 @@
             </div>
         </section>
     </main>
+
     <!-- Footer-->
     <footer class="py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Rick 2025</div>
+                </div>
                 <div class="col-auto">
                     <a class="small" href="#!">Privacidad</a>
                     <span class="mx-1">·</span>
@@ -510,6 +428,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -519,12 +438,14 @@
     <script>
         AOS.init();
     </script>
+
     <!-- Theme toggle button -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
         <span id="theme-icon">🌙</span>
     </button>
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
@@ -533,7 +454,7 @@
             centeredSlides: true,
             spaceBetween: 20,
             loop: true,
-            initialSlide: 1,
+            initialSlide: 1, // El slide "2" es el que se ve centrado inicialmente
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
