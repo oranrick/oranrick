@@ -12075,5 +12075,43 @@ body {
   /* Ajustes opcionales: letter-spacing, etc. */
 }
 
+/* -- Etiqueta de género: solo texto naranja, negrita, tamaño un poco grande -- */
+.genre-label {
+  display: inline-block;
+  color: #ff8a00;        /* naranja */
+  font-size: 1rem;       /* súbele un poco si lo quieres más grande */
+  font-weight: 700;      /* negrita */
+  cursor: default;
+  pointer-events: none;
+  /* Agrega más si deseas sombra de texto
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.7); */
+}
+
+/* -- Botón "Leer más" en un naranja menos chillón -- */
+.btn-leermas {
+  background-color: #ff9800; /* naranja un poco más oscuro */
+  color: #fff;
+  border: none;
+}
+.btn-leermas:hover {
+  background-color: #ff8a00; /* más oscuro al hover */
+  color: #fff;
+}
+
+/* -- Ajustes para la escala de los slides -- */
+.swiper-slide {
+  opacity: 0.5 !important;
+  transform: scale(0.7) !important;
+  transition: all 0.3s ease;
+}
+.swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+.swiper-slide-prev, .swiper-slide-next {
+  opacity: 0.8 !important;
+  transform: scale(0.85) !important;
+}
+
   
 }
