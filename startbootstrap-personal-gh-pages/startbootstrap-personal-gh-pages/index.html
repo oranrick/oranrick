@@ -159,14 +159,14 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  opacity: 0.6; /* Los slides laterales son menos visibles */
-  transform: scale(0.7); /* Los slides laterales son más pequeños */
-  width: auto !important; /* Asegura que Swiper no fuerce un ancho fijo */
+  opacity: 0.4; /* Reducimos la opacidad para un efecto más difuso */
+  transform: scale(0.5); /* Hacemos los slides laterales más pequeños */
+  width: auto !important;
 }
 
 .swiper-slide-active {
   opacity: 1; /* El slide central es completamente visible */
-  transform: scale(1); /* El slide central es más grande */
+  transform: scale(1); /* El slide central sigue siendo más grande */
 }
 
 /* Estilo de las tarjetas de proyecto */
@@ -188,77 +188,39 @@
   overflow: hidden;
 }
 
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #333; /* Fondo oscuro detrás de la imagen para evitar el "filtro blanco" */
+}
+
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5; /* Reducimos la opacidad de la imagen para que no se vea "sucio" */
+  opacity: 0.7; /* Aumentamos un poco la opacidad para que la imagen sea más visible */
   transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-image img {
-  opacity: 0.7; /* Al pasar el mouse, la imagen se ve un poco más clara */
+  opacity: 1; /* Al pasar el mouse, la imagen se ve completamente clara */
 }
 
-.project-content {
-  padding: 20px;
-  text-align: center;
+/* Ajuste específico para modo claro */
+:root {
+  --image-opacity: 0.7; /* Opacidad en modo claro */
 }
 
-.project-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+[data-theme="dark"] {
+  --image-opacity: 0.5; /* Opacidad en modo oscuro, como te gusta */
 }
 
-.project-text {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: var(--muted-text-color);
-}
-
-/* Flechas de navegación */
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--text-color);
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 20px;
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 767px) {
-  .swiper-slide {
-    opacity: 1; /* En móvil, todos los slides son visibles */
-    transform: scale(1); /* En móvil, todos los slides tienen el mismo tamaño */
-  }
-
-  .project-card {
-    max-width: 300px;
-  }
-
-  .project-image {
-    height: 150px;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-text {
-    font-size: 0.9rem;
-  }
+.project-image img {
+  opacity: var(--image-opacity);
 }
         
-}
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -524,19 +486,18 @@
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-    <script>
+   <script>
   var swiper = new Swiper('.mySwiper', {
     slidesPerView: 3, // Muestra 3 slides a la vez (el central y uno a cada lado)
     centeredSlides: true, // El slide activo estará centrado
     spaceBetween: 20, // Espacio entre los slides
     loop: true, // Permite un desplazamiento infinito
+    initialSlide: 1, // Comienza en el segundo slide (índice 1) para que el central sea el inicial
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      // Ajustes para pantallas pequeñas
       0: {
         slidesPerView: 1, // En móvil, muestra solo 1 slide a la vez
         spaceBetween: 10,
@@ -544,6 +505,14 @@
       768: {
         slidesPerView: 3, // En pantallas más grandes, muestra 3 slides
         spaceBetween: 20,
+      },
+    },
+    on: {
+      init: function () {
+        this.update(); // Forza una actualización al inicializar para evitar problemas de renderizado
+      },
+      resize: function () {
+        this.update(); // Actualiza el carrusel al cambiar el tamaño de la ventana
       },
     },
   });
