@@ -12190,5 +12190,53 @@ body {
   color: #ffffff !important;
   text-decoration: none !important;
 }
- 
+
+/* ====================== AJUSTES PARA MÓVILES (<768px) ====================== */
+@media (max-width: 767px) {
+  /* Evitar desbordamiento horizontal del carrusel en pantallas pequeñas */
+  .swiper {
+    overflow: hidden;
+  }
+  /* Mostrar solo un slide a la vez en móvil (sin escalado reducido) */
+  .swiper-slide,
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+  /* Asegurar que el cursor parpadeante sea visible en móvil */
+  .cursor-blink {
+    display: inline !important;
+    visibility: visible !important;
+  }
+}
+
+/* ====================== ESTILO ETIQUETA DE GÉNERO ====================== */
+/* Mantener color naranja y texto en negrita */
+.genre-label {
+  color: #ff8a00;
+  font-weight: bold;
+}
+
+/* ====================== ESTILO BOTÓN "Leer más" ====================== */
+/* Estilo de botón con fondo naranja para .btn-leermas */
+.btn-leermas {
+  display: inline-block;
+  background-color: #ff8a00;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+/* Opcional: efecto al pasar el cursor o enfocar el botón */
+.btn-leermas:hover,
+.btn-leermas:focus {
+  background-color: #e67600;
+  color: #fff;
+  text-decoration: none;
+}
+  
 }
