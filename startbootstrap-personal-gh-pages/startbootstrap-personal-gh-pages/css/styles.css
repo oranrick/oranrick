@@ -12238,5 +12238,41 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+/* Media query para ajustar el carrusel Swiper en móviles */
+@media (max-width: 767px) {
+  .swiper-slide,
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+}
+
+/* Media query para ajustar las imágenes de proyectos en pantallas pequeñas */
+@media (max-width: 767px) {
+  .project-image {
+    height: 150px; /* Altura más pequeña para móviles */
+  }
+}
+
+/* Estilos para modo oscuro */
+[data-theme="dark"] .genre-label {
+  color: #ff8a00 !important; /* Naranja para la etiqueta */
+  font-weight: bold !important; /* Texto en negrita */
+}
+
+[data-theme="dark"] .btn-leermas {
+  background-color: #ff9800 !important; /* Fondo naranja para el botón */
+  color: #ffffff !important; /* Texto blanco */
+}
+
+/* Asegura que la animación del cursor funcione en móviles */
+@media (max-width: 767px) {
+  .cursor-blink {
+    animation: blink 1s step-start infinite !important; /* Activa la animación */
+  }
+}
   
 }
