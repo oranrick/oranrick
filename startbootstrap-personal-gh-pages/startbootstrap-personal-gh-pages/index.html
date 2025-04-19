@@ -251,6 +251,20 @@
                  max-width: 300px;
              }
         }
+
+        .cursor-blink {
+      display: inline-block;
+      font-weight: bold;
+      color: #fd7e14; /* naranja */
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
         
     </style>
 </head>
