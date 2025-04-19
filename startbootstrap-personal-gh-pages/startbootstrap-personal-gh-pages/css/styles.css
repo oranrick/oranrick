@@ -12066,24 +12066,59 @@ body {
    AJUSTES GENERALES CARRUSEL
    ========================= */
 
-/* Project card más delgada y con borde naranja */
+/* ✅ QUITAR borde naranja */
 .project-card {
   max-width: 300px; /* Ajusta a tu gusto (antes 400px) */
-  border: 2px solid #ff8a00; /* Borde naranja */
+  border: none !important; /* removido borde naranja */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Reducir espacios laterales en el carrusel */
+.project-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Imagen fija y consistente */
+.project-image img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Reducción de espacios laterales en el carrusel */
 .swiper {
   width: 100%;
-  padding: 20px 40px; /* Más espacio para flechas; ajusta si gustas */
+  padding: 20px 40px;
   overflow: visible;
 }
 .swiper-slide {
-  margin: 0 8px !important; /* Menos separación horizontal */
+  margin: 0 8px !important;
+  transition: transform 0.3s ease;
+  transform: scale(0.85);
+  opacity: 0.6;
+  filter: blur(1px);
+}
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  filter: none;
+}
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.9);
+  opacity: 0.8;
+  filter: none;
 }
 
-/* Flechas de Swiper más visibles y fuera del carrusel */
+/* Flechas Swiper */
 .swiper-button-next,
 .swiper-button-prev {
   background-color: #ff8a00;
@@ -12111,7 +12146,7 @@ body {
    ETIQUETA DE GÉNERO
    ========================= */
 .genre-label {
-  color: #ff8a00 !important; /* Texto naranja */
+  color: #ff8a00 !important;
   font-weight: bold !important;
   font-size: 1rem !important;
 }
@@ -12122,7 +12157,7 @@ body {
 .btn-leermas {
   display: inline-block !important;
   padding: 0.5rem 1rem !important;
-  background-color: #ff9800 !important; /* Naranja menos fuerte */
+  background-color: #ff9800 !important;
   color: #ffffff !important;
   text-decoration: none !important;
   border: none !important;
@@ -12133,7 +12168,7 @@ body {
   transition: background-color 0.2s ease !important;
 }
 .btn-leermas:hover {
-  background-color: #ff8a00 !important; /* Hover más oscuro */
+  background-color: #ff8a00 !important;
   color: #fff !important;
 }
 
@@ -12141,19 +12176,17 @@ body {
    AJUSTES EN MÓVIL (<768px)
    ========================= */
 @media (max-width: 767px) {
-  /* Sólo 1 slide a la vez en móvil, sin escalas raras */
   .swiper-slide,
   .swiper-slide-prev,
   .swiper-slide-next {
     width: 100% !important;
     opacity: 1 !important;
     transform: scale(1) !important;
+    filter: none !important;
   }
-  /* Reducir altura de la imagen */
   .project-image {
     height: 150px !important;
   }
-  /* Ocultar flechas en móvil */
   .swiper-button-prev,
   .swiper-button-next {
     display: none !important;
