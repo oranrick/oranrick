@@ -12093,13 +12093,15 @@ body {
   object-fit: cover;
 }
 
+/* Configuración general del carrusel */
 .swiper {
-  width: 100vw;        /* Ocupa toda la ventana */
-  max-width: 100vw;    /* No se pasa del 100% */
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
   margin: 0 auto;
-  padding: 20px 0;     /* Solo padding arriba y abajo */
-  overflow: visible;
+  padding: 20px 60px; /* Aumentamos el padding lateral para las flechas */
+  overflow: visible !important;
   perspective: 1000px;
+  position: relative; /* Importante para posicionar las flechas */
 }
 
 /* Configuración base para slides */
@@ -12117,10 +12119,25 @@ body {
   align-items: center;
 }
 
-/* Tarjetas de proyecto */
+/* Tarjetas de proyecto - con límites de tamaño */
 .project-card {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
   transition: all 0.5s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Limitar tamaño de imágenes */
+.project-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción y cubre el espacio */
 }
 
 /* Efecto hover mejorado */
@@ -12128,62 +12145,66 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Flechas de navegación - CORREGIDAS */
 .swiper-button-next,
 .swiper-button-prev {
-  background: none !important;   /* Sin fondo */
-  border: none !important;       /* Sin borde */
-  color: #ff8a00 !important;     /* Naranja */
+  background: none !important;
+  border: none !important;
+  color: #ff8a00 !important;
   width: 44px;
   height: 44px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  margin-top: -22px; /* Centra verticalmente */
+  z-index: 100; /* Asegura que estén por encima de todo */
+  outline: none !important;
   box-shadow: none !important;
+}
+
+.swiper-button-prev {
+  left: 10px !important; /* Asegura la posición correcta */
+}
+
+.swiper-button-next {
+  right: 10px !important; /* Asegura la posición correcta */
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 32px;               /* Más grande si lo deseas */
-  color: #ff8a00 !important;     /* Naranja */
+  font-size: 32px;
+  color: #ff8a00 !important;
   font-weight: bold;
 }
 
-/* Etiqueta de género */
-.genre-label {
-  color: #ff8a00 !important;
-  font-weight: bold !important;
-  font-size: 1rem !important;
-}
-
-/* Botón "Leer más" */
-.btn-leermas {
-  display: inline-block !important;
-  padding: 0.5rem 1rem !important;
-  background-color: #ff9800 !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  border: none !important;
-  border-radius: 0.25rem !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  transition: background-color 0.2s ease !important;
-}
-
-.btn-leermas:hover {
-  background-color: #ff8a00 !important;
-  color: #fff !important;
-}
-
-/* Ajustes móvil */
+/* Ajustes específicos para móvil */
 @media (max-width: 767px) {
+  .swiper {
+    padding: 20px 0; /* Sin padding lateral en móvil */
+  }
+  
+  .project-card {
+    max-width: 90%; /* Limita el ancho en móvil */
+  }
+  
   .project-image {
-    height: 150px !important;
+    height: 150px !important; /* Altura más pequeña en móvil */
   }
   
   .swiper-button-prev,
   .swiper-button-next {
-    display: none !important;
+    display: none !important; /* Oculta flechas en móvil */
+  }
+  
+  /* Contenido más compacto en móvil */
+  .project-content {
+    padding: 15px !important;
+  }
+  
+  .project-content h3 {
+    font-size: 18px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .project-content p {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
   }
 }
-
