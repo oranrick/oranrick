@@ -12195,4 +12195,29 @@ body {
   .swiper-button-next {
     display: none !important;
   }
+
+  /* Mejora del efecto visual con transiciones más suaves */
+.swiper-slide {
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    transform-style: preserve-3d;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 767px) {
+    .swiper-slide {
+        transition: all 0.3s ease;
+    }
+}
+
+/* Estilo para el contenedor de proyectos */
+.project-card {
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover mejorado */
+.swiper-slide-active .project-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
 }
