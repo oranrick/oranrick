@@ -12067,7 +12067,7 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 30px 15px; /* Ajustado para mejor centrado */
+  padding: 30px 0; /* Ajustado para mejor centrado */
   overflow: visible;
   perspective: 1000px;
   position: relative;
