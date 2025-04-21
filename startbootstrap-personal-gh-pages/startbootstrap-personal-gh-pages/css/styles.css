@@ -12191,17 +12191,5 @@ body {
   .swiper-button-next {
     display: none !important;
   }
-  
-  /* Si quieres deshabilitar el efecto de escala en móvil, descomenta esto: */
-  /*
-  .swiper-slide,
-  .swiper-slide-prev,
-  .swiper-slide-next {
-    width: 100% !important;
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    filter: none !important;
-  }
-  */
 }
 
