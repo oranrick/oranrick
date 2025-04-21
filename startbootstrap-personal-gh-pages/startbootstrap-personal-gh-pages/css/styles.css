@@ -12098,29 +12098,34 @@ body {
   width: 100%;
   padding: 20px 40px;
   overflow: visible;
-}
-/* Configuración base para todos los slides */
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    width: auto !important;
-    /* Eliminamos las reglas fijas de opacity y transform */
+  perspective: 1000px; /* Efecto 3D */
 }
 
-/* Añadimos perspectiva al contenedor para mejorar el efecto 3D */
-.swiper {
-    perspective: 1000px;
-    overflow: visible; /* Mantiene visibles los laterales */
+/* Configuración base para slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  width: auto !important;
+  transform-style: preserve-3d;
 }
 
 .swiper-wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-/* Estas reglas serán controladas por JavaScript */
+/* Tarjetas de proyecto */
+.project-card {
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover mejorado */
+.swiper-slide-active .project-card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
 
 /* Flechas Swiper */
 .swiper-button-next,
@@ -12135,29 +12140,28 @@ body {
   font-size: 18px;
   z-index: 10;
 }
+
 .swiper-button-prev {
   left: 0;
 }
+
 .swiper-button-next {
   right: 0;
 }
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 20px;
 }
 
-/* =========================
-   ETIQUETA DE GÉNERO
-   ========================= */
+/* Etiqueta de género */
 .genre-label {
   color: #ff8a00 !important;
   font-weight: bold !important;
   font-size: 1rem !important;
 }
 
-/* =========================
-   BOTÓN "LEER MÁS"
-   ========================= */
+/* Botón "Leer más" */
 .btn-leermas {
   display: inline-block !important;
   padding: 0.5rem 1rem !important;
@@ -12171,15 +12175,25 @@ body {
   font-weight: 600 !important;
   transition: background-color 0.2s ease !important;
 }
+
 .btn-leermas:hover {
   background-color: #ff8a00 !important;
   color: #fff !important;
 }
 
-/* =========================
-   AJUSTES EN MÓVIL (<768px)
-   ========================= */
+/* Ajustes móvil */
 @media (max-width: 767px) {
+  .project-image {
+    height: 150px !important;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+  
+  /* Si quieres deshabilitar el efecto de escala en móvil, descomenta esto: */
+  /*
   .swiper-slide,
   .swiper-slide-prev,
   .swiper-slide-next {
@@ -12188,36 +12202,6 @@ body {
     transform: scale(1) !important;
     filter: none !important;
   }
-  .project-image {
-    height: 150px !important;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none !important;
-  }
-
-  /* Mejora del efecto visual con transiciones más suaves */
-.swiper-slide {
-    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
-    transform-style: preserve-3d;
+  */
 }
 
-/* Ajustes para dispositivos móviles */
-@media (max-width: 767px) {
-    .swiper-slide {
-        transition: all 0.3s ease;
-    }
-}
-
-/* Estilo para el contenedor de proyectos */
-.project-card {
-    transition: all 0.5s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Efecto hover mejorado */
-.swiper-slide-active .project-card {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-}
