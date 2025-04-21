@@ -250,7 +250,7 @@
 
         <!-- Sección de Proyectos destacados con Swiper -->
         <section class="py-5 bg-light">
-  <div class="container px-5">
+  <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
       <h2 class="display-5 fw-bolder">
         <span class="text-gradient d-inline">Mis proyectos</span>
@@ -347,15 +347,15 @@
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 5,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 2, // Cambiado
-    },
+  320: {
+    slidesPerView: 1,
+    spaceBetween: 5,
   },
+  768: {
+    slidesPerView: 3,
+    spaceBetween: 2,
+  },
+},
   on: {
     init: function () {
       updateSlidesScale(this);
