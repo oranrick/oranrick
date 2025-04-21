@@ -447,23 +447,65 @@
   var swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,
     centeredSlides: true,
-    spaceBetween: 20,
+    spaceBetween: 30,
     loop: true,
+    initialSlide: 1,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
     },
-  });
+    on: {
+        init: function () {
+            updateSlidesScale(this);
+        },
+        slideChange: function () {
+            updateSlidesScale(this);
+        },
+        resize: function () {
+            updateSlidesScale(this);
+        },
+    },
+});
+
+// Función para actualizar la escala de los slides según su distancia al centro
+function updateSlidesScale(swiper) {
+    const slides = swiper.slides;
+    const activeIndex = swiper.activeIndex;
+    
+    slides.forEach(function(slide, index) {
+        // Calculamos la distancia al slide activo (teniendo en cuenta el loop)
+        let distance = Math.min(
+            Math.abs(index - activeIndex),
+            Math.abs(index - activeIndex - slides.length),
+            Math.abs(index - activeIndex + slides.length)
+        );
+        
+        // Calculamos la escala basada en la distancia
+        let scale = 1 - (distance * 0.15); // Reducimos 15% por cada slide de distancia
+        scale = Math.max(scale, 0.5); // No permitir escalas menores a 0.5
+        
+        // Calculamos la opacidad basada en la distancia
+        let opacity = 1 - (distance * 0.2); // Reducimos 20% de opacidad por cada slide de distancia
+        opacity = Math.max(opacity, 0.4); // No permitir opacidades menores a 0.4
+        
+        // Aplicamos la escala y opacidad
+        slide.style.transform = `scale(${scale})`;
+        slide.style.opacity = opacity;
+        
+        // Ajustamos el z-index para que los slides más cercanos al centro estén por encima
+        slide.style.zIndex = 10 - distance;
+    });
+}
 </script>
     </main>
 
