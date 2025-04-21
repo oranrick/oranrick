@@ -332,7 +332,10 @@
   </div>
 </section>
 
-<!-- Config Swiper al final, antes del </body> -->
+<!-- Swiper JS - Asegúrate de que esté antes de tu inicialización -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Inicialización de Swiper con efecto de escalado -->
 <script>
   var swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,
@@ -365,10 +368,10 @@
             updateSlidesScale(this);
         },
     },
-});
+  });
 
-// Función para actualizar la escala de los slides según su distancia al centro
-function updateSlidesScale(swiper) {
+  // Función para actualizar la escala de los slides según su distancia al centro
+  function updateSlidesScale(swiper) {
     const slides = swiper.slides;
     const activeIndex = swiper.activeIndex;
     
@@ -395,7 +398,7 @@ function updateSlidesScale(swiper) {
         // Ajustamos el z-index para que los slides más cercanos al centro estén por encima
         slide.style.zIndex = 10 - distance;
     });
-}
+  }
 </script>
     </main>
 
@@ -426,7 +429,6 @@ function updateSlidesScale(swiper) {
     <script>
         AOS.init();
     </script>
-
     <!-- Theme toggle button -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
         <span id="theme-icon">🌙</span>
@@ -434,33 +436,5 @@ function updateSlidesScale(swiper) {
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3, // Exactamente 3 slides visibles
-    initialSlide: 1, // Comienza con el segundo slide activo (en el centro)
-    centeredSlides: true, // Mantiene un slide centrado
-    spaceBetween: 30,
-    loop: true, // Permite desplazamiento infinito
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    // Para dispositivos móviles
-    breakpoints: {
-      // En móvil mostramos solo 1
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      // En tablet mostramos 3
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-    // Sin efecto de escala dinámico - solo CSS fijo
-  });
-</script>
 </body>
 </html>
