@@ -12217,7 +12217,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   }
   .project-image {
-    height: 120px !important;
+    height: auto !important;
     max-height: 35vw !important;
     min-height: 80px !important;
   }
