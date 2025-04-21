@@ -437,98 +437,30 @@ function updateSlidesScale(swiper) {
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3,
-    centeredSlides: true,
+    slidesPerView: 3, // Exactamente 3 slides visibles
+    initialSlide: 1, // Comienza con el segundo slide activo (en el centro)
+    centeredSlides: true, // Mantiene un slide centrado
     spaceBetween: 30,
-    loop: true,
-    initialSlide: 1,
+    loop: true, // Permite desplazamiento infinito
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    // Mejorado para soporte móvil
-    touchRatio: 1, // Habilita el deslizamiento táctil
-    grabCursor: true, // Cambia el cursor a "agarrar"
-    threshold: 5, // Hace más sensible el deslizamiento
-    resistance: true, // Añade efecto de resistencia
-    resistanceRatio: 0.85,
+    // Para dispositivos móviles
     breakpoints: {
+      // En móvil mostramos solo 1
       0: {
         slidesPerView: 1,
         spaceBetween: 10,
       },
-      576: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
+      // En tablet mostramos 3
       768: {
         slidesPerView: 3,
         spaceBetween: 20,
       },
     },
-    on: {
-      init: function () {
-        updateSlidesScale(this);
-      },
-      slideChange: function () {
-        updateSlidesScale(this);
-      },
-      resize: function () {
-        updateSlidesScale(this);
-      },
-    },
+    // Sin efecto de escala dinámico - solo CSS fijo
   });
-
-  function updateSlidesScale(swiper) {
-    const slides = swiper.slides;
-    const activeIndex = swiper.activeIndex;
-    const isMobile = window.innerWidth < 768;
-    
-    // En móvil, ajustamos el tamaño para que sea más compacto
-    slides.forEach(function(slide, index) {
-      // Calculamos la distancia al slide activo
-      let distance;
-      
-      if (swiper.params.loop) {
-        // En modo loop, usamos realIndex para calcular la distancia
-        const realIndex = swiper.realIndex;
-        const slideIndexAttr = slide.getAttribute('data-swiper-slide-index');
-        
-        if (slideIndexAttr !== null) {
-          const slideIndex = parseInt(slideIndexAttr, 10);
-          distance = Math.abs(realIndex - slideIndex);
-          // Ajustamos para obtener la distancia más corta en un carrusel circular
-          const totalSlides = swiper.slides.length - (swiper.loopedSlides * 2);
-          distance = Math.min(distance, totalSlides - distance);
-        } else {
-          distance = Math.abs(index - activeIndex);
-        }
-      } else {
-        distance = Math.abs(index - activeIndex);
-      }
-      
-      // Ajustamos escala y opacidad según el dispositivo
-      let scale, opacity;
-      
-      if (isMobile) {
-        // En móvil menos diferencia entre slides
-        scale = distance === 0 ? 1 : 0.85;
-        opacity = distance === 0 ? 1 : 0.7;
-      } else {
-        // En escritorio, efecto progresivo
-        scale = 1 - (distance * 0.15);
-        scale = Math.max(scale, 0.5);
-        
-        opacity = 1 - (distance * 0.2);
-        opacity = Math.max(opacity, 0.4);
-      }
-      
-      // Aplicamos la transformación
-      slide.style.transform = `scale(${scale})`;
-      slide.style.opacity = opacity;
-      slide.style.zIndex = 10 - distance;
-    });
-  }
 </script>
 </body>
 </html>
