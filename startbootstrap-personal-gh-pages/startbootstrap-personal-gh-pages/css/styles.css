@@ -12099,24 +12099,28 @@ body {
   padding: 20px 40px;
   overflow: visible;
 }
+/* Configuración base para todos los slides */
 .swiper-slide {
-  margin: 0 8px !important;
-  transition: transform 0.3s ease;
-  transform: scale(0.85);
-  opacity: 0.6;
-  filter: blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    width: auto !important;
+    /* Eliminamos las reglas fijas de opacity y transform */
 }
-.swiper-slide-active {
-  transform: scale(1);
-  opacity: 1;
-  filter: none;
+
+/* Añadimos perspectiva al contenedor para mejorar el efecto 3D */
+.swiper {
+    perspective: 1000px;
+    overflow: visible; /* Mantiene visibles los laterales */
 }
-.swiper-slide-prev,
-.swiper-slide-next {
-  transform: scale(0.9);
-  opacity: 0.8;
-  filter: none;
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
 }
+
+/* Estas reglas serán controladas por JavaScript */
 
 /* Flechas Swiper */
 .swiper-button-next,
