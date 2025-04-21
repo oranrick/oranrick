@@ -12240,3 +12240,60 @@ body {
     display: none !important;
   }
 }
+
+/* Ajustes Swiper general */
+.swiper {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 30px 0;
+  overflow: visible;
+  perspective: 1000px;
+  position: relative;
+}
+
+/* Slides base */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  transition: all 0.4s ease;
+  height: auto;
+}
+
+/* Flechas Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  background: none !important;
+  border: none !important;
+  color: #ff8a00 !important;
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: none !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 32px;
+  color: #ff8a00 !important;
+  font-weight: bold;
+}
+
+/* Responsive para móvil */
+@media (max-width: 767px) {
+  .swiper {
+    padding: 16px 0 !important;
+    max-width: 100vw !important;
+  }
+  .swiper-slide {
+    max-width: 95vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
