@@ -336,68 +336,70 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  var swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3,
-    centeredSlides: true,
-    spaceBetween: 10, // <-- Cambia a 10 para que no estén tan separados
-    loop: true,
-    initialSlide: 1,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+ var swiper = new Swiper('.mySwiper', {
+  slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 2, // Cambiado
+  loop: true,
+  initialSlide: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 5,
     },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 5, // Menos separación en móvil
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 10,
-      },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 2, // Cambiado
     },
-    on: {
-      init: function () {
-        updateSlidesScale(this);
-      },
-      slideChange: function () {
-        updateSlidesScale(this);
-      },
-      resize: function () {
-        updateSlidesScale(this);
-      },
+  },
+  on: {
+    init: function () {
+      updateSlidesScale(this);
     },
-  });
+    slideChange: function () {
+      updateSlidesScale(this);
+    },
+    resize: function () {
+      updateSlidesScale(this);
+    },
+  },
+});
 
   // Escalado progresivo para los slides (solo en desktop)
   function updateSlidesScale(swiper) {
-    const slides = swiper.slides;
-    const activeIndex = swiper.activeIndex;
-    const isMobile = window.innerWidth < 768;
+  const slides = swiper.slides;
+  const activeIndex = swiper.activeIndex;
+  const isMobile = window.innerWidth < 768;
 
-    slides.forEach(function(slide, index) {
-      if (isMobile) {
-        // En móvil, todo igual (sin escalado ni opacidad)
-        slide.style.transform = "scale(1)";
-        slide.style.opacity = "1";
-        slide.style.zIndex = "1";
-      } else {
-        // En escritorio, escalado progresivo
-        let distance = Math.min(
-          Math.abs(index - activeIndex),
-          Math.abs(index - activeIndex - slides.length),
-          Math.abs(index - activeIndex + slides.length)
-        );
-        let scale = 1 - (distance * 0.15);
-        scale = Math.max(scale, 0.5);
-        let opacity = 1 - (distance * 0.2);
-        opacity = Math.max(opacity, 0.4);
-        slide.style.transform = `scale(${scale})`;
-        slide.style.opacity = opacity;
-        slide.style.zIndex = 10 - distance;
-      }
-    });
-  }
+  slides.forEach(function(slide, index) {
+    if (isMobile) {
+      // En móvil, todo igual (sin escalado ni opacidad)
+      slide.style.transform = "scale(1)";
+      slide.style.opacity = "1";
+      slide.style.zIndex = "1";
+      slide.style.width = "90vw"; // Asegura que coincida con el CSS
+      slide.style.maxWidth = "90vw"; // Asegura que coincida con el CSS
+    } else {
+      // En escritorio, escalado progresivo
+      let distance = Math.min(
+        Math.abs(index - activeIndex),
+        Math.abs(index - activeIndex - slides.length),
+        Math.abs(index - activeIndex + slides.length)
+      );
+      let scale = 1 - (distance * 0.1); // Cambiado de 0.15 a 0.1
+      scale = Math.max(scale, 0.7); // Cambiado de 0.5 a 0.7 para que los laterales sean más grandes
+      let opacity = 1 - (distance * 0.2);
+      opacity = Math.max(opacity, 0.4);
+      slide.style.transform = `scale(${scale})`;
+      slide.style.opacity = opacity;
+      slide.style.zIndex = 10 - distance;
+    }
+  });
+}
 </script>
 
     </main>
