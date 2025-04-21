@@ -12173,10 +12173,10 @@ body {
   box-shadow: none !important;
 }
 .swiper-button-prev {
-  left: -10px; /* Ajustado para mover la flecha izquierda fuera del slide */
+  left: 10px; /* Ajustado para mover la flecha izquierda fuera del slide */
 }
 .swiper-button-next {
-  right: -10px; /* Ajustado para mover la flecha derecha fuera del slide */
+  right: 10px; /* Ajustado para mover la flecha derecha fuera del slide */
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
