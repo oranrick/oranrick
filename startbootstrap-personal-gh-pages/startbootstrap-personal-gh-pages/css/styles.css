@@ -12115,7 +12115,7 @@ body {
 /* Imagen de tamaño fijo */
 .project-image {
   width: 100%;
-  height: 200px; /* Altura fija para todas las imágenes */
+  height: 250px; /* Altura fija para todas las imágenes */
   overflow: hidden;
   flex-shrink: 0;
 }
