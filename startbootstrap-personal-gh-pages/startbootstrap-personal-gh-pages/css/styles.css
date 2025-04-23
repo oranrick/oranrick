@@ -12074,14 +12074,18 @@ body {
 }
 
 /* Slides base */
+/* Reducir espaciado entre slides */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: stretch;
   transition: all 0.4s ease;
-  transform: scale(0.8); /* Reducido de 0.8 para que los laterales estén más cerca */
-  opacity: 0.7; /* Aumentado de 0.6 para mejor visibilidad */
+  transform: scale(0.95); /* Aumentado de 0.9 para acercar más las tarjetas */
+  opacity: 0.8; /* Aumentado de 0.7 para mejor visibilidad */
   height: auto;
+  /* Reducir el margen horizontal entre slides */
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 /* Slide activo (el del centro) */
@@ -12091,7 +12095,7 @@ body {
   z-index: 10;
 }
 
-/* Tarjeta de proyecto */
+/* Ajuste para tarjetas de altura uniforme */
 .project-card {
   margin: 0 auto;
   background-color: var(--bg-color);
@@ -12104,21 +12108,22 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 450px; /* Altura fija para todas las tarjetas */
   transition: all 0.3s;
 }
 
-/* Imagen de la tarjeta */
+/* Imagen de tamaño fijo */
 .project-image {
   width: 100%;
-  height: 100%;
+  height: 200px; /* Altura fija para todas las imágenes */
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Esto asegura que la imagen cubra bien el espacio */
   display: block;
 }
 
