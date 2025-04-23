@@ -12084,8 +12084,8 @@ body {
   opacity: 0.7; /* Aumentado de 0.7 para mejor visibilidad */
   height: auto;
   /* Reducir el margen horizontal entre slides */
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 /* Slide activo (el del centro) */
