@@ -12093,6 +12093,7 @@ body {
 
 /* Tarjeta de proyecto */
 .project-card {
+  margin: 0 auto;
   background-color: var(--bg-color);
   color: var(--text-color);
   border-radius: 16px;
