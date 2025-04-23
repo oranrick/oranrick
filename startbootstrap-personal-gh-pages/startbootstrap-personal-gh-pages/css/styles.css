@@ -12084,8 +12084,8 @@ body {
   opacity: 0.8; /* Aumentado de 0.7 para mejor visibilidad */
   height: auto;
   /* Reducir el margen horizontal entre slides */
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: 10px;
+  margin-right: -10px;
 }
 
 /* Slide activo (el del centro) */
@@ -12116,7 +12116,8 @@ body {
 .project-image {
   width: 100%;
   height: 200px; /* Altura fija para todas las imágenes */
-  padding: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.10);
   overflow: hidden;
   flex-shrink: 0;
 }
