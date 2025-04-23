@@ -12108,14 +12108,14 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
-  height: 450px; /* Altura fija para todas las tarjetas */
+  height: 500px; /* Altura fija para todas las tarjetas */
   transition: all 0.3s;
 }
 
 /* Imagen de tamaño fijo */
 .project-image {
   width: 100%;
-  height: 250px; /* Altura fija para todas las imágenes */
+  height: 200px; /* Altura fija para todas las imágenes */
   overflow: hidden;
   flex-shrink: 0;
 }
