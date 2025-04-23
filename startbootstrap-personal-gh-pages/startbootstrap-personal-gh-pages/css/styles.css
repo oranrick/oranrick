@@ -11778,7 +11778,7 @@ html {
     left: -2vw;
   }
 
-  .project-card {
+  .project-card-horizontal {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
