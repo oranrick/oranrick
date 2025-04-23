@@ -12110,7 +12110,7 @@ body {
 /* Imagen de la tarjeta */
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 100%;
   overflow: hidden;
   flex-shrink: 0;
 }
