@@ -345,26 +345,29 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
- var swiper = new Swiper('.mySwiper', {
-  slidesPerView: 3,
+ const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
   centeredSlides: true,
-  spaceBetween: 2,
   loop: true,
-  initialSlide: 1,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
   breakpoints: {
-  0: {
-    slidesPerView: 1,
-    spaceBetween: 0,
-  },
-  768: {
-    slidesPerView: 3,
-    spaceBetween: 1,
-  },
-},
+    // cuando la ventana es >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    // cuando la ventana es >= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    // cuando la ventana es >= 768px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }
+});
   on: {
     init: function () {
       updateSlidesScale(this);
