@@ -12210,6 +12210,41 @@ body {
   color: #ff8a00 !important;
 }
 
+.ver-todos-container {
+  text-align: center;
+  margin: 30px auto 50px;
+  width: 100%;
+}
+
+.ver-todos-link {
+  display: inline-block;
+  color: #666 !important; 
+  text-decoration: none !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+  
+.ver-todos-link:hover, 
+.ver-todos-link:focus, 
+.ver-todos-link:active {
+  color: #ff8a00 !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid #ff8a00 !important;
+}
+
+/* Para modo oscuro */
+[data-theme="dark"] .ver-todos-link {
+  color: #aaa !important; /* Gris más claro para modo oscuro */
+}
+
+[data-theme="dark"] .ver-todos-link:hover {
+  color: #ff9800 !important; /* Tu naranja en modo oscuro */
+  border-bottom: 2px solid #ff9800 !important;
+}
+  
 /* ===== Responsive para móvil ===== */
 @media (max-width: 767px) {
   .swiper {
@@ -12252,51 +12287,5 @@ body {
   .swiper-button-next {
     display: none !important;
   }
-
-/* Añade estos estilos a tu CSS */
-.ver-todos-container {
-  text-align: center;
-  margin: 30px auto 50px;
-  width: 100%;
-}
-
-.ver-todos-link {
-  display: inline-block;
-  color: #666; /* Color gris oscuro sutil */
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 8px 16px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.ver-todos-link:hover {
-  color: #ff8a00; /* Tu color naranja corporativo */
-  border-bottom: 2px solid #ff8a00;
-}
-
-/* Para modo oscuro */
-[data-theme="dark"] .ver-todos-link {
-  color: #aaa; /* Gris más claro para modo oscuro */
-}
-
-[data-theme="dark"] .ver-todos-link:hover {
-  color: #ff9800; /* Tu naranja en modo oscuro */
-  border-bottom: 2px solid #ff9800;
-}
-
-a.ver-todos-link {
-  color: #666 !important; 
-  text-decoration: none !important;
-}
-
-a.ver-todos-link:hover, 
-a.ver-todos-link:focus, 
-a.ver-todos-link:active {
-  color: #ff8a00 !important;
-  text-decoration: none !important;
-  border-bottom: 2px solid #ff8a00 !important;
-}
   
 }
