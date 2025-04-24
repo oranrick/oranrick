@@ -12245,47 +12245,50 @@ body {
   border-bottom: 2px solid #ff9800 !important;
 }
   
-/* ===== Responsive para móvil ===== */
 @media (max-width: 767px) {
+  /* Ajuste del carrusel */
   .swiper {
-    padding: 16px 0 !important;
-    max-width: 100% !important; /* Cambiado de 100vw a 100% */
+    padding: 10px 0 !important;
   }
+  
+  /* Ajuste de los slides */
   .swiper-slide {
-    max-width: 90vw !important; /* Reducido de 95vw para mejor centrado */
-    min-width: 0 !important;
-    margin: 0 auto !important;
-    transform: scale(1) !important;
-    opacity: 1 !important;
+    max-width: 85vw !important; /* Reducido para mejor centrado */
+    transform: scale(0.98) !important;
   }
+  
+  /* Ajuste de las tarjetas */
   .project-card {
-    max-width: 90vw !important; /* Reducido de 98vw para mejor ajuste */
-    min-width: 0 !important;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    max-width: 100% !important;
+    height: auto !important; /* Altura automática en móvil */
   }
+  
+  /* Ajuste de las imágenes */
   .project-image {
-    height: auto !important;
-    max-height: 30vw !important; /* Reducido de 35vw para imágenes más pequeñas */
-    min-height: 120px !important; /* Aumentado de 80px para evitar que sea muy pequeño */
+    height: 150px !important; /* Altura fija más pequeña */
+    max-height: 150px !important;
+    min-height: 100px !important;
   }
+  
   .project-image img {
+    object-fit: cover !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 12px 12px 0 0;
   }
+  
+  /* Ajuste del texto */
   .project-content {
-    padding: 12px !important;
+    padding: 10px !important;
   }
-  .btn-leermas {
-    font-size: 15px !important;
-    padding: 0.4rem 1rem !important;
-    margin-bottom: 10px;
+  
+  h5.project-title {
+    font-size: 18px !important;
+    margin-bottom: 5px !important;
   }
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none !important;
+  
+  .project-text {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
   }
   
 }
