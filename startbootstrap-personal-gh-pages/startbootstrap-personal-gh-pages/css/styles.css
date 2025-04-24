@@ -12101,7 +12101,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   border-radius: 14px;
-  overflow: hidden;
   width: 100%;
   max-width: 340px;
   min-width: 220px;
