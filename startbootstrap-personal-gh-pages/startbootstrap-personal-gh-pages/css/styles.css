@@ -12093,8 +12093,6 @@ body {
   transform: scale(1);
   opacity: 1;
   z-index: 10;
-  overflow: hidden;
-  margin-bottom: 10px;  
 }
 
 /* Ajuste para tarjetas de altura uniforme */
@@ -12102,7 +12100,7 @@ body {
   margin: 0 auto;
   background-color: var(--bg-color);
   color: var(--text-color);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   width: 100%;
   max-width: 340px;
@@ -12287,6 +12285,19 @@ body {
 [data-theme="dark"] .ver-todos-link:hover {
   color: #ff9800; /* Tu naranja en modo oscuro */
   border-bottom: 2px solid #ff9800;
+}
+
+a.ver-todos-link {
+  color: #666 !important; 
+  text-decoration: none !important;
+}
+
+a.ver-todos-link:hover, 
+a.ver-todos-link:focus, 
+a.ver-todos-link:active {
+  color: #ff8a00 !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid #ff8a00 !important;
 }
   
 }
