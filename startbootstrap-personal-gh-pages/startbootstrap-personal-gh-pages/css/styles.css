@@ -12235,6 +12235,15 @@ body {
   border-bottom: 2px solid #ff8a00 !important;
 }
 
+/* === Ajuste de ancho real del slide (solo escritorio) =============== */
+@media (min-width: 768px) {              /* opcional: solo pantallas grandes */
+  .swiper-slide {
+    /* ‼️ Dale al slide el mismo ancho que tu tarjeta */
+    flex: 0 0 340px;            /* grow  shrink  basis  */
+    width: 340px;               /* fallback - Swiper a veces fuerza width */
+    margin: 0 1px !important;   /* 1 px a cada lado ⇒ 2 px totales (spaceBetween) */
+  }
+
 /* Para modo oscuro */
 [data-theme="dark"] .ver-todos-link {
   color: #aaa !important; /* Gris más claro para modo oscuro */
