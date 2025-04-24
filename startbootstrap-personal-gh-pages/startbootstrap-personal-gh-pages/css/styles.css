@@ -12093,6 +12093,7 @@ body {
   transform: scale(1);
   opacity: 1;
   z-index: 10;
+  
 }
 
 /* Ajuste para tarjetas de altura uniforme */
@@ -12253,4 +12254,38 @@ body {
   .swiper-button-next {
     display: none !important;
   }
+
+/* Añade estos estilos a tu CSS */
+.ver-todos-container {
+  text-align: center;
+  margin: 30px auto 50px;
+  width: 100%;
+}
+
+.ver-todos-link {
+  display: inline-block;
+  color: #666; /* Color gris oscuro sutil */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.ver-todos-link:hover {
+  color: #ff8a00; /* Tu color naranja corporativo */
+  border-bottom: 2px solid #ff8a00;
+}
+
+/* Para modo oscuro */
+[data-theme="dark"] .ver-todos-link {
+  color: #aaa; /* Gris más claro para modo oscuro */
+}
+
+[data-theme="dark"] .ver-todos-link:hover {
+  color: #ff9800; /* Tu naranja en modo oscuro */
+  border-bottom: 2px solid #ff9800;
+}
+  
 }
