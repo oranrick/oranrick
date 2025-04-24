@@ -12066,7 +12066,7 @@ body {
 .swiper {
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 30px 0; /* Ajustado para mejor centrado */
   overflow: visible;
   perspective: 1000px;
@@ -12080,10 +12080,10 @@ body {
   justify-content: center;
   align-items: stretch;
   transition: all 0.4s ease;
-  transform: scale(0.95); /* Aumentado de 0.9 para acercar más las tarjetas */
-  opacity: 0.7; /* Aumentado de 0.7 para mejor visibilidad */
+  transform: scale(0.95);
+  overflow: hidden;
+  opacity: 0.7; /
   height: auto;
-  /* Reducir el margen horizontal entre slides */
   margin-left: 0px;
   margin-right: 0px;
 }
