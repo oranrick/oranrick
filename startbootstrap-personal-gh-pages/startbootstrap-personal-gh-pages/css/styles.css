@@ -12234,16 +12234,7 @@ body {
   text-decoration: none !important;
   border-bottom: 2px solid #ff8a00 !important;
 }
-
-/* === Ajuste de ancho real del slide (solo escritorio) =============== */
-@media (min-width: 768px) {              /* opcional: solo pantallas grandes */
-  .swiper-slide {
-    /* ‼️ Dale al slide el mismo ancho que tu tarjeta */
-    flex: 0 0 340px;            /* grow  shrink  basis  */
-    width: 340px;               /* fallback - Swiper a veces fuerza width */
-    margin: 0 1px !important;   /* 1 px a cada lado ⇒ 2 px totales (spaceBetween) */
-  }
-
+  
 /* Para modo oscuro */
 [data-theme="dark"] .ver-todos-link {
   color: #aaa !important; /* Gris más claro para modo oscuro */
@@ -12255,49 +12246,41 @@ body {
 }
   
 @media (max-width: 767px) {
-  /* Ajuste del carrusel */
+  /* Reset completo de estilos para móvil */
   .swiper {
-    padding: 10px 0 !important;
-  }
-  
-  /* Ajuste de los slides */
-  .swiper-slide {
-    max-width: 85vw !important; /* Reducido para mejor centrado */
-    transform: scale(0.98) !important;
-  }
-  
-  /* Ajuste de las tarjetas */
-  .project-card {
+    padding: 0 !important;
+    margin: 0 !important;
     max-width: 100% !important;
-    height: auto !important; /* Altura automática en móvil */
+    overflow: hidden !important;
   }
   
-  /* Ajuste de las imágenes */
-  .project-image {
-    height: 150px !important; /* Altura fija más pequeña */
-    max-height: 150px !important;
-    min-height: 100px !important;
+  .swiper-slide {
+    width: 280px !important; /* Ancho fijo más pequeño */
+    margin: 0 5px !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
   
-  .project-image img {
-    object-fit: cover !important;
+  .project-card {
     width: 100% !important;
-    height: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important; /* Altura mínima manejable */
+    margin: 0 !important;
   }
   
-  /* Ajuste del texto */
+  .project-image {
+    height: 120px !important; /* Altura fija muy reducida */
+    overflow: hidden !important;
+  }
+  
   .project-content {
     padding: 10px !important;
   }
   
-  h5.project-title {
-    font-size: 18px !important;
-    margin-bottom: 5px !important;
+  /* Esconde elementos no esenciales */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
   }
-  
-  .project-text {
-    font-size: 14px !important;
-    margin-bottom: 10px !important;
-  }
-  
 }
