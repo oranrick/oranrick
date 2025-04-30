@@ -11778,7 +11778,8 @@ html {
     left: -2vw;
   }
 
-  .project-card-horizontal {
+ /* ===== Estilos para Projects.html (Vista horizontal) ===== */
+.project-card-horizontal {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
@@ -11788,11 +11789,13 @@ html {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Contenido textual del proyecto */
 .project-text {
   flex: 1 1 50%;
   padding: 2rem;
 }
 
+/* Contenedor de imagen para vista horizontal */
 .project-image-wrapper {
   flex: 1 1 50%;
   padding: 1rem;
@@ -11801,11 +11804,30 @@ html {
   justify-content: center;
 }
 
-.project-image {
+/* Imagen en vista de página projects.html 
+   Nota: Estos estilos no afectan a las imágenes del carrusel */
+.project-image-wrapper .project-image {
   max-width: 100%;
   height: auto;
   border-radius: 1rem;
   object-fit: cover;
+}
+
+/* Versión móvil para tarjetas horizontales */
+@media (max-width: 767px) {
+  .project-card-horizontal {
+    flex-direction: column;
+  }
+  
+  .project-text,
+  .project-image-wrapper {
+    flex: 1 1 100%;
+    padding: 1rem;
+  }
+  
+  .project-image-wrapper {
+    order: -1; /* Imagen arriba en móviles */
+  }
 }
 
 .skill-card {
@@ -11887,12 +11909,6 @@ html {
   margin-left: 4px;       /* Un pequeño espacio a la izquierda */
   animation: blink 1s step-start infinite;
 }
-
-/* Animación que alterna la opacidad de 1 a 0 */
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
   
 /* Ajustes específicos para salomon.html */
 .custom-article {
@@ -12067,22 +12083,20 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 2rem auto;
-  padding: 30px 0; /* Ajustado para mejor centrado */
+  padding: 30px 0;
   overflow: visible;
   perspective: 1000px;
   position: relative;
 }
 
 /* Slides base */
-/* Reducir espaciado entre slides */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: stretch;
   transition: all 0.4s ease;
   transform: scale(0.95);
-  overflow: hidden;
-  opacity: 0.7; /
+  opacity: 0.7;
   height: auto;
   margin-left: 0px;
   margin-right: 0px;
@@ -12111,19 +12125,18 @@ body {
   transition: all 0.3s;
 }
 
-/* Imagen de tamaño fijo */
-.project-image {
+/* Imagen de tamaño fijo - ESPECÍFICA PARA EL CARRUSEL */
+.swiper-slide .project-image {
   width: 100%;
   height: 200px; /* Altura fija para todas las imágenes */
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.project-image img {
+.swiper-slide .project-image img {
   width: 100%;
   height: 100%;
   padding: 10px;
-  box-shadow: 0 2px 8px rgba(6,6,0,0.0);
   object-fit: cover; /* Esto asegura que la imagen cubra bien el espacio */
   display: block;
 }
@@ -12176,14 +12189,14 @@ body {
   height: 44px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 20; /* Aumentado para evitar superposición */
+  z-index: 20;
   box-shadow: none !important;
 }
 .swiper-button-prev {
-  left: 10px; /* Ajustado para mover la flecha izquierda fuera del slide */
+  left: 10px;
 }
 .swiper-button-next {
-  right: 10px; /* Ajustado para mover la flecha derecha fuera del slide */
+  right: 10px;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -12237,50 +12250,108 @@ body {
   
 /* Para modo oscuro */
 [data-theme="dark"] .ver-todos-link {
-  color: #aaa !important; /* Gris más claro para modo oscuro */
+  color: #aaa !important;
 }
 
 [data-theme="dark"] .ver-todos-link:hover {
-  color: #ff9800 !important; /* Tu naranja en modo oscuro */
+  color: #ff9800 !important;
   border-bottom: 2px solid #ff9800 !important;
 }
-  
+
+/* ===== VERSIÓN MÓVIL MEJORADA ===== */
 @media (max-width: 767px) {
-  /* Reset completo de estilos para móvil */
   .swiper {
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100% !important;
+    padding: 15px 0 !important;
+    margin: 1rem auto !important;
     overflow: hidden !important;
   }
   
   .swiper-slide {
-    width: 280px !important; /* Ancho fijo más pequeño */
-    margin: 0 5px !important;
+    width: 85% !important; /* Ancho controlado */
+    margin: 0 auto !important;
     transform: none !important;
     opacity: 1 !important;
   }
   
-  .project-card {
+  .swiper .project-card {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    min-height: 400px !important; /* Altura mínima manejable */
-    margin: 0 !important;
+    height: auto !important; /* Altura auto */
+    min-height: 420px !important; /* Altura mínima para contenido */
+    margin: 0 auto !important;
   }
   
-  .project-image {
-    height: 120px !important; /* Altura fija muy reducida */
-    overflow: hidden !important;
+  .swiper-slide .project-image {
+    height: 160px !important; /* Altura más adecuada */
+  }
+  
+  .swiper-slide .project-image img {
+    padding: 8px;
   }
   
   .project-content {
-    padding: 10px !important;
+    padding: 15px !important;
   }
   
-  /* Esconde elementos no esenciales */
+  .project-content h5 {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .genre-label {
+    font-size: 0.9rem !important;
+  }
+  
+  .project-text {
+    font-size: 0.95rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Mantener flechas de navegación, pero más pequeñas */
   .swiper-button-next,
   .swiper-button-prev {
-    display: none !important;
+    width: 30px !important;
+    height: 30px !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 50% !important;
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 18px !important;
+  }
+  
+  /* Ajustes al botón */
+  .btn-leermas {
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ajustar contenedor de "Ver todos" */
+  .ver-todos-container {
+    margin: 20px auto 30px !important;
+  }
+  
+  .ver-todos-link {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Ajustes específicos para móviles muy pequeños */
+@media (max-width: 380px) {
+  .swiper-slide {
+    width: 90% !important; /* Ancho casi completo */
+  }
+  
+  .swiper .project-card {
+    min-height: 380px !important;
+  }
+  
+  .swiper-slide .project-image {
+    height: 140px !important;
+  }
+  
+  .project-content {
+    padding: 12px !important;
   }
 }
