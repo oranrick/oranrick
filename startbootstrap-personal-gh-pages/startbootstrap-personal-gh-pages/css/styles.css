@@ -12460,4 +12460,31 @@ body {
   .project-content h5 {
     font-size: 1rem;
   }
+@media (max-width: 767px) {
+  .swiper-slide {
+    width: 90% !important;
+    margin-right: 10px;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  .project-card {
+    max-width: 100%;
+    min-height: 420px;
+  }
+
+  .project-image {
+    height: 140px !important;
+  }
+
+  .project-content {
+    font-size: 0.95rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 28px;
+    height: 28px;
+    top: 45%;
+  } 
 }
