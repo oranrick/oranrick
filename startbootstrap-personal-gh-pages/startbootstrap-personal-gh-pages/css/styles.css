@@ -11909,9 +11909,6 @@ html {
   animation: blink 1s step-start infinite;
 }
 
-#rotating-word {
-  filter: brightness(1.2);
-}
   
 /* Ajustes específicos para salomon.html */
 .custom-article {
