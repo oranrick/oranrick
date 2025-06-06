@@ -347,27 +347,30 @@
 <script>
   var swiper = new Swiper('.mySwiper', {
   slidesPerView: 'auto',
-  spaceBetween: 10,
+  spaceBetween: 2,
   centeredSlides: true,
   loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
   breakpoints: {
     // cuando la ventana es >= 320px
     320: {
       slidesPerView: 1,
-      spaceBetween: 10
+      spaceBetween: 2
     },
     // cuando la ventana es >= 480px
     480: {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 5
     },
     // cuando la ventana es >= 768px
     768: {
       slidesPerView: 2.5,
-      spaceBetween: 15
+      spaceBetween: 5
     }
-  }
-});
+  },
   on: {
     init: function () {
       updateSlidesScale(this);
@@ -378,7 +381,7 @@
     resize: function () {
       updateSlidesScale(this);
     },
-  },
+  }
 });
 
   // Escalado progresivo para los slides (solo en desktop)

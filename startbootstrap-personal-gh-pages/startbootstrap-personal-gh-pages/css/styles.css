@@ -12193,10 +12193,10 @@ body {
   box-shadow: none !important;
 }
 .swiper-button-prev {
-  left: 10px;
+  left: -20px;
 }
 .swiper-button-next {
-  right: 10px;
+  right: -20px;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
