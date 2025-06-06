@@ -357,18 +357,6 @@
     resize: function() { updateSlidesScale(this); }
   }
 });
-  on: {
-    init: function () {
-      updateSlidesScale(this);
-    },
-    slideChange: function () {
-      updateSlidesScale(this);
-    },
-    resize: function () {
-      updateSlidesScale(this);
-    },
-  },
-});
 
   // Escalado progresivo para los slides (solo en desktop)
   function updateSlidesScale(swiper) {
