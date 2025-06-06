@@ -194,8 +194,7 @@
                                 Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje
                             </div>
                             <h1 class="display-3 fw-bolder mb-5">
-                            <span class="text-gradient d-inline">Creo puentes con palabras</span>
-                            <span class="cursor-blink">|</span>
+                            <span class="text-gradient d-inline">Creo puentes con <span id="rotating-word">palabras</span></span><span class="cursor-blink">|</span>
                             </h1>
 
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
@@ -347,27 +346,30 @@
 <script>
   var swiper = new Swiper('.mySwiper', {
   slidesPerView: 'auto',
-  spaceBetween: 10,
+  spaceBetween: 2,
   centeredSlides: true,
   loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
   breakpoints: {
     // cuando la ventana es >= 320px
     320: {
       slidesPerView: 1,
-      spaceBetween: 10
+      spaceBetween: 2
     },
     // cuando la ventana es >= 480px
     480: {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 5
     },
     // cuando la ventana es >= 768px
     768: {
       slidesPerView: 2.5,
-      spaceBetween: 15
+      spaceBetween: 5
     }
-  }
-});
+  },
   on: {
     init: function () {
       updateSlidesScale(this);
@@ -378,7 +380,7 @@
     resize: function () {
       updateSlidesScale(this);
     },
-  },
+  }
 });
 
   // Escalado progresivo para los slides (solo en desktop)

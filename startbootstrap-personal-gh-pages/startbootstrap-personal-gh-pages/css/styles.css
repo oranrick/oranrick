@@ -11906,9 +11906,9 @@ html {
 .cursor-blink {
   color: #ff8a00;         /* Naranja */
   font-weight: 800;       /* Más grueso, si quieres */
-  margin-left: 4px;       /* Un pequeño espacio a la izquierda */
   animation: blink 1s step-start infinite;
 }
+
   
 /* Ajustes específicos para salomon.html */
 .custom-article {
@@ -12193,10 +12193,10 @@ body {
   box-shadow: none !important;
 }
 .swiper-button-prev {
-  left: 10px;
+  left: -20px;
 }
 .swiper-button-next {
-  right: 10px;
+  right: -20px;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
