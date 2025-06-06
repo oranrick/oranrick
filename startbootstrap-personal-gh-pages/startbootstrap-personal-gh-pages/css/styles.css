@@ -11910,8 +11910,7 @@ html {
 }
 
 #rotating-word {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
   
 /* Ajustes específicos para salomon.html */
