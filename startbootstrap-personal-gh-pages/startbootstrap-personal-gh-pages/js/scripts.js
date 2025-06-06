@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let wordIndex = 0;
   let charIndex = el.textContent.length;
   let isDeleting = true;
-  const hold = 5000; // time to hold each word
+  const hold = 2000; // time to hold each word
 
   function type() {
     const current = words[wordIndex];

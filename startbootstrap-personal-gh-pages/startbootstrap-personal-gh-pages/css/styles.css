@@ -11906,8 +11906,12 @@ html {
 .cursor-blink {
   color: #ff8a00;         /* Naranja */
   font-weight: 800;       /* Más grueso, si quieres */
-  margin-left: 4px;       /* Un pequeño espacio a la izquierda */
   animation: blink 1s step-start infinite;
+}
+
+#rotating-word {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  filter: brightness(1.1);
 }
   
 /* Ajustes específicos para salomon.html */
