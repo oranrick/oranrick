@@ -12460,6 +12460,8 @@ body {
   .project-content h5 {
     font-size: 1rem;
   }
+}
+  
 @media (max-width: 767px) {
   .swiper-slide {
     width: 90% !important;
