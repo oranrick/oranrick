@@ -8,7 +8,7 @@
 
 // Typing effect for rotating headline words
 document.addEventListener('DOMContentLoaded', () => {
-  const words = ['palabras', 'amor', 'empatía', 'humanidad'];
+  const words = ['palabras', 'amor', 'empatía', 'ética', 'abrazos'];
   const el = document.getElementById('rotating-word');
   if (!el) return;
 
