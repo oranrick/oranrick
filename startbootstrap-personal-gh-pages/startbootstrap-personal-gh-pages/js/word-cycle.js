@@ -24,7 +24,7 @@ if (typeof document !== 'undefined') {
     let index = 0;
     const typeSpeed = 100;   // tiempo entre letras al escribir
     const eraseSpeed = 50;   // tiempo entre letras al borrar
-    const pauseTime = 1000;  // pausa antes de borrar
+    const pauseTime = 2000;  // pausa antes de borrar
 
     function typeWord(word, charIndex = 0) {
       if (charIndex <= word.length) {
