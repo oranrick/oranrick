@@ -11906,7 +11906,7 @@ html {
 .cursor-blink {
   color: #ff8a00;         /* Naranja */
   font-weight: 800;       /* Más grueso, si quieres */
-  margin-left: 4px;       /* Un pequeño espacio a la izquierda */
+  margin-left: 2px;       /* Espaciado más reducido */
   animation: blink 1s step-start infinite;
 }
   
@@ -12491,23 +12491,3 @@ body {
   }
 }
 
-/* Ajustes para el carrusel de Bootstrap */
-#projectsCarousel .carousel-item {
-  display: flex;
-  justify-content: center;
-}
-
-#projectsCarousel .carousel-item .project-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-#projectsCarousel .carousel-item .project-image img {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  object-fit: cover;
-  display: block;
-}
