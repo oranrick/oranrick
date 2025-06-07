@@ -194,8 +194,7 @@
                                 Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje
                             </div>
                             <h1 class="display-3 fw-bolder mb-5">
-                            <span class="text-gradient d-inline">Creo puentes con palabras</span>
-                            <span class="cursor-blink">|</span>
+                                <span class="text-gradient d-inline">Creo puentes con </span><span id="changing-word" class="theme-word">palabras</span><span class="cursor-blink">|</span>
                             </h1>
 
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
@@ -231,71 +230,6 @@
       </h2>
     </div>
 
-    <!-- Carrusel de proyectos -->
-    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/trump.jpg" alt="La política del engaño">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">La política del engaño</h5>
-              <span class="genre-label mb-2">Reportaje - Opinión</span>
-              <p class="project-text">La desinformación como estrategia emocional en la política moderna.</p>
-              <a href="poder-mentira.html" class="btn btn-leermas fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/portadaarte.jpg" alt="Arte y naturaleza">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">Arte y naturaleza</h5>
-              <span class="genre-label mb-2">Reseña</span>
-              <p class="project-text">Diálogo entre surrealismo y crisis ecológica. Un paseo por la biomorfología del siglo XX.</p>
-              <a href="arte-naturaleza.html" class="btn btn-leermas fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/portada-salo.jpg" alt="La maternidad en el arte">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">La maternidad en el arte</h5>
-              <span class="genre-label mb-2">Reseña</span>
-              <p class="project-text">Interpretación crítica del juicio de Salomón desde lo humano y lo ético.</p>
-              <a href="salomon.html" class="btn btn-leermas fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/maribursa.png" alt="Mariposa bursátil">
-            </div>
-            <div class="project-content">
-              <h5 class="project-title fw-bold">Del monopolio al mercado global: metamorfosis del IBEX35</h5>
-              <span class="genre-label mb-2">Reportaje</span>
-              <p class="project-text">Un recorrido por la transformación del IBEX 35.</p>
-              <a href="ibex35.html" class="btn btn-leermas fw-bold">Leer más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
   </div>
 
     <div class="ver-todos-container">
@@ -368,6 +302,8 @@
     </button>
     <!-- Dark mode script -->
     <script src="js/dark-mode.js"></script>
+    <!-- Word cycling script -->
+    <script src="js/word-cycle.js"></script>
 
 </body>
 </html>
