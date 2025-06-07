@@ -11906,7 +11906,7 @@ html {
 .cursor-blink {
   color: #ff8a00;         /* Naranja */
   font-weight: 800;       /* Más grueso, si quieres */
-  margin-left: 4px;       /* Un pequeño espacio a la izquierda */
+  margin-left: 2px;       /* Espaciado más reducido */
   animation: blink 1s step-start infinite;
 }
   
