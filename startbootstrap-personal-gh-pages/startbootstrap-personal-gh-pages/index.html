@@ -157,6 +157,28 @@
       }
     }
 
+    /* Gradients for changing words */
+    .gradient-gray {
+      background: linear-gradient(to right, #777, #bbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-orange {
+      background: linear-gradient(to right, #ff8a00, #ffa600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-red {
+      background: linear-gradient(to right, #ff3b3b, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-pink {
+      background: linear-gradient(to right, #ff55a5, #ff99cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     /* ===== Adelanto de proyectos ===== */
     .project-preview-section {
       background-color: var(--bg-color);
@@ -273,7 +295,7 @@
                                 Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje
                             </div>
                             <h1 class="display-3 fw-bolder mb-5">
-                                <span class="text-gradient d-inline">Creo puentes con <span id="changing-word">palabras</span></span><span class="cursor-blink">|</span>
+                                Creo puentes con <span id="changing-word" class="gradient-gray">palabras</span><span class="cursor-blink">|</span>
                             </h1>
 
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">

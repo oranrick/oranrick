@@ -21,12 +21,21 @@ if (typeof document !== 'undefined') {
     if (!element) return;
 
     const words = ['palabras', 'empatía', 'amor', 'ética', 'abrazos'];
+    const classMap = {
+      palabras: 'gradient-gray',
+      'empatía': 'gradient-orange',
+      amor: 'gradient-red',
+      abrazos: 'gradient-pink'
+    };
     let index = 0;
     const typeSpeed = 100;   // tiempo entre letras al escribir
     const eraseSpeed = 50;   // tiempo entre letras al borrar
     const pauseTime = 1000;  // pausa antes de borrar
 
     function typeWord(word, charIndex = 0) {
+      if (charIndex === 0) {
+        element.className = classMap[word] || '';
+      }
       if (charIndex <= word.length) {
         element.textContent = word.substring(0, charIndex);
         setTimeout(() => typeWord(word, charIndex + 1), typeSpeed);
