@@ -156,6 +156,67 @@
         opacity: 0;
       }
     }
+
+    /* ===== Adelanto de proyectos ===== */
+    .project-preview-section {
+      background-color: #000;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 992px) {
+      .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .project-card-preview {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .project-card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .project-card-preview:hover img {
+      transform: scale(1.05);
+    }
+    .project-card-preview .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .project-card-preview:hover .overlay {
+      opacity: 1;
+    }
+    .project-card-preview h3 {
+      color: #fff;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-card-preview p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -222,23 +283,45 @@
             </div>
 
             <!-- Sección de Proyectos destacados -->
-        <section class="py-5">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="display-5 fw-bolder">
-        <span class="text-gradient d-inline">Mis proyectos</span>
-      </h2>
-    </div>
+        <section class="py-5 project-preview-section">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5 fw-bolder text-white">
+                        <span class="text-gradient d-inline">Mis proyectos</span>
+                    </h2>
+                </div>
 
-  </div>
+                <div class="project-grid">
+                    <a href="arte-naturaleza.html" class="project-card-preview">
+                        <img src="assets/portadaarte.jpg" alt="Arte y naturaleza" />
+                        <div class="overlay">
+                            <h3>Arte y naturaleza</h3>
+                            <p>Del surrealismo a la crisis ecológica</p>
+                        </div>
+                    </a>
+                    <a href="poder-mentira.html" class="project-card-preview">
+                        <img src="assets/trump.jpg" alt="La política del engaño" />
+                        <div class="overlay">
+                            <h3>La política del engaño</h3>
+                            <p>¿Puede sobrevivir la democracia a la desinformación?</p>
+                        </div>
+                    </a>
+                    <a href="salomon.html" class="project-card-preview">
+                        <img src="assets/portada-salo.jpg" alt="La abnegación más pura" />
+                        <div class="overlay">
+                            <h3>La abnegación más pura</h3>
+                            <p>Un recorrido por la maternidad en el arte</p>
+                        </div>
+                    </a>
+                </div>
 
-    <div class="ver-todos-container">
-  <a href="projects.html" class="ver-todos-link">
-    Ver todos mis proyectos <i class="fas fa-arrow-right"></i>
-  </a>
-</div>
-            
-</section>
+                <div class="ver-todos-container mt-4">
+                    <a href="projects.html" class="ver-todos-link">
+                        Ver todos mis proyectos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
             
         </header>
 
