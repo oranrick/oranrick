@@ -12231,13 +12231,17 @@ body {
 
 .ver-todos-link {
   display: inline-block;
-  color: #666 !important; 
+  color: #666 !important;
   text-decoration: none !important;
   font-weight: 500;
   font-size: 1rem;
   padding: 8px 16px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
+}
+.ver-todos-link:visited {
+  color: #666 !important;
+  text-decoration: none !important;
 }
   
 .ver-todos-link:hover, 
