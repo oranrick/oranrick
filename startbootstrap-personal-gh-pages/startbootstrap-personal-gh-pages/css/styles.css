@@ -12491,3 +12491,33 @@ body {
   }
 }
 
+/* ==== Overrides for profile image size and shape ==== */
+.profile {
+  border-radius: 50%;
+  max-width: 20rem;
+  max-height: 20rem;
+}
+.profile .profile-img {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .profile {
+    max-width: 22rem;
+    max-height: 22rem;
+  }
+}
+@media (min-width: 992px) {
+  .profile {
+    max-width: 25rem;
+    max-height: 25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .profile {
+    max-width: 28rem;
+    max-height: 28rem;
+  }
+}
+
