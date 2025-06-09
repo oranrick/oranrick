@@ -12491,33 +12491,51 @@ body {
   }
 }
 
-/* ==== Overrides for profile image size and shape ==== */
+/* ==== Hero layout and profile image ==== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+.hero-copy {
+  grid-area: copy;
+}
+
+.hero-photo {
+  grid-area: photo;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-areas:
+      'copy'
+      'photo';
+  }
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, #FF9400, #FF7600);
+}
+
 .profile {
   border-radius: 50%;
-  max-width: 20rem;
-  max-height: 20rem;
+  overflow: hidden;
 }
+
 .profile .profile-img {
-  border-radius: 50%;
+  max-width: clamp(140px, 45vw, 320px);
   width: 100%;
   height: auto;
-}
-@media (min-width: 768px) {
-  .profile {
-    max-width: 22rem;
-    max-height: 22rem;
-  }
-}
-@media (min-width: 992px) {
-  .profile {
-    max-width: 25rem;
-    max-height: 25rem;
-  }
-}
-@media (min-width: 1200px) {
-  .profile {
-    max-width: 28rem;
-    max-height: 28rem;
-  }
+  border-radius: 50%;
 }
 
