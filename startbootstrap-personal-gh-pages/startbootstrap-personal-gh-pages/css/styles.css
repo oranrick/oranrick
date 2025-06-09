@@ -12492,50 +12492,47 @@ body {
 }
 
 /* ==== Hero layout and profile image ==== */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+.hero-flex {
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
 }
 
 .hero-copy {
-  grid-area: copy;
+  order: -1;
 }
 
 .hero-photo {
-  grid-area: photo;
   display: flex;
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr auto;
-    align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-areas:
-      'copy'
-      'photo';
-  }
-}
-
 .bg-gradient-hero {
-  background: linear-gradient(135deg, #FF9400, #FF7600);
+  background: radial-gradient(circle at center, #FF9400, #FF7600);
 }
 
 .profile {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .profile .profile-img {
-  max-width: clamp(140px, 45vw, 320px);
   width: 100%;
   height: auto;
-  border-radius: 50%;
+}
+
+@media (min-width: 1024px) {
+  .hero-flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+  .hero-copy {
+    order: 0;
+  }
 }
 
