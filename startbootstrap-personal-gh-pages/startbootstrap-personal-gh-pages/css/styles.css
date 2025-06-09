@@ -12513,16 +12513,6 @@ body {
 
 .profile {
   position: relative;
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.profile .profile-img {
-  width: 100%;
-  height: auto;
 }
 
 @media (min-width: 1024px) {
