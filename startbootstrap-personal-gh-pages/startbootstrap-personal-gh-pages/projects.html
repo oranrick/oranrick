@@ -148,12 +148,18 @@
             border-radius: 0.5rem;
         }
         @media (max-width: 768px) {
-            .project-card {
+            .project-card,
+            .project-card-horizontal {
                 flex-direction: column;
             }
+            .project-text,
             .project-image-wrapper {
                 flex: none;
                 width: 100%;
+                padding: 1rem;
+            }
+            .project-image-wrapper {
+                order: -1; /* Imagen arriba en móviles */
             }
         }
         .footer a {
