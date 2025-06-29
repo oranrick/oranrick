@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,24 +13,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <style>
-        /* Variables de color */
+        /* Paleta única para la página */
         :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --muted-text-color: #6c757d; /* Texto muted en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
-            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
-            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
-            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
-            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --muted-text-color: #adb5bd;
+            --nav-link-color: #ffa94d;
+            --section-bg-light: #1e1e1e;
+            --btn-outline-border: #ffffff;
+            --caption-color: #adb5bd;
         }
 
         /* Reset de fondos y colores */
@@ -50,32 +41,7 @@
         }
 
         /* Estilo del botón de cambio de tema */
-        .theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-            color: var(--text-color);
-            cursor: pointer;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 767px) {
-            .theme-toggle {
-                top: 4rem;
-                right: 1rem;
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-        }
+
 
         /* Ajustes para el menú desplegable */
         .navbar-collapse {
@@ -176,11 +142,5 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- Theme toggle button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-        <span id="theme-icon">🌙</span>
-    </button>
-    <!-- Dark mode script -->
-    <script src="js/dark-mode.js"></script>
 </body>
 </html>

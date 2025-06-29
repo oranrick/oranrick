@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -22,26 +22,16 @@
 
     <!-- Estilos para modo oscuro y carrusel -->
     <style>
-        /* Variables de color */
+        /* Paleta única para la página */
         :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --muted-text-color: #6c757d; /* Texto muted en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
-            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
-            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
-            --image-opacity: 0.7; /* Opacidad en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
-            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
-            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
-            --image-opacity: 0.5; /* Opacidad en modo oscuro */
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --muted-text-color: #adb5bd;
+            --nav-link-color: #ffa94d;
+            --section-bg-light: #1e1e1e;
+            --btn-outline-border: #ffffff;
+            --caption-color: #adb5bd;
+            --image-opacity: 0.5;
         }
 
         /* Reset de fondos y colores */
@@ -60,33 +50,7 @@
             background-color: var(--section-bg-light) !important;
         }
 
-        /* Estilo del botón de cambio de tema */
-        .theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-            color: var(--text-color);
-            cursor: pointer;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 767px) {
-            .theme-toggle {
-                top: 4rem;
-                right: 1rem;
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-        }
+
 
         /* Ajustes para el menú desplegable */
         .navbar-collapse {
@@ -217,6 +181,16 @@
       color: #ccc;
       font-size: 0.9rem;
     }
+    /* ===== About blocks ===== */
+    .about-block {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid #444;
+      margin-bottom: 2rem;
+    }
+    .about-block:last-child {
+      margin-bottom: 0;
+    }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -330,21 +304,24 @@
         <section class="bg-light py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-xxl-8">
-                        <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder">
-                                <span class="text-gradient d-inline">Sobre mí</span>
-                            </h2>
-                            <p class="lead fw-light mb-4">
-                                Mi nombre es Rick Grisales, soy periodista y creativo.
-                            </p>
-                            <p class="text-muted">
-                                Me apasiona el poder de las palabras para conectar, inspirar y transformar. Como periodista, busco historias que importen; como creativo, exploro formas de contarlas que dejen huella...
-                            </p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                <a class="text-gradient" href="https://www.instagram.com/oranrick"><i class="bi bi-instagram"></i></a>
-                                <a class="text-gradient" href="https://www.linkedin.com/in/ricardo-grisales-ramirez-49a322232/"><i class="bi bi-linkedin"></i></a>
-                            </div>
+                    <div class="col-lg-8 col-xl-7">
+                        <h2 class="text-center display-5 fw-bolder mb-5" data-aos="fade-up">
+                            <span class="text-gradient d-inline">Sobre mí</span>
+                        </h2>
+                        <div class="about-block lh-lg mb-5" data-aos="fade-up">
+                            <h3 class="fs-3 fw-bold mb-3">What taught me to see differently</h3>
+                            <p>I was born in Spain but grew up in Colombia. I was raised between two languages, two ways of naming the same thing, and I quickly learned that there’s never just one way of understanding the world.</p>
+                            <p>That’s where my fascination with language began: with how it builds, and how it can either wound or embrace.</p>
+                        </div>
+                        <div class="about-block lh-lg mb-5" data-aos="fade-up" data-aos-delay="150">
+                            <h3 class="fs-3 fw-bold mb-3">Writing was never a choice</h3>
+                            <p>I don’t remember when I started writing — but I do remember why I kept going: to avoid falling silent in the face of what hurt, to invent meaning where there was none.</p>
+                            <p>Over time, I realized writing could also be a way to think, to question, to transform. A way to translate the unspoken — not with answers, but with better questions.</p>
+                        </div>
+                        <div class="about-block lh-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="fs-3 fw-bold mb-3">It all begins with a question</h3>
+                            <p>Every project I take on begins there: with a question that won’t stay quiet. Whether it’s academic, journalistic, or creative, I want my work to be in conversation with reality — but also to unsettle it a little.</p>
+                            <p>And deep down, I want it to resemble who I am: curious, critical, sensitive. And fully convinced that language can — and should — be a tool for empathy.</p>
                         </div>
                     </div>
                 </div>
@@ -379,12 +356,8 @@
     <script>
         AOS.init();
     </script>
-    <!-- Theme toggle button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-        <span id="theme-icon">🌙</span>
-    </button>
-    <!-- Dark mode script -->
-    <script src="js/dark-mode.js"></script>
+    <!-- Word cycling script -->
+    <script src="js/word-cycle.js"></script>
     <!-- Word cycling script -->
     <script src="js/word-cycle.js"></script>
 
