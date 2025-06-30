@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -61,7 +61,6 @@
         }
 
         /* Estilo del botón de cambio de tema */
-        .theme-toggle {
             position: fixed;
             top: 1.5rem;
             right: 1.5rem;
@@ -79,7 +78,6 @@
             justify-content: center;
         }
         @media (max-width: 767px) {
-            .theme-toggle {
                 top: 4rem;
                 right: 1rem;
                 width: 32px;
@@ -229,7 +227,6 @@
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -335,13 +332,30 @@
                             <h2 class="display-5 fw-bolder">
                                 <span class="text-gradient d-inline">Sobre mí</span>
                             </h2>
-                            <p class="lead fw-light mb-4">
-                                Mi nombre es Rick Grisales, soy periodista y creativo.
-                            </p>
-                            <p class="text-muted">
-                                Me apasiona el poder de las palabras para conectar, inspirar y transformar. Como periodista, busco historias que importen; como creativo, exploro formas de contarlas que dejen huella...
-                            </p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
+
+                            <div class="d-flex flex-column align-items-center gap-5 mt-5">
+                                <div class="text-center" data-aos="fade-up">
+                                    <h3 class="fs-3 fw-bolder mb-3" style="color: var(--nav-link-color);">Lo que me hizo mirar distinto</h3>
+                                    <p class="text-muted mb-2">Nací en España, pero crecí en Colombia.</p>
+                                    <p class="text-muted mb-2">Crecí entre dos lenguajes, dos formas de nombrar lo mismo, y aprendí pronto que no existe una única manera de entender el mundo.</p>
+                                    <p class="text-muted">Ahí nació mi fascinación por el lenguaje: por cómo construye, por cómo puede herir o abrazar.</p>
+                                </div>
+                                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                                    <h3 class="fs-3 fw-bolder mb-3" style="color: var(--nav-link-color);">Escribir no fue una decisión</h3>
+                                    <p class="text-muted mb-2">No recuerdo cuándo empecé a escribir, pero sí recuerdo por qué seguí haciéndolo: para no quedarme mudo ante lo que me dolía, para inventar sentido cuando faltaba.</p>
+                                    <p class="text-muted mb-2">Con el tiempo, descubrí que escribir también podía ser un modo de pensar, de cuestionar, de transformar.</p>
+                                    <p class="text-muted">Una forma de traducir lo inefable —no con respuestas, sino con preguntas mejores.</p>
+                                </div>
+                                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                                    <h3 class="fs-3 fw-bolder mb-3" style="color: var(--nav-link-color);">Todo parte de una pregunta</h3>
+                                    <p class="text-muted mb-2">Cada proyecto que emprendo nace de eso: una duda que no se calla.</p>
+                                    <p class="text-muted mb-2">Ya sea académico, periodístico o creativo, busco que lo que hago dialogue con lo real, pero también lo desestabilice un poco.</p>
+                                    <p class="text-muted mb-2">Y en el fondo, que se parezca a mí: curioso, crítico, sensible.</p>
+                                    <p class="text-muted">Y profundamente convencido de que el lenguaje puede —y debe— ser una herramienta para la empatía.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center fs-2 gap-4 mt-5">
                                 <a class="text-gradient" href="https://www.instagram.com/oranrick"><i class="bi bi-instagram"></i></a>
                                 <a class="text-gradient" href="https://www.linkedin.com/in/ricardo-grisales-ramirez-49a322232/"><i class="bi bi-linkedin"></i></a>
                             </div>
@@ -379,12 +393,6 @@
     <script>
         AOS.init();
     </script>
-    <!-- Theme toggle button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-        <span id="theme-icon">🌙</span>
-    </button>
-    <!-- Dark mode script -->
-    <script src="js/dark-mode.js"></script>
     <!-- Word cycling script -->
     <script src="js/word-cycle.js"></script>
 
