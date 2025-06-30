@@ -77,23 +77,13 @@
   --bs-link-hover-color: #1826c2;
   --bs-code-color: #e21e80;
   --bs-highlight-bg: #fff3cd;
-  --bg-color: #ffffff;           /* Fondo claro por defecto */
-  --text-color: #000000;         /* Texto oscuro por defecto */
-  --muted-text-color: #6c757d;   /* Texto muted en modo claro */
-  --nav-link-color: #000000;     /* Color de los enlaces del menú en modo claro */
-  --section-bg-light: #f8f9fa;   /* Fondo de secciones claras en modo claro */
-  --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
-  --caption-color: #555;         /* Color de los pies de página en modo claro */
-}
-
-[data-theme="dark"] {
   --bg-color: #121212;           /* Fondo oscuro */
   --text-color: #ffffff;         /* Texto claro */
   --muted-text-color: #adb5bd;   /* Texto muted en modo oscuro */
-  --nav-link-color: #ffa94d;     /* Color de los enlaces del menú en modo oscuro (naranja) */
-  --section-bg-light: #1e1e1e;   /* Fondo de secciones claras en modo oscuro */
-  --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
-  --caption-color: #bbb;         /* Color de los pies de página en modo oscuro */
+  --nav-link-color: #ffa94d;     /* Color de los enlaces del menú */
+  --section-bg-light: #1e1e1e;   /* Fondo de secciones claras */
+  --btn-outline-border: #ffffff; /* Borde del botón outline */
+  --caption-color: #bbb;         /* Color de los pies de página */
 }
 
 *,
@@ -11848,43 +11838,15 @@ html {
 }
 
 /* Ajustes para modo oscuro */
-[data-theme="dark"] .skill-card {
+.skill-card {
     border: 1px solid rgba(255, 255, 255, 0.1); /* Borde más claro en modo oscuro */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en modo oscuro */
 }
 
-[data-theme="dark"] .skill-card:hover {
+.skill-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
 }
 
-/* Estilo del botón de cambio de tema */
-.theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 767px) {
-  .theme-toggle {
-    top: 4rem;
-    right: 1rem;
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-  }
-}
 
 /* Ajustes para el menú desplegable */
 .navbar-collapse {
@@ -12010,16 +11972,6 @@ html {
    ====================== */
 /* Variables para modo claro */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --muted-text-color: #6c757d;
-  --nav-link-color: #000000;
-  --section-bg-light: #f8f9fa;
-  --btn-outline-border: #000000;
-}
-
-/* Variables para modo oscuro */
-[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
   --muted-text-color: #adb5bd;
@@ -12043,24 +11995,6 @@ body {
   background-color: var(--section-bg-light) !important;
 }
 
-/* (Si usas un botón flotante para tema) */
-.theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /* ======================
    SUBTAG (opcional)
@@ -12072,11 +12006,6 @@ body {
   color: var(--bs-gray-600) !important;
 }
 
-/* Si quieres forzar en modo oscuro, usa:
-   [data-theme="dark"] .subtag {
-     color: var(--bs-gray-400) !important;
-   }
-*/
 
 /* ===== Carrusel Swiper General ===== */
 .swiper {
@@ -12206,20 +12135,20 @@ body {
 }
 
 /* ===== Modo Oscuro ===== */
-[data-theme="dark"] body {
+body {
   background: #181818 !important;
   color: #fff !important;
 }
-[data-theme="dark"] .project-card {
+.project-card {
   background: #232323 !important;
   color: #fff !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
-[data-theme="dark"] .btn-leermas {
+.btn-leermas {
   background: #ff9800 !important;
   color: #fff !important;
 }
-[data-theme="dark"] .genre-label {
+.genre-label {
   color: #ff8a00 !important;
 }
 
@@ -12249,11 +12178,11 @@ body {
 }
   
 /* Para modo oscuro */
-[data-theme="dark"] .ver-todos-link {
+.ver-todos-link {
   color: #aaa !important;
 }
 
-[data-theme="dark"] .ver-todos-link:hover {
+.ver-todos-link:hover {
   color: #ff9800 !important;
   border-bottom: 2px solid #ff9800 !important;
 }
