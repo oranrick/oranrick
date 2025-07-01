@@ -97,6 +97,8 @@
             border-radius: 0.5rem;
             max-width: 600px;
             margin: 2rem auto;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .tech-card ul {
             padding-left: 1rem;
@@ -104,6 +106,11 @@
         }
         .tech-card li {
             margin-bottom: 0.25rem;
+        }
+        [data-theme="dark"] .tech-card {
+            background-color: #262626;
+            border-color: #333;
+        }
         /* --- Estilos editoriales --- */
         .review-content {
             font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -144,6 +151,10 @@
             border: 1px solid #ddd;
             border-radius: 8px;
           }
+        [data-theme="dark"] .ficha-tecnica {
+            background: #262626;
+            border-color: #333;
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -183,7 +194,7 @@
                 <p>Entre toques de R&amp;B alternativo y psicodelia latina, las canciones fluyen sin prisa. Es un álbum que pide paciencia y oído atento, un diario musical para escuchar sin urgencias.</p>
             </div>
 
-            <div class="ficha-tecnica">
+            <div class="ficha-tecnica tech-card">
                 <h3 class="text-center mb-3">Ficha técnica</h3>
                 <ul class="list-unstyled mb-0">
                     <li><strong>Título:</strong> Sincerely</li>
@@ -191,6 +202,7 @@
                     <li><strong>Productores:</strong> Josh Crocker, Kali Uchis, Tom Henry, Dylan Wiggins</li>
                     <li><strong>Sello:</strong> Capitol Records / Left Music</li>
                     <li><strong>Disponible en:</strong> Spotify, Apple Music, Soundcloud, YouTube</li>
+                    <li><strong>Fecha de publicación:</strong> 9 de may</li>
                     <li><strong>Fecha de publicación:</strong> 9 de mayo de 2024</li>
                     <li><strong>Géneros:</strong> R&amp;B alternativo, dream pop, soul, psicodelia latina</li>
                 </ul>
