@@ -11807,8 +11807,8 @@ html {
 /* Imagen en vista de página projects.html 
    Nota: Estos estilos no afectan a las imágenes del carrusel */
 .project-image-wrapper .project-image {
-  max-width: 100%;
-  height: 250;
+  width: 100%;
+  height: 250px;
   border-radius: 1rem;
   object-fit: cover;
 }
