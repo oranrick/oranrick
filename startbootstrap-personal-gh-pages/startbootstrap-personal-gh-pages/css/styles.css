@@ -12193,10 +12193,10 @@ body {
   box-shadow: none !important;
 }
 .swiper-button-prev {
-  left: 10px;
+  left: -80px !important;
 }
 .swiper-button-next {
-  right: 10px;
+  right: -80px !important;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -12484,11 +12484,18 @@ body {
     font-size: 0.95rem;
   }
 
-  .swiper-button-next,
   .swiper-button-prev {
     width: 28px;
     height: 28px;
     top: 45%;
+    left: -20px !important;
+  }
+
+  .swiper-button-next {
+    width: 28px;
+    height: 28px;
+    top: 45%;
+    right: -20px !important;
   }
 }
 
