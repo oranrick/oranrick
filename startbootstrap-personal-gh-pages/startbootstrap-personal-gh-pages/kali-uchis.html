@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <style>
@@ -64,6 +64,47 @@
         }
         .footer a { color: var(--caption-color); text-decoration: none; }
         .footer a:hover { color: var(--nav-link-color); }
+
+        /* --- Estilos editoriales --- */
+        .review-content {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+        }
+        .review-content p {
+            margin-bottom: 1rem;
+        }
+        .review-content blockquote {
+            font-style: italic;
+            border-left: 3px solid #ccc;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+        .review-section h2 {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-variant: small-caps;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .review-section {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 992px) {
+            .review-content {
+                column-count: 2;
+                column-gap: 2rem;
+            }
+        }
+
+        .ficha-tecnica {
+            max-width: 550px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100">
@@ -92,6 +133,42 @@
             <p class="lead fw-bold fst-italic">
                 Kali Uchis se aleja del brillo comercial para ofrecernos su obra más íntima: un álbum nacido entre el duelo y la maternidad, donde cada canción respira honestidad. Sincerely no busca complacer, sino acompañar.
             </p>
+
+            <div class="review-content">
+                <div class="review-section">
+                    <h2>UN ÁLBUM NACIDO FUERA DEL ESTUDIO</h2>
+                    <p>Compuesto entre viajes y silencios obligados, el disco se gestó lejos de la presión de las discográficas. Uchis apostó por grabar en espacios domésticos, permitiendo que cada pista retuviera la calidez de lo hecho a mano.</p>
+                    <blockquote class="quote">“I’m sleepless without you, you’re the calm through the storm.”</blockquote>
+                    <p>La producción se apoya en texturas acústicas y sintetizadores discretos que envuelven la voz sin ocultarla, creando un ambiente de cercanía que contrasta con la grandilocuencia de sus trabajos anteriores.</p>
+                </div>
+
+                <div class="review-section">
+                    <h2>LETRAS ÍNTIMAS, VOZ CONTENIDA</h2>
+                    <p>La cantante se muestra vulnerable y directa, alejándose de metáforas rebuscadas para hablar de miedos y anhelos cotidianos. Su interpretación es susurrada, casi en confesión, como si cada verso se pensara para un solo oyente.</p>
+                    <blockquote class="quote">“Esto es lo que hay, no para que lo juzgues, sino para que lo sientas.”</blockquote>
+                    <p>El resultado es una narrativa que invita a la empatía, donde la voz se coloca al servicio del relato y no del virtuosismo. Cada pista se siente como una carta sin remitente.</p>
+                </div>
+
+                <div class="review-section">
+                    <h2>UNA OBRA PARA ESCUCHAR DESPACIO</h2>
+                    <p>Lejos de los sencillos diseñados para las listas, Sincerely propone un recorrido pausado, con canciones que piden ser degustadas sin distracciones. Es un álbum que recompensa la escucha atenta y la repetición.</p>
+                    <p>En tiempos de gratificación inmediata, Uchis entrega un trabajo que respira y deja respirar, un refugio sonoro donde la intimidad se vuelve universal.</p>
+                </div>
+            </div>
+
+            <div class="ficha-tecnica">
+                <h3 class="text-center mb-3">🎧 Ficha técnica</h3>
+                <ul class="list-unstyled mb-0">
+                    <li><strong>Título:</strong> Sincerely</li>
+                    <li><strong>Artista:</strong> Kali Uchis (Karly-Marina Loaiza)</li>
+                    <li><strong>Productores:</strong> Josh Crocker, Kali Uchis, Tom Henry, Dylan Wiggins</li>
+                    <li><strong>Sello:</strong> Capitol Records / Left Music</li>
+                    <li><strong>Disponible en:</strong> Spotify, Apple Music, Soundcloud, YouTube</li>
+                    <li><strong>Fecha de publicación:</strong> 9 de mayo de 2025</li>
+                    <li><strong>Géneros:</strong> R&B alternativo, dream pop, soul, psicodelia latina</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 </main>
