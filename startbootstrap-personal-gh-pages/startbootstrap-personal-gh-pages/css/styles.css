@@ -12231,31 +12231,32 @@ body {
 
 .ver-todos-link {
   display: inline-block;
-  color: #666 !important; 
-  text-decoration: none !important;
+  color: #ff8a00 !important;
+  text-decoration: underline !important;
   font-weight: 500;
   font-size: 1rem;
   padding: 8px 16px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid #ff8a00 !important;
   transition: all 0.3s ease;
 }
-  
-.ver-todos-link:hover, 
-.ver-todos-link:focus, 
+
+.ver-todos-link:hover,
+.ver-todos-link:focus,
 .ver-todos-link:active {
-  color: #ff8a00 !important;
-  text-decoration: none !important;
-  border-bottom: 2px solid #ff8a00 !important;
+  color: #ffa500 !important;
+  text-decoration: underline !important;
+  border-bottom: 2px solid #ffa500 !important;
 }
-  
+
 /* Para modo oscuro */
 [data-theme="dark"] .ver-todos-link {
-  color: #aaa !important;
+  color: #ff8a00 !important;
+  border-bottom-color: #ff8a00 !important;
 }
 
 [data-theme="dark"] .ver-todos-link:hover {
-  color: #ff9800 !important;
-  border-bottom: 2px solid #ff9800 !important;
+  color: #ffa500 !important;
+  border-bottom: 2px solid #ffa500 !important;
 }
 
 /* Carrusel de proyectos - Versión móvil */
