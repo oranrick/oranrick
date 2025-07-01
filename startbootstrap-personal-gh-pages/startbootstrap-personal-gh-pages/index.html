@@ -289,28 +289,47 @@
                     </h2>
                 </div>
 
-                <div class="project-grid">
-                    <a href="arte-naturaleza.html" class="project-card-preview">
-                        <img src="assets/portadaarte.jpg" alt="Arte y naturaleza" />
-                        <div class="overlay">
-                            <h3>Arte y naturaleza</h3>
-                            <p>Del surrealismo a la crisis ecológica</p>
+                <div class="swiper project-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="arte-naturaleza.html" class="project-card-preview">
+                                <img src="assets/portadaarte.jpg" alt="Arte y naturaleza" />
+                                <div class="overlay">
+                                    <h3>Arte y naturaleza</h3>
+                                    <p>Del surrealismo a la crisis ecológica</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="poder-mentira.html" class="project-card-preview">
-                        <img src="assets/trump.jpg" alt="La política del engaño" />
-                        <div class="overlay">
-                            <h3>La política del engaño</h3>
-                            <p>¿Puede sobrevivir la democracia a la desinformación?</p>
+                        <div class="swiper-slide">
+                            <a href="poder-mentira.html" class="project-card-preview">
+                                <img src="assets/trump.jpg" alt="La política del engaño" />
+                                <div class="overlay">
+                                    <h3>La política del engaño</h3>
+                                    <p>¿Puede sobrevivir la democracia a la desinformación?</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="salomon.html" class="project-card-preview">
-                        <img src="assets/portada-salo.jpg" alt="La abnegación más pura" />
-                        <div class="overlay">
-                            <h3>La abnegación más pura</h3>
-                            <p>Un recorrido por la maternidad en el arte</p>
+                        <div class="swiper-slide">
+                            <a href="salomon.html" class="project-card-preview">
+                                <img src="assets/portada-salo.jpg" alt="La abnegación más pura" />
+                                <div class="overlay">
+                                    <h3>La abnegación más pura</h3>
+                                    <p>Un recorrido por la maternidad en el arte</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                        <div class="swiper-slide">
+                            <a href="kali-uchis.html" class="project-card-preview">
+                                <img src="assets/sincerely.jpg" alt="Amor, duelo y libertad" />
+                                <div class="overlay">
+                                    <h3>Amor, duelo y libertad</h3>
+                                    <p>El álbum más íntimo de Kali Uchis</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
 
                 <div class="ver-todos-container mt-4">
@@ -393,6 +412,27 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const projectSwiper = new Swiper('.project-swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2
+                },
+                992: {
+                    slidesPerView: 3
+                }
+            }
+        });
     </script>
     <!-- Word cycling script -->
     <script src="js/word-cycle.js"></script>
