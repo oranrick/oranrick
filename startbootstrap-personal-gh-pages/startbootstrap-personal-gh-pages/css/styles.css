@@ -12499,3 +12499,38 @@ body {
   }
 }
 
+/* ==== Hero layout and profile image ==== */
+.hero-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.hero-copy {
+  order: -1;
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-gradient-hero {
+  background: radial-gradient(circle at center, #FF9400, #FF7600);
+}
+
+.profile {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .hero-flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+  .hero-copy {
+    order: 0;
+  }
+}
+
