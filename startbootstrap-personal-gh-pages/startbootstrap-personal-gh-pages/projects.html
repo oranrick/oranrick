@@ -148,12 +148,16 @@
             object-fit: cover;
         }
         @media (max-width: 768px) {
-            .project-card {
+            .project-card-horizontal {
                 flex-direction: column;
             }
             .project-image-wrapper {
                 flex: none;
                 width: 100%;
+                order: -1;
+            }
+            .project-image {
+                height: auto;
             }
         }
         .footer a {
