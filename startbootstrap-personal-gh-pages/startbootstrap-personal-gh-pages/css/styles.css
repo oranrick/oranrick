@@ -12152,7 +12152,7 @@ body {
 
 /* Etiqueta de género */
 .genre-label {
-  color: #ff8a00 !important;
+  color: #FF7A00 !important;
   font-weight: bold !important;
   font-size: 1rem !important;
   margin-bottom: 7px;
@@ -12184,7 +12184,7 @@ body {
 .swiper-button-prev {
   background: none !important;
   border: none !important;
-  color: #ff8a00 !important;
+  color: #FF7A00 !important;
   width: 44px;
   height: 44px;
   top: 50%;
@@ -12201,7 +12201,7 @@ body {
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 32px;
-  color: #ff8a00 !important;
+  color: #FF7A00 !important;
   font-weight: bold;
 }
 
@@ -12229,14 +12229,37 @@ body {
   width: 100%;
 }
 
+.ver-todos-container .swiper-button-prev,
+.ver-todos-container .swiper-button-next {
+  position: static;
+  transform: none;
+  width: 32px;
+  height: 32px;
+  color: #FF7A00 !important;
+  left: auto;
+  right: auto;
+}
+
+.ver-todos-container .swiper-button-prev:after,
+.ver-todos-container .swiper-button-next:after {
+  font-size: 24px;
+}
+
+@media (max-width: 767px) {
+  .ver-todos-container .swiper-button-prev,
+  .ver-todos-container .swiper-button-next {
+    display: none;
+  }
+}
+
 .ver-todos-link {
   display: inline-block;
-  color: #ff8a00 !important;
+  color: #FF7A00 !important;
   text-decoration: underline !important;
   font-weight: 500;
   font-size: 1rem;
   padding: 8px 16px;
-  border-bottom: 2px solid #ff8a00 !important;
+  border-bottom: 2px solid #FF7A00 !important;
   transition: all 0.3s ease;
 }
 
@@ -12250,8 +12273,8 @@ body {
 
 /* Para modo oscuro */
 [data-theme="dark"] .ver-todos-link {
-  color: #ff8a00 !important;
-  border-bottom-color: #ff8a00 !important;
+  color: #FF7A00 !important;
+  border-bottom-color: #FF7A00 !important;
 }
 
 [data-theme="dark"] .ver-todos-link:hover {
