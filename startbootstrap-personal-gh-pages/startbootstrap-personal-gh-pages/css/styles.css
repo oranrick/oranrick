@@ -12233,11 +12233,18 @@ body {
 .ver-todos-container .swiper-button-next {
   position: static;
   transform: none;
+  width: 32px;
+  height: 32px;
   width: 44px;
   height: 44px;
   color: #FF7A00 !important;
   left: auto;
   right: auto;
+}
+
+.ver-todos-container .swiper-button-prev:after,
+.ver-todos-container .swiper-button-next:after {
+  font-size: 24px;
 }
 
 @media (max-width: 767px) {
