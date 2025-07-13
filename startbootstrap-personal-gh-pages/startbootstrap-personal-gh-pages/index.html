@@ -367,14 +367,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-button-prev" aria-label="Anterior"></div>
-                    <div class="swiper-button-next" aria-label="Siguiente"></div>
                 </div>
 
-                <div class="ver-todos-container mt-4">
-                    <a href="projects.html" class="ver-todos-link">
+                <div class="ver-todos-container mt-4 d-flex justify-content-center align-items-center gap-3">
+                    <div class="project-nav-prev swiper-button-prev" aria-label="Anterior"></div>
+                    <a href="projects.html" class="ver-todos-link" style="color:#FF7A00 !important;">
                         Ver todos mis proyectos <i class="fas fa-arrow-right"></i>
                     </a>
+                    <div class="project-nav-next swiper-button-next" aria-label="Siguiente"></div>
                 </div>
             </div>
         </section>
@@ -462,8 +462,8 @@
                 disableOnInteraction: false
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.project-nav-next',
+                prevEl: '.project-nav-prev',
             },
             slidesPerView: 1,
             spaceBetween: 20,
