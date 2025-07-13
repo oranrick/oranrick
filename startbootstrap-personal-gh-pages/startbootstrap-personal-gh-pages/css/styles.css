@@ -12225,12 +12225,23 @@ body {
 
 .ver-todos-container {
   text-align: center;
-  margin: 30px auto 50px;
+  margin: 30px auto;
   width: 100%;
 }
 
 .ver-todos-container .swiper-button-prev,
 .ver-todos-container .swiper-button-next {
+  position: static !important;
+  transform: none !important;
+  width: 28px;
+  height: 28px;
+  color: #FF7A00 !important;
+  left: auto;
+  right: auto;
+  margin: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: static;
   transform: none;
   width: 32px;
@@ -12244,6 +12255,7 @@ body {
 
 .ver-todos-container .swiper-button-prev:after,
 .ver-todos-container .swiper-button-next:after {
+  font-size: 20px;
   font-size: 24px;
 }
 
@@ -12522,5 +12534,17 @@ body {
     top: 45%;
     right: 5px;
   }
+}
+
+/* Ajustes específicos para el carrusel de portada */
+.project-swiper .swiper-button-prev,
+.project-swiper .swiper-button-next {
+  display: none !important;
+}
+
+.ver-todos-container .swiper-button-prev,
+.ver-todos-container .swiper-button-next {
+  position: static !important;
+  transform: none !important;
 }
 
