@@ -224,13 +224,6 @@
     .project-swiper {
       overflow: hidden;
     }
-    @media (min-width: 768px) {
-      .project-swiper {
-        overflow: visible;
-      }
-    }
-      overflow: visible;
-    }
       
     .swiper-button-next,
     .swiper-button-prev {
@@ -476,16 +469,8 @@
                 nextEl: '.project-nav-next',
                 prevEl: '.project-nav-prev',
             },
-            slidesPerView: 1,
-            spaceBetween: 20,
-            breakpoints: {
-                768: {
-                    slidesPerView: 2
-                },
-                992: {
-                    slidesPerView: 3
-                }
-            }
+            slidesPerView: 3,
+            spaceBetween: 20
         });
     </script>
     <!-- Word cycling script -->
