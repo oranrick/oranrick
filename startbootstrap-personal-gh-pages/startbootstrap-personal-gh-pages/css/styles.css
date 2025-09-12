@@ -11598,6 +11598,7 @@ textarea.form-control-lg {
 body,
 html {
   height: 100%;
+  background-color: var(--bg-color);
 }
 
 .bg-gradient-primary-to-secondary {
@@ -12028,8 +12029,9 @@ html {
   --btn-outline-border: #ffffff;
 }
 
+html,
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color) !important;
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
@@ -12546,5 +12548,13 @@ body {
 .ver-todos-container .swiper-button-next {
   position: static !important;
   transform: none !important;
+}
+
+/* Diary excerpts limited to three lines */
+.diary-excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
