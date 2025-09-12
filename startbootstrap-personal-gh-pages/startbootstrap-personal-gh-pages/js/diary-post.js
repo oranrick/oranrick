@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const time = document.createElement("p");
   time.className = "post-date";
-  time.textContent = new Date(entry.date).toLocaleDateString("en-US", {
+  time.textContent = new Date(entry.date).toLocaleDateString("es-ES", {
     day: "numeric",
     month: "long",
     year: "numeric",
