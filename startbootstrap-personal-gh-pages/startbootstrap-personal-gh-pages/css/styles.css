@@ -12557,6 +12557,7 @@ body {
 }
 
 .diary-page { background: #171717; color: #eaeaea; --bg-color:#171717; --text-color:#eaeaea; --nav-link-color:#ffa94d; }
+
 .diary-page .navbar, .diary-page .footer { background:#000 !important; }
 .diary-page .nav-link, .diary-page .nav-link:hover { color:#ffa94d !important; }
 .diary-header { margin: 24px 0 8px; font-weight: 700; }
@@ -12565,7 +12566,11 @@ body {
 @media(min-width: 900px){ .diary-grid { grid-template-columns:1fr 1fr; } }
 .diary-card { background:#222; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.25); padding:20px; }
 .diary-card h3 { margin:0 0 6px; font-size:1.25rem; line-height:1.3; }
+
 .diary-card h3 a, .diary-card h3 a:visited, .diary-featured h2 a, .diary-featured h2 a:visited { color:#ffa94d; text-decoration:none; }
+
+.diary-card h3 a, .diary-featured h2 a { color:#ffa94d; text-decoration:none; }
+
 .diary-card h3 a:hover, .diary-featured h2 a:hover { color:#ffa94d; }
 .diary-date { color:#9aa0a6; font-size:.9rem; margin-bottom:8px; }
 .diary-excerpt { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; color:#d6d6d6; }
