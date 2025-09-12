@@ -61,8 +61,8 @@
   --bs-body-font-size: 1.1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-color: var(--text-color);
+  --bs-body-bg: var(--bg-color);
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -94,6 +94,8 @@
   --section-bg-light: #1e1e1e;   /* Fondo de secciones claras en modo oscuro */
   --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
   --caption-color: #bbb;         /* Color de los pies de página en modo oscuro */
+  --bs-link-color: #ffa94d;      /* Color de los enlaces en modo oscuro */
+  --bs-link-hover-color: #ffa94d;/* Color de los enlaces al pasar el cursor */
 }
 
 *,
@@ -114,9 +116,9 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: var(--text-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: var(--bg-color);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: background-color 0.3s, color 0.3s; /* Transición suave para el cambio de tema */
