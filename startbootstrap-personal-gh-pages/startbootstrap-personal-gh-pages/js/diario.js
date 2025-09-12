@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(p);
       return;
     }
-    
+
+   
     list.forEach(entry => {
       const article = document.createElement('article');
       const h2 = document.createElement('h2');
@@ -74,14 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
       p.textContent = getExcerpt(entry.content);
       article.appendChild(p);
 
-
       time.textContent = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
       header.appendChild(time);
       article.appendChild(header);
       const content = document.createElement('div');
       content.innerHTML = marked.parse(entry.content);
       article.appendChild(content);
-
+      
       container.appendChild(article);
     });
   }

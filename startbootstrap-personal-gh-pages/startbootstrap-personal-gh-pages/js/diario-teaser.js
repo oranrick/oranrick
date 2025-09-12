@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     temp.innerHTML = html;
     const firstP = temp.querySelector('p');
     p.textContent = firstP ? firstP.textContent : '';
- main
     article.appendChild(p);
     teaser.appendChild(article);
   });
