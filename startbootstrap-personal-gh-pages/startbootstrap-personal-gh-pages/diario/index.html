@@ -38,14 +38,29 @@
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
+            background-color: var(--bg-color) !important;
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
         }
-        .navbar, .footer { background-color: var(--bg-color) !important; }
+        .navbar, .footer, header, main, section { background-color: var(--bg-color) !important; }
         .bg-light { background-color: var(--section-bg-light) !important; }
         .nav-link { color: var(--nav-link-color) !important; }
         .text-muted { color: var(--muted-text-color) !important; }
+
+        /* Typography for diary entries */
+        #diary-entries article { margin-bottom: 2rem; }
+        #diary-entries .diary-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        #diary-entries .diary-date { font-size: 0.875rem; color: var(--muted-text-color); }
+        #diary-entries h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; }
+        #diary-entries h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+        #diary-entries p { line-height: 1.75; margin-bottom: 1rem; }
+        #diary-entries blockquote {
+            border-left: 4px solid var(--muted-text-color);
+            padding-left: 1rem;
+            font-style: italic;
+            color: var(--muted-text-color);
+            margin: 1.5rem 0;
+        }
     </style>
 </head>
 <body>
