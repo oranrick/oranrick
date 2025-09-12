@@ -12548,3 +12548,11 @@ body {
   transform: none !important;
 }
 
+/* Diary excerpts limited to three lines */
+.diary-excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
