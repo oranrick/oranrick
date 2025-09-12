@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function render(list) {
     container.innerHTML = '';
+    if (list.length === 0) {
+      const p = document.createElement('p');
+      p.textContent = 'No se encontraron entradas con esa búsqueda.';
+      container.appendChild(p);
+      return;
+    }
     let currentMonth = '';
     list.forEach(entry => {
       const date = new Date(entry.date);
@@ -28,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
       time.textContent = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
       header.appendChild(time);
       article.appendChild(header);
-      const p = document.createElement('p');
-      p.innerHTML = entry.content;
-      article.appendChild(p);
+      const content = document.createElement('div');
+      content.innerHTML = marked.parse(entry.content);
+      article.appendChild(content);
       container.appendChild(article);
     });
   }
