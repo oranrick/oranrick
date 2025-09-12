@@ -38,6 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const back = document.createElement("a");
   back.className = "back-link";
   back.href = "/diary/";
-  back.textContent = "← Back to Diary";
+  back.textContent = "← Volver al diario";
   container.appendChild(back);
 });
