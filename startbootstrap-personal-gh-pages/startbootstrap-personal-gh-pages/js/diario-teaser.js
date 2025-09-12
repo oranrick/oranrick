@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstP = temp.querySelector('p');
     const snippet = quote ? quote.textContent : firstP ? firstP.textContent : '';
     p.textContent = snippet;
+    const html = marked.parse(entry.content);
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    const firstP = temp.querySelector('p');
+    p.textContent = firstP ? firstP.textContent : '';
+ main
     article.appendChild(p);
     teaser.appendChild(article);
   });

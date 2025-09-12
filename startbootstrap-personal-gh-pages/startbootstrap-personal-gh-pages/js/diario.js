@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(p);
       return;
     }
+    
     list.forEach(entry => {
       const article = document.createElement('article');
       const h2 = document.createElement('h2');
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const time = document.createElement('time');
       time.dateTime = entry.date;
       time.className = 'text-muted d-block mb-2';
+
       time.textContent = new Date(entry.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
       article.appendChild(time);
 
@@ -71,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
       p.className = 'diary-excerpt';
       p.textContent = getExcerpt(entry.content);
       article.appendChild(p);
+
+
+      time.textContent = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+      header.appendChild(time);
+      article.appendChild(header);
+      const content = document.createElement('div');
+      content.innerHTML = marked.parse(entry.content);
+      article.appendChild(content);
 
       container.appendChild(article);
     });
