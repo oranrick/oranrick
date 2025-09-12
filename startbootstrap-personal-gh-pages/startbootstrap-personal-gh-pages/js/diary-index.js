@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const time = document.createElement("div");
     time.className = "diary-date";
-    time.textContent = new Date(entry.date).toLocaleDateString("en-US", {
+    time.textContent = new Date(entry.date).toLocaleDateString("es-ES", {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cta = document.createElement("a");
     cta.className = "diary-cta";
     cta.href = link.href;
-    cta.textContent = "Read full post";
+    cta.textContent = "Leer entrada completa";
     article.appendChild(cta);
 
     featuredEl.appendChild(article);
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const heading = document.createElement("h2");
         heading.className = "diary-month";
         const date = new Date(`${y}-${m}-01T00:00:00`);
-        heading.textContent = date.toLocaleDateString("en-US", {
+        heading.textContent = date.toLocaleDateString("es-ES", {
           month: "long",
           year: "numeric",
         });
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           const time = document.createElement("div");
           time.className = "diary-date";
-          time.textContent = new Date(entry.date).toLocaleDateString("en-US", {
+          time.textContent = new Date(entry.date).toLocaleDateString("es-ES", {
             day: "numeric",
             month: "long",
             year: "numeric",
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const cta = document.createElement("a");
           cta.className = "diary-cta";
           cta.href = link.href;
-          cta.textContent = "Read more";
+          cta.textContent = "Leer más";
           article.appendChild(cta);
 
           grid.appendChild(article);
