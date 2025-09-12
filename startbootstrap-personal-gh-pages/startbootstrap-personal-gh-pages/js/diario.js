@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(p);
       return;
     }
-    
+
     list.forEach(entry => {
       const article = document.createElement('article');
       const h2 = document.createElement('h2');
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       p.className = 'diary-excerpt';
       p.textContent = getExcerpt(entry.content);
       article.appendChild(p);
-
 
       time.textContent = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
       header.appendChild(time);
