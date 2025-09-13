@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Periodista humanista" />
     <meta name="author" content="Rick Grisales" />
+    <meta id="theme-color" name="theme-color" content="#ffffff" />
     <title>Home - Rick Grisales</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
@@ -14,250 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Apply stored theme before CSS -->
+    <script>
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Estilos para modo oscuro y carrusel -->
-    <style>
-        /* Variables de color */
-        :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --muted-text-color: #6c757d; /* Texto muted en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
-            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
-            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
-            --image-opacity: 0.7; /* Opacidad en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
-            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
-            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
-            --image-opacity: 0.5; /* Opacidad en modo oscuro */
-        }
-
-        /* Reset de fondos y colores */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .navbar, .footer {
-            background-color: var(--bg-color) !important;
-        }
-        .bg-light {
-            background-color: var(--section-bg-light) !important;
-        }
-
-        /* Estilo del botón de cambio de tema */
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-            color: var(--text-color);
-            cursor: pointer;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 767px) {
-                top: 4rem;
-                right: 1rem;
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Ajustes para el menú desplegable */
-        .navbar-collapse {
-            z-index: 1000;
-        }
-        .nav-link {
-            color: var(--nav-link-color) !important;
-        }
-        .navbar-toggler {
-            border-color: var(--text-color);
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        /* Ajustes para elementos específicos */
-        .text-muted {
-            color: var(--muted-text-color) !important;
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-outline-dark {
-            color: var(--text-color);
-            border-color: var(--btn-outline-border);
-        }
-        .btn-outline-dark:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-        .badge.bg-gradient-primary-to-secondary {
-            background: linear-gradient(45deg, #ff8a00, #e52e71);
-        }
-        .card {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .profile .dots-1 path,
-        .profile .dots-2 path,
-        .profile .dots-3 path,
-        .profile .dots-4 path {
-            fill: var(--text-color);
-        }
-        .footer a {
-            color: var(--caption-color);
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: var(--nav-link-color);
-        }
-        .card-img-top {
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .cursor-blink {
-      display: inline-block;
-      font-weight: bold;
-      color: #fd7e14; /* naranja */
-      animation: blink 1s step-start infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* ===== Adelanto de proyectos ===== */
-    .project-preview-section {
-      background-color: #000;
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    @media (min-width: 768px) {
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 992px) {
-      .project-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    .project-card-preview {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      padding-top: 75%; /* 4:3 ratio */
-      display: block;
-    }
-    .project-card-preview img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      display: block;
-    }
-    .project-card-preview .overlay {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .project-card-preview:hover img {
-      transform: scale(1.05);
-    }
-    .project-card-preview:hover .overlay {
-      opacity: 1;
-    }
-    .project-card-preview h3 {
-      color: #fff;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .project-card-preview p {
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-
-    .project-swiper {
-      overflow: hidden;
-    }
-      
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #FF7A00 !important;
-      z-index: 20;
-    }
-    @media (min-width: 1280px) {
-      .swiper-button-prev { left: -60px; }
-      .swiper-button-next { right: -60px; }
-    }
-    @media (min-width: 768px) and (max-width: 1279px) {
-      .swiper-button-prev { left: -40px; }
-      .swiper-button-next { right: -40px; }
-    }
-    @media (max-width: 767px) {
-      .swiper-button-next,
-      .swiper-button-prev { display: none; }
-    }
-
-    @media (max-width: 767px) {
-      .project-card-preview {
-        height: 200px;
-      }
-
-      .project-card-preview h3 {
-        font-size: 1rem;
-      }
-
-      .project-card-preview p {
-        font-size: 0.8rem;
-      }
-    }
-    </style>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></head>
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
@@ -276,6 +45,7 @@
                         <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="diary/">Diario de un escritor perdido</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li class="nav-item"><button id="theme-toggle" class="btn btn-link nav-link px-2" aria-label="Toggle color theme"><span id="theme-icon" aria-hidden="true">🌙</span></button></li>
                     </ul>
                 </div>
             </div>
@@ -444,6 +214,7 @@
     <script src="js/diary-utils.js"></script>
     <script src="js/diary-teaser.js"></script>
     <script src="js/word-cycle.js"></script>
+    <script src="js/theme.js"></script>
 
 </body>
 </html>
