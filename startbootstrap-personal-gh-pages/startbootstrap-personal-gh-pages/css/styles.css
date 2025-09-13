@@ -12572,6 +12572,9 @@ body {
 .diary-featured { margin:32px 0; padding:28px; background:#1f1f1f; border-radius:16px; }
 .diary-cta { display:inline-block; margin-top:12px; padding:8px 14px; border:1px solid #888; border-radius:10px; text-decoration:none; color:#eaeaea; }
 .diary-cta:hover { border-color:#bbb; }
+@media (hover:hover) and (pointer:fine) {
+  .diary-cta:hover { color: var(--bs-orange); border-color: var(--bs-orange); }
+}
 blockquote { border-left:3px solid #4b5563; padding-left:14px; color:#c7c7c7; font-style:italic; }
 h1.post-title { font-size:2.25rem; line-height:1.2; margin:10px 0 14px; }
 .post-date { color:#9aa0a6; font-size:.9rem; margin-bottom:16px; }

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cta = document.createElement("a");
     cta.className = "diary-cta";
     cta.href = link.href;
-    cta.textContent = "Read full post";
+    cta.textContent = "Leer más";
     article.appendChild(cta);
 
     featuredEl.appendChild(article);
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const cta = document.createElement("a");
           cta.className = "diary-cta";
           cta.href = link.href;
-          cta.textContent = "Read more";
+          cta.textContent = "Leer más";
           article.appendChild(cta);
 
           grid.appendChild(article);
