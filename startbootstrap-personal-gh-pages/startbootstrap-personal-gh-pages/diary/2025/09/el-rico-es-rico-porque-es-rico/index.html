@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Notas breves y pensamientos de Rick Grisales" />
     <meta name="author" content="Rick Grisales" />
+    <meta id="theme-color" name="theme-color" content="#ffffff" />
     <title>Diario de un escritor perdido - Rick Grisales</title>
     <link rel="icon" type="image/x-icon" href="../../../../assets/orange.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <script>
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
     <link href="../../../../css/styles.css" rel="stylesheet" />
 </head>
 <body class="diary-page">
@@ -27,7 +34,8 @@
                     <li class="nav-item"><a class="nav-link" href="../../../../projects.html">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../../diary/">Diario de un escritor perdido</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../../contact.html">Contacto</a></li>
-                </ul>
+                <li class="nav-item"><button id="theme-toggle" class="btn btn-link nav-link px-2" aria-label="Toggle color theme"><span id="theme-icon" aria-hidden="true">🌙</span></button></li>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -53,7 +61,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../../../js/scripts.js"></script>
-    <script src="../../../../js/dark-mode.js"></script>
+    <script src="../../../../js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../../../../js/diary-utils.js"></script>
     <script src="../../../../js/diary-post.js"></script>

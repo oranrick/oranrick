@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>La abnegación más pura - Rick Grisales</title>
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
+    <meta id="theme-color" name="theme-color" content="#ffffff" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,162 +14,16 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
+    <script>
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
     <!-- Tu CSS base -->
     <link href="css/styles.css" rel="stylesheet" />
 
     <!-- Variables y modo oscuro -->
-    <style>
-        /* VARIABLES DE COLOR */
-        :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --caption-color: #555; /* Color de los pies de página en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --caption-color: #bbb; /* Color de los pies de página en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-        }
-
-        /* RESET DE FONDOS FIJOS */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .navbar, .footer {
-            background-color: var(--bg-color);
-        }
-
-        /* Estilo del botón de cambio de tema */
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1); /* Fondo sutil para mejor visibilidad */
-            border: none; /* Eliminamos el borde circular */
-            border-radius: 8px; /* Bordes ligeramente redondeados */
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-            color: var(--text-color);
-            cursor: pointer;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 767px) {
-                top: 4rem; /* Bajamos el botón en pantallas pequeñas para evitar solapamiento con el menú */
-                right: 1rem;
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Ajustes para el menú desplegable */
-        .navbar-collapse {
-            z-index: 1000; /* Aseguramos que el menú esté por encima del botón de tema */
-        }
-        .nav-link {
-            color: var(--nav-link-color) !important; /* Color naranja en modo oscuro */
-        }
-        .navbar-toggler {
-            border-color: var(--text-color); /* Borde del botón hamburguesa visible */
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            /* Ícono hamburguesa en naranja */
-        }
-        
-        /* SECCIÓN PRINCIPAL DEL ARTÍCULO */
-        .custom-article {
-            background-color: var(--bg-color);
-            padding: 2rem;
-        }
-        @media (min-width: 768px) {
-            .custom-article {
-                max-width: 750px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        .gradient-title {
-            color: var(--text-color);
-            font-weight: 700;
-            display: inline-block;
-            border-bottom: 4px solid #ffa94d;
-            padding-bottom: 0.2em;
-        }
-        .obra {
-            border-radius: 10px;
-            margin: 1rem 0;
-            width: 100%;
-            height: auto;
-        }
-        .highlight-quote {
-            display: block;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin: 1.5rem 0;
-            text-align: center;
-            position: relative;
-            color: var(--text-color);
-            text-shadow: 0 0 5px rgba(255, 169, 77, 0.5);
-        }
-        .highlight-quote::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #ffa94d;
-            margin: 0.5rem auto 0;
-        }
-        .image-container {
-            display: flex;
-            margin: 1.5rem 0;
-        }
-        .image-container.left {
-            justify-content: flex-start;
-        }
-        .image-container.right {
-            justify-content: flex-end;
-        }
-        .image-container.center {
-            justify-content: center;
-        }
-        .image-container figure {
-            margin: 0;
-            max-width: 300px;
-            width: 100%;
-        }
-        .image-container img {
-            border-radius: 10px;
-            width: 100%;
-            height: auto;
-        }
-        .image-container figcaption {
-            font-size: 0.9rem;
-            color: var(--caption-color);
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-        @media (max-width: 767px) {
-            .image-container {
-                justify-content: center !important;
-            }
-            .image-container figure {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
@@ -186,7 +41,8 @@
                     <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="diary/">Diario de un escritor perdido</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                </ul>
+                <li class="nav-item"><button id="theme-toggle" class="btn btn-link nav-link px-2" aria-label="Toggle color theme"><span id="theme-icon" aria-hidden="true">🌙</span></button></li>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -271,5 +127,6 @@
 
 
 
+    <script src="js/theme.js"></script>
 </body>
 </html>
