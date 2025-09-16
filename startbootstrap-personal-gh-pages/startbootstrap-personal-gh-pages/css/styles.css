@@ -12589,3 +12589,104 @@ footer a.small,
 footer a.small:hover {
   color: var(--bs-orange);
 }
+
+/* Share component */
+.share-container {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .share-container {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.share-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.share-description {
+  color: var(--muted-text-color);
+  margin-bottom: 1.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.share-button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--text-color);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.share-button .bi {
+  font-size: 1.1rem;
+}
+
+.share-button:hover,
+.share-button:focus-visible {
+  background-color: var(--nav-link-color);
+  color: var(--bg-color);
+  border-color: var(--nav-link-color);
+  outline: none;
+  box-shadow: 0 0 0 0.15rem rgba(255, 169, 77, 0.25);
+}
+
+[data-theme="dark"] .share-button {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .share-button:hover,
+[data-theme="dark"] .share-button:focus-visible {
+  color: #121212;
+  box-shadow: 0 0 0 0.2rem rgba(255, 169, 77, 0.4);
+}
+
+.share-hint {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--muted-text-color);
+}
+
+.share-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--nav-link-color);
+  display: none;
+}
+
+.share-feedback.is-visible {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .share-container {
+    padding-top: 2rem;
+  }
+
+  .share-buttons {
+    gap: 0.5rem;
+  }
+
+  .share-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
