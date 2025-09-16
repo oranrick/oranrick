@@ -12018,6 +12018,10 @@ html {
   --nav-link-color: #000000;
   --section-bg-light: #f8f9fa;
   --btn-outline-border: #000000;
+  --share-button-bg: #ff8a00;
+  --share-button-bg-hover: #e67600;
+  --share-button-text: #ffffff;
+  --share-button-focus-ring: rgba(255, 138, 0, 0.35);
 }
 
 /* Variables para modo oscuro */
@@ -12028,6 +12032,10 @@ html {
   --nav-link-color: #ffa94d;
   --section-bg-light: #1e1e1e;
   --btn-outline-border: #ffffff;
+  --share-button-bg: #ff8a00;
+  --share-button-bg-hover: #e67600;
+  --share-button-text: #ffffff;
+  --share-button-focus-ring: rgba(255, 138, 0, 0.45);
 }
 
 body {
@@ -12619,17 +12627,19 @@ footer a.small:hover {
 }
 
 .share-button {
-  border: 1px solid var(--btn-outline-border);
-  background-color: transparent;
-  color: var(--text-color);
+  border: 1px solid var(--share-button-bg);
+  background-color: var(--share-button-bg);
+  color: var(--share-button-text);
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
   cursor: pointer;
+  box-shadow: none;
 }
 
 .share-button .bi {
@@ -12638,10 +12648,14 @@ footer a.small:hover {
 
 .share-button:hover,
 .share-button:focus-visible {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  border-color: var(--text-color);
+  background-color: var(--share-button-bg-hover);
+  color: var(--share-button-text);
+  border-color: var(--share-button-bg-hover);
   outline: none;
+}
+
+.share-button:focus-visible {
+  box-shadow: 0 0 0 0.25rem var(--share-button-focus-ring);
 }
 
 .share-hint {
