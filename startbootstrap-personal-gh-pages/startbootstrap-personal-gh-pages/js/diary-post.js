@@ -14,6 +14,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  const back = document.createElement("a");
+  back.className = "btn btn-warning position-fixed top-0 start-0 m-3";
+  back.href = "/diary/";
+  back.textContent = "← Volver";
+  back.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = back.href;
+    }
+  });
+  container.appendChild(back);
+
   const h1 = document.createElement("h1");
   h1.className = "post-title";
   h1.textContent = entry.title;
@@ -34,54 +48,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   const firstH1 = content.querySelector("h1");
   if (firstH1) firstH1.remove();
   container.appendChild(content);
-
-  const share = document.createElement("div");
-  share.className = "share-container";
-  share.setAttribute("data-share-text", entry.title);
-  share.innerHTML = `
-    <h2 class="share-title">Comparte este texto</h2>
-    <p class="share-description">Si te gustó, compártelo en tus redes sociales favoritas:</p>
-    <div class="share-buttons">
-      <button type="button" class="share-button" data-share-network="facebook">
-        <i class="bi bi-facebook"></i>
-        <span>Facebook</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="x">
-        <i class="bi bi-twitter-x"></i>
-        <span>X</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="instagram">
-        <i class="bi bi-instagram"></i>
-        <span>Instagram</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="linkedin">
-        <i class="bi bi-linkedin"></i>
-        <span>LinkedIn</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="whatsapp">
-        <i class="bi bi-whatsapp"></i>
-        <span>WhatsApp</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="telegram">
-        <i class="bi bi-telegram"></i>
-        <span>Telegram</span>
-      </button>
-      <button type="button" class="share-button" data-share-network="copy">
-        <i class="bi bi-link-45deg"></i>
-        <span>Copiar enlace</span>
-      </button>
-    </div>
-    <p class="share-hint"><i class="bi bi-info-circle me-2"></i>Instagram no permite compartir enlaces automáticos, pero puedes pegar el enlace copiado en tus historias o mensajes.</p>
-    <p class="share-feedback" role="status" aria-live="polite"></p>
-  `;
-  container.appendChild(share);
-  if (typeof window.initializeShareButtons === "function") {
-    window.initializeShareButtons(share);
-  }
-
-  const back = document.createElement("a");
-  back.className = "back-link";
-  back.href = "/diary/";
-  back.textContent = "← Volver al diario";
-  container.appendChild(back);
 });
