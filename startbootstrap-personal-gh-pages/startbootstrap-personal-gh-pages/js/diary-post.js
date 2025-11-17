@@ -48,4 +48,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const firstH1 = content.querySelector("h1");
   if (firstH1) firstH1.remove();
   container.appendChild(content);
+
+  setupTranslationToggle(content);
 });
+
+function setupTranslationToggle(root) {
+  const toggle = root.querySelector("#english-toggle");
+  const english = root.querySelector("#english-version");
+  if (!toggle || !english) return;
+
+  english.style.display = "none";
+  toggle.addEventListener("click", () => {
+    const hidden = english.style.display === "none";
+    english.style.display = hidden ? "block" : "none";
+    toggle.textContent = hidden ? "HIDE" : "ENGLISH";
+  });
+}
