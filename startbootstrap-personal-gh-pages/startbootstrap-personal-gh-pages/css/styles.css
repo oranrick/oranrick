@@ -12222,6 +12222,10 @@ body {
   box-shadow: none !important;
 }
 .swiper-button-prev {
+  left: -80px !important;
+}
+.swiper-button-next {
+  right: -80px !important;
   left: -25px;
 }
 .swiper-button-next {
@@ -12554,6 +12558,7 @@ body {
     width: 28px;
     height: 28px;
     top: 45%;
+    left: -20px !important;
     left: 5px;
   }
 
@@ -12561,6 +12566,7 @@ body {
     width: 28px;
     height: 28px;
     top: 45%;
+    right: -20px !important;
     right: 5px;
   }
 }
