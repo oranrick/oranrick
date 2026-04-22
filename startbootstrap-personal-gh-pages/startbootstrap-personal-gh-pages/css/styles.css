@@ -11634,12 +11634,12 @@ html {
   width: 75vw;
   border-radius: 5vw;
   margin-top: 5vw;
-  max-height: 28rem;
-  max-width: 28rem;
+  max-height: 20rem;
+  max-width: 20rem;
 }
 .profile .profile-img {
   height: 80vw;
-  max-height: 31rem;
+  max-height: 22rem;
   position: absolute;
   bottom: 0;
   left: 50%;
