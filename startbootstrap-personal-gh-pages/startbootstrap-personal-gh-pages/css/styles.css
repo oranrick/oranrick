@@ -12721,3 +12721,38 @@ footer a.small:hover {
     justify-content: center;
   }
 }
+
+/* === Theme Toggle Button === */
+.theme-toggle-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #212529;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn i {
+  pointer-events: none;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    top: 4.5rem;
+    right: 0.75rem;
+  }
+}
