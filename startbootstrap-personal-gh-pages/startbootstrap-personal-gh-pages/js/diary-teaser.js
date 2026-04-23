@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const h3 = document.createElement("h3");
     const link = document.createElement("a");
+    link.className = "diary-title-link";
     link.href = `/diary/${entry.date.slice(0, 4)}/${entry.date.slice(5, 7)}/${entry.slug}/`;
     link.textContent = entry.title;
     h3.appendChild(link);
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     article.appendChild(p);
 
     const cta = document.createElement("a");
-    cta.className = "diary-cta";
+    cta.className = "diary-cta leer-mas-link";
     cta.href = link.href;
     cta.textContent = "Leer más";
     article.appendChild(cta);
