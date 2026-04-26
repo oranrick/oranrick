@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".theme-toggle-btn");
+  if (btn) {
+    btn.style.removeProperty("display");
+    btn.style.removeProperty("visibility");
+    btn.style.removeProperty("top");
+    btn.style.removeProperty("left");
+  }
+});
+
 (function () {
   const root = document.documentElement;
   const button = document.querySelector('.theme-toggle-btn');
