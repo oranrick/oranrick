@@ -12776,3 +12776,53 @@ footer a.small:hover {
   color: #ff6600 !important;
   border-color: #000000 !important;
 }
+
+/* === Language Toggle Button === */
+.lang-toggle-btn {
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  right: 5.5rem !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 99999 !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  border: 2px solid #FF6600 !important;
+  background-color: transparent !important;
+  color: #FF6600 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  padding: 0 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  transition: all 0.3s !important;
+}
+
+.lang-toggle-btn:hover {
+  background-color: #FF6600 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .lang-toggle-btn {
+  border-color: #ffa94d !important;
+  color: #ffa94d !important;
+}
+
+[data-theme="dark"] .lang-toggle-btn:hover {
+  background-color: #ffa94d !important;
+  color: #121212 !important;
+}
+
+@media (max-width: 768px) {
+  .lang-toggle-btn {
+    bottom: 1.2rem !important;
+    right: 4.8rem !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}

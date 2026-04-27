@@ -245,11 +245,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resumen - CV</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="diary/">Diario de un escritor perdido</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-es="Home" data-en="Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html" data-es="Resumen - CV" data-en="Resume - CV">Resumen - CV</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diary/" data-es="Diario de un escritor perdido" data-en="Diary of a lost writer">Diario de un escritor perdido</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -263,7 +263,7 @@
                         <!-- Header text content-->
                         <div class="text-center text-xxl-start">
                             <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                                <div class="text-uppercase">Escritor · Creativo · Editor</div>
+                                <div class="text-uppercase" data-es="Escritor · Creativo · Editor" data-en="Writer · Creative · Editor">Escritor · Creativo · Editor</div>
                             </div>
                             <div class="fs-3 fw-light text-muted">
                                 Hola, soy <strong>Rick</strong>. Periodista, creativo y amante del lenguaje
@@ -273,8 +273,8 @@
                             </h1>
 
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="projects.html">Proyectos</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="resume.html">Resumen - CV</a>
+                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a>
+                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="resume.html" data-es="Resumen - CV" data-en="Resume - CV">Resumen - CV</a>
                             </div>
                         </div>
                     </div>
@@ -301,7 +301,7 @@
             <div class="container">
                 <div class="text-center mb-5" data-aos="fade-up">
                     <h2 class="display-5 fw-bolder text-white">
-                        <span class="text-gradient d-inline">Mis proyectos</span>
+                        <span class="text-gradient d-inline" data-es="Mis proyectos" data-en="My projects">Mis proyectos</span>
                     </h2>
                 </div>
 
@@ -363,9 +363,9 @@
 
     <section class="py-5">
         <div class="container px-5 text-center">
-            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Diario de un escritor perdido</span></h2>
+            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline" data-es="Diario de un escritor perdido" data-en="Diary of a lost writer">Diario de un escritor perdido</span></h2>
             <div id="diary-teaser" class="text-start mt-4"></div>
-            <a class="btn btn-outline-dark px-4 py-2 mt-4" href="diary/">Leer el diario completo</a>
+            <a class="btn btn-outline-dark px-4 py-2 mt-4" href="diary/" data-es="Leer el diario completo" data-en="Read the full diary">Leer el diario completo</a>
         </div>
     </section>
 
@@ -377,11 +377,11 @@
                     <div class="small m-0">Copyright © Rick 2025</div>
                 </div>
                 <div class="col-auto">
-                    <a class="small" href="#!">Privacidad</a>
+                    <a class="small" href="#!" data-es="Privacidad" data-en="Privacy">Privacidad</a>
                     <span class="mx-1">·</span>
-                    <a class="small" href="#!">Términos</a>
+                    <a class="small" href="#!" data-es="Términos" data-en="Terms">Términos</a>
                     <span class="mx-1">·</span>
-                    <a class="small" href="#!">Contacto</a>
+                    <a class="small" href="#!" data-es="Contacto" data-en="Contact">Contacto</a>
                 </div>
             </div>
         </div>
@@ -420,7 +420,9 @@
     <script src="js/word-cycle.js"></script>
 
     <script src="js/theme-toggle.js"></script>
+    <script src="js/lang-toggle.js"></script>
 
+<button class="lang-toggle-btn" aria-label="Cambiar idioma">EN</button>
 <button class="theme-toggle-btn" aria-label="Cambiar tema">
     <i class="bi bi-moon-fill"></i>
 </button>
