@@ -27,11 +27,16 @@
   --bs-link-color: #FF6600;
   --bs-link-hover-color: #ffa500;
   --bs-font-sans-serif: 'Syne', sans-serif;
+  --bs-body-font-family: 'Syne', sans-serif;
   --bs-body-color: var(--text-color);
   --bs-body-bg: var(--bg-color);
 }
 
 /* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Syne', sans-serif;
   background-color: var(--bg-color);
@@ -41,6 +46,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Syne', sans-serif;
 }
+
+/* Force Syne everywhere Bootstrap might override */
+p, li, td, th, label, input, textarea, select, button, a {
+  font-family: 'Syne', sans-serif;
+}
+
+::selection {
+  background: rgba(255, 102, 0, 0.28);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: rgba(255, 102, 0, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 102, 0, 0.55); }
 
 /* --- Layout overrides --- */
 .bg-light,
@@ -210,6 +230,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   padding-top: 4.5rem;
   padding-bottom: 5rem;
+  background:
+    radial-gradient(ellipse at 75% 40%, rgba(255, 102, 0, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 102, 0, 0.03) 0%, transparent 45%);
 }
 
 .hero-badge {
@@ -825,36 +848,78 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--bg-card);
   color: var(--text-color);
   border: 1px solid var(--border-color);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  padding: 20px;
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.diary-card h3 { margin: 0 0 6px; font-size: 1.25rem; line-height: 1.3; }
+.diary-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 102, 0, 0.32);
+  box-shadow: 0 8px 32px rgba(255, 102, 0, 0.1);
+}
+
+.diary-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: 'Syne', sans-serif;
+}
+
+.diary-title-link {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.diary-title-link:hover {
+  color: var(--accent) !important;
+}
 
 .diary-card h3 a,
 .diary-card h3 a:visited,
-.diary-card h3 a:hover,
 .diary-featured h2 a,
-.diary-featured h2 a:visited,
-.diary-featured h2 a:hover,
-#diary-teaser a,
-#diary-teaser h3 a,
-#diary-teaser h2 a {
-  color: var(--accent) !important;
+.diary-featured h2 a:visited {
+  color: var(--text-color) !important;
   text-decoration: none !important;
 }
 
-#diary-teaser a:hover { color: #FFA500 !important; text-decoration: underline !important; }
+.diary-card h3 a:hover,
+.diary-featured h2 a:hover,
+#diary-teaser a:hover {
+  color: var(--accent) !important;
+}
 
-.diary-date { color: var(--muted-text-color); font-size: 0.9rem; margin-bottom: 8px; }
+#diary-teaser a,
+#diary-teaser h3 a,
+#diary-teaser h2 a {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+}
+
+.diary-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
 
 .diary-excerpt {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  color: var(--text-color);
+  color: var(--muted-text-color);
+  font-size: 0.83rem;
+  line-height: 1.55;
+  flex: 1;
 }
 
 .diary-featured {
@@ -874,18 +939,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .diary-cta {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   text-decoration: none;
-  color: var(--text-color);
-  transition: color 0.2s, border-color 0.2s;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(255, 102, 0, 0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, gap 0.2s;
+  font-family: 'Syne', sans-serif;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .diary-cta:hover { color: var(--accent); border-color: var(--accent); }
+.diary-cta:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+  gap: 0.5rem;
 }
 
 blockquote {

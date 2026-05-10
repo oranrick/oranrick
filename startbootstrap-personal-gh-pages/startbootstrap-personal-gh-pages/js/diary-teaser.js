@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cta = document.createElement("a");
     cta.className = "diary-cta leer-mas-link";
     cta.href = link.href;
-    cta.textContent = "Leer más";
+    cta.innerHTML = "Leer más <span>→</span>";
     article.appendChild(cta);
 
     grid.appendChild(article);
