@@ -19,8 +19,8 @@ if (typeof document !== 'undefined') {
     const element = document.getElementById('changing-word');
     if (!element) return;
 
-    const wordsEs = ['palabras', 'empatía', 'amor', 'ética', 'abrazos'];
-    const wordsEn = ['words', 'empathy', 'love', 'ethics', 'hugs'];
+    const wordsEs = ['palabras', 'caos', 'datos', 'memoria', 'poder', 'verdad'];
+    const wordsEn = ['words', 'chaos', 'data', 'memory', 'power', 'truth'];
 
     const savedLang = localStorage.getItem('lang') || 'es';
     let words = savedLang === 'en' ? wordsEn : wordsEs;

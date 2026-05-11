@@ -274,20 +274,30 @@ p, li, td, th, label, input, textarea, select, button, a {
 }
 
 .hero-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
+  line-height: 1;
+  letter-spacing: normal;
   color: var(--text-color);
 }
 
 .hero-title-static {
   display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(0.62rem, 1.2vw, 0.78rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(240, 240, 240, 0.28);
+  margin-bottom: 0.35rem;
 }
 
 .hero-word-accent {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(4rem, 11vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
   color: var(--accent);
+  text-transform: uppercase;
 }
 
 /* --- IRA Hero Card --- */
@@ -1460,3 +1470,144 @@ figure.article-img-left img { width: 100%; border-radius: 10px; }
   margin-bottom: 2rem;
 }
 .diary-post-back:hover { color: var(--accent); gap: 0.65rem; }
+
+/* ═══════════════════════════════════════════════════════════
+   Article — extended layout components
+   ═══════════════════════════════════════════════════════════ */
+
+/* Wide image — breaks out of 700px column, full container width */
+figure.article-img-wide {
+  width: 100%;
+  margin: 2.5rem 0;
+  clear: both;
+}
+figure.article-img-wide img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+}
+figure.article-img-wide figcaption {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.63rem;
+  color: var(--muted-text-color);
+  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Pull statement — editorial headline-sized break */
+.article-pull-statement {
+  clear: both;
+  margin: 4rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 102, 0, 0.18);
+  border-bottom: 1px solid rgba(255, 102, 0, 0.18);
+  text-align: center;
+}
+.article-pull-statement p {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.55rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-color) !important;
+  margin: 0 auto !important;
+  max-width: 600px;
+  letter-spacing: -0.025em;
+}
+.article-pull-statement .pull-accent {
+  color: var(--accent);
+}
+
+/* Lyric pull — for song lyrics, intimate monospace feel */
+.article-lyric {
+  margin: 2.25rem 0;
+  padding: 1.75rem 2rem 1.75rem 2.25rem;
+  border-left: 2px solid rgba(240, 240, 240, 0.1);
+  clear: both;
+}
+.article-lyric p {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.95rem !important;
+  font-style: italic;
+  line-height: 1.8 !important;
+  color: rgba(240, 240, 240, 0.55) !important;
+  margin: 0 !important;
+  letter-spacing: 0.01em;
+}
+
+/* Lyric pull — wide centered version */
+.article-lyric-wide {
+  clear: both;
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.article-lyric-wide p {
+  font-family: 'DM Mono', monospace !important;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem) !important;
+  font-style: italic;
+  line-height: 1.85 !important;
+  color: rgba(240, 240, 240, 0.5) !important;
+  margin: 0 auto !important;
+  max-width: 460px;
+  letter-spacing: 0.01em;
+}
+
+/* Stat card — visual callout for data points */
+.article-stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+  clear: both;
+}
+.article-stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+.article-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted-text-color);
+  line-height: 1.6;
+  padding-top: 0.2rem;
+}
+.article-stat-label strong {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-color);
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+/* Cinematic cover — taller, darker, no radius */
+.article-cover-cinematic {
+  width: 100%;
+  max-height: 580px;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  filter: brightness(0.68) contrast(1.1);
+}
+
+@media (max-width: 767px) {
+  .article-pull-statement { margin: 2.5rem 0; padding: 2rem 0; }
+  .article-pull-statement p { font-size: 1.3rem; }
+  .article-stat-card { flex-direction: column; gap: 0.75rem; }
+  .article-stat-number { font-size: 2.5rem; }
+}
