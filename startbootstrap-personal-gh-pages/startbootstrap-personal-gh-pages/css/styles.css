@@ -1292,7 +1292,17 @@ blockquote {
 @media (max-width: 767px) {
   .projects-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.4rem; }
-  .ira-card-title { font-size: 2.8rem; }
+  .ira-card-title { font-size: 2.2rem; }
+  .ira-hero-card { padding: 1.5rem 1.4rem; }
+  .ira-entity-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .ira-mini-entity { padding: 0.65rem 0.6rem 0.6rem; }
+  .ira-mini-name { font-size: 0.72rem; }
+  .ira-card-desc { font-size: 0.88rem; }
+}
+
+@media (max-width: 400px) {
+  .ira-entity-grid { grid-template-columns: 1fr; }
+  .ira-card-title { font-size: 1.9rem; }
 }
 
 /* ═══════════════════════════════════════════════════════════

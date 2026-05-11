@@ -17,7 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function applyLanguage(lang) {
   document.querySelectorAll("[data-es]").forEach(function (el) {
-    el.textContent = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+    if (el.children.length > 0) return; // skip elements that contain child elements
+    const text = lang === "en"
+      ? (el.getAttribute("data-en") || el.getAttribute("data-es"))
+      : el.getAttribute("data-es");
+    if (text != null) el.textContent = text;
   });
   document.documentElement.setAttribute("lang", lang);
   document.dispatchEvent(new CustomEvent("langchange", { detail: { lang: lang } }));

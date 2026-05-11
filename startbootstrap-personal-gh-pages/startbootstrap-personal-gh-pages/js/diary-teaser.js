@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const teaser = document.getElementById("diary-teaser");
   if (!teaser) return;
+
   const entries = (await loadDiaryEntries()).slice(0, 4);
   const grid = document.createElement("div");
   grid.className = "diary-grid diary-teaser";
+
+  function currentLang() {
+    return localStorage.getItem("lang") || "es";
+  }
+
   entries.forEach((entry) => {
     const article = document.createElement("article");
     article.className = "diary-card";
@@ -21,11 +27,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const time = document.createElement("div");
     time.className = "diary-date";
-    time.textContent = new Date(entry.date).toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
+    const dateObj = new Date(entry.date);
+    const formatDate = (lang) => dateObj.toLocaleDateString(lang === "en" ? "en-US" : "es-ES", {
+      day: "numeric", month: "long", year: "numeric",
     });
+    time.textContent = formatDate(currentLang());
     article.appendChild(time);
 
     const p = document.createElement("p");
@@ -36,10 +42,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cta = document.createElement("a");
     cta.className = "diary-cta leer-mas-link";
     cta.href = link.href;
-    cta.innerHTML = "Leer más <span>→</span>";
+    cta.textContent = currentLang() === "en" ? "Read more →" : "Leer más →";
     article.appendChild(cta);
 
     grid.appendChild(article);
   });
+
   teaser.appendChild(grid);
+
+  document.addEventListener("langchange", (e) => {
+    const lang = e.detail.lang;
+    grid.querySelectorAll(".leer-mas-link").forEach((el) => {
+      el.textContent = lang === "en" ? "Read more →" : "Leer más →";
+    });
+    grid.querySelectorAll(".diary-date").forEach((el, i) => {
+      if (entries[i]) {
+        el.textContent = new Date(entries[i].date).toLocaleDateString(
+          lang === "en" ? "en-US" : "es-ES",
+          { day: "numeric", month: "long", year: "numeric" }
+        );
+      }
+    });
+  });
 });
