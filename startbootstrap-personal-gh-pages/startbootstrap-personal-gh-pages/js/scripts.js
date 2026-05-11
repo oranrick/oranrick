@@ -167,6 +167,16 @@
   window.initializeShareButtons = prepareShareButtons;
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Inject animated background
+    const aura = document.createElement("div");
+    aura.className = "bg-aura";
+    aura.innerHTML =
+      '<span class="bg-blob bg-blob-a"></span>' +
+      '<span class="bg-blob bg-blob-b"></span>' +
+      '<span class="bg-blob bg-blob-c"></span>' +
+      '<span class="bg-noise"></span>';
+    document.body.prepend(aura);
+
     prepareShareButtons(document);
   });
 })();
