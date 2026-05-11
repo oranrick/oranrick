@@ -265,18 +265,25 @@ p, li, td, th, label, input, textarea, select, button, a {
 }
 
 .hero-intro {
-  font-size: 1.05rem;
-  color: var(--muted-text-color);
-  line-height: 1.65;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 240, 0.3);
+  line-height: 1.5;
+  text-transform: lowercase;
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.05;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.0;
   letter-spacing: -0.04em;
   color: var(--text-color);
+}
+
+.hero-title-static {
+  display: block;
 }
 
 .hero-word-accent {
