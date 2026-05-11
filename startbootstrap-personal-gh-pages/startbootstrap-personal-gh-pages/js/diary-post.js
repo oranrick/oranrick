@@ -14,20 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const back = document.createElement("a");
-  back.className = "btn btn-warning position-fixed top-0 start-0 m-3";
-  back.href = "/diary/";
-  back.textContent = "← Volver";
-  back.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = back.href;
-    }
-  });
-  container.appendChild(back);
-
   const h1 = document.createElement("h1");
   h1.className = "post-title";
   h1.textContent = entry.title;

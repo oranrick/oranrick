@@ -1,39 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".theme-toggle-btn");
-  if (btn) {
-    btn.style.removeProperty("display");
-    btn.style.removeProperty("visibility");
-    btn.style.removeProperty("top");
-    btn.style.removeProperty("left");
-  }
-});
-
+// Apply saved theme immediately to avoid flash of wrong theme
 (function () {
-  const root = document.documentElement;
-  const button = document.querySelector('.theme-toggle-btn');
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.theme-toggle-btn');
+  if (!btn) return;
 
   function setIcon(theme) {
-    if (!button) return;
-    const icon = button.querySelector('i');
+    const icon = btn.querySelector('i');
     if (!icon) return;
     icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
   }
 
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    setIcon(theme);
-  }
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  setIcon(currentTheme);
 
-  const savedTheme = localStorage.getItem('theme');
-  const initialTheme = savedTheme || 'light';
-  applyTheme(initialTheme);
-
-  if (button) {
-    button.addEventListener('click', function () {
-      const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-      localStorage.setItem('theme', nextTheme);
-    });
-  }
-})();
+  btn.addEventListener('click', function () {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    setIcon(nextTheme);
+  });
+});

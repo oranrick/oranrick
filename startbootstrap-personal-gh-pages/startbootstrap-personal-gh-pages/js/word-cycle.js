@@ -14,36 +14,47 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = WordCycler;
 }
 
-// Browser initialization with typing effect
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
     const element = document.getElementById('changing-word');
     if (!element) return;
 
-    const words = ['palabras', 'empatía', 'amor', 'ética', 'abrazos'];
+    const wordsEs = ['palabras', 'empatía', 'amor', 'ética', 'abrazos'];
+    const wordsEn = ['words', 'empathy', 'love', 'ethics', 'hugs'];
+
+    const savedLang = localStorage.getItem('lang') || 'es';
+    let words = savedLang === 'en' ? wordsEn : wordsEs;
     let index = 0;
-    const typeSpeed = 100;   // tiempo entre letras al escribir
-    const eraseSpeed = 50;   // tiempo entre letras al borrar
-    const pauseTime = 1000;  // pausa antes de borrar
+    const typeSpeed = 100;
+    const eraseSpeed = 50;
+    const pauseTime = 1000;
+    let timeoutId = null;
 
     function typeWord(word, charIndex = 0) {
       if (charIndex <= word.length) {
         element.textContent = word.substring(0, charIndex);
-        setTimeout(() => typeWord(word, charIndex + 1), typeSpeed);
+        timeoutId = setTimeout(() => typeWord(word, charIndex + 1), typeSpeed);
       } else {
-        setTimeout(() => eraseWord(word, word.length - 1), pauseTime);
+        timeoutId = setTimeout(() => eraseWord(word, word.length - 1), pauseTime);
       }
     }
 
     function eraseWord(word, charIndex) {
       if (charIndex >= 0) {
         element.textContent = word.substring(0, charIndex);
-        setTimeout(() => eraseWord(word, charIndex - 1), eraseSpeed);
+        timeoutId = setTimeout(() => eraseWord(word, charIndex - 1), eraseSpeed);
       } else {
         index = (index + 1) % words.length;
-        setTimeout(() => typeWord(words[index], 0), typeSpeed);
+        timeoutId = setTimeout(() => typeWord(words[index], 0), typeSpeed);
       }
     }
+
+    document.addEventListener('langchange', (e) => {
+      words = e.detail.lang === 'en' ? wordsEn : wordsEs;
+      if (timeoutId) clearTimeout(timeoutId);
+      index = 0;
+      typeWord(words[0], 0);
+    });
 
     typeWord(words[index]);
   });

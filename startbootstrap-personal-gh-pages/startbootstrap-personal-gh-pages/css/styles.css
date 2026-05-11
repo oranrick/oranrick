@@ -966,9 +966,7 @@ blockquote {
   font-style: italic;
 }
 
-h1.post-title { font-size: 2.25rem; line-height: 1.2; margin: 10px 0 14px; }
-.post-date { color: var(--muted-text-color); font-size: 0.9rem; margin-bottom: 16px; }
-.post-content p { margin: 0 0 16px; line-height: 1.75; }
+/* post-title, post-date, post-content defined below in article/diary section */
 
 .diary-teaser { display: grid; grid-template-columns: 1fr; }
 @media (min-width: 600px) { .diary-teaser { grid-template-columns: 1fr 1fr; } }
@@ -1089,3 +1087,314 @@ h1.post-title { font-size: 2.25rem; line-height: 1.2; margin: 10px 0 14px; }
   .hero-title { font-size: 2.4rem; }
   .ira-card-title { font-size: 2.8rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Article pages
+   ═══════════════════════════════════════════════════════════ */
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-text-color);
+  text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+  margin-bottom: 2.25rem;
+}
+.article-back:hover { color: var(--accent); gap: 0.65rem; }
+
+.article-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(255,102,0,0.3);
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+}
+
+.article-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.article-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.article-lead {
+  font-size: 1.1rem;
+  color: var(--muted-text-color);
+  line-height: 1.82;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  max-width: 680px;
+}
+
+.article-cover {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+}
+
+.article-header { padding: 2.5rem 0 2.5rem; }
+.article-header-inner { border-bottom: 1px solid var(--border-color); padding-bottom: 2.5rem; }
+
+.article-body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+  overflow: hidden;
+}
+
+.article-body p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-color);
+  margin-bottom: 1.6rem;
+}
+
+/* Drop cap on the first paragraph */
+.article-body > p:first-child::first-letter {
+  font-family: 'Syne', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  float: left;
+  line-height: 0.78;
+  margin: 0.1em 0.12em 0 0;
+  color: var(--accent);
+}
+
+/* Section marker: LABEL ────────── */
+.article-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+  clear: both;
+}
+.article-section::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+.article-section span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Pull quote — left border */
+.article-pull {
+  margin: 2rem -1rem 2rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(255,102,0,0.04);
+  border-radius: 0 8px 8px 0;
+  clear: both;
+}
+.article-pull p {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text-color) !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em;
+}
+
+/* Wide quote — centered break in flow */
+.article-pull-wide {
+  clear: both;
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,102,0,0.15);
+  border-bottom: 1px solid rgba(255,102,0,0.15);
+  text-align: center;
+}
+.article-pull-wide p {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text-color) !important;
+  margin: 0 auto !important;
+  max-width: 520px;
+  letter-spacing: -0.01em;
+}
+
+/* Images inside article body */
+figure.article-img { margin: 1.75rem 0; }
+figure.article-img img { width: 100%; border-radius: 10px; display: block; }
+figure.article-img figcaption,
+figure.article-img-right figcaption,
+figure.article-img-left figcaption {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.63rem;
+  color: var(--muted-text-color);
+  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+figure.article-img-right {
+  float: right;
+  width: 270px;
+  margin: 0.25rem 0 1.5rem 2rem;
+}
+figure.article-img-right img { width: 100%; border-radius: 10px; }
+figure.article-img-left {
+  float: left;
+  width: 270px;
+  margin: 0.25rem 2rem 1.5rem 0;
+}
+figure.article-img-left img { width: 100%; border-radius: 10px; }
+
+@media (max-width: 767px) {
+  figure.article-img-right,
+  figure.article-img-left { float: none; width: 100%; margin: 1.5rem 0; }
+  .article-pull { margin-left: 0; margin-right: 0; }
+}
+
+/* Data / info box */
+.article-data-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0 0;
+  clear: both;
+}
+.article-data-box .data-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.article-data-box ul { list-style: none; padding: 0; margin: 0; }
+.article-data-box li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--muted-text-color);
+}
+.article-data-box li:last-child { border-bottom: none; }
+.article-data-box li strong { color: var(--text-color); }
+
+/* Diary index overrides */
+.diary-index-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+}
+.diary-index-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+.diary-index-header p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--muted-text-color);
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+.diary-search-wrap { margin-top: 1.5rem; max-width: 380px; }
+.diary-search-wrap .form-control {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  border-radius: 6px;
+}
+.diary-search-wrap .form-control::placeholder { color: var(--muted-text-color); }
+.diary-search-wrap .form-control:focus {
+  background: var(--bg-card);
+  border-color: rgba(255,102,0,0.45);
+  box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
+  color: var(--text-color);
+}
+
+/* Diary post page */
+.post-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+.post-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.post-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+.post-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
+  color: var(--text-color);
+}
+.post-content > p:first-child::first-letter {
+  font-family: 'Syne', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  float: left;
+  line-height: 0.8;
+  margin: 0.1em 0.12em 0 0;
+  color: var(--accent);
+}
+.diary-post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-text-color);
+  text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+  margin-bottom: 2rem;
+}
+.diary-post-back:hover { color: var(--accent); gap: 0.65rem; }

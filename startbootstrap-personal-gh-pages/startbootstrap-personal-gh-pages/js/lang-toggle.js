@@ -1,7 +1,3 @@
-const translations = {
-  // Add translations as data attributes
-};
-
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.querySelector(".lang-toggle-btn");
   if (!btn) return;
@@ -24,4 +20,5 @@ function applyLanguage(lang) {
     el.textContent = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
   });
   document.documentElement.setAttribute("lang", lang);
+  document.dispatchEvent(new CustomEvent("langchange", { detail: { lang: lang } }));
 }

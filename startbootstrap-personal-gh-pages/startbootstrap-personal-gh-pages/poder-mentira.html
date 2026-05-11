@@ -1,217 +1,127 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="La política del engaño. ¿Puede sobrevivir la democracia a la desinformación? Por Rick Grisales." />
+    <meta name="author" content="Rick Grisales" />
     <title>La política del engaño - Rick Grisales</title>
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-        /* Variables de color */
-        :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --muted-text-color: #6c757d; /* Texto muted en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-            --section-bg-light: #f8f9fa; /* Fondo de secciones claras */
-            --btn-outline-border: #000000; /* Borde del botón outline en modo claro */
-            --caption-color: #6c757d; /* Color de los pies de página en modo claro */
-            --subtitle-bg: #ffd6a5; /* Fondo del subtítulo en modo claro */
-            --subtitle-text: #111; /* Texto del subtítulo en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --muted-text-color: #adb5bd; /* Texto muted en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-            --section-bg-light: #1e1e1e; /* Fondo de secciones claras en modo oscuro */
-            --btn-outline-border: #ffffff; /* Borde del botón outline en modo oscuro */
-            --caption-color: #adb5bd; /* Color de los pies de página en modo oscuro */
-            --subtitle-bg: #2a2a2a; /* Fondo del subtítulo en modo oscuro */
-            --subtitle-text: #ffffff; /* Texto del subtítulo en modo oscuro */
-        }
-
-        /* Reset de fondos y colores */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .navbar, .footer {
-            background-color: var(--bg-color) !important;
-        }
-        .custom-article {
-            background-color: var(--bg-color);
-            padding: 2rem;
-        }
-
-        /* Ajustes para el menú desplegable */
-        .navbar-collapse {
-            z-index: 1000;
-        }
-        .nav-link {
-            color: var(--nav-link-color) !important;
-        }
-        .navbar-toggler {
-            border-color: var(--text-color);
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        /* Estilos específicos del artículo */
-        @media (min-width: 768px) {
-            .custom-article {
-                max-width: 750px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .obra-lateral {
-                float: right;
-                margin-left: 1.5rem;
-                margin-bottom: 1rem;
-                max-width: 300px;
-            }
-        }
-        .gradient-title {
-            color: var(--text-color);
-            font-weight: 700;
-            display: inline-block;
-            border-bottom: 4px solid #ffa94d;
-            padding-bottom: 0.2em;
-        }
-        .obra {
-            border-radius: 10px;
-            margin: 1rem 0;
-            width: 100%;
-            height: auto;
-        }
-        .custom-subtitle {
-            display: inline-block;
-            background-color: var(--subtitle-bg);
-            color: var(--subtitle-text);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 0.3em 0.8em;
-            border-radius: 5px;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        .highlight-quote {
-    display: block;
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin: 1.5rem 0;
-    text-align: center;
-    position: relative;
-    background: linear-gradient(to right, #ffa94d, #4dabf7); /* naranja a azul claro */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-        .highlight-quote::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #ffa94d;
-            margin: 0.5rem auto 0;
-        }
-        .footer a {
-            color: var(--caption-color);
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: var(--nav-link-color);
-        }
-    </style>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg py-3">
         <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">Rick Grisales</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                    <li class="nav-item"><a class="nav-link" href="index.html" data-es="Home" data-en="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html" data-es="Resumen - CV" data-en="Resume - CV">Resumen - CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="diary/" data-es="Diario de un escritor perdido" data-en="Diary of a lost writer">Diario de un escritor perdido</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diary/">Diario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <a href="javascript:history.back()" class="btn btn-warning position-fixed top-0 start-0 m-3">&larr; Volver</a>
+    <!-- Article header -->
+    <section class="article-header">
+        <div class="container px-5">
+            <div class="article-header-inner">
+                <a class="article-back" href="projects.html">← Proyectos</a>
 
-    <section class="py-5">
-        <div class="container px-5 custom-article">
-            <h1 class="fw-bolder mb-4"><span class="gradient-title">La política del engaño</span></h1>
-            <span class="small d-inline-block subtag">Reportaje / Opinión</span>
-            <img src="assets/trump.jpg" alt="Imagen de Donald Trump" class="obra" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;" />
-            
-            <p class="lead fw-bold fst-italic">
-                Vivimos en un momento en el que estamos saturados de datos, y aun así la verdad ya no parece ser suficiente. La desinformación —alimentada por la inteligencia artificial, los algoritmos y el manejo emocional en redes sociales— ha convertido nuestro acceso a la información en una especie de batalla permanente. La tecnología ha abierto la puerta a una era en la que lo falso no solo compite de tú a tú con lo verdadero, sino que incluso lo supera en atractivo. Esta revolución tecnológica es tan impresionante como peligrosa. Y ante este panorama, surge la gran pregunta: ¿podrá la democracia resistir cuando la mentira se vuelva prácticamente indistinguible de la verdad?
-            </p>
+                <div class="article-kicker">Ensayo · Opinión</div>
+                <h1 class="article-title">La política del engaño</h1>
 
-            <p>La política, desde siempre, ha buscado mediante múltiples mecanismos y ramas llegar a la población. La política, que no es más que el arte de ponerse de acuerdo, está demostrando ser inútil en una sociedad masificada y tecnócrata. Lo vimos recientemente con la reelección del candidato republicano Donald Trump, en donde la mentira fue la piedra angular de su campaña, y probablemente uno de los mayores motivos de su logro. El candidato se atribuyó logros de otras administraciones (Obamacare), insultó a su contrincante (una vez más, como lo hizo con Hillary Clinton en su momento), mintió continuamente sobre los datos científicos arrojados sobre el cambio climático e incluso mencionó que inmigrantes ilegales haitianos se estaban comiendo las mascotas de la población autóctona de Ohio. El efecto consecuente que se esperaría a todos estos acontecimientos sería un rechazo hacia su personaje político y un decrecimiento de su popularidad; sin embargo, estos actos solo impulsaron más su triunfo. Estamos viviendo el fin de la democracia tal como la conocíamos: el rápido avance tecnológico, la globalización, el control de la información y el neoliberalismo tecnócrata más salvaje nos demuestran que la política —y la legislatura— está atrasada respecto al mundo.</p>
-            <p class="highlight-quote">Estamos viviendo el fin de la democracia tal como la conocíamos.</p>
-            
-            <p>La mentira siempre ha estado presente, de eso no queda ninguna duda. Sin embargo, en este crono topos la mentira tiene ventaja sobre nosotros: la polarización, poseída por pasionales arranques de moralidad; el sentimentalismo, cada vez más extremo, en la oratoria política; las redes sociales —que son básicamente altavoces del subconsciente— y ahora se suma uno más a la gran lista: la inteligencia artificial, que amplifica las posibilidades de manipulación al crear una realidad paralela, indistinguible de la realidad. El anonimato es otra cuestión crucial. El anarquismo digital revoluciona y estimula a todo aquel que esté dentro de él. La verdad se vuelve escurridiza y poco atractiva, le falta ese morbo y esa emocionalidad que tiene su vecina, que es mucho más eficaz para captar la atención en un espacio virtual saturado de estímulos.</p>
-            <p class="highlight-quote">La verdad se vuelve escurridiza y poco atractiva, le falta ese morbo y esa emocionalidad que tiene su vecina.</p>
-            
-            <p>La posibilidad de poder lanzar la piedra sin ser visto; de tirar del gatillo sin dejar huella; de escupir a la cara sin tener represalias: todo esto es lo que el anonimato alimenta, en un entorno donde las narrativas emocionales desplazan los datos objetivos. Es casi como si volviéramos a nuestra niñez, pero con el control del mundo en nuestras espaldas. Tiene sentido, el opus apela a lo más nuestro, al punto más profundo de nuestro subconsciente, a las emociones más profundas que no sabíamos que sentimos. Hoy en día, la gente se da baños de polarización: el deseo está sobre la razón, el dato ya no mata al relato. Sobre esto, Alberto Barreiro argumenta: “La verdadera batalla que se avecina no será entre conservadores y progresistas, sino entre quienes defienden la autonomía humana y quienes abrazan la visión aristócrata del elitismo tecnocrático”.</p>
-            
-            <p>La tecnología, lejos de la neutralidad, se ha convertido en un motor clave para la propagación masiva de desinformación. En un mundo hiperconectado, donde las herramientas digitales están al alcance de casi cualquier persona, las barreras para crear y difundir contenido falso prácticamente han desaparecido. Hoy, aplicaciones y programas accesibles a toda la polis permiten manipular imágenes, editar videos y generar contenidos falsificados con una facilidad que hace una década habría sido la trama de un episodio más de Black Mirror. Un ejemplo claro: los deepfakes, una técnica basada en IA generativa, estos han sido utilizados para fabricar videos como el de Volodímir Zelenski pidiendo a los ciudadanos ucranianos que se rindieran; o el cheapfake que desacreditó a Nancy Pelosi al alterar su discurso para hacerla parecer ebria. Estas tecnologías, impulsadas por redes neuronales como las Generative Adversarial Networks (GANs), hacen posible producir falsificaciones convincentes sin necesidad de equipos costosos ni conocimientos técnicos avanzados, solo se necesita radicalización y emocionalidad. Con la llegada de la IA generativa, finalmente tocamos fondo: la realidad se fragmenta, y ya no sabemos siquiera si lo que nuestros sentidos perciben es real. Ahora el problema no es la edición de imágenes, videos o sonidos reales; ahora, el problema es que no podremos saber qué es real o no.</p>
-            <p class="highlight-quote">La realidad se fragmenta, y ya no sabemos siquiera si lo que nuestros sentidos perciben es real.</p>
-            
-            <p>Las redes sociales, con sus algoritmos diseñados para maximizar la interacción y la esclavitud de sus usuarios, amplifican aún más este problema. Estas plataformas tienden a priorizar contenidos que generan respuestas emocionales intensas, como indignación, odio o sorpresa, lo que les da a las noticias falsas una ventaja sobre la información verificada. Un estudio publicado en Science en 2018 demostró que las noticias falsas viajan más rápido que la verdad precisamente por su capacidad de impactar emocionalmente. Ya sabíamos de esto desde el siglo pasado, la creación y el desarrollo de las relaciones públicas nos mostraron el potencial emocional animal que habita en nuestro subconsciente. Los algoritmos de recomendación refuerzan esta dinámica al crear filtros burbuja y cámaras de eco, encerrando a los usuarios en entornos donde solo se enfrentan a perspectivas que confirman sus creencias, polarizándonos cada vez más. Un bulo capaz de generar controversia puede ser amplificado miles de veces más que un hecho objetivo simplemente porque alimenta esta lógica morbosa.</p>
-            
-            <p>La democratización del acceso a tecnologías avanzadas de manipulación digital ha reducido costos y eliminado barreras de entrada, pero también ha generado un entorno donde la desinformación resulta casi imposible de contener. Ejemplos como el deepfake creado por Jordan Peele, donde utilizó la imagen de Barack Obama para alertar sobre los riesgos de estas herramientas, evidencian el poder de estas tecnologías y plantean una pregunta urgente: ¿cómo puede sobrevivir la democracia cuando la mentira se vuelve indistinguible de la verdad? ¿Cómo convertir a la verdad en algo atractivo cuando no despierta nuestra irracionalidad? La velocidad del avance de la inteligencia artificial generativa no hace más que agravar este desafío, dejando a las instituciones y a la sociedad civil rezagadas, retrasadas y humilladas, en su capacidad de respuesta.</p>
-            
-            <p>El relato tiene una ventaja innegable: se conecta con nuestra tendencia a creer, mientras que los datos suelen obligarnos a cuestionar lo que ya pensamos. Esto no sucede por casualidad: nuestro cerebro está configurado para responder mejor a los relatos cargados de emoción que a la información cruda. En sus estudios sobre el subconsciente, Sigmund Freud (sobre quien mantengo una postura crítica pese a su inclusión aquí) sostenía que las decisiones humanas están fuertemente determinadas por impulsos y temores inconscientes. Freud estaba desilusionado por la especie humana, él pensaba que nuestros instintos irracionales nos iban a llevar a nuestro fin.</p>
-            
-            <p>Edward Bernays, conocido como el padre de la propaganda moderna, y además, sobrino de Sigmund Freud, tomó esta idea y la aplicó de forma brillante para moldear la opinión pública a través de técnicas psicológicas enfocadas en deseos ocultos. Uno de los casos más representativos y recordados de la influencia de Edward Bernays fue la campaña de los años 20 para que las mujeres comenzaran a fumar. Al ligar los cigarrillos con conceptos como libertad y emancipación femenina, logró convertir lo que antes era visto como un hábito prohibido en un símbolo de progreso y fortaleza. El empresario, además, llevó y mantuvo populares a tres gobernantes de la casa blanca (Calvin Coolidge, Woodrow Wilson, Herbert Hoover y Franklin D. Roosevelt (indirectamente)), y su herencia se sigue viendo en las campañas de relaciones públicas de las contiendas electorales actuales. En definitiva, su trabajo consistió en transformar a la sociedad: de una ciudadanía que miraba por sus necesidades, a una que miraba por sus deseos irracionales. Es este el mundo que tenemos hoy. Ahora, si Bernays hubiera contado con la tecnología de nuestros días, los resultados habrían sido más rápidos y contundentes, además de sucios. Pensemos en algoritmos capaces de detectar las inseguridades más comunes en las personas de aquel entonces o en la difusión masiva de anuncios dirigidos a audiencias específicas en redes sociales. Con la IA generativa, sería posible crear propaganda manipuladora instantáneamente, ajustada a perfiles psicológicos diversos, de modo que el mensaje no solo ganara en impacto, sino que resultara prácticamente inevitable e inefable.</p>
-            
-            <p>Los estudios científicos respaldan este patrón de comportamiento. Investigaciones en neurociencia muestran que las historias estimulan zonas del cerebro asociadas al placer y la empatía —principalmente el sistema límbico—, mientras que las cifras activan partes más racionales, como el córtex prefrontal (Mar, R. A. (2011)). Esta diferencia explica por qué un relato cargado de emoción suele quedarnos más grabado que una serie de datos sueltos y fríos; esta diferencia explica por qué seguimos viendo shorts de belleza hegemónica, humor roto, entretenimiento, y no shorts informativos, dignos y serios. De acuerdo con investigaciones lideradas por el seudocientífico Paul Zak, las narraciones que mueven nuestras emociones producen oxitocina, la hormona vinculada a la conexión y la confianza, lo cual genera una mayor identificación con el contenido.</p>
-            
-            <p>La inteligencia artificial, al ser capaz de desarrollar historias muy personalizadas y emocionalmente potentes, amplifica aún más el efecto. Un algoritmo no solo recopila nuestras preferencias, sino que también puede generar contenido que ahonde en nuestros temores y deseos más profundos. El algoritmo no recopila información de nuestro yo consciente, sino de lo más profundo de nuestra mente. Así, el relato falso no solo compite con la verdad; la supera, porque apela a lo que somos en lo más básico: seres emocionales buscando sentido en un mundo complejo. In esta dinámica, la desinformación se convierte en una experiencia personalizada, hecha a milímetro de nuestras propias vulnerabilidades.</p>
+                <p class="article-lead">
+                    Vivimos en un momento en el que estamos saturados de datos, y aun así la verdad ya no parece ser suficiente. La desinformación —alimentada por la inteligencia artificial, los algoritmos y el manejo emocional en redes sociales— ha convertido nuestro acceso a la información en una especie de batalla permanente. ¿Podrá la democracia resistir cuando la mentira se vuelva prácticamente indistinguible de la verdad?
+                </p>
 
-            <h3 class="custom-subtitle">Reflexión Final</h3>
-            <p>La desinformación, alimentada por la tecnología, ha convertido a la verdad en un concepto fragmentado, casi irreconocible, en un mundo saturado de datos. In este entorno, los avances como la inteligencia artificial amplifican no solo las posibilidades de manipulación, sino también nuestras propias vulnerabilidades emocionales. La política, ese arte de llegar a acuerdos, se enfrenta ahora a un desafío monumental: comunicarse en un espacio donde el relato falso no solo compite con la verdad, sino que la supera in atractivo. Más allá de señalar culpables, lo que esta realidad pone in evidencia es una pregunta: ¿cómo puede la democracia adaptarse a un mundo donde la desinformación y las emociones dominan el discurso? Probablemente, no haya ninguna respuesta. Quizás el problema no radica únicamente in las herramientas tecnológicas, sino in nuestra disposición a utilizarlas sin una conciencia clara de sus consecuencias. Como bien señaló Pepe Mujica in una entrevista con DW in Español: La culpa no es de la máquina, sino de quienes la usamos.</p>
-            
-            <p>La conclusión, entonces, no es un cierre, sino un inicio. La IA y la tecnología no son inherentemente destructivas, pero su potencial para fragmentar la verdad nos obliga a reflexionar sobre qué tipo de relación queremos construir con ellas. Tal vez la solución no sea eliminar la desinformación por completo —una tarea probablemente utópica—, sino aprender a convivir con ella desarrollando herramientas críticas y éticas que nos permitan distinguir el ruido de lo esencial; lo real y orgánico de lo falso y anarquista.</p>
-            
-            <p>Sin una solución o una respuesta que se asome in el horizonte, quizá el amor pueda ser una guía. Al igual que las emociones que nos manipulan, también apela a lo profundo de nuestra humanidad. Sin embargo, a diferencia del miedo o la indignación, el amor tiene el potencial de construir in lugar de destruir, de unir in lugar de fragmentar. Si bien el romanticismo puede ser emocionalidad, no es irracionalidad; es una elección consciente que puede guiar nuestros valores hacia el entendimiento y la empatía colectiva. In esta dicotomía de emociones, el amor puede ser el antídoto: no porque sea sencillo o idealizado, sino porque fomenta la empatía, la reflexión y, sobre todo, el compromiso con la verdad y con los otros. Carl Jung decía: “Donde el amor reina, no hay voluntad de poder; y donde el poder predomina, el amor falta”. Al final, lo que está in juego no es solo la verdad, sino nuestra capacidad de imaginar una democracia que sea resiliente in su imperfección. Y quizá ahí resida la clave: in reconocer que, aunque no podamos controlar todo, todavía podemos decidir cómo enfrentarlo.</p>
-            <p class="highlight-quote">El amor puede ser el antídoto: no porque sea sencillo o idealizado, sino porque fomenta la empatía, la reflexión y, sobre todo, el compromiso con la verdad y con los otros.</p>
-
+                <img src="assets/trump.jpg" alt="Donald Trump — La política del engaño" class="article-cover" />
+            </div>
         </div>
     </section>
+
+    <!-- Article body -->
+    <div class="container px-5">
+        <div class="article-body">
+
+            <p>La política, desde siempre, ha buscado mediante múltiples mecanismos y ramas llegar a la población. Lo vimos recientemente con la reelección del candidato republicano Donald Trump, en donde la mentira fue la piedra angular de su campaña. El candidato se atribuyó logros de otras administraciones, insultó a su contrincante, mintió continuamente sobre los datos científicos arrojados sobre el cambio climático e incluso mencionó que inmigrantes ilegales haitianos se estaban comiendo las mascotas de la población autóctona de Ohio. El efecto consecuente que se esperaría sería un rechazo hacia su personaje político; sin embargo, estos actos solo impulsaron más su triunfo.</p>
+
+            <div class="article-pull-wide">
+                <p>Estamos viviendo el fin de la democracia tal como la conocíamos.</p>
+            </div>
+
+            <p>La mentira siempre ha estado presente, de eso no queda ninguna duda. Sin embargo, en este crono topos la mentira tiene ventaja sobre nosotros: la polarización, poseída por pasionales arranques de moralidad; el sentimentalismo, cada vez más extremo, en la oratoria política; las redes sociales —que son básicamente altavoces del subconsciente— y ahora se suma la inteligencia artificial, que amplifica las posibilidades de manipulación al crear una realidad paralela, indistinguible de la realidad.</p>
+
+            <div class="article-pull">
+                <p>La verdad se vuelve escurridiza y poco atractiva, le falta ese morbo y esa emocionalidad que tiene su vecina.</p>
+            </div>
+
+            <p>La posibilidad de poder lanzar la piedra sin ser visto; de tirar del gatillo sin dejar huella; de escupir a la cara sin tener represalias: todo esto es lo que el anonimato alimenta, en un entorno donde las narrativas emocionales desplazan los datos objetivos. Hoy en día, la gente se da baños de polarización: el deseo está sobre la razón, el dato ya no mata al relato. Sobre esto, Alberto Barreiro argumenta: "La verdadera batalla que se avecina no será entre conservadores y progresistas, sino entre quienes defienden la autonomía humana y quienes abrazan la visión aristócrata del elitismo tecnocrático".</p>
+
+            <div class="article-section"><span>La tecnología como vector</span></div>
+
+            <p>La tecnología, lejos de la neutralidad, se ha convertido en un motor clave para la propagación masiva de desinformación. En un mundo hiperconectado, las barreras para crear y difundir contenido falso prácticamente han desaparecido. Un ejemplo claro: los deepfakes, una técnica basada en IA generativa, han sido utilizados para fabricar videos como el de Volodímir Zelenski pidiendo a los ciudadanos ucranianos que se rindieran; o el cheapfake que desacreditó a Nancy Pelosi al alterar su discurso para hacerla parecer ebria. Estas tecnologías hacen posible producir falsificaciones convincentes sin necesidad de equipos costosos ni conocimientos técnicos avanzados, solo se necesita radicalización y emocionalidad.</p>
+
+            <div class="article-pull-wide">
+                <p>La realidad se fragmenta, y ya no sabemos siquiera si lo que nuestros sentidos perciben es real.</p>
+            </div>
+
+            <p>Las redes sociales, con sus algoritmos diseñados para maximizar la interacción, amplifican aún más este problema. Un estudio publicado en <em>Science</em> en 2018 demostró que las noticias falsas viajan más rápido que la verdad precisamente por su capacidad de impactar emocionalmente. Los algoritmos de recomendación refuerzan esta dinámica al crear filtros burbuja y cámaras de eco, encerrando a los usuarios en entornos donde solo se enfrentan a perspectivas que confirman sus creencias.</p>
+
+            <div class="article-section"><span>El relato contra el dato</span></div>
+
+            <p>El relato tiene una ventaja innegable: se conecta con nuestra tendencia a creer, mientras que los datos suelen obligarnos a cuestionar lo que ya pensamos. En sus estudios sobre el subconsciente, Freud sostenía que las decisiones humanas están fuertemente determinadas por impulsos y temores inconscientes.</p>
+
+            <p>Edward Bernays, conocido como el padre de la propaganda moderna, tomó esta idea y la aplicó de forma brillante para moldear la opinión pública. Uno de los casos más representativos fue la campaña de los años 20 para que las mujeres comenzaran a fumar. Al ligar los cigarrillos con conceptos como libertad y emancipación femenina, logró convertir lo que antes era visto como un hábito prohibido en un símbolo de progreso. En definitiva, su trabajo consistió en transformar a la sociedad: de una ciudadanía que miraba por sus necesidades, a una que miraba por sus deseos irracionales. Ese es el mundo que tenemos hoy.</p>
+
+            <p>Los estudios científicos respaldan este patrón. Investigaciones en neurociencia muestran que las historias estimulan zonas del cerebro asociadas al placer y la empatía —principalmente el sistema límbico—, mientras que las cifras activan partes más racionales, como el córtex prefrontal. Esta diferencia explica por qué un relato cargado de emoción suele quedarnos más grabado que una serie de datos sueltos y fríos.</p>
+
+            <div class="article-section"><span>Reflexión final</span></div>
+
+            <p>La desinformación, alimentada por la tecnología, ha convertido a la verdad en un concepto fragmentado, casi irreconocible, en un mundo saturado de datos. La política, ese arte de llegar a acuerdos, se enfrenta ahora a un desafío monumental: comunicarse en un espacio donde el relato falso no solo compite con la verdad, sino que la supera en atractivo. ¿Cómo puede la democracia adaptarse a un mundo donde la desinformación y las emociones dominan el discurso? Probablemente no haya ninguna respuesta.</p>
+
+            <p>La conclusión, entonces, no es un cierre, sino un inicio. La IA y la tecnología no son inherentemente destructivas, pero su potencial para fragmentar la verdad nos obliga a reflexionar sobre qué tipo de relación queremos construir con ellas. Tal vez la solución no sea eliminar la desinformación por completo —una tarea probablemente utópica—, sino aprender a convivir con ella desarrollando herramientas críticas y éticas que nos permitan distinguir el ruido de lo esencial.</p>
+
+            <div class="article-pull">
+                <p>El amor puede ser el antídoto: no porque sea sencillo o idealizado, sino porque fomenta la empatía, la reflexión y, sobre todo, el compromiso con la verdad y con los otros.</p>
+            </div>
+
+            <p>Carl Jung decía: "Donde el amor reina, no hay voluntad de poder; y donde el poder predomina, el amor falta". Al final, lo que está en juego no es solo la verdad, sino nuestra capacidad de imaginar una democracia que sea resiliente en su imperfección. Y quizá ahí resida la clave: en reconocer que, aunque no podamos controlar todo, todavía podemos decidir cómo enfrentarlo.</p>
+
+        </div>
+    </div>
+
 </main>
 
-<footer class="py-4 mt-auto">
+<!-- Footer -->
+<footer class="footer py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="col-auto"><div class="small m-0">Copyright © Rick 2025</div></div>
             <div class="col-auto">
-                <a class="small" href="#!" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="#!" data-es="Términos" data-en="Terms">Términos</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a>
+                <div class="small footer-copy">Copyright © Rick 2025</div>
+            </div>
+            <div class="col-auto">
+                <a class="small footer-link" href="#!">Privacidad</a>
+                <span class="mx-1 footer-sep">·</span>
+                <a class="small footer-link" href="#!">Términos</a>
+                <span class="mx-1 footer-sep">·</span>
+                <a class="small footer-link" href="contact.html">Contacto</a>
             </div>
         </div>
     </div>
@@ -219,12 +129,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/lang-toggle.js"></script>
-
+<script src="js/lang-toggle.js"></script>
 <button class="lang-toggle-btn" aria-label="Cambiar idioma">EN</button>
-<button class="theme-toggle-btn" aria-label="Cambiar tema">
-    <i class="bi bi-moon-fill"></i>
-</button>
 </body>
 </html>

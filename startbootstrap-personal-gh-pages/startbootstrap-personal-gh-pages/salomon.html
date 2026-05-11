@@ -1,260 +1,148 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="La abnegación más pura: maternidad. El juicio de Salomón por Luca Giordano. Por Rick Grisales." />
+    <meta name="author" content="Rick Grisales" />
     <title>La abnegación más pura - Rick Grisales</title>
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet" />
-    
-    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-    
-    <!-- Tu CSS base -->
     <link href="css/styles.css" rel="stylesheet" />
-
-    <!-- Variables y modo oscuro -->
-    <style>
-        /* VARIABLES DE COLOR */
-        :root {
-            --bg-color: #ffffff;  /* Fondo claro */
-            --text-color: #000000; /* Texto oscuro */
-            --caption-color: #555; /* Color de los pies de página en modo claro */
-            --nav-link-color: #000000; /* Color de los enlaces del menú en modo claro */
-        }
-        [data-theme="dark"] {
-            --bg-color: #121212;   /* Fondo oscuro */
-            --text-color: #ffffff; /* Texto claro */
-            --caption-color: #bbb; /* Color de los pies de página en modo oscuro */
-            --nav-link-color: #ffa94d; /* Color de los enlaces del menú en modo oscuro (naranja) */
-        }
-
-        /* RESET DE FONDOS FIJOS */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .navbar, .footer {
-            background-color: var(--bg-color);
-        }
-
-        /* Ajustes para el menú desplegable */
-        .navbar-collapse {
-            z-index: 1000; /* Aseguramos que el menú esté por encima del botón de tema */
-        }
-        .nav-link {
-            color: var(--nav-link-color) !important; /* Color naranja en modo oscuro */
-        }
-        .navbar-toggler {
-            border-color: var(--text-color); /* Borde del botón hamburguesa visible */
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 169, 77, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            /* Ícono hamburguesa en naranja */
-        }
-        
-        /* SECCIÓN PRINCIPAL DEL ARTÍCULO */
-        .custom-article {
-            background-color: var(--bg-color);
-            padding: 2rem;
-        }
-        @media (min-width: 768px) {
-            .custom-article {
-                max-width: 750px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        .gradient-title {
-            color: var(--text-color);
-            font-weight: 700;
-            display: inline-block;
-            border-bottom: 4px solid #ffa94d;
-            padding-bottom: 0.2em;
-        }
-        .obra {
-            border-radius: 10px;
-            margin: 1rem 0;
-            width: 100%;
-            height: auto;
-        }
-        .highlight-quote {
-            display: block;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin: 1.5rem 0;
-            text-align: center;
-            position: relative;
-            color: var(--text-color);
-            text-shadow: 0 0 5px rgba(255, 169, 77, 0.5);
-        }
-        .highlight-quote::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #ffa94d;
-            margin: 0.5rem auto 0;
-        }
-        .image-container {
-            display: flex;
-            margin: 1.5rem 0;
-        }
-        .image-container.left {
-            justify-content: flex-start;
-        }
-        .image-container.right {
-            justify-content: flex-end;
-        }
-        .image-container.center {
-            justify-content: center;
-        }
-        .image-container figure {
-            margin: 0;
-            max-width: 300px;
-            width: 100%;
-        }
-        .image-container img {
-            border-radius: 10px;
-            width: 100%;
-            height: auto;
-        }
-        .image-container figcaption {
-            font-size: 0.9rem;
-            color: var(--caption-color);
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-        @media (max-width: 767px) {
-            .image-container {
-                justify-content: center !important;
-            }
-            .image-container figure {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-    <!-- NAVBAR -->
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg py-3">
         <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Rick Grisales</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <a class="navbar-brand" href="index.html">Rick Grisales</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                    <li class="nav-item"><a class="nav-link" href="index.html" data-es="Home" data-en="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html" data-es="Resumen - CV" data-en="Resume - CV">Resumen - CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="diary/" data-es="Diario de un escritor perdido" data-en="Diary of a lost writer">Diario de un escritor perdido</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diary/">Diario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <a href="javascript:history.back()" class="btn btn-warning position-fixed top-0 start-0 m-3">&larr; Volver</a>
+    <!-- Article header -->
+    <section class="article-header">
+        <div class="container px-5">
+            <div class="article-header-inner">
+                <a class="article-back" href="projects.html">← Proyectos</a>
 
-    <!-- CONTENIDO DEL ARTÍCULO -->
-    <section class="py-5">
-        <div class="container px-5 custom-article">
-            <h1 class="fw-bolder mb-4"><span class="gradient-title">La abnegación más pura: maternidad</span></h1>
-            <h2 class="fw-bold mb-3">El juicio de Salomón por Luca Giordano</h2>
-            <img src="assets/portada-salo.jpg" alt="El juicio de Salomón por Luca Giordano. Arte barroco italiano. Imagen 1." class="obra" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;" />
-            <span class="small d-inline-block subtag">Reseña</span>
-            <p class="lead fw-bold fst-italic">
-                Es difícil recorrer los pasillos del Thyssen sin detenerse a ver esta dramática escena, que, marcada por una iluminación barroca, narra uno de los más citados episodios bíblicos. La pintura recoge el momento principal de El juicio de Salomón.
-            </p>
-            
-            <p>El juicio de Salomón cuenta la historia de dos mujeres que recurren al rey Salomón debido a que tienen una disputa: ambas argumentan ser madres de un niño con pocos días de nacido. Las dos exponen sus motivos y se culpabilizan mutuamente de haber robado a su bebé. Tras escuchar los puntos de vista, el rey indica a un guardia que traiga una espada y corte al niño a la mitad, de esta forma, ambas madres recibirán una parte del bebé. Cuando la primera mujer escucha esto, empieza a llorar y le suplica desconsoladamente que por favor le entregue el bebé a la otra mujer, a cambio de que no lo corte. En respuesta, el rey le indica al guardia que le devuelva el bebé a la primera mujer, la verdadera madre. Mientras que la otra fue castigada.</p>
-            
-            <div class="image-container left">
-                <figure>
-                    <img src="assets/salo-2.jpg" alt="La primera y verdadera madre del bebé. El punto suroccidental del triángulo. Imagen 2." />
-                    <figcaption>La primera y verdadera madre del bebé. El punto suroccidental del triángulo. Imagen 2.</figcaption>
-                </figure>
+                <div class="article-kicker">Reseña · Arte barroco</div>
+                <h1 class="article-title">La abnegación más pura:<br>maternidad</h1>
+                <span class="article-subtitle">El juicio de Salomón — Luca Giordano</span>
+
+                <p class="article-lead">
+                    Es difícil recorrer los pasillos del Thyssen sin detenerse a ver esta dramática escena, que, marcada por una iluminación barroca, narra uno de los más citados episodios bíblicos. La pintura recoge el momento principal de El juicio de Salomón.
+                </p>
+
+                <img src="assets/portada-salo.jpg" alt="El juicio de Salomón — Luca Giordano. Arte barroco italiano." class="article-cover" />
             </div>
-            <p>En la obra, podemos observar a la verdadera madre arrodillada (imagen 2) en el centro de la pintura. Podemos notar su sufrimiento. Pareciera que estuviese en movimiento. Sus ojos están llenos de lágrimas y su expresión grita misericordia: la abnegación más profunda, el amor maternal. Incluso en su vestimenta, con un desorden desesperado, podemos ver una señal más que muestra la maestría de Giordano en la pintura. Otro elemento precioso son sus manos: abiertas, pidiendo el fin del mundo a cambio de la vida de su primogénito.</p>
-            <p class="highlight-quote">La abnegación más profunda, el amor maternal.</p>
-            
-            <div class="image-container right">
-                <figure>
-                    <img src="assets/salo-3.jpg" alt="El bebé con vida. Punto centro-norte del triángulo. Imagen 3." />
-                    <figcaption>El bebé con vida. Punto centro-norte del triángulo. Imagen 3.</figcaption>
-                </figure>
+        </div>
+    </section>
+
+    <!-- Article body -->
+    <div class="container px-5">
+        <div class="article-body">
+
+            <p>El juicio de Salomón cuenta la historia de dos mujeres que recurren al rey Salomón debido a que tienen una disputa: ambas argumentan ser madres de un niño con pocos días de nacido. Tras escuchar los puntos de vista, el rey indica a un guardia que traiga una espada y corte al niño a la mitad, de esta forma, ambas madres recibirán una parte del bebé. Cuando la primera mujer escucha esto, empieza a llorar y le suplica desconsoladamente que por favor le entregue el bebé a la otra mujer, a cambio de que no lo corte. En respuesta, el rey le indica al guardia que le devuelva el bebé a la primera mujer, la verdadera madre.</p>
+
+            <div class="article-section"><span>La verdadera madre</span></div>
+
+            <figure class="article-img-left">
+                <img src="assets/salo-2.jpg" alt="La primera y verdadera madre del bebé. El punto suroccidental del triángulo." />
+                <figcaption>La verdadera madre — punto suroccidental del triángulo</figcaption>
+            </figure>
+
+            <p>En la obra, podemos observar a la verdadera madre arrodillada en el centro de la pintura. Podemos notar su sufrimiento. Pareciera que estuviese en movimiento. Sus ojos están llenos de lágrimas y su expresión grita misericordia. Incluso en su vestimenta, con un desorden desesperado, podemos ver una señal más que muestra la maestría de Giordano en la pintura. Otro elemento precioso son sus manos: abiertas, pidiendo el fin del mundo a cambio de la vida de su primogénito.</p>
+
+            <div class="article-pull">
+                <p>La abnegación más profunda, el amor maternal.</p>
             </div>
-            <p>La iluminación de la obra está uniformemente repartida, aunque se centra adicionalmente en un triángulo fácilmente observable. Uno de los extremos del triángulo lo conforma la verdadera madre. Otro de los puntos de la figura es el bebé (imagen 3), que, aunque inconsciente y poco participativo, es el centro de la historia, el meollo de la disputa, las lágrimas de la madre, la decisión del rey. De cabeza, con un pie coleando y el otro sostenido por un guardia que envaina nuevamente su espada, el bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
-            <p class="highlight-quote">El bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
-            
-            <div class="image-container left">
-                <figure>
-                    <img src="assets/salo-4.jpg" alt="El rey Salomón. Punto oriental del triángulo. Imagen 4." />
-                    <figcaption>El rey Salomón. Punto oriental del triángulo. Imagen 4.</figcaption>
-                </figure>
+
+            <div class="article-section"><span>El bebé</span></div>
+
+            <figure class="article-img-right">
+                <img src="assets/salo-3.jpg" alt="El bebé con vida. Punto centro-norte del triángulo." />
+                <figcaption>El bebé con vida — punto centro-norte del triángulo</figcaption>
+            </figure>
+
+            <p>La iluminación de la obra está uniformemente repartida, aunque se centra adicionalmente en un triángulo fácilmente observable. Uno de los extremos del triángulo lo conforma la verdadera madre. Otro de los puntos de la figura es el bebé, que, aunque inconsciente y poco participativo, es el centro de la historia, el meollo de la disputa, las lágrimas de la madre, la decisión del rey. De cabeza, con un pie coleando y el otro sostenido por un guardia que envaina nuevamente su espada, el bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
+
+            <div class="article-pull-wide">
+                <p>El bebé no puede hacer nada, más que confiar en la sabiduría del rey y en el lenguaje de su madre.</p>
             </div>
-            <p>El último elemento de este triángulo está representado por el rey Salomón (imagen 4), tan sereno, sabio, prudente y bohemio. Exalta la sabiduría y la justicia que caracteriza el poder político legítimo. Su cuerpo y sus brazos generan movimientos pacíficos y deliberados, muy bien pensados, grandes ejemplos comunicativos. Todos –y todo– lo que está alrededor del rey expresa confianza y esperanza en el monarca.</p>
-            <p class="highlight-quote">El rey Salomón, tan sereno, sabio, prudente y bohemio.</p>
-            
-            <div class="image-container center">
-                <figure>
-                    <img src="assets/salo-5.jpg" alt="El bebé muerto, hijo de la segunda mujer. Imagen 5." />
-                    <figcaption>El bebé muerto, hijo de la segunda mujer. Imagen 5.</figcaption>
-                </figure>
+
+            <div class="article-section"><span>El rey Salomón</span></div>
+
+            <figure class="article-img-left">
+                <img src="assets/salo-4.jpg" alt="El rey Salomón. Punto oriental del triángulo." />
+                <figcaption>El rey Salomón — punto oriental del triángulo</figcaption>
+            </figure>
+
+            <p>El último elemento de este triángulo está representado por el rey Salomón, tan sereno, sabio, prudente y bohemio. Exalta la sabiduría y la justicia que caracteriza el poder político legítimo. Su cuerpo y sus brazos generan movimientos pacíficos y deliberados, muy bien pensados, grandes ejemplos comunicativos. Todos —y todo— lo que está alrededor del rey expresa confianza y esperanza en el monarca.</p>
+
+            <div class="article-pull">
+                <p>El rey Salomón, tan sereno, sabio, prudente y bohemio.</p>
             </div>
-            <p>Fuera de este triángulo de personajes, el autor incorpora detalles significativos que dotan la obra de complejidad y personalidad. Uno de estos elementos puede ser el bebé que aparece muerto en la parte inferior de la pintura (imagen 5). El recién nacido era hijo de la segunda mujer. En aquella época sería su única esperanza de tener una vida autónoma. En la antigüedad la ley del levirato aún imperaba, esta norma condiciona a las mujeres viudas sin hijos a casarse con el hermano de su difunto esposo. Por una parte, la madre falsa recibiría un castigo por sus mentiras. Por otra, tendría que casarse con el hermano de su difunto marido, incluso si no lo deseaba. El bebé muerto en la obra no es un detalle más que adorna la pintura, es un elemento lleno de significado que explica profundamente parte de la causalidad de la situación, que en un contexto normal puede ser irracional.</p>
-            <p class="highlight-quote">El bebé muerto en la obra no es un detalle más que adorna la pintura, es un elemento lleno de significado.</p>
-            
+
+            <div class="article-section"><span>El detalle escondido</span></div>
+
+            <figure class="article-img">
+                <img src="assets/salo-5.jpg" alt="El bebé muerto, hijo de la segunda mujer." />
+                <figcaption>El bebé muerto, hijo de la segunda mujer</figcaption>
+            </figure>
+
+            <p>Fuera de este triángulo de personajes, el autor incorpora detalles significativos que dotan la obra de complejidad y personalidad. Uno de estos elementos puede ser el bebé que aparece muerto en la parte inferior de la pintura. El recién nacido era hijo de la segunda mujer. En aquella época sería su única esperanza de tener una vida autónoma. En la antigüedad la ley del levirato aún imperaba, esta norma condiciona a las mujeres viudas sin hijos a casarse con el hermano de su difunto esposo.</p>
+
+            <div class="article-pull">
+                <p>El bebé muerto en la obra no es un detalle más que adorna la pintura, es un elemento lleno de significado que explica profundamente parte de la causalidad de la situación.</p>
+            </div>
+
             <p>En definitiva, la pintura es una escena llena de fuerza, emocionalidad, belleza y significado. Es también un cuadro más en los pasillos del maravilloso Thyssen, pero absolutamente una experiencia histórica que se debe vivir. El juicio de Salomón ha fascinado a las personas durante siglos. Tiene conexiones profundas con la sabiduría, la justicia y la compasión, y su mensaje sigue siendo relevante hoy en día. Giordano representa vívidamente la historia y nos recuerda que, en manos de poder legítimo, la justicia siempre triunfa sobre la injusticia.</p>
 
         </div>
-    </section>
+    </div>
+
 </main>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="footer py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto">
-                <div class="small m-0">Copyright © Rick 2025</div>
+                <div class="small footer-copy">Copyright © Rick 2025</div>
             </div>
             <div class="col-auto">
-                <a class="small" href="#!" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="#!" data-es="Términos" data-en="Terms">Términos</a>
-                <span class="mx-1">·</span>
-                <a class="small" href="#!" data-es="Contacto" data-en="Contact">Contacto</a>
+                <a class="small footer-link" href="#!">Privacidad</a>
+                <span class="mx-1 footer-sep">·</span>
+                <a class="small footer-link" href="#!">Términos</a>
+                <span class="mx-1 footer-sep">·</span>
+                <a class="small footer-link" href="contact.html">Contacto</a>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap core JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/scripts.js"></script>
-
-
-
-
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/lang-toggle.js"></script>
-
+<script src="js/lang-toggle.js"></script>
 <button class="lang-toggle-btn" aria-label="Cambiar idioma">EN</button>
-<button class="theme-toggle-btn" aria-label="Cambiar tema">
-    <i class="bi bi-moon-fill"></i>
-</button>
 </body>
 </html>
