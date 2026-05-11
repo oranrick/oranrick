@@ -340,52 +340,85 @@ p, li, td, th, label, input, textarea, select, button, a {
   margin-bottom: 1.5rem;
 }
 
-/* IRA sample scores preview */
-.ira-scores-preview {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  padding: 1rem 0;
+/* IRA entity mini-cards grid */
+.ira-entity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  padding: 1rem 0 0.5rem;
   border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 0.5rem;
 }
 
-.preview-row {
+.ira-mini-entity {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 0.8rem 0.7rem 0.7rem;
+  backdrop-filter: blur(8px);
+}
+
+.ira-mini-top {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.55rem;
 }
 
-.preview-name {
+.ira-mini-flag {
+  font-size: 13px;
+  display: block;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.ira-mini-name {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+
+.ira-mini-badge {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--muted-text-color);
-  width: 4rem;
+  font-size: 0.52rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1px 5px;
+  border-radius: 20px;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.ira-ring-wrap {
+  position: relative;
   flex-shrink: 0;
 }
 
-.preview-bar {
-  flex: 1;
+.ira-ring-score {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.ira-param-strip {
+  display: flex;
+  gap: 2px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 2px;
-  overflow: hidden;
 }
 
-.preview-fill {
-  height: 100%;
-  background: var(--accent);
+.ira-param-strip div {
+  flex: 1;
   border-radius: 2px;
-}
-
-.preview-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--accent);
-  width: 2.5rem;
-  text-align: right;
-  flex-shrink: 0;
 }
 
 /* IRA tech tags */
