@@ -31,33 +31,43 @@ document.addEventListener("DOMContentLoaded", async () => {
     article.className = "diary-featured diary-card";
     article.setAttribute("data-title", entry.title || "");
     article.setAttribute("data-excerpt", ex);
+
+    const body = document.createElement("div");
+    body.className = "diary-featured-body";
+
+    const label = document.createElement("span");
+    label.className = "diary-featured-label";
+    label.textContent = "Última entrada";
+    body.appendChild(label);
+
     const h2 = document.createElement("h2");
     const link = document.createElement("a");
     link.href = `/diary/${entry.date.slice(0, 4)}/${entry.date.slice(5, 7)}/${entry.slug}/`;
     link.textContent = entry.title;
     h2.appendChild(link);
-    article.appendChild(h2);
+    body.appendChild(h2);
 
     const time = document.createElement("div");
     time.className = "diary-date";
-    time.textContent = new Date(entry.date).toLocaleDateString("en-US", {
+    time.textContent = new Date(entry.date).toLocaleDateString("es-ES", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
-    article.appendChild(time);
+    body.appendChild(time);
 
     const p = document.createElement("p");
     p.className = "diary-excerpt";
     p.textContent = ex;
-    article.appendChild(p);
+    body.appendChild(p);
 
     const cta = document.createElement("a");
     cta.className = "diary-cta";
     cta.href = link.href;
-    cta.textContent = "Leer más";
-    article.appendChild(cta);
+    cta.textContent = "Leer →";
+    body.appendChild(cta);
 
+    article.appendChild(body);
     featuredEl.appendChild(article);
   }
 

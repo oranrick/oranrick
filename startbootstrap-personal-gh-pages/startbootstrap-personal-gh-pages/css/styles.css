@@ -11,7 +11,7 @@
   --bg-card-hover: #1d1d2a;
   --text-color: #f0f0f0;
   --muted-text-color: #8a8a9a;
-  --nav-link-color: rgba(240, 240, 240, 0.5);
+  --nav-link-color: rgba(240, 240, 240, 0.88);
   --section-bg-light: #16161e;
   --caption-color: #8a8a9a;
   --border-color: rgba(255, 255, 255, 0.07);
@@ -912,18 +912,35 @@ p, li, td, th, label, input, textarea, select, button, a {
 /* --- Diary --- */
 .diary-page { background-color: var(--bg-color); color: var(--text-color); }
 .diary-header { margin: 24px 0 8px; font-weight: 700; }
-.diary-month { margin: 40px 0 16px; font-weight: 600; font-size: 1.125rem; color: var(--muted-text-color); }
-.diary-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-@media (min-width: 900px) { .diary-grid { grid-template-columns: 1fr 1fr; } }
+
+.diary-month {
+  margin: 3rem 0 1.25rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-text-color);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.diary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 600px) { .diary-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .diary-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .diary-card {
   background-color: var(--bg-card);
   color: var(--text-color);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 1.25rem 1.4rem 1.5rem;
+  padding: 1.5rem 1.6rem 1.6rem;
   display: flex;
   flex-direction: column;
+  min-height: 200px;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -934,7 +951,7 @@ p, li, td, th, label, input, textarea, select, button, a {
 }
 
 .diary-card h3 {
-  margin: 0 0 0.35rem;
+  margin: 0.45rem 0 0.5rem;
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.3;
@@ -976,11 +993,11 @@ p, li, td, th, label, input, textarea, select, button, a {
 
 .diary-date {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0;
 }
 
 .diary-excerpt {
@@ -990,17 +1007,56 @@ p, li, td, th, label, input, textarea, select, button, a {
   -webkit-box-orient: vertical;
   color: var(--muted-text-color);
   font-size: 0.83rem;
-  line-height: 1.55;
+  line-height: 1.6;
   flex: 1;
+  margin: 0.5rem 0 0;
 }
 
+/* Featured diary entry — horizontal card */
 .diary-featured {
-  margin: 32px 0;
-  padding: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 2rem 0;
   background-color: var(--bg-card);
   color: var(--text-color);
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.diary-featured:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 102, 0, 0.1);
+}
+.diary-featured-body {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.diary-featured-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+.diary-featured h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0.25rem 0 0;
+}
+.diary-featured .diary-date { margin-top: 0.1rem; }
+.diary-featured .diary-excerpt {
+  -webkit-line-clamp: 4;
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
 }
 
 .diary-page .navbar-dark {
@@ -1015,14 +1071,16 @@ p, li, td, th, label, input, textarea, select, button, a {
   align-items: center;
   gap: 0.35rem;
   margin-top: 1.1rem;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--accent);
   border-bottom: 1px solid rgba(255, 102, 0, 0.3);
   padding-bottom: 1px;
   transition: border-color 0.2s, gap 0.2s;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .diary-cta:hover {
@@ -1549,6 +1607,81 @@ figure.article-img-left img { width: 100%; border-radius: 10px; }
   .project-featured-img { flex: 0 0 auto; }
   .project-featured-img img { min-height: 220px; height: 220px; }
   .project-featured-body { padding: 1.75rem 1.5rem; }
+}
+
+/* IRA featured card — visual side (no photo, data viz) */
+.ira-feat-vis {
+  background: rgba(255, 102, 0, 0.04);
+  border-right: 1px solid rgba(255, 102, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 2.75rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+.ira-feat-bg-word {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9rem;
+  font-weight: 800;
+  color: rgba(255, 102, 0, 0.07);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.ira-feat-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.ira-feat-score {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.ira-feat-flag { font-size: 1.1rem; }
+.ira-feat-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-text-color);
+  flex: 1;
+}
+.ira-feat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.ira-feat-label-bottom {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 2.75rem;
+  z-index: 1;
+}
+.ira-feat-url {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted-text-color);
+  opacity: 0.55;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .ira-feat-vis { padding: 2rem 1.75rem; min-height: 200px; }
+  .ira-feat-bg-word { font-size: 6rem; }
+  .ira-feat-num { font-size: 1.7rem; }
 }
 
 /* CV page timeline */

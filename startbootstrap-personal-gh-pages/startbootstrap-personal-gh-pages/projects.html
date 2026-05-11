@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="assets/orange.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -48,19 +48,55 @@
         </div>
     </section>
 
-    <!-- Featured article -->
-    <section class="pb-3">
+    <!-- IRA Featured -->
+    <section class="pb-4">
         <div class="container px-5">
-            <a href="poder-mentira.html" class="project-featured-card" data-aos="fade-up">
-                <div class="project-featured-img">
-                    <img src="assets/trump.jpg" alt="La política del engaño" />
+            <a href="https://ira-index.vercel.app" target="_blank" rel="noopener noreferrer"
+               class="project-featured-card ira-featured-card" data-aos="fade-up">
+
+                <!-- Visual side -->
+                <div class="project-featured-img ira-feat-vis">
+                    <div class="ira-feat-bg-word">IRA</div>
+                    <div class="ira-feat-scores">
+                        <div class="ira-feat-score">
+                            <span class="ira-feat-flag">🇳🇿</span>
+                            <span class="ira-feat-name">Ardern</span>
+                            <span class="ira-feat-num" style="color:#6ec6a0">8.75</span>
+                        </div>
+                        <div class="ira-feat-score">
+                            <span class="ira-feat-flag">🇨🇴</span>
+                            <span class="ira-feat-name">Petro</span>
+                            <span class="ira-feat-num" style="color:#e8a838">5.60</span>
+                        </div>
+                        <div class="ira-feat-score">
+                            <span class="ira-feat-flag">🇺🇸</span>
+                            <span class="ira-feat-name">Trump</span>
+                            <span class="ira-feat-num" style="color:#e05252">2.48</span>
+                        </div>
+                    </div>
+                    <div class="ira-feat-label-bottom">
+                        <span class="ira-feat-url">ira-index.vercel.app ↗</span>
+                    </div>
                 </div>
+
+                <!-- Text side -->
                 <div class="project-featured-body">
-                    <span class="card-tag">Ensayo · Opinión</span>
-                    <h2>La política del engaño</h2>
-                    <p>Vivimos saturados de datos y, aun así, la verdad ya no parece ser suficiente. La desinformación alimentada por IA y redes sociales ha convertido la democracia en un campo de batalla emocional.</p>
-                    <span class="card-readmore" data-es="Leer ensayo →" data-en="Read essay →">Leer ensayo →</span>
+                    <span class="card-tag">Proyecto · IA · Análisis político</span>
+                    <h2 style="font-size:clamp(2.2rem,4vw,3.5rem);letter-spacing:-0.04em;">IRA Index</h2>
+                    <p style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--accent);letter-spacing:0.06em;margin:0;">
+                        Índice de Resonancia Afectiva
+                    </p>
+                    <p style="margin-top:0.75rem;">
+                        Análisis del lenguaje político con inteligencia artificial. Cada discurso se evalúa en una escala 0–10 de resonancia afectiva distribuida en 8 parámetros emocionales. ¿Cuánto mueve realmente lo que dicen los líderes?
+                    </p>
+                    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.25rem;">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Claude API</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <span class="card-readmore" style="margin-top:0.75rem;" data-es="Explorar proyecto →" data-en="Explore project →">Explorar proyecto →</span>
                 </div>
+
             </a>
         </div>
     </section>
@@ -68,9 +104,24 @@
     <!-- Articles grid -->
     <section class="projects-section pb-5">
         <div class="container px-5">
+            <div class="section-header mb-4" data-aos="fade-up">
+                <span class="label-tag" data-es="Escritura" data-en="Writing">Escritura</span>
+                <h2 class="section-title" data-es="Ensayos y críticas" data-en="Essays and criticism">Ensayos y críticas</h2>
+            </div>
             <div class="projects-grid">
 
-                <a href="arte-naturaleza.html" class="project-card-new" data-aos="fade-up" data-aos-delay="0">
+                <a href="poder-mentira.html" class="project-card-new" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card-img-wrap">
+                        <img src="assets/trump.jpg" alt="La política del engaño">
+                    </div>
+                    <div class="card-body-inner">
+                        <span class="card-tag">Ensayo · Opinión</span>
+                        <h3 data-es="La política del engaño" data-en="The politics of deception">La política del engaño</h3>
+                        <p data-es="¿Puede sobrevivir la democracia a la desinformación?" data-en="Can democracy survive disinformation?">¿Puede sobrevivir la democracia a la desinformación?</p>
+                    </div>
+                </a>
+
+                <a href="arte-naturaleza.html" class="project-card-new" data-aos="fade-up" data-aos-delay="60">
                     <div class="card-img-wrap">
                         <img src="assets/portadaarte.jpg" alt="Arte y naturaleza">
                     </div>
@@ -81,7 +132,7 @@
                     </div>
                 </a>
 
-                <a href="salomon.html" class="project-card-new" data-aos="fade-up" data-aos-delay="60">
+                <a href="salomon.html" class="project-card-new" data-aos="fade-up" data-aos-delay="120">
                     <div class="card-img-wrap">
                         <img src="assets/portada-salo.jpg" alt="La abnegación más pura">
                     </div>
@@ -92,7 +143,7 @@
                     </div>
                 </a>
 
-                <a href="kali-uchis.html" class="project-card-new" data-aos="fade-up" data-aos-delay="120">
+                <a href="kali-uchis.html" class="project-card-new" data-aos="fade-up" data-aos-delay="180">
                     <div class="card-img-wrap">
                         <img src="assets/sincerely.jpg" alt="Amor, duelo y libertad">
                     </div>
