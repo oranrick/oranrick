@@ -27,11 +27,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../resume.html">CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../projects.html">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../diary/">Diario</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html" data-es="Home" data-en="Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resume.html" data-es="CV" data-en="CV">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../diary/" data-es="Diario" data-en="Diary">Diario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -39,22 +39,28 @@
 
     <main class="container px-5 flex-shrink-0">
         <header class="diary-index-header">
-            <div class="article-kicker">Escritura personal</div>
-            <h1>Diario de un escritor perdido</h1>
-            <p>Pensamientos sueltos en busca de hogar.</p>
+            <div class="article-kicker" data-es="Escritura personal" data-en="Personal writing">Escritura personal</div>
+            <h1 data-es="Diario de un escritor perdido" data-en="Diary of a lost writer">Diario de un escritor perdido</h1>
+            <p data-es="Pensamientos sueltos en busca de hogar." data-en="Loose thoughts in search of a home.">Pensamientos sueltos en busca de hogar.</p>
             <div class="diary-search-wrap">
-                <input type="search" id="diary-search" class="form-control" placeholder="Buscar en el diario…" aria-label="Buscar en el diario" />
+                <input type="search" id="diary-search" class="form-control"
+                    placeholder="Buscar en el diario…"
+                    data-placeholder-es="Buscar en el diario…"
+                    data-placeholder-en="Search the diary…"
+                    aria-label="Buscar en el diario" />
             </div>
         </header>
 
         <section id="diary-featured"></section>
         <div id="diary-list"></div>
-        <p id="diary-empty" style="display:none; color:var(--muted-text-color); font-family:'DM Mono',monospace; font-size:0.82rem;">
+        <p id="diary-empty" style="display:none; color:var(--muted-text-color); font-family:'DM Mono',monospace; font-size:0.82rem;"
+            data-es="No se encontraron entradas para esa búsqueda."
+            data-en="No entries found for that search.">
             No se encontraron entradas para esa búsqueda.
         </p>
 
         <div class="text-start my-5">
-            <a class="article-back" href="../index.html">← Volver al inicio</a>
+            <a class="article-back" href="../index.html" data-es="← Volver al inicio" data-en="← Back to home">← Volver al inicio</a>
         </div>
     </main>
 
@@ -63,11 +69,11 @@
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto"><div class="small footer-copy">Copyright © Rick 2025</div></div>
                 <div class="col-auto">
-                    <a class="small footer-link" href="#!">Privacidad</a>
+                    <a class="small footer-link" href="#!" data-es="Privacidad" data-en="Privacy">Privacidad</a>
                     <span class="mx-1 footer-sep">·</span>
-                    <a class="small footer-link" href="#!">Términos</a>
+                    <a class="small footer-link" href="#!" data-es="Términos" data-en="Terms">Términos</a>
                     <span class="mx-1 footer-sep">·</span>
-                    <a class="small footer-link" href="../contact.html">Contacto</a>
+                    <a class="small footer-link" href="../contact.html" data-es="Contacto" data-en="Contact">Contacto</a>
                 </div>
             </div>
         </div>
