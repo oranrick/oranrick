@@ -1,8 +1,10 @@
 ---
 title: "Fotosíntesis"
+title_en: "Photosynthesis"
 date: "2025-10-31"
 slug: "fotosintesis"
 excerpt: "Me siento como una planta con tallo débil, aún sin florecer."
+excerpt_en: "I feel like a plant with a fragile stem, not yet in bloom."
 ---
 
 <p><strong>Fotosíntesis</strong></p>
@@ -36,15 +38,15 @@ Así al menos cuando muera podré mirar al cielo, a las constelaciones, de donde
   <p>I feel like a plant—<br />
   A plant with a fragile stem,<br />
   With barely any leaves,<br />
-  That hasn’t bloomed yet and still doesn’t fit its own pot.</p>
+  That hasn't bloomed yet and still doesn't fit its own pot.</p>
 
-  <p>They say that when you’re young you must grow roots,<br />
+  <p>They say that when you're young you must grow roots,<br />
   But I feel dehydrated in the corner of a room with no light.</p>
 
   <p>I fight to survive like the cactus I think I am, trying to capture any particle of water in the air—<br />
   Air so dense and treacherous, so uncertain, left to chance.</p>
 
-  <p>I’m really an orchid trying to become a cactus,<br />
+  <p>I'm really an orchid trying to become a cactus,<br />
   A tropical flower struggling to endure the Sahara.<br />
   I wish I could be in that vast desert—<br />
   At least then, when I die, I could look up at the sky, at the constellations, where I come from.</p>
