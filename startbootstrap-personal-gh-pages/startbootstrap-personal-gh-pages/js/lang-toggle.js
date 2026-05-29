@@ -17,11 +17,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function applyLanguage(lang) {
   document.querySelectorAll("[data-es]").forEach(function (el) {
-    if (el.children.length > 0) return; // skip elements that contain child elements
-    const text = lang === "en"
-      ? (el.getAttribute("data-en") || el.getAttribute("data-es"))
-      : el.getAttribute("data-es");
-    if (text != null) el.textContent = text;
+    const esVal = el.getAttribute("data-es");
+    const enVal = el.getAttribute("data-en");
+    if (esVal == null) return;
+
+    if (el.children.length === 0) {
+      // Plain text element
+      el.textContent = lang === "en" ? (enVal || esVal) : esVal;
+    } else {
+      // Element with children: use innerHTML swap
+      const target = lang === "en" ? (enVal || esVal) : esVal;
+      // Only swap if it looks like plain text (no HTML tags in data attrs)
+      if (target && !target.includes("<")) {
+        // Replace only the direct text nodes, preserve child elements
+        el.childNodes.forEach(function (node) {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
+            node.textContent = target;
+          }
+        });
+      }
+    }
   });
   document.documentElement.setAttribute("lang", lang);
   document.dispatchEvent(new CustomEvent("langchange", { detail: { lang: lang } }));
