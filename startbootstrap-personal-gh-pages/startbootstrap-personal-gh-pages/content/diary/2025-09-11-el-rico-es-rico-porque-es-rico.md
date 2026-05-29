@@ -1,13 +1,15 @@
 ---
 title: "El rico es rico porque es rico"
+title_en: "The rich are rich because they're rich"
 date: "2025-09-11"
 excerpt: "El capital genera más capital. El que ya tiene, siempre gana más. El resto apenas sobrevive."
+excerpt_en: "Capital generates more capital. Those who already have always gain more. The rest barely survive."
 slug: "el-rico-es-rico-porque-es-rico"
 ---
 
 # El rico es rico porque es rico
 
-> *“El capital genera más capital. El que ya tiene, siempre gana más. El resto apenas sobrevive.”*
+> *"El capital genera más capital. El que ya tiene, siempre gana más. El resto apenas sobrevive."*
 
 ---
 
@@ -43,7 +45,7 @@ Lo obvio es lo más brutal.
 Sí, todos sabemos que **el rico es rico porque es rico**, pero no todos lo sentimos en carne propia.
 
 Cuando le conté mi descubrimiento a un amigo, me dijo:
-> *“Ah, apenas descubres cómo funciona el mundo.”*
+> *"Ah, apenas descubres cómo funciona el mundo."*
 
 Y quizá tenía razón. Muchos pensarán que soy ingenuo, joven, inocente.
 Pero hay una diferencia enorme entre **saber algo** y **sentirlo hasta que duela**.
@@ -58,10 +60,10 @@ Aquí la gente suplica a sus jefes que les den más horas, mientras los cuerpos 
 
 En España, en mis últimos trabajos, eran los jefes quienes casi nos rogaban hacer horas extras.
 Aquí, en cambio, una señora me dice:
-> *“Ay, Ricardo, quédese ahí, déjeme trabajar, que si no me van a quitar mis horas.”*
+> *"Ay, Ricardo, quédese ahí, déjeme trabajar, que si no me van a quitar mis horas."*
 
 Cuando acaba su turno, sigue trabajando. Yo la regaño:
-> *“Deja eso, ya vete a casa, no te están pagando; a mí sí, descansa.”*
+> *"Deja eso, ya vete a casa, no te están pagando; a mí sí, descansa."*
 
 Y aun así se queda.
 
@@ -106,4 +108,3 @@ Porque al final son la misma cosa, aunque nos empeñemos en dividirlas.
 
 Poco más que decir de este texto raro, a medio camino entre desahogo y crónica.
 Un número tan simple como un 5% me recordó que la vida no es solo matemática: es también sudor, cansancio, y la certeza amarga de que el rico es rico porque es rico.
-
