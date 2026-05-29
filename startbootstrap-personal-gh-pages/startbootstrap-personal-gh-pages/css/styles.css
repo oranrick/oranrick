@@ -2025,3 +2025,71 @@ figure.article-img-wide figcaption {
   .article-stat-card { flex-direction: column; gap: 0.75rem; }
   .article-stat-number { font-size: 2.5rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CV — improved mobile layout
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* Hero name */
+  .cv-hero-name {
+    font-size: clamp(3rem, 14vw, 5rem) !important;
+    line-height: 0.88 !important;
+  }
+
+  /* Each entry: stack meta above body, tighten padding */
+  .cv-entry {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem 1.1rem;
+  }
+  .cv-entry-meta {
+    min-width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
+  }
+  .cv-entry-year  { margin-bottom: 0; }
+  .cv-entry-place { font-size: 0.85rem; }
+  .cv-entry-location { font-size: 0.63rem; }
+
+  /* Role label */
+  .cv-entry-role { font-size: 0.82rem; margin-bottom: 0.4rem; }
+  .cv-entry-body p { font-size: 0.88rem; line-height: 1.7; }
+
+  /* IRA featured card on CV */
+  .cv-ira-card-inner {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Sidebar goes below main col on mobile — add breathing room */
+  .col-lg-4 { margin-top: 2.5rem; }
+
+  /* Skill tags: slightly bigger tap targets */
+  .cv-skill-tag {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.85rem;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+  }
+
+  /* Section label */
+  .cv-section-label { margin-bottom: 1.1rem; }
+
+  /* Written works list: stack nicely */
+  .project-card-new[style*="flex-direction:row"] {
+    flex-direction: column !important;
+  }
+
+  /* Contact sidebar box */
+  .cv-contact-box { padding: 1.1rem 1.2rem !important; }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  .cv-entry { padding: 1rem 0.85rem; }
+  .cv-entry-meta { gap: 0.3rem 0.5rem; }
+}
