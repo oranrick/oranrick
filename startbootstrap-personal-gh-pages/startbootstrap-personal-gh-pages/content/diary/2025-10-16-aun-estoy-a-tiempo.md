@@ -1,8 +1,10 @@
 ---
 title: "Aún estoy a tiempo"
+title_en: "I'm still in time"
 date: "2025-10-16"
 slug: "aun-estoy-a-tiempo"
 excerpt: "¿Para qué es la juventud? ¿Para gastarla bailando, besando, follando o construyendo un porvenir que aún no aparece?"
+excerpt_en: "What is youth for? To spend it dancing, kissing, making love — or building a future that has yet to appear?"
 ---
 
 Aún estoy a tiempo  
@@ -14,7 +16,7 @@ Gastarla construyendo un mejor porvenir
 
 ¿Y dónde está el porvenir?    
 ¿En qué piso tengo que parar?    
-También dicen que “hay que vivir el presente”    
+También dicen que "hay que vivir el presente"    
 ¡A la vez que tengo que ver por mi futuro!    
 Un futuro con dolencias de bailar, besar, follar    
 O un futuro con dolencias de cargar, trabajar, construir  
@@ -38,7 +40,7 @@ Y es que no sé si es que estoy en la edad antifa o es que con el tiempo se acep
 
 Mi corazón me dice que la respuesta, que está dentro de mí mismo, está con los otros    
 Y es tan extraño…    
-Empiezo a escribir pensando en “la crisis de los 23” —un titular cómico, por cierto—    
+Empiezo a escribir pensando en "la crisis de los 23" —un titular cómico, por cierto—    
 O sobre el rico es rico porque es rico    
 O de cualquier cosa  
 
