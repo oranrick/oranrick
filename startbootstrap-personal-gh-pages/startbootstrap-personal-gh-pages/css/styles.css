@@ -1693,7 +1693,27 @@ figure.article-img-left img { width: 100%; border-radius: 10px; }
   .project-featured-card { flex-direction: column; }
   .project-featured-img { flex: 0 0 auto; }
   .project-featured-img img { min-height: 220px; height: 220px; }
-  .project-featured-body { padding: 1.75rem 1.5rem; }
+  .project-featured-body {
+    padding: 1.5rem 1.25rem;
+    gap: 0.6rem;
+  }
+  .project-featured-body h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+  .project-featured-body p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  /* IRA visual side stacks on top, compact */
+  .ira-feat-vis {
+    min-height: 160px;
+    padding: 1.5rem 1.25rem 2.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,102,0,0.14);
+  }
+  .ira-feat-scores { gap: 0.85rem; }
+  .ira-feat-num { font-size: 1.5rem; }
+  .ira-feat-bg-word { font-size: 5rem; }
 }
 
 /* IRA featured card — visual side (no photo, data viz) */
