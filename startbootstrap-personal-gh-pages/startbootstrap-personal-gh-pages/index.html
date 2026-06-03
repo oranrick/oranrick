@@ -74,8 +74,12 @@
                         </div>
                     </div>
 
-                    <!-- Right: IRA featured card -->
+                    <!-- Right: hero project slider -->
                     <div class="col-lg-7 mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+                      <div class="hero-slider">
+
+                        <!-- Slide 1: IRA Index -->
+                        <div class="hero-slide active">
                         <a href="https://ira-index.vercel.app" target="_blank" rel="noopener noreferrer" class="ira-hero-card">
                             <div class="d-flex align-items-start justify-content-between mb-3">
                                 <span class="card-tag" data-es="Proyecto destacado" data-en="Featured project">Proyecto destacado</span>
@@ -188,6 +192,71 @@
                                 </span>
                             </div>
                         </a>
+                        </div><!-- /slide 1 -->
+
+                        <!-- Slide 2: foro -->
+                        <div class="hero-slide">
+                        <a href="https://foro-red.vercel.app" target="_blank" rel="noopener noreferrer" class="ira-hero-card foro-hero-card">
+                            <div class="d-flex align-items-start justify-content-between mb-3">
+                                <span class="card-tag" data-es="Proyecto destacado" data-en="Featured project">Proyecto destacado</span>
+                                <span class="ira-external-hint">foro-red.vercel.app ↗</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3 mb-1">
+                                <svg width="34" height="18" viewBox="0 0 68 36" fill="none" aria-hidden="true">
+                                    <circle cx="19" cy="18" r="15" stroke="rgba(240,240,240,0.75)" stroke-width="2.5"/>
+                                    <circle cx="39" cy="18" r="15" stroke="rgba(240,240,240,0.75)" stroke-width="2.5"/>
+                                </svg>
+                                <h2 class="ira-card-title" style="margin:0">foro</h2>
+                            </div>
+                            <p class="ira-card-subtitle" style="color:rgba(184,105,73,0.9)">Un lugar para hablar</p>
+
+                            <p class="ira-card-desc" data-es="Un medio que mide el lenguaje político. Verificación, análisis de discurso e Índice de Resonancia Afectiva." data-en="A publication that measures political language. Fact-checking, discourse analysis and IRA score.">Un medio que mide el lenguaje político. Verificación, análisis de discurso e Índice de Resonancia Afectiva.</p>
+
+                            <div class="foro-hero-articles">
+                                <div class="foro-hero-article">
+                                    <div class="foro-hero-meta">
+                                        <span class="foro-hero-seccion">Política</span>
+                                        <span class="foro-hero-ira" style="color:#e8a838">· IRA 5.4</span>
+                                    </div>
+                                    <span class="foro-hero-titulo">Sánchez declara el «no a la guerra» ante la crisis en Oriente Medio</span>
+                                </div>
+                                <div class="foro-hero-article">
+                                    <div class="foro-hero-meta">
+                                        <span class="foro-hero-seccion">Política</span>
+                                        <span class="foro-hero-ira" style="color:#e05252">· IRA 2.8</span>
+                                    </div>
+                                    <span class="foro-hero-titulo">Feijóo presenta la moción de censura con máxima intensidad retórica</span>
+                                </div>
+                                <div class="foro-hero-article">
+                                    <div class="foro-hero-meta">
+                                        <span class="foro-hero-seccion">Ciencia</span>
+                                    </div>
+                                    <span class="foro-hero-titulo">El Mediterráneo se calienta tres veces más rápido que la media global</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <div class="ira-tech-stack">
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Sanity CMS</span>
+                                    <span class="tech-tag">Claude API</span>
+                                </div>
+                                <span class="ira-card-cta">
+                                    <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span>
+                                    <span class="cta-arrow">→</span>
+                                </span>
+                            </div>
+                        </a>
+                        </div><!-- /slide 2 -->
+
+                      </div><!-- /hero-slider -->
+
+                      <!-- Dots navigation -->
+                      <div class="hero-dots" role="group" aria-label="Proyectos destacados">
+                          <button class="hero-dot active" aria-label="IRA Index"></button>
+                          <button class="hero-dot" aria-label="foro"></button>
+                      </div>
                     </div>
 
                 </div>
@@ -204,16 +273,7 @@
 
                 <div class="projects-grid">
 
-                    <a href="https://foro-red.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card-new project-card-text" data-aos="fade-up" data-aos-delay="0">
-                        <div class="card-body-inner">
-                            <span class="card-tag" data-es="Proyecto · Periodismo · IA" data-en="Project · Journalism · AI">Proyecto · Periodismo · IA</span>
-                            <h3 data-es="foro" data-en="foro">foro</h3>
-                            <p data-es="Un medio que mide el lenguaje político. Verificación, análisis de discurso e Índice de Resonancia Afectiva." data-en="A publication that measures political language. Fact-checking, discourse analysis and Affective Resonance Index.">Un medio que mide el lenguaje político. Verificación, análisis de discurso e Índice de Resonancia Afectiva.</p>
-                            <span class="card-arrow">→</span>
-                        </div>
-                    </a>
-
-                    <a href="arte-naturaleza.html" class="project-card-new" data-aos="fade-up" data-aos-delay="60">
+                    <a href="arte-naturaleza.html" class="project-card-new" data-aos="fade-up" data-aos-delay="0">
                         <div class="card-img-wrap">
                             <img src="assets/portadaarte.jpg" alt="Arte y naturaleza">
                         </div>
@@ -330,6 +390,36 @@
     <script src="js/diary-teaser.js"></script>
     <script src="js/word-cycle.js"></script>
     <script src="js/lang-toggle.js"></script>
+    <script>
+    (function () {
+      var slides = document.querySelectorAll('.hero-slide');
+      var dots   = document.querySelectorAll('.hero-dot');
+      var current = 0;
+      var timer;
+
+      function goTo(i) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = i;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function next() { goTo((current + 1) % slides.length); }
+
+      function start() { timer = setInterval(next, 5000); }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          clearInterval(timer);
+          goTo(i);
+          start();
+        });
+      });
+
+      start();
+    })();
+    </script>
 
     <button class="lang-toggle-btn" aria-label="Cambiar idioma">EN</button>
 </body>
