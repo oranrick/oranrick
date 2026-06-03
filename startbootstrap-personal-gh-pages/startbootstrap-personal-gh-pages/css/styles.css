@@ -2435,3 +2435,52 @@ figure.article-img-wide figcaption {
   .foro-feat-bg-word { font-size: 6rem; }
   .foro-feat-label-bottom { left: 1.25rem; }
 }
+
+/* ---- Project nav buttons (IRA Index + foro) ---- */
+.proj-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.proj-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.72rem;
+  border-radius: 5px;
+  font-size: 0.68rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.proj-btn-ira {
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+  background: rgba(255, 102, 0, 0.07);
+  border: 1px solid rgba(255, 102, 0, 0.38);
+  color: var(--accent);
+}
+.proj-btn-ira:hover {
+  background: rgba(255, 102, 0, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.proj-btn-foro {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 0.88rem;
+  background: #f1ebe0;
+  border: 1px solid #d8d0c4;
+  color: #b86949;
+}
+.proj-btn-foro:hover {
+  background: #e8e0d0;
+  color: #9a5a30;
+}
+
+@media (max-width: 991px) {
+  .proj-btns { margin-left: 0; margin-top: 0.75rem; }
+}
