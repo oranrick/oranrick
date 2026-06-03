@@ -2115,6 +2115,119 @@ figure.article-img-wide figcaption {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Hero slider — IRA ↔ Foro rotation
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-slider {
+  display: grid;
+}
+
+.hero-slide {
+  grid-row: 1;
+  grid-column: 1;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.hero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* Foro hero card */
+.foro-hero-card {
+  border-color: rgba(184, 105, 73, 0.22);
+  border-left-color: rgba(184, 105, 73, 0.85);
+  background: rgba(184, 105, 73, 0.04);
+}
+
+.foro-hero-card:hover {
+  border-color: rgba(184, 105, 73, 0.42);
+  box-shadow: 0 20px 56px rgba(184, 105, 73, 0.12);
+  background: rgba(184, 105, 73, 0.07);
+  color: var(--text-color);
+}
+
+.foro-hero-card .ira-card-cta {
+  color: rgba(184, 105, 73, 0.9);
+  border-bottom-color: rgba(184, 105, 73, 0.3);
+}
+
+.foro-hero-card:hover .ira-card-cta {
+  border-bottom-color: rgba(184, 105, 73, 0.8);
+}
+
+.foro-hero-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.foro-hero-article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  align-items: baseline;
+}
+
+.foro-hero-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  grid-column: 1 / -1;
+  margin-bottom: 2px;
+}
+
+.foro-hero-seccion {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(184, 105, 73, 0.7);
+}
+
+.foro-hero-ira {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.foro-hero-titulo {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-color);
+  line-height: 1.35;
+  grid-column: 1 / -1;
+}
+
+/* ═══════════════════════════════════════════════════════════
    Projects page — Foro featured card visual side
    ═══════════════════════════════════════════════════════════ */
 
