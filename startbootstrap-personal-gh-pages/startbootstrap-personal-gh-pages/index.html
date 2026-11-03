@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%276%27 fill=%27%23EC4A17%27/%3E%3Ctext x=%2732%27 y=%2750%27 text-anchor=%27middle%27 font-family=%27Arial Narrow,Arial%27 font-weight=%27900%27 font-size=%2746%27 fill=%27%2317140F%27%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%277%27 fill=%27%23EC4A17%27/%3E%3Ctext x=%2732%27 y=%2745%27 text-anchor=%27middle%27 font-family=%27Arial Narrow,Arial,sans-serif%27 font-weight=%27900%27 font-size=%2734%27 letter-spacing=%27-2%27 fill=%27%2317140F%27%3ERG%3C/text%3E%3C/svg%3E">
 <title>Ricardo Grisales Ramírez</title>
 <meta name="description" content="Periodista e investigador. Analizo el lenguaje político: qué promete, qué oculta y a quién deja fuera. Ensayos, críticas e IRA, el Índice de Resonancia Afectiva.">
 <meta property="og:title" content="Ricardo Grisales Ramírez">
@@ -545,6 +545,9 @@ html[data-theme=night] .ira-note{background:#1F1D19;color:#ECE5D7}
 /* ===== ventana de IRA (estilos de IRA, acotados) ===== */
 .ira-embed{--ira-fondo:#041414;--ira-superficie:#0A1E1E;--ira-elevada:#112A2A;--ira-linea:#1B3636;--ira-linea-fuerte:#2A4747;--ira-nieve:#FCFDFF;--ira-tinta:#EDEFEA;--ira-texto-2:#A9B8B8;--ira-texto-3:#7C8F8F;--ira-texto-cita:#D5DEDE;--ira-oro:#DCB149;--ira-oro-hover:#F4CF7A;--ira-salvia:#8DAA7E;--ira-radio-m:4px;--ira-font-cifra:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;--ira-font-texto:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;--ira-font-titulo:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;--ira-font-voz:'Literata',Georgia,serif;
  background:var(--ira-fondo);color:var(--ira-nieve);font-family:var(--ira-font-texto);border-radius:8px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:18px}
+.ira-embed{cursor:pointer;transition:box-shadow .3s,transform .3s}
+.ira-embed:hover{box-shadow:0 0 0 1px #2A4747,0 18px 40px #0003;transform:translateY(-2px)}
+.ira-embed .ira-panel-ej__controles{cursor:default}
 .ira-embed__marca{display:flex;align-items:flex-end;gap:12px;color:var(--ira-texto-2);font:500 13px/1.2 var(--ira-font-texto)}
 .ira-embed__marca img{height:35px;width:auto;display:block}
 .ira-embed__marca span{padding-bottom:3px}
@@ -1089,6 +1092,7 @@ function iraPintar(i,animar=true){
 }
 function iraReloj(){clearInterval(iraTimer);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;iraTimer=setInterval(()=>{const P=document.getElementById('iraPanel');if(!P){clearInterval(iraTimer);return}if(!P.matches(':hover')&&!P.contains(document.activeElement))iraPintar(iraI+1)},7000)}
 function iraMontar(){const P=document.getElementById('iraPanel');if(!P)return;iraPintar(iraI,false);
+ const box=document.getElementById('iraEmbed');if(box&&!box._w){box._w=1;box.addEventListener('click',e=>{if(e.target.closest('button,a'))return;window.open(IRA_URL,'_blank','noopener')})}
  const io=new IntersectionObserver(([en])=>{if(en.isIntersecting){iraPintar(iraI,true);io.disconnect()}},{threshold:.3});io.observe(P);iraReloj()}
 addEventListener('resize',()=>{const P=document.getElementById('iraPanel');if(P)iraPintar(iraI,false)});
 
