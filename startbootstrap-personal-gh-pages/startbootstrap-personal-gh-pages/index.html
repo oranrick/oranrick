@@ -960,7 +960,7 @@ function about(){
   </div>
  </section>
  <section class="cuest">
-  <div class="section-bar reveal"><h2>${es?'Cuestionario':'Questionnaire'}</h2><span>${es?'Preguntas de la redacción, respuestas mías':'The newsroom asks, I answer'}</span></div>
+  <div class="section-bar reveal"><h2>${es?'Cuestionario':'Questionnaire'}</h2><span>${es?'Ocho preguntas para conocerme':'Eight questions to get to know me'}</span></div>
   ${QA.map(([q,a],i)=>`<div class="pq reveal"><span class="pq-n">${String(i+1).padStart(2,'0')}</span><div><p class="pq-q">${q.replace(/\?$/,'<em>?</em>')}</p><p class="pq-a">${a}</p></div></div>`).join('')}
   </section>${footer()}`;
 }
