@@ -215,6 +215,54 @@ figcaption{font:400 12px/1.5 var(--mono);color:var(--muted);margin-top:8px}
 .fin:after{content:"";display:inline-block;width:12px;height:12px;background:var(--ink)}
 .next{max-width:980px;margin:56px auto 30px;border-top:3px double var(--ink);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;gap:20px}
 .next b{font:900 clamp(36px,4vw,60px)/.9 var(--head)}
+/* fotorreportaje */
+.fotorr .ph-fig{margin:64px -200px;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:30px;align-items:end}
+.fotorr .ph-fig:nth-of-type(even){grid-template-columns:240px minmax(0,1fr)}
+.fotorr .ph-fig:nth-of-type(even) .ph-imgs{order:2}
+.fotorr .ph-fig.reveal{filter:none;transform:translateY(24px)}.fotorr .ph-fig.reveal.in{transform:none}
+.ph-imgs{display:block;min-width:0}
+.ph-fig.dos .ph-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+.ph-im{display:block;width:100%;border:0;padding:0;margin:0;background:var(--paper-2);cursor:zoom-in;overflow:hidden}
+.fotorr .ph-im img{display:block;width:100%;height:auto;max-height:80vh;object-fit:cover;transition:filter 2.4s cubic-bezier(.3,.1,.2,1) .15s,transform .8s var(--ease)}
+.ph-fig.dos .ph-im img{height:68vh;max-height:none}
+.ph-fig.reveal .ph-im img{filter:grayscale(1) sepia(.35) brightness(1.75) contrast(.5)}
+.ph-fig.reveal.in .ph-im img{filter:none}
+.ph-im:hover img{transform:scale(1.015)}
+.ph-cap{margin:0;border-top:3px solid var(--ink);padding-top:10px;display:flex;flex-direction:column;gap:0;font:inherit;color:var(--ink)}
+.ph-n{font:900 64px/.9 var(--head);color:var(--mark);letter-spacing:-.01em}
+.ph-t{font:600 12px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;margin:8px 0 12px}
+.ph-q{font:800 27px/1.02 var(--head);margin:0 0 12px;letter-spacing:-.005em}
+.ph-x{font:italic 400 15.5px/1.58 var(--text);color:var(--ink)}
+.ph-cr{font:400 11px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+.contactos{margin:72px -200px 0;background:#17140F;color:#ECE5D7;padding:16px 20px 14px}
+html[data-theme=night] .contactos{background:#1F1D18;box-shadow:inset 0 0 0 1px #38332C}
+.ct-h{display:flex;justify-content:space-between;gap:16px;font:500 11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#A69D8E;margin-bottom:14px}
+.ct-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px}
+.ct{position:relative;display:block;border:0;color:inherit}
+.ct img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;opacity:.88;transition:opacity .3s,transform .3s var(--ease)}
+.ct:hover img{opacity:1;transform:translateY(-3px)}
+.ct span{display:block;font:500 10px/1 var(--mono);color:#FF7547;margin-top:6px;letter-spacing:.06em}
+.ct-mark{position:absolute;left:-9px;top:-9px;right:-9px;bottom:6px;border:2.5px solid #FF7547;border-radius:52% 46% 50% 48%/48% 54% 46% 52%;transform:rotate(-5deg);pointer-events:none;opacity:0}
+.contactos.in .ct-mark{animation:lapiz .9s .9s cubic-bezier(.5,0,.3,1) forwards}
+@keyframes lapiz{from{opacity:0;clip-path:polygon(50% 50%,50% 0,50% 0,50% 0,50% 0,50% 0)}to{opacity:1;clip-path:polygon(50% 50%,50% -50%,150% -50%,150% 150%,-50% 150%,-50% -50%)}}
+.ct-note{font:italic 400 13px/1.4 var(--text);color:#A69D8E;margin:12px 0 0}
+.lb{position:fixed;inset:0;z-index:200;background:#0E0D0Bf2;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:92vw;max-height:86vh;object-fit:contain;box-shadow:0 20px 60px #0008;transform:scale(.97);transition:transform .4s var(--ease)}
+.lb.on img{transform:none}
+.lb button{position:absolute;background:none;border:0;color:#ECE5D7;font:500 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:14px}
+.lb .lb-x{top:14px;right:16px}.lb .lb-p{left:10px;top:50%;font-size:30px}.lb .lb-n{right:10px;top:50%;font-size:30px}
+.lb .lb-c{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:500 12px/1 var(--mono);color:#A69D8E;letter-spacing:.08em}
+@media (max-width:1180px){.fotorr .ph-fig,.contactos{margin-left:-60px;margin-right:-60px}}
+@media (max-width:980px){
+ .fotorr .ph-fig,.fotorr .ph-fig:nth-of-type(even){grid-template-columns:1fr;gap:14px;margin:44px 0}
+ .fotorr .ph-fig:nth-of-type(even) .ph-imgs{order:0}
+ .ph-fig.dos .ph-im img{height:auto;aspect-ratio:3/5}
+ .ph-n{font-size:48px}
+ .contactos{margin:56px 0 0;padding:14px}
+ .ct-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .lb .lb-p,.lb .lb-n{top:auto;bottom:4px}
+}
 .only-es{max-width:680px;margin:30px auto 0;font:500 13px/1.5 var(--mono);color:var(--accent);border:1px solid var(--mark);padding:10px 14px}
 
 .pull:before{content:'«';position:absolute;left:-.62em;top:.32em;font:900 1.6em/1 var(--head);color:var(--mark)}
@@ -622,7 +670,7 @@ html[data-theme=night] .ira-note{background:#1F1D19;color:#ECE5D7}
 .ira-embed .ira-icono-trazo{fill:none;stroke:currentColor;stroke-width:1.75px;stroke-linecap:round;stroke-linejoin:round}
 .ira-embed__origen{margin:0;font-size:13px;color:var(--ira-texto-3)}
 @media (max-width:640px){.pq{grid-template-columns:26px minmax(0,1fr)!important;gap:4px 8px!important}.cuest .section-bar>span{display:none}.cuest .pq-a{font-size:17px}.cuest{margin-top:40px}}
-@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}.sign.reveal .firma{clip-path:none}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}.sign.reveal .firma{clip-path:none}.ph-fig.reveal .ph-im img{filter:none}.ct-mark{opacity:1}}
 </style>
 </head>
 <body class="boot">
@@ -717,6 +765,7 @@ function trace(s,seed){ // calma = onda suave, polarización = picos
 const fmt=s=>lang==='es'?s.toFixed(2).replace('.',','):s.toFixed(2);
 
 const PIECES=[
+ {id:'vizcaya',typ:{es:'Fotorreportaje',en:'Photo essay'},title:{es:'Lo que aprendí mirando un jardín',en:'What I learned looking at a garden'},d:'2026-06-16',min:3,img:'img/viz-01.jpg'},
  {id:'kali',typ:{es:'Crítica musical',en:'Music review'},title:{es:'Amor, duelo y libertad: el álbum más íntimo de Kali Uchis',en:'Love, grief and freedom: Kali Uchis’s most intimate album'},d:'2025-06-30',min:4,img:null},
  {id:'engano',typ:{es:'Opinión',en:'Opinion'},title:{es:'La política del engaño',en:'The politics of deception'},d:'2025-04-05',min:6,img:null},
  {id:'abnegacion',typ:{es:'Ensayo',en:'Essay'},title:{es:'La abnegación más pura',en:'The purest devotion'},d:'2025-04-05',min:4,img:'img/salo-2.jpg'},
@@ -731,6 +780,21 @@ const IRA_URL='https://ira-index.vercel.app/';
 
 
 const ART={
+ vizcaya:{d:'2026-06-16',slug:'vizcaya',layout:'foto',kicker:{es:'Fotorreportaje',en:'Photo essay'},title:{es:'Lo que aprendí mirando un jardín',en:'What I learned looking at a garden'},deck:{es:'Diez miradas a lo que significa estudiar lejos de Madrid, en los jardines de Vizcaya, en Miami.',en:'Ten ways of looking at what it means to study far from Madrid, in the gardens of Vizcaya, Miami.'},min:3,hero:null,next:'kali',
+ body:[
+  ['p','La vida universitaria casi nunca cabe en un aula. Sucede en los trayectos, en las pausas, en los lugares donde uno se sienta a pensar lejos de casa. Por eso este reportaje no se hizo en Madrid, sino a miles de kilómetros: en el Parque de Vizcaya, en Miami.'],
+  ['p','Estudiar fuera convierte cualquier espacio en campus. Los jardines, las columnas, la luz del agua y las sombras de la tarde se transformaron en biblioteca, en aula y en patio. Tener aún más ganas de estudiar hace que la universidad aporte en todo. Las diez fotografías que siguen buscan esa idea: que aprender es, sobre todo, una forma de mirar.'],
+  ['p','Cada imagen va con una breve nota sobre la intención con la que fue tomada. Juntas cuentan una jornada y, con ella, el sentido de habitar un lugar nuevo siendo estudiante.'],
+  ['foto',['img/viz-01.jpg'],{n:'01',t:'El campus invisible',x:'',alt:'Pasarela de madera bajo los árboles del Parque de Vizcaya'}],
+  ['foto',['img/viz-02.jpg'],{n:'02',t:'El primer trayecto',x:'Lleva décadas en el mismo muro. Sin cartel, sin luz, sin pedestal. Alguien lo puso ahí antes de que existieras y nadie desde entonces ha sentido la necesidad de explicarlo. La universidad funciona igual: hay presencias que lo sostienen todo sin que nadie te las presente. Aprendes a verlas, o las pasas sin notarlas.',alt:'Busto de piedra en un nicho de un muro rojo y ocre'}],
+  ['foto',['img/viz-03.jpg','img/viz-04.jpg'],{n:'03 · 04',t:'Entreclases',x:'Un rostro sin nombre lleva décadas en el mismo muro. A pocos metros, alguien cruza un arco cargado de historia sin detenerse a leerla. Las dos imágenes dicen lo mismo: el lugar guarda más de lo que muestra y, la mayoría del tiempo, simplemente lo atravesamos.',alt:'Un busto entre árboles; una mujer cruza un arco de piedra'}],
+  ['foto',['img/viz-05.jpg'],{n:'05',t:'La pausa larga',x:'Esta escalera no lleva a ningún aula. Pero la imagen que produce, mirando hacia abajo y viendo la forma completa de algo que acabas de recorrer, es la misma que deja un año estudiando fuera. No la entiendes mientras la vives. Solo cuando ya estás arriba.',q:'Solo desde arriba se entiende la forma que tenía el camino.',alt:'Escalera de caracol vista desde arriba'}],
+  ['foto',['img/viz-06.jpg'],{n:'06',t:'Detalles del día',x:'Todos fotografían lo mismo. La diferencia no está en el objeto, sino en lo que decides dejar fuera del encuadre. Se aprende en un aula, y también parado frente a algo que no entiendes del todo, disparando de todas formas.',alt:'Un hombre fotografía la barcaza de piedra de Vizcaya en la bahía'}],
+  ['foto',['img/viz-07.jpg'],{n:'07',t:'El patio',x:'Todo campus tiene un patio como este. El de la facultad en Madrid no es muy distinto. Estudiar lejos te enseña a reconocer lo familiar en lo ajeno.',alt:'Patio interior con arcos, plantas y una fuente'}],
+  ['foto',['img/viz-08.jpg'],{n:'08',t:'La hora dorada',x:'Desde aquí, Madrid queda exactamente al otro lado del agua. Un edificio europeo trasplantado en Florida, una ventana que enmarca el horizonte y tú adentro, en la sombra, mirando hacia fuera. La reja no te impide ver, solo te recuerda que todavía hay distancia. Estudiar lejos tiene exactamente esta forma.',alt:'Puerta abierta hacia la bahía, con una reja de hierro'}],
+  ['foto',['img/viz-09.jpg','img/viz-10.jpg'],{n:'09 · 10',t:'Última luz',x:'Dos imágenes para cerrar el día. La primera: el agua quieta, los nenúfares, la pausa que no produces ni justificas, solo habitas. La segunda: la casa vista desde dentro, al otro lado del agua, tan integrada en el jardín que ya no sabes si es arquitectura o paisaje. Eso es lo que queda después de un día así: la certeza de que estuviste en un lugar que existía mucho antes que tú y que seguirá existiendo cuando te vayas. Como la universidad. Ojalá que algún día me recuerde.',alt:'Fuente con nenúfares; la casa de Vizcaya vista a través de una ventana'}],
+  ['contactos']
+ ]},
  engano:{d:'2025-04-05',slug:'poder-mentira',kicker:{es:'Opinión',en:'Opinion'},title:{es:'La política del engaño',en:'The politics of deception'},deck:{es:'¿Puede sobrevivir la democracia a la desinformación?',en:'Can democracy survive disinformation?'},min:6,hero:null,next:'abnegacion',
  body:[
   ['p','Vivimos saturados de datos y, aun así, la verdad ya no parece ser suficiente. La desinformación —alimentada por inteligencia artificial, algoritmos y manipulación emocional— ha convertido el acceso a la información en una batalla permanente.'],
@@ -857,9 +921,18 @@ function footer(){
  <div class="foot"><span class="foot-l"><span class="foot-firma">${FIRMA}</span>${t('foot1')}</span><span>${t('foot2')}</span></div>`;
 }
 
+function fotoHTML(src,m){
+ const es=lang==='es',two=src.length>1,id='f'+m.n.slice(0,2);
+ return `<figure class="ph-fig reveal${two?' dos':''}" id="${id}"><div class="ph-imgs">${src.map((s,i)=>`<button type="button" class="ph-im" data-lb="${s}" aria-label="${es?'Ampliar foto':'Enlarge photo'} ${two?m.n.split(' · ')[i]:m.n}"><img src="${s}" alt="${esc(m.alt)}" loading="lazy"></button>`).join('')}</div>
+ <figcaption class="ph-cap"><span class="ph-n">${m.n}</span><span class="ph-t">${esc(m.t)}</span>${m.q?`<b class="ph-q">${esc(m.q)}</b>`:''}${m.x?`<span class="ph-x">${esc(m.x)}</span>`:''}<span class="ph-cr">${es?'Foto':'Photo'}: Ricardo Grisales Ramírez</span></figcaption></figure>`;
+}
+function contactosHTML(){
+ const es=lang==='es';let s='';for(let i=1;i<=10;i++){const n=String(i).padStart(2,'0'),tgt=i===4?'f03':i===10?'f09':'f'+n;s+=`<a class="ct" href="#${tgt}" data-ct="${tgt}"><img src="img/viz-${n}-t.jpg" alt="" loading="lazy"><span>${n}</span>${i===1?`<i class="ct-mark" aria-hidden="true"></i>`:''}</a>`}
+ return `<section class="contactos reveal"><div class="ct-h"><span>${es?'Hoja de contactos':'Contact sheet'}</span><span>${es?'Vizcaya, Miami · 10 fotos':'Vizcaya, Miami · 10 photos'}</span></div><div class="ct-grid">${s}</div><p class="ct-note">${es?'Marcada a lápiz, la que eligió la portada.':'Circled in pencil, the one chosen for the cover.'}</p></section>`;
+}
 function article(id){
  const a=ART[id];
- let nI=0;const body=a.body.map(([k,x,y])=>k==='p'?`<p>${esc(x)}</p>`:k==='q'?`<blockquote class="pull">${esc(x)}</blockquote>`:k==='t'?`<div class="trip"><div class="trip-title"><span>${lang==='es'?'El triángulo de luz':'The triangle of light'}</span><span>${lang==='es'?'Detalles':'Details'}</span></div>${x.map((f,i)=>`<figure><div class="fr"><img src="${f[0]}" alt="${esc(f[1])}" loading="lazy"></div><figcaption><b>${i+1}</b><span>${esc(f[1])}</span></figcaption></figure>`).join('')}</div>`:k==='h'?`<h2 class="ladillo">${esc(x)}</h2>`:k==='v'?`<div class="verdict"><span>${lang==='es'?'Veredicto':'Verdict'}</span><p>${esc(x)}</p></div>`:k==='sala'?`<div class="sala"><span class="sala-n">${lang==='es'?'Sala':'Room'} ${y}</span><h2>${esc(x)}</h2></div>`:k==='cartela'?`<figure class="cartela-fig"><img src="${x}" alt="${esc(y.t)}, ${esc(y.a)}" loading="lazy"><figcaption class="cartela"><b>${esc(y.a)}</b><i>${esc(y.t)}</i>${y.y?`<span>${y.y}</span>`:''}<span>${esc(y.m)}</span></figcaption></figure>`:k==='ticket'?`<div class="ticket"><div class="tk-main"><div class="tk-h">${lang==='es'?'Entrada':'Ticket'}</div><div class="tk-t">Arte y naturaleza</div>${x.map(([a,b])=>`<div class="tk-r"><span>${a}</span>${b}</div>`).join('')}</div></div>`:k==='f'?`<figure><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`:`<figure class="narrow ${(nI++)%2?'r':''}"><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`).join('');
+ let nI=0;const body=a.body.map(([k,x,y])=>k==='p'?`<p>${esc(x)}</p>`:k==='q'?`<blockquote class="pull">${esc(x)}</blockquote>`:k==='t'?`<div class="trip"><div class="trip-title"><span>${lang==='es'?'El triángulo de luz':'The triangle of light'}</span><span>${lang==='es'?'Detalles':'Details'}</span></div>${x.map((f,i)=>`<figure><div class="fr"><img src="${f[0]}" alt="${esc(f[1])}" loading="lazy"></div><figcaption><b>${i+1}</b><span>${esc(f[1])}</span></figcaption></figure>`).join('')}</div>`:k==='h'?`<h2 class="ladillo">${esc(x)}</h2>`:k==='v'?`<div class="verdict"><span>${lang==='es'?'Veredicto':'Verdict'}</span><p>${esc(x)}</p></div>`:k==='sala'?`<div class="sala"><span class="sala-n">${lang==='es'?'Sala':'Room'} ${y}</span><h2>${esc(x)}</h2></div>`:k==='foto'?fotoHTML(x,y):k==='contactos'?contactosHTML():k==='cartela'?`<figure class="cartela-fig"><img src="${x}" alt="${esc(y.t)}, ${esc(y.a)}" loading="lazy"><figcaption class="cartela"><b>${esc(y.a)}</b><i>${esc(y.t)}</i>${y.y?`<span>${y.y}</span>`:''}<span>${esc(y.m)}</span></figcaption></figure>`:k==='ticket'?`<div class="ticket"><div class="tk-main"><div class="tk-h">${lang==='es'?'Entrada':'Ticket'}</div><div class="tk-t">Arte y naturaleza</div>${x.map(([a,b])=>`<div class="tk-r"><span>${a}</span>${b}</div>`).join('')}</div></div>`:k==='f'?`<figure><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`:`<figure class="narrow ${(nI++)%2?'r':''}"><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`).join('');
  const nx=ART[a.next];
  return `<article class="art">
   <header class="art-head"><div class="kicker">${L(a.kicker)}</div><h1 style="view-transition-name:headline">${L(a.title)}</h1><p class="deck">${L(a.deck)}</p>
@@ -867,7 +940,7 @@ function article(id){
   ${a.layout==='album'?`<div class="album-hero" aria-hidden="true"><div class="vinyl" id="vinyl"><div class="vl"><b>Sincerely</b><span>2025</span></div></div><div class="sleeve"><span>Kali Uchis</span><b>Sincerely</b><span>${lang==='es'?'Crítica de R. Grisales':'Review by R. Grisales'}</span></div></div>`:''}
   ${a.hero?`<figure class="art-hero reveal"><img src="${a.hero[0]}" alt="${L(a.hero[1])}"><figcaption>${L(a.hero[1])}</figcaption></figure>`:''}
   ${lang==='en'?`<p class="only-es">${t('onlyEs')}</p>`:''}
-  ${a.layout==='album'?`<div class="album-grid"><aside class="ficha"><div class="ficha-in"><div class="kicker">${lang==='es'?'Ficha técnica':'Fact sheet'}</div>${a.ficha.map(([k,v])=>`<div class="fi"><span>${k}</span>${v}</div>`).join('')}<div class="kicker" style="margin-top:22px">${lang==='es'?'Trayectoria':'Discography'}</div><div class="disco">${a.disco.map(([y,n])=>`<div class="${n==='Sincerely'?'on':''}"><span>${y}</span>${n}</div>`).join('')}</div></div></aside><div class="body">${body}<div class="fin" aria-hidden="true"></div></div></div>`:`<div class="body${a.layout==='expo'?' expo':''}">${body}<div class="fin" aria-hidden="true"></div></div>`}
+  ${a.layout==='album'?`<div class="album-grid"><aside class="ficha"><div class="ficha-in"><div class="kicker">${lang==='es'?'Ficha técnica':'Fact sheet'}</div>${a.ficha.map(([k,v])=>`<div class="fi"><span>${k}</span>${v}</div>`).join('')}<div class="kicker" style="margin-top:22px">${lang==='es'?'Trayectoria':'Discography'}</div><div class="disco">${a.disco.map(([y,n])=>`<div class="${n==='Sincerely'?'on':''}"><span>${y}</span>${n}</div>`).join('')}</div></div></aside><div class="body">${body}<div class="fin" aria-hidden="true"></div></div></div>`:`<div class="body${a.layout==='expo'?' expo':a.layout==='foto'?' fotorr':''}">${body}<div class="fin" aria-hidden="true"></div></div>`}
   <div class="cite"><div class="lbl"><span>${t('citeL')}</span><button type="button" id="citeBtn">${t('copy')}</button></div><p id="citeTxt">Grisales Ramírez, R. (${a.d.slice(0,4)}, ${longD(a.d).replace(/ de \d{4}$/,'').replace(/, \d{4}$/,'')}). <i>${L(a.title)}</i>. Ricardo Grisales Ramírez. https://oranrick.com/${a.slug}</p></div>
   <a class="next" href="#${a.next}" data-id="${a.next}"><span class="mono" style="font-size:12px;color:var(--muted)">${t('nextL')}</span><b><span class="ink" data-vt="${a.next}">${L(nx.title)}</span></b></a>
   ${footer()}
@@ -1229,6 +1302,18 @@ function wire(){
   .then(r=>{if(!r.ok)throw new Error(r.status);try{envs.push(Date.now());localStorage.setItem('rgr-cartas',JSON.stringify(envs))}catch(e){}exito()})
   .catch(()=>{btn.disabled=false;btn.textContent=es?'Echar al buzón':'Post it';document.getElementById('ltDone').textContent=es?'No se pudo enviar. Escríbeme directamente a oranrick@gmail.com.':'It could not be sent. Write to me directly at oranrick@gmail.com.'})};
   lt.querySelectorAll('textarea,input').forEach(f=>f.addEventListener('input',()=>{const map={ltBody:'errBody',ltName:'errName',ltMail:'errMail'};document.getElementById(map[f.id]).textContent=''}))}
+ const fims=[...view.querySelectorAll('[data-lb]')];
+ if(fims.length){let lb=document.getElementById('lb');if(!lb){lb=document.createElement('div');lb.id='lb';lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.innerHTML='<img alt=""><button type="button" class="lb-x"></button><button type="button" class="lb-p" aria-label="Anterior">‹</button><button type="button" class="lb-n" aria-label="Siguiente">›</button><div class="lb-c"></div>';document.body.appendChild(lb)}
+  const im=lb.querySelector('img'),cap=lb.querySelector('.lb-c');let k=0;
+  const show=i=>{k=(i+fims.length)%fims.length;const b=fims[k];im.src=b.dataset.lb;im.alt=b.querySelector('img').alt;cap.textContent=String(k+1).padStart(2,'0')+' / '+String(fims.length).padStart(2,'0')};
+  const close=()=>{lb.classList.remove('on');document.removeEventListener('keydown',key)};
+  const key=e=>{if(e.key==='Escape')close();else if(e.key==='ArrowRight')show(k+1);else if(e.key==='ArrowLeft')show(k-1)};
+  lb.querySelector('.lb-x').textContent=lang==='es'?'Cerrar':'Close';
+  lb.onclick=e=>{if(e.target===lb||e.target.classList.contains('lb-x'))close()};
+  lb.querySelector('.lb-p').onclick=e=>{e.stopPropagation();show(k-1)};lb.querySelector('.lb-n').onclick=e=>{e.stopPropagation();show(k+1)};
+  fims.forEach((b,i)=>b.onclick=()=>{show(i);lb.classList.add('on');document.addEventListener('keydown',key);lb.querySelector('.lb-x').focus()});
+  view.querySelectorAll('[data-ct]').forEach(a=>a.onclick=e=>{e.preventDefault();const el=document.getElementById(a.dataset.ct);if(el)el.scrollIntoView({behavior:'smooth',block:'center'})});
+ }
  if(document.getElementById('conc')&&pendingWord){const w=pendingWord;pendingWord=null;setTimeout(()=>{openWord(w);document.getElementById('indice-palabras').scrollIntoView({behavior:'smooth'})},450)}
  const cv=document.getElementById('cvBtn');if(cv)cv.onclick=()=>toast(t('cvSoon'));
  const rp=document.getElementById('replayBtn');if(rp)rp.onclick=()=>{played=false;if(location.hash.length>1){go('#')}else{render();scrollTo({top:0,behavior:'smooth'})}};
