@@ -320,6 +320,7 @@ html.turn::view-transition-new(root){animation:turnin .6s .1s var(--ease) both}
   .lead-grid{grid-template-columns:1fr;margin-top:30px}.col-byline{border-left:0;padding-left:0;flex-direction:row;align-items:center;gap:14px;border-top:1px solid var(--rule);padding-top:16px}.photo.big{width:56px;height:66px}
 }
 @media (max-width:640px){
+  .pq{grid-template-columns:28px minmax(0,1fr);gap:4px 8px}
   .headline{line-height:1.32;padding-top:.3em}.gl-l{bottom:calc(100% - .23em);padding-bottom:5px}.gl-l:after{height:4px}
   .strip .mid{display:none}
   .brand{white-space:normal;font-size:clamp(50px,17vw,80px);line-height:.84}
@@ -414,6 +415,15 @@ html.turn::view-transition-new(root){animation:turnin .6s .1s var(--ease) both}
 .pc-back-body{padding:18px;display:flex;flex-direction:column;gap:12px;flex:1}
 .pc-rule{font:italic 500 19px/1.35 var(--text);margin:0}
 .pc-bar{margin-top:auto;height:54px;background:repeating-linear-gradient(90deg,#17140F 0 3px,#0000 3px 5px,#17140F 5px 6px,#0000 6px 10px)}
+.pq{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;border-top:1px solid var(--rule);padding:22px 0 20px;transition-delay:.05s}
+.pq-n{font:600 13px/1 var(--mono);color:var(--accent);padding-top:10px;letter-spacing:.05em}
+.pq-q{margin:0 0 12px;font:900 clamp(30px,3vw,42px)/.95 var(--head);letter-spacing:-.005em;text-wrap:balance}
+.pq-q em{font-style:normal;color:var(--mark)}
+.pq-a{margin:0;font:italic 400 18px/1.55 var(--text);color:var(--ink);max-width:52ch;opacity:.35;transform:translateY(6px);transition:opacity .8s var(--ease) .25s,transform .8s var(--ease) .25s}
+.pq.in .pq-a{opacity:1;transform:none}
+.pq-a span{display:block;font:700 11px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.pq:hover .pq-q em{display:inline-block;animation:pqwob .6s var(--ease)}
+@keyframes pqwob{30%{transform:rotate(-12deg) translateY(-3px)}60%{transform:rotate(8deg)}}
 .iv-intro{font:italic 400 21px/1.5 var(--text);color:var(--muted);margin:10px 0 26px}
 .qa{border-top:1px solid var(--rule);padding:16px 0}
 .qa p{margin:0}.qa .q{font:800 clamp(24px,2.3vw,30px)/1.05 var(--head);margin-bottom:10px}
@@ -912,27 +922,29 @@ function openWord(w){
 function about(){
  const es=lang==='es';
  const QA=es?[
-  ['¿Por qué periodismo?','Porque creo que el periodismo necesita herramientas que le ayuden a leer el poder, no solo a transcribirlo.'],
-  ['¿Qué es IRA, en una frase?','Un índice que mide si el lenguaje político acerca o polariza a quien lo escucha.'],
-  ['¿Por qué medir la empatía de un discurso?','Porque entendemos al otro, en parte, sintiendo con él. Si las palabras de un político refuerzan o rompen ese vínculo, eso se puede estudiar con método.'],
-  ['¿Qué te enseñó la hostelería?','Que la toma de decisiones bajo presión también es una forma de periodismo.'],
-  ['¿Hacia dónde vas?','Hacia la investigación: validar IRA y llevarlo a la academia.']
+  ['¿Por qué unas palabras nos acercan y otras nos separan?','Creo que antes de entender, sentimos. Un discurso puede unirnos o enfrentarnos antes de que nos dé tiempo a pensarlo.'],
+  ['¿Puede una máquina medir la empatía?','Es la pregunta de mi trabajo de máster. IRA es mi intento de responderla con un método que cualquiera pueda revisar y corregir.'],
+  ['¿Cuánto tarda una palabra en volverse normal?','Klemperer vio cómo el nazismo se metió en el idioma de todos, poco a poco. Me pregunto qué palabras de hoy estamos aceptando sin darnos cuenta.'],
+  ['¿Qué le hace el miedo a un discurso?','Lo acorta, lo simplifica y le busca un enemigo. Quiero entender cómo, para poder notarlo a tiempo.'],
+  ['¿Puede el lenguaje reparar lo que rompe?','Si las palabras pueden dañar un vínculo, también deberían poder sanarlo. Es la parte que más me importa.'],
+  ['¿Vamos hacia una sociedad más empática?','A pesar de las crisis, creo que sí. Pero no me basta con creerlo: quiero poder demostrarlo.']
  ]:[
-  ['Why journalism?','Because I believe journalism needs tools that help it read power, not just transcribe it.'],
-  ['What is IRA, in one sentence?','An index that measures whether political language brings listeners closer or polarizes them.'],
-  ['Why measure the empathy of a speech?','Because we understand others, in part, by feeling with them. Whether a politician’s words strengthen or break that bond can be studied with method.'],
-  ['What did hospitality teach you?','That making decisions under pressure is also a form of journalism.'],
-  ['Where are you heading?','Towards research: validating IRA and taking it into academia.']];
+  ['Why do some words bring us closer and others push us apart?','I think we feel before we understand. A speech can unite us or set us against each other before we have time to think about it.'],
+  ['Can a machine measure empathy?','It is the question of my master’s thesis. IRA is my attempt to answer it with a method anyone can review and correct.'],
+  ['How long does it take for a word to become normal?','Klemperer watched Nazism seep into everyone’s language, little by little. I wonder which words of today we are accepting without noticing.'],
+  ['What does fear do to a speech?','It shortens it, simplifies it and finds it an enemy. I want to understand how, so we can notice it in time.'],
+  ['Can language repair what it breaks?','If words can damage a bond, they should also be able to heal it. That is the part I care about most.'],
+  ['Are we heading towards a more empathetic society?','Despite the crises, I think so. But believing it is not enough: I want to be able to prove it.']];
  return `<header class="page-head"><div class="kicker">${es?'Sobre mí':'About'}</div><h1 style="view-transition-name:headline">${es?'Quién firma':'Who signs'}</h1><p class="deck">${es?'Periodista colombo-español. Analizo el discurso político, la inteligencia artificial y la desinformación.':'Colombian-Spanish journalist. I analyse political discourse, artificial intelligence and disinformation.'}</p></header>
  <section class="about2">
   <div class="card-wrap reveal"><button class="pcard" id="pcard" type="button" aria-label="${es?'Girar la acreditación':'Flip the press pass'}">
    <div class="pc-face pc-front"><div class="pc-hole"></div><div class="pc-band">${es?'PRENSA':'PRESS'}</div><div class="pc-body"><div class="ph pc-ph"><img src="img/rick-full-bw.jpg" alt="Ricardo Grisales Ramírez"><img class="c" src="img/rick-full.jpg" alt=""></div><div class="pc-data"><div class="pc-name">Ricardo<br>Grisales Ramírez</div><div class="pc-role">${es?'Periodista e investigador':'Journalist and researcher'}</div></div></div><div class="pc-foot">${es?'Toca para girar':'Tap to flip'}</div></div>
    <div class="pc-face pc-back"><div class="pc-hole"></div><div class="pc-band">${es?'AL DORSO':'BACK'}</div><div class="pc-back-body"><p class="pc-rule">${es?'Esta acreditación permite hacer preguntas incómodas, con educación.':'This pass allows asking uncomfortable questions, politely.'}</p><div class="pc-meta"><span>${es?'Correo':'Email'}</span>oranrick@gmail.com<span>${es?'Idiomas':'Languages'}</span>${es?'Español, inglés':'Spanish, English'}<span>${es?'Formación':'Education'}</span>${es?'Periodismo, UCM':'Journalism, UCM'}</div></div></div>
   </button></div>
-  <div class="interview">
-   <div class="kicker">${es?'Entrevista':'Interview'}</div>
-   <p class="iv-intro">${es?'Ricardo Grisales Ramírez se entrevista a sí mismo, porque nadie más lo había hecho todavía.':'Ricardo Grisales Ramírez interviews himself, because nobody else had done it yet.'}</p>
-   ${QA.map(([q,a])=>`<div class="qa reveal"><p class="q"><b>${es?'P.':'Q.'}</b> ${q}</p><p class="a"><b>${es?'R.':'A.'}</b> ${a}</p></div>`).join('')}
+  <div class="persigue">
+   <div class="kicker">${es?'Las preguntas que me persiguen':'The questions that follow me'}</div>
+   <p class="iv-intro">${es?'No tengo respuestas cerradas. Estas son las preguntas a las que vuelvo una y otra vez, y lo que pienso de ellas por ahora.':'I have no closed answers. These are the questions I keep coming back to, and what I think about them for now.'}</p>
+   ${QA.map(([q,a],i)=>`<div class="pq reveal"><span class="pq-n">${String(i+1).padStart(2,'0')}</span><div><p class="pq-q">${q.replace(/\?$/,'<em>?</em>')}</p><p class="pq-a"><span>${es?'Por ahora':'For now'}</span>${a}</p></div></div>`).join('')}
   </div>
  </section>
  <section class="cv">
