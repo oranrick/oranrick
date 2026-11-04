@@ -473,6 +473,7 @@ html.turn::view-transition-new(root){animation:turnin .6s .1s var(--ease) both}
 .letter.sent{transform:translateY(30px) rotate(-1.5deg) scale(.96)}
 .lt-done{font:500 14px/1.5 var(--mono);color:var(--accent);text-align:center;min-height:22px;margin-top:22px}
 .lt-alt{display:flex;justify-content:center;gap:12px;font:500 13px/1 var(--mono);color:var(--muted);margin:10px 0 30px}
+.lt-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .nf h1{font-size:clamp(56px,9vw,130px)}.nf-old{text-decoration:line-through;text-decoration-color:var(--mark);text-decoration-thickness:.07em;color:var(--muted)}
 .nf .btn{margin-top:20px}
@@ -995,6 +996,7 @@ function lettersPage(){
   <p class="lt-hello">${es?'Hola, Rick:':'Hi Rick,'}</p>
   <label class="sr-only" for="ltBody">${es?'Tu carta':'Your letter'}</label><textarea id="ltBody" rows="7" placeholder="${es?'Escribe aquí tu idea, tu pregunta o tu réplica.':'Write your idea, question or reply here.'}"></textarea><p class="lt-err" id="errBody"></p>
   <div class="lt-sign"><div><label for="ltName">${es?'Firma':'Signature'}</label><input id="ltName" autocomplete="name" placeholder="${es?'Tu nombre':'Your name'}"><p class="lt-err" id="errName"></p></div><div><label for="ltMail">${es?'Correo para responderte':'Email so I can reply'}</label><input id="ltMail" type="email" autocomplete="email" placeholder="nombre@correo.com"><p class="lt-err" id="errMail"></p></div></div>
+  <div class="lt-hp" aria-hidden="true"><label for="ltHp">No escribas aquí</label><input id="ltHp" name="lt_hp" tabindex="-1" autocomplete="off"></div>
   <button class="btn lt-send" type="submit">${es?'Echar al buzón':'Post it'}</button>
   <div class="lt-seal" aria-hidden="true">R</div>
  </form><p class="lt-done" id="ltDone" role="status"></p>
@@ -1196,6 +1198,11 @@ function go(hash,vtId){
  document.documentElement.classList.add('turn');
  const vt=document.startViewTransition(run);vt.finished.finally(()=>document.documentElement.classList.remove('turn'));
 }
+function sinSentido(s){
+ const l=s.toLowerCase().replace(/[^a-z\u00e0-\u00ff]/g,'');if(l.length<8)return false;
+ const v=(l.match(/[aeiou\u00e0-\u00e6\u00e8-\u00ef\u00f2-\u00f6\u00f9-\u00fc]/g)||[]).length/l.length;
+ const pal=s.split(/\s+/).filter(w=>/[a-z\u00e0-\u00ff]{2,}/i.test(w)).length;
+ return v<.22||pal<3||/(.)\1{4,}/.test(l)||/[bcdfghjklmnpqrstvwxz]{6,}/.test(s.toLowerCase())}
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2600)}
 function wire(){
  document.querySelectorAll('a[data-id]:not(.w)').forEach(a=>{a.classList.add('w');a.addEventListener('click',e=>{e.preventDefault();const id=a.dataset.id;if(a.dataset.word)pendingWord=a.dataset.word;if(ART[id]||PAGES[id])go('#'+id,id);else toast(t('soon'))})});
@@ -1205,14 +1212,21 @@ function wire(){
  document.querySelectorAll('.ix:not(.w)').forEach(b=>{b.classList.add('w');b.onclick=()=>openWord(b.dataset.w)});
  const pc=document.getElementById('pcard');if(pc&&!pc._w){pc._w=1;pc.onclick=()=>pc.classList.toggle('flip')}
  const nfh=document.getElementById('nfHome');if(nfh)nfh.onclick=e=>{e.preventDefault();go('#')};
- const lt=document.getElementById('letter');if(lt&&!lt._w){lt._w=1;lt.onsubmit=e=>{e.preventDefault();const es=lang==='es';const b=lt.querySelector('#ltBody'),n=lt.querySelector('#ltName'),m=lt.querySelector('#ltMail');let ok=true;
+ const lt=document.getElementById('letter');if(lt&&!lt._w){lt._w=1;lt._t0=Date.now();lt._human=false;
+  ['keydown','pointerdown','paste','touchstart'].forEach(ev=>lt.addEventListener(ev,e=>{if(e.isTrusted)lt._human=true},{passive:true}));
+  lt.onsubmit=e=>{e.preventDefault();const es=lang==='es';const b=lt.querySelector('#ltBody'),n=lt.querySelector('#ltName'),m=lt.querySelector('#ltMail'),hp=lt.querySelector('#ltHp');let ok=true;
+  const exito=()=>{lt.classList.add('sent');setTimeout(()=>{document.getElementById('ltDone').textContent=es?`Carta recibida, ${n.value.trim()}. Te respondo a ${m.value.trim()}.`:`Letter received, ${n.value.trim()}. I will reply to ${m.value.trim()}.`},1500)};
+  const robot=hp.value!==''||!lt._human||Date.now()-lt._t0<3000||/https?:|www\./i.test(n.value);
+  if(robot){const btn=lt.querySelector('.lt-send');btn.disabled=true;exito();return}
   const set=(id,msg)=>{document.getElementById(id).textContent=msg;if(msg)ok=false};
-  set('errBody',b.value.trim().length<10?(es?'Escribe al menos una frase.':'Write at least one sentence.'):'');
+  const txt=b.value.trim();set('errBody',txt.length<10||sinSentido(txt)?(es?'Escribe al menos una frase que se entienda.':'Write at least one sentence that makes sense.'):(txt.match(/https?:\/\/|www\./gi)||[]).length>1?(es?'Incluye como mucho un enlace.':'Include one link at most.'):'');
   set('errName',!n.value.trim()?(es?'Firma la carta.':'Sign the letter.'):'');
   set('errMail',!/^\S+@\S+\.\S+$/.test(m.value.trim())?(es?'Necesito un correo válido para responderte.':'I need a valid email to reply.'):'');
-  if(!ok)return;const btn=lt.querySelector('.lt-send');btn.disabled=true;btn.textContent=es?'Enviando…':'Sending…';
-  fetch('https://formsubmit.co/ajax/oranrick@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:n.value.trim(),email:m.value.trim(),message:b.value.trim(),_subject:'Carta desde oranrick.com',_template:'table'})})
-  .then(r=>{if(!r.ok)throw new Error(r.status);lt.classList.add('sent');setTimeout(()=>{document.getElementById('ltDone').textContent=es?`Carta recibida, ${n.value.trim()}. Te respondo a ${m.value.trim()}.`:`Letter received, ${n.value.trim()}. I will reply to ${m.value.trim()}.`},1500)})
+  if(!ok)return;let envs=[];try{envs=JSON.parse(localStorage.getItem('rgr-cartas')||'[]').filter(x=>Date.now()-x<36e5)}catch(e){}
+  if(envs.length>=3){document.getElementById('ltDone').textContent=es?'Ya me enviaste varias cartas. Dame un rato para leerlas y vuelve a intentarlo en una hora.':'You have already sent me several letters. Give me time to read them and try again in an hour.';return}
+  const btn=lt.querySelector('.lt-send');btn.disabled=true;btn.textContent=es?'Enviando…':'Sending…';
+  fetch('https://formsubmit.co/ajax/oranrick@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:n.value.trim(),email:m.value.trim(),message:txt,_subject:'Carta desde oranrick.com',_template:'table',_honey:hp.value,_blacklist:'casino,crypto,bitcoin,viagra,cialis,backlinks,seo services,porn,loan,forex,escort'})})
+  .then(r=>{if(!r.ok)throw new Error(r.status);try{envs.push(Date.now());localStorage.setItem('rgr-cartas',JSON.stringify(envs))}catch(e){}exito()})
   .catch(()=>{btn.disabled=false;btn.textContent=es?'Echar al buzón':'Post it';document.getElementById('ltDone').textContent=es?'No se pudo enviar. Escríbeme directamente a oranrick@gmail.com.':'It could not be sent. Write to me directly at oranrick@gmail.com.'})};
   lt.querySelectorAll('textarea,input').forEach(f=>f.addEventListener('input',()=>{const map={ltBody:'errBody',ltName:'errName',ltMail:'errMail'};document.getElementById(map[f.id]).textContent=''}))}
  if(document.getElementById('conc')&&pendingWord){const w=pendingWord;pendingWord=null;setTimeout(()=>{openWord(w);document.getElementById('indice-palabras').scrollIntoView({behavior:'smooth'})},450)}
