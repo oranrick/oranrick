@@ -102,6 +102,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .cols{columns:2;column-gap:32px;column-rule:1px solid var(--rule);font:400 17px/1.62 var(--text);hyphens:auto}
 .cols p{margin:0 0 12px}
 .cols p:first-child:first-letter{initial-letter:3;-webkit-initial-letter:3;font-family:var(--head);font-weight:900;margin-right:8px;color:var(--ink)}
+.cols .sign{font-style:italic;margin-top:18px}
+.cols .sign b{display:block;font:900 34px/1 var(--head);font-style:normal;color:var(--ink);margin-top:4px;letter-spacing:-.01em}
+.cols p a .ink{font-weight:500}
 .jump{font:500 12px/1 var(--mono);color:var(--accent);display:inline-block;margin-top:4px}
 
 /* IRA */
@@ -631,9 +634,10 @@ const T={
  es:{night:'Edición de noche',day:'Edición de día',tagline:'Periodismo, ensayo e investigación del lenguaje',nav1:'Portada',nav2:'Investigación',nav3:'Hemeroteca',nav4:'Fe de erratas',nav5:'Escríbeme',nav6:'Sobre mí',secs:'Secciones',wire:'Teletipo',
   kicker:'Carta del director',h1a:'Analizo',h1b:'las palabras',deck:'Soy periodista y escritor. Investigo lo que hace el lenguaje en público: qué promete, qué oculta y a quién deja fuera.',
   by:'Por Ricardo Grisales Ramírez',role:'Periodista, Universidad Complutense de Madrid',
-  ed1:'Esta redacción tiene un solo periodista. Aquí publico lo que escribo y lo que investigo: ensayos sobre arte, críticas de música y el análisis del lenguaje político.',
-  ed2:'De una pregunta salió mi trabajo de fin de grado, El contagio de las palabras: ¿por qué unas palabras nos acercan y otras nos separan? De ese trabajo nació IRA, el Índice de Resonancia Afectiva.',
-  ed3:'IRA no mide lo que piensa un político. Mide cómo su lenguaje intenta actuar sobre quien lo escucha: si refuerza el vínculo o lo rompe.',
+  ed1:'Esta página tiene un solo periodista. Aquí publico lo que escribo y lo que investigo: ensayos sobre arte y política, críticas de música y análisis del lenguaje político contemporáneo en español. Mi aspiración, como periodista o, mejor dicho, como comunicador, es hacer algún día del lenguaje una herramienta de unidad social y de empatía colectiva.',
+  ed2:'Esa vocación estalló con mi trabajo de fin de grado, <i>El contagio de las palabras. Metáforas, empatía y polarización en el discurso político contemporáneo</i> (UCM, 2024), y con una pregunta: ¿por qué unas palabras nos acercan y otras nos separan? Alrededor de ella giran mi trabajo y mi escritura. De ahí nació IRA, el Índice de Resonancia Afectiva, un proyecto independiente que une neurociencia, lingüística y psicología social para estudiar cómo actúa el lenguaje sobre quien lo escucha.',
+  ed3:'Ni mi trabajo ni IRA pretenden juzgar a nadie, ni medir lo que piensa un político. IRA mide cómo su lenguaje intenta actuar sobre quien lo escucha: qué estructuras emocionales y neuronales busca tocar, modificar, dañar o incluso sanar. Si refuerza los vínculos o los rompe.',
+  ed4:'Esta es una explicación breve, casi reduccionista, de lo que hago. Si te quedas con la intriga, <a href="#investigacion" data-id="investigacion"><span class="ink on">explora</span></a> o <a href="#cartas" data-id="cartas"><span class="ink on">escríbeme</span></a>.',sign1:'Que todo vaya bien,',
   jump:'Sigue en Investigación',
   research:'Investigación',pg2:'Pág. 2',iraSub:'Índice de Resonancia Afectiva',iraQ:'¿El lenguaje político acerca o polariza?',
   c1:'Ex primera ministra de Nueva Zelanda',c2:'Expresidente de Colombia',c3:'Presidente de Estados Unidos',pol:'polariza',emp:'acerca',
@@ -650,9 +654,10 @@ const T={
  en:{night:'Night edition',day:'Day edition',tagline:'Journalism, essays and research on language',nav1:'Front page',nav2:'Research',nav3:'Archive',nav4:'Corrections',nav5:'Write to me',nav6:'About',secs:'Sections',wire:'Wire',
   kicker:'Editor’s letter',h1a:'I analyze',h1b:'words',deck:'I am a journalist and writer. I study what language does in public: what it promises, what it hides and who it leaves out.',
   by:'By Ricardo Grisales Ramírez',role:'Journalist, Complutense University of Madrid',
-  ed1:'This newsroom has a single reporter. Here I publish what I write and what I research: essays on art, music criticism and the analysis of political language.',
-  ed2:'My undergraduate thesis, The Contagion of Words, grew out of one question: why do some words bring us closer while others push us apart? IRA, the Affective Resonance Index, grew out of that thesis.',
-  ed3:'IRA does not measure what a politician thinks. It measures how their language tries to act on the listener: whether it strengthens the bond or breaks it.',
+  ed1:'This page has a single reporter. Here I publish what I write and what I research: essays on art and politics, music criticism and analysis of contemporary political language in Spanish. My aspiration, as a journalist or rather as a communicator, is to one day make language a tool for social unity and collective empathy.',
+  ed2:'That calling took off with my undergraduate thesis, <i>The Contagion of Words. Metaphors, empathy and polarization in contemporary political discourse</i> (UCM, 2024), and with one question: why do some words bring us closer while others push us apart? My work and my writing revolve around it. That is where IRA, the Affective Resonance Index, was born: an independent project that brings together neuroscience, linguistics and social psychology to study how language acts on those who listen.',
+  ed3:'Neither my work nor IRA tries to judge anyone, or to measure what a politician thinks. IRA measures how their language tries to act on the listener: which emotional and neural structures it seeks to touch, change, harm or even heal. Whether it strengthens bonds or breaks them.',
+  ed4:'This is a short, almost reductive account of what I do. If you are curious, <a href="#investigacion" data-id="investigacion"><span class="ink on">explore</span></a> or <a href="#cartas" data-id="cartas"><span class="ink on">write to me</span></a>.',sign1:'All the best,',
   jump:'Continued in Research',
   research:'Research',pg2:'P. 2',iraSub:'Affective Resonance Index',iraQ:'Does political language bring people closer or polarize?',
   c1:'Former Prime Minister of New Zealand',c2:'Former President of Colombia',c3:'President of the United States',pol:'polarizes',emp:'connects',
@@ -795,7 +800,7 @@ function home(){
    <h1 class="headline ${played?'glossed':''}" id="headline" aria-label="${t('h1a')} ${SEQ[lang].at(-1)}"><span aria-hidden="true">${glHTML(GL[lang].a)}</span> <span class="swap ${played?'on':''}" id="swap" aria-hidden="true"><span class="w">${played?glHTML(GL[lang].f,GL[lang].a.length):SEQ[lang][0]}</span></span></h1>
    <div class="lead-grid"><p class="deck">${t('deck')}</p>
    <a class="col-byline" href="#sobre-mi" data-id="sobre-mi">${PHOTO('md')}<div><div class="who">${t('by')}</div><div class="what">${t('role')}</div></div></a></div>
-   <div class="cols"><p>${t('ed1')}</p><p>${t('ed2')}</p><p>${t('ed3')}</p><a class="jump" href="#investigacion" data-id="investigacion"><span class="ink">${t('jump')}</span></a></div>
+   <div class="cols"><p>${t('ed1')}</p><p>${t('ed2')}</p><p>${t('ed3')}</p><p>${t('ed4')}</p><p class="sign">${t('sign1')}<b>Rick</b></p></div>
   </div>
   <div class="vrule"></div>
   <aside class="side" id="ira-caja">
