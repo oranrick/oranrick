@@ -415,6 +415,11 @@ html.turn::view-transition-new(root){animation:turnin .6s .1s var(--ease) both}
 .pc-back-body{padding:18px;display:flex;flex-direction:column;gap:12px;flex:1}
 .pc-rule{font:italic 500 19px/1.35 var(--text);margin:0}
 .pc-bar{margin-top:auto;height:54px;background:repeating-linear-gradient(90deg,#17140F 0 3px,#0000 3px 5px,#17140F 5px 6px,#0000 6px 10px)}
+.cv-side{margin:0!important;max-width:none!important}
+.cv-side .section-bar{padding-top:0}
+.cuest{max-width:900px;margin:60px auto 0}
+.cuest .pq-a{opacity:1;transform:none;font-style:normal;font-size:19px;line-height:1.65;max-width:62ch}
+.cuest .pq-q{font-size:clamp(30px,3.2vw,44px)}
 .pq{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;border-top:1px solid var(--rule);padding:22px 0 20px;transition-delay:.05s}
 .pq-n{font:600 13px/1 var(--mono);color:var(--accent);padding-top:10px;letter-spacing:.05em}
 .pq-q{margin:0 0 12px;font:900 clamp(30px,3vw,42px)/.95 var(--head);letter-spacing:-.005em;text-wrap:balance}
@@ -605,6 +610,7 @@ html[data-theme=night] .ira-note{background:#1F1D19;color:#ECE5D7}
 .ira-embed .ira-boton:focus-visible{outline:2px solid var(--ira-oro);outline-offset:3px}
 .ira-embed .ira-icono-trazo{fill:none;stroke:currentColor;stroke-width:1.75px;stroke-linecap:round;stroke-linejoin:round}
 .ira-embed__origen{margin:0;font-size:13px;color:var(--ira-texto-3)}
+@media (max-width:640px){.pq{grid-template-columns:26px minmax(0,1fr)!important;gap:4px 8px!important}.cuest .section-bar>span{display:none}.cuest .pq-a{font-size:17px}.cuest{margin-top:40px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}}
 </style>
 </head>
@@ -922,38 +928,41 @@ function openWord(w){
 function about(){
  const es=lang==='es';
  const QA=es?[
-  ['¿Por qué unas palabras nos acercan y otras nos separan?','Creo que antes de entender, sentimos. Un discurso puede unirnos o enfrentarnos antes de que nos dé tiempo a pensarlo.'],
-  ['¿Puede una máquina medir la empatía?','Es la pregunta de mi trabajo de máster. IRA es mi intento de responderla con un método que cualquiera pueda revisar y corregir.'],
-  ['¿Cuánto tarda una palabra en volverse normal?','Klemperer vio cómo el nazismo se metió en el idioma de todos, poco a poco. Me pregunto qué palabras de hoy estamos aceptando sin darnos cuenta.'],
-  ['¿Qué le hace el miedo a un discurso?','Lo acorta, lo simplifica y le busca un enemigo. Quiero entender cómo, para poder notarlo a tiempo.'],
-  ['¿Puede el lenguaje reparar lo que rompe?','Si las palabras pueden dañar un vínculo, también deberían poder sanarlo. Es la parte que más me importa.'],
-  ['¿Vamos hacia una sociedad más empática?','A pesar de las crisis, creo que sí. Pero no me basta con creerlo: quiero poder demostrarlo.']
+  ['¿Cuál fue la primera vez que unas palabras te cambiaron algo por dentro?','Tuve una infancia un poco atropellada. Me crié en una ciudad pequeña de Colombia, en una familia ultraconservadora, y las discusiones por mi sexualidad y por mi forma de ser, tan distinta, eran constantes. Ahí el lenguaje tuvo su primer papel en mi vida: me tocó ser mediador entre la incomprensión de mi familia y yo. Aprendí la diferencia entre responder con un insulto y responder con un «escúchame, quiero que hablemos, quiero que los dos estemos bien».'],
+  ['¿Qué te llevó de contar historias a querer medir el lenguaje?','Las lecturas sobre los grandes picos de polarización de la historia: las semejanzas con la sociedad del nazismo que documenta Klemperer; el patrón de polarización que suele llegar después de las crisis socioeconómicas; el poder del miedo y de la ira para captar la atención; y el contagio de ideas inhumanas, contrarias a valores que hasta hace poco creíamos intocables.'],
+  ['¿Qué te enseñó la hostelería que no te enseñó la universidad?','Que la comunicación está en todo: con la familia, con los amigos y en cualquier trabajo, sea cual sea. Y que saber leer al otro y escucharlo hace que todo fluya mejor.'],
+  ['¿Qué discurso político te ha marcado?','El de Jacinda Ardern después del atentado de Christchurch: la empatía política en su máximo esplendor. También el de José Mujica en la ONU. Discursos llenos de esperanza y de empatía por el otro, sea quien sea.'],
+  ['¿Qué te da más miedo de cómo hablamos hoy?','La agresividad. Los deseos de muerte. Las metáforas bélicas invadiéndolo todo.'],
+  ['¿Y qué te da esperanza?','Las metáforas arquitectónicas y de cuidado, la comunicación institucional empática, la fuerza del amor y la inteligencia emocional. Y pensar que, con el paso del tiempo, cada vez somos más quienes valoramos la inteligencia emocional.'],
+  ['¿Qué libros le regalarías a un político?','<i>Inteligencia emocional</i>, de Daniel Goleman, e <i>Inteligencia emocional 2.0</i>, de Travis Bradberry y Jean Greaves.'],
+  ['¿Cómo te gustaría que se usara IRA dentro de diez años?','Como un medidor en vivo del discurso político e institucional. Más que para controlar, para que toda la sociedad sepa cómo le afectan mentalmente los pronombres, las metáforas y los demás recursos lingüísticos con los que se le habla.']
  ]:[
-  ['Why do some words bring us closer and others push us apart?','I think we feel before we understand. A speech can unite us or set us against each other before we have time to think about it.'],
-  ['Can a machine measure empathy?','It is the question of my master’s thesis. IRA is my attempt to answer it with a method anyone can review and correct.'],
-  ['How long does it take for a word to become normal?','Klemperer watched Nazism seep into everyone’s language, little by little. I wonder which words of today we are accepting without noticing.'],
-  ['What does fear do to a speech?','It shortens it, simplifies it and finds it an enemy. I want to understand how, so we can notice it in time.'],
-  ['Can language repair what it breaks?','If words can damage a bond, they should also be able to heal it. That is the part I care about most.'],
-  ['Are we heading towards a more empathetic society?','Despite the crises, I think so. But believing it is not enough: I want to be able to prove it.']];
+  ['When did words first change something inside you?','I had a somewhat rough childhood. I grew up in a small Colombian city, in an ultra-conservative family, and arguments about my sexuality and my way of being, so different, were constant. That is where language first played a role in my life: I had to mediate between my family’s incomprehension and myself. I learned the difference between answering with an insult and answering with “listen to me, I want us to talk, I want us both to be okay”.'],
+  ['What took you from telling stories to wanting to measure language?','Reading about the great peaks of polarization in history: the parallels with Nazi-era society documented by Klemperer; the pattern of polarization that tends to follow socioeconomic crises; the power of fear and anger to grab attention; and the spread of inhuman ideas, against values we believed untouchable until recently.'],
+  ['What did hospitality teach you that university did not?','That communication is everywhere: with family, with friends and in any job, whatever it is. And that knowing how to read and listen to the other person makes everything flow better.'],
+  ['Which political speech has stayed with you?','Jacinda Ardern’s after the Christchurch attack: political empathy at its finest. Also José Mujica’s at the UN. Speeches full of hope and empathy for the other, whoever they are.'],
+  ['What scares you most about how we talk today?','Aggression. Wishing others dead. War metaphors invading everything.'],
+  ['And what gives you hope?','Metaphors of building and of care, empathetic institutional communication, the strength of love and emotional intelligence. And thinking that, over time, more and more of us value emotional intelligence.'],
+  ['Which books would you give a politician?','<i>Emotional Intelligence</i>, by Daniel Goleman, and <i>Emotional Intelligence 2.0</i>, by Travis Bradberry and Jean Greaves.'],
+  ['How would you like IRA to be used ten years from now?','As a live meter of political and institutional speech. Not to control, but so that everyone knows how pronouns, metaphors and the other linguistic devices used to address them affect them mentally.']];
  return `<header class="page-head"><div class="kicker">${es?'Sobre mí':'About'}</div><h1 style="view-transition-name:headline">${es?'Quién firma':'Who signs'}</h1><p class="deck">${es?'Periodista colombo-español. Analizo el discurso político, la inteligencia artificial y la desinformación.':'Colombian-Spanish journalist. I analyse political discourse, artificial intelligence and disinformation.'}</p></header>
  <section class="about2">
   <div class="card-wrap reveal"><button class="pcard" id="pcard" type="button" aria-label="${es?'Girar la acreditación':'Flip the press pass'}">
    <div class="pc-face pc-front"><div class="pc-hole"></div><div class="pc-band">${es?'PRENSA':'PRESS'}</div><div class="pc-body"><div class="ph pc-ph"><img src="img/rick-full-bw.jpg" alt="Ricardo Grisales Ramírez"><img class="c" src="img/rick-full.jpg" alt=""></div><div class="pc-data"><div class="pc-name">Ricardo<br>Grisales Ramírez</div><div class="pc-role">${es?'Periodista e investigador':'Journalist and researcher'}</div></div></div><div class="pc-foot">${es?'Toca para girar':'Tap to flip'}</div></div>
    <div class="pc-face pc-back"><div class="pc-hole"></div><div class="pc-band">${es?'AL DORSO':'BACK'}</div><div class="pc-back-body"><p class="pc-rule">${es?'Esta acreditación permite hacer preguntas incómodas, con educación.':'This pass allows asking uncomfortable questions, politely.'}</p><div class="pc-meta"><span>${es?'Correo':'Email'}</span>oranrick@gmail.com<span>${es?'Idiomas':'Languages'}</span>${es?'Español, inglés':'Spanish, English'}<span>${es?'Formación':'Education'}</span>${es?'Periodismo, UCM':'Journalism, UCM'}</div></div></div>
   </button></div>
-  <div class="persigue">
-   <div class="kicker">${es?'Las preguntas que me persiguen':'The questions that follow me'}</div>
-   <p class="iv-intro">${es?'No tengo respuestas cerradas. Estas son las preguntas a las que vuelvo una y otra vez, y lo que pienso de ellas por ahora.':'I have no closed answers. These are the questions I keep coming back to, and what I think about them for now.'}</p>
-   ${QA.map(([q,a],i)=>`<div class="pq reveal"><span class="pq-n">${String(i+1).padStart(2,'0')}</span><div><p class="pq-q">${q.replace(/\?$/,'<em>?</em>')}</p><p class="pq-a"><span>${es?'Por ahora':'For now'}</span>${a}</p></div></div>`).join('')}
-  </div>
- </section>
- <section class="cv">
+  <div class="cv cv-side">
   <div class="section-bar"><h2>${es?'Ficha técnica':'Fact sheet'}</h2><span>${es?'El CV, por secciones':'The CV, by section'}</span></div>
   <details class="cvd" open><summary>${es?'Formación':'Education'}</summary>${cvRows(CV.edu)}</details>
   <details class="cvd"><summary>${es?'Investigación':'Research'}</summary>${cvRows(CV.res)}</details>
   <details class="cvd"><summary>${es?'Experiencia':'Experience'}</summary>${cvRows(CV.work)}</details>
   <details class="cvd"><summary>${es?'Herramientas e idiomas':'Tools and languages'}</summary><div class="tags">${['HTML y CSS','Python','Claude API','Supabase','Vercel',es?'Visualización de datos':'Data visualization',es?'Español, nativo':'Spanish, native',es?'Inglés, B2':'English, B2'].map(x=>`<span>${x}</span>`).join('')}</div></details>
- </section>${footer()}`;
+  </div>
+ </section>
+ <section class="cuest">
+  <div class="section-bar reveal"><h2>${es?'Cuestionario':'Questionnaire'}</h2><span>${es?'Preguntas de la redacción, respuestas mías':'The newsroom asks, I answer'}</span></div>
+  ${QA.map(([q,a],i)=>`<div class="pq reveal"><span class="pq-n">${String(i+1).padStart(2,'0')}</span><div><p class="pq-q">${q.replace(/\?$/,'<em>?</em>')}</p><p class="pq-a">${a}</p></div></div>`).join('')}
+  </section>${footer()}`;
 }
 /* ---------- fe de erratas ---------- */
 function erratasPage(){
