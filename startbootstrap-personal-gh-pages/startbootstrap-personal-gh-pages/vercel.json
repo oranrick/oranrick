@@ -6,6 +6,7 @@
     { "source": "/arte-naturaleza(.html)?", "destination": "/#arte", "permanent": true },
     { "source": "/kali-uchis(.html)?", "destination": "/#kali", "permanent": true },
     { "source": "/vizcaya(.html)?", "destination": "/#vizcaya", "permanent": true },
+    { "source": "/ia-maquina(.html)?", "destination": "/#ia", "permanent": true },
     { "source": "/resume(.html)?", "destination": "/#sobre-mi", "permanent": true },
     { "source": "/contact(.html)?", "destination": "/#cartas", "permanent": true },
     { "source": "/gracias(.html)?", "destination": "/#cartas", "permanent": true },
