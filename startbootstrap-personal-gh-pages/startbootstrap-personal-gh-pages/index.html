@@ -622,6 +622,117 @@ html[data-theme=night] .ira-note{background:#1F1D19;color:#ECE5D7}
 .ira-embed .ira-icono-trazo{fill:none;stroke:currentColor;stroke-width:1.75px;stroke-linecap:round;stroke-linejoin:round}
 .ira-embed__origen{margin:0;font-size:13px;color:var(--ira-texto-3)}
 @media (max-width:640px){.pq{grid-template-columns:26px minmax(0,1fr)!important;gap:4px 8px!important}.cuest .section-bar>span{display:none}.cuest .pq-a{font-size:17px}.cuest{margin-top:40px}}
+/* ===== fotorreportaje: Vizcaya ===== */
+.rep-hero{margin:30px auto 0;max-width:1180px;position:relative}
+.rep-hero .rep-ph{aspect-ratio:16/9;max-height:78vh}
+.rep-hero .rep-ph img{object-position:50% 62%}
+.rep-ph{display:block;width:100%;position:relative;overflow:hidden;background:var(--paper-2);cursor:zoom-in;padding:0;border:0}
+.rep-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.rep-ph:hover img{transform:scale(1.025)}
+.develop img{filter:grayscale(1) sepia(.35) contrast(.7) brightness(1.18);opacity:.45;transition:filter 2.4s var(--ease),opacity 1.6s var(--ease),transform 1.2s var(--ease)}
+.develop.in img{filter:none;opacity:1}
+.rep-cap{display:flex;gap:10px;align-items:baseline;font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:9px}
+.rep-cap b{font:700 12px/1 var(--mono);color:var(--accent)}
+.rep-note{margin-top:46px}
+/* hoja de contactos */
+.rep-sheet{max-width:1180px;margin:56px auto 10px;background:#1A1814;color:#ECE5D7;padding:18px 18px 14px;position:relative;box-shadow:0 18px 40px #0000002a;transform:rotate(-.6deg)}
+.rep-sheet-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#A69D8E;margin-bottom:12px}
+.rep-sheet-h b{font:900 26px/1 var(--head);letter-spacing:0;text-transform:none;color:#ECE5D7}
+.rep-strip{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;position:relative;padding:14px 0}
+.rep-strip:before,.rep-strip:after{content:'';position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(90deg,transparent 0 9px,#ECE5D733 9px 17px)}
+.rep-strip:before{top:0}.rep-strip:after{bottom:0}
+.rep-th{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;cursor:pointer;padding:0;border:0;background:#000}
+.rep-th img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);transition:transform .6s var(--ease),filter .4s}
+.rep-th span{position:absolute;left:5px;bottom:4px;font:700 11px/1 var(--mono);color:#fff;text-shadow:0 1px 3px #000}
+.rep-th:after{content:'';position:absolute;inset:3px;border:2.5px solid var(--mark);border-radius:46% 52% 48% 55%/55% 47% 53% 45%;opacity:0;transform:rotate(-4deg) scale(1.08);transition:opacity .25s,transform .45s var(--ease)}
+.rep-th:hover img,.rep-th:focus-visible img{transform:scale(1.07);filter:none}
+.rep-th:hover:after,.rep-th:focus-visible:after,.rep-th.on:after{opacity:1;transform:rotate(-2deg) scale(1)}
+.rep-sheet-f{font:italic 400 14px/1.4 var(--text);color:#A69D8E;margin-top:4px}
+/* el recorrido: la luz cambia con el día */
+.rep-walk{position:relative;isolation:isolate;padding:70px 0 40px;margin-top:60px}
+.rep-walk:before{content:'';position:absolute;top:0;bottom:0;left:50%;width:calc(100vw - var(--sbw,0px));transform:translateX(-50%);background:var(--sky,transparent);z-index:-1;pointer-events:none;transition:background .3s linear}
+.rep-st{max-width:1180px;margin:0 auto 150px;position:relative}
+.rep-st:last-child{margin-bottom:40px}
+.rep-k{font:600 12px/1 var(--mono);color:var(--accent);letter-spacing:.04em}
+.rep-st h2{font:900 clamp(52px,6.4vw,96px)/.84 var(--head);margin:10px 0 18px;letter-spacing:-.012em}
+.rep-st p{font:400 19px/1.65 var(--text);margin:0 0 16px}
+.rep-tx{max-width:460px}
+.rep-tx:before{content:'';display:block;width:34px;height:3px;background:var(--mark);margin-bottom:16px}
+/* una foto */
+.rep-single{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.rep-single .rep-ph{aspect-ratio:4/5}
+/* pareja */
+.rep-pair .rep-two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.rep-pair .rep-two>:nth-child(2){margin-top:110px}
+.rep-pair .rep-ph{aspect-ratio:3/4}
+.rep-pair figure,.rep-duo figure,.rep-single figure,.rep-window figure{margin:0}
+.rep-pair .rep-txw{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;margin-top:46px;align-items:start}
+.rep-pair .rep-txw h2{margin-top:16px}
+.rep-st .rep-last{font:italic 500 clamp(28px,3vw,40px)/1.15 var(--text);color:var(--accent);margin:26px 0 0;text-wrap:balance}
+/* la escalera gira */
+.rep-spiral{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
+.rep-orb{position:relative;aspect-ratio:1;border-radius:50%;overflow:hidden;cursor:zoom-in;box-shadow:0 30px 60px #00000030,inset 0 0 0 1px #0000001a;padding:0;border:0;background:var(--paper-2);width:100%}
+.rep-orb img{position:absolute;left:50%;top:50%;width:118%;height:118%;object-fit:cover;transform:translate(-50%,-50%) rotate(var(--rot,0deg));transition:none}
+.rep-st .rep-q{font:900 clamp(46px,5vw,78px)/.9 var(--head);margin:0 0 26px;text-wrap:balance}
+.rep-q em{font-style:normal;color:var(--mark)}
+/* dúo asimétrico */
+.rep-duo{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 28px}
+.rep-duo .a{grid-column:1/7;grid-row:1/3}
+.rep-duo .a .rep-ph{aspect-ratio:3/4}
+.rep-duo .ta{grid-column:8/13;grid-row:1;align-self:start;padding-top:20px}
+.rep-duo .b{grid-column:6/12;grid-row:3/5;margin-top:-140px;position:relative;z-index:2}
+.rep-duo .b .rep-ph{aspect-ratio:4/5;box-shadow:0 24px 50px #00000038}
+.rep-duo .tb{grid-column:1/5;grid-row:4;align-self:end;padding-bottom:10px}
+/* la ventana: te acercas */
+.rep-window{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center}
+.rep-window .rep-ph{aspect-ratio:3/4;clip-path:inset(calc(var(--w,0)*7%) calc(var(--w,0)*9%) calc(var(--w,0)*7%) calc(var(--w,0)*9%));transition:clip-path .1s linear}
+.rep-window .rep-ph img{transform:scale(calc(1.18 - var(--w,0)*.18))}
+/* reloj de luz */
+.rep-sun{position:fixed;left:12px;bottom:18px;z-index:40;width:94px;background:var(--paper);border:1px solid var(--rule);padding:12px 14px 11px;box-shadow:0 10px 26px #0000001f;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.rep-sun.on{opacity:1;transform:none}
+.rep-sun svg{display:block;width:100%;height:auto;overflow:visible}
+.rep-sun .arc{fill:none;stroke:var(--rule);stroke-width:1.5;stroke-dasharray:2 4}
+.rep-sun .arc-done{fill:none;stroke:var(--mark);stroke-width:2.2;stroke-linecap:round}
+.rep-sun .hz{stroke:var(--ink);stroke-width:1}
+.rep-sun .sol{fill:var(--mark)}
+.rep-sun-l{display:block;font:900 17px/.95 var(--head);margin-top:7px;text-wrap:balance}
+.rep-sun-k{display:block;font:600 11px/1 var(--mono);color:var(--muted);margin-top:4px}
+/* visor */
+.rep-lb{position:fixed;inset:0;z-index:90;background:#0d0c0aee;display:grid;grid-template-rows:1fr auto;place-items:center;padding:28px 70px 18px;opacity:0;pointer-events:none;transition:opacity .3s}
+.rep-lb.on{opacity:1;pointer-events:auto}
+.rep-lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;box-shadow:0 20px 60px #000a}
+.rep-lb p{color:#ECE5D7;font:400 13px/1.4 var(--mono);margin:12px 0 0;text-align:center}
+.rep-lb p b{color:#FF7547;margin-right:8px}
+.rep-lb button{position:absolute;color:#ECE5D7;font:500 13px/1 var(--mono);padding:12px;opacity:.8}
+.rep-lb button:hover{opacity:1;color:#FF7547}
+.rep-lb .x{top:14px;right:16px}.rep-lb .pv{left:10px;top:50%;font-size:30px}.rep-lb .nx{right:10px;top:50%;font-size:30px}
+/* recorte en la hemeroteca */
+.clip-vizcaya{grid-column:1/5;grid-row:2;--r:-1.6deg;margin-top:-14px}
+.clips .clip-arte{grid-column:5/10;grid-row:2;margin-top:10px}
+.fan{position:relative;height:210px;margin:4px 0 16px}
+.fan img{position:absolute;top:10px;width:128px;height:170px;object-fit:cover;border:6px solid #FBF9F4;box-shadow:0 8px 18px #00000030;transition:transform .7s var(--ease)}
+html[data-theme=night] .fan img{border-color:#2A2722}
+.fan img:nth-child(1){left:calc(50% - 64px);transform:rotate(-9deg) translateX(-38px);z-index:1}
+.fan img:nth-child(2){left:calc(50% - 64px);transform:rotate(2deg);z-index:3}
+.fan img:nth-child(3){left:calc(50% - 64px);transform:rotate(11deg) translateX(40px);z-index:2}
+.clip-vizcaya:hover .fan img:nth-child(1){transform:rotate(-14deg) translateX(-84px) translateY(6px)}
+.clip-vizcaya:hover .fan img:nth-child(2){transform:rotate(0) translateY(-8px)}
+.clip-vizcaya:hover .fan img:nth-child(3){transform:rotate(15deg) translateX(86px) translateY(8px)}
+.rep-sun{padding:10px 10px 9px}
+@media (max-width:1379px){.rep-sun{left:auto;right:14px;bottom:14px;width:112px}}
+@media (max-width:980px){
+ .rep-single,.rep-spiral,.rep-window,.rep-pair .rep-txw{grid-template-columns:minmax(0,1fr);gap:26px}
+ .rep-pair .rep-two{gap:12px}.rep-pair .rep-two>:nth-child(2){margin-top:50px}
+ .rep-duo{display:flex;flex-direction:column;gap:24px}.rep-duo .b{margin-top:0}.rep-duo .b .rep-ph{box-shadow:none}
+ .rep-st{margin-bottom:90px}
+ .rep-strip{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .rep-strip:before,.rep-strip:after{display:none}
+ .rep-sun{display:none}
+ .rep-st h2{font-size:clamp(42px,12vw,56px)}
+ .rep-hero .rep-ph{aspect-ratio:4/5}
+ .rep-lb{padding:20px 10px 14px}.rep-lb .pv,.rep-lb .nx{top:auto;bottom:6px}
+ .clip-vizcaya{--r:-1deg}
+}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}.sign.reveal .firma{clip-path:none}}
 </style>
 </head>
@@ -717,6 +828,7 @@ function trace(s,seed){ // calma = onda suave, polarización = picos
 const fmt=s=>lang==='es'?s.toFixed(2).replace('.',','):s.toFixed(2);
 
 const PIECES=[
+ {id:'vizcaya',typ:{es:'Fotorreportaje',en:'Photo essay'},title:{es:'Vizcaya: diez miradas a estudiar lejos de Madrid',en:'Vizcaya: ten looks at studying far from Madrid'},d:'2026-06-16',min:4,img:'img/viz-05.jpg'},
  {id:'kali',typ:{es:'Crítica musical',en:'Music review'},title:{es:'Amor, duelo y libertad: el álbum más íntimo de Kali Uchis',en:'Love, grief and freedom: Kali Uchis’s most intimate album'},d:'2025-06-30',min:4,img:null},
  {id:'engano',typ:{es:'Opinión',en:'Opinion'},title:{es:'La política del engaño',en:'The politics of deception'},d:'2025-04-05',min:6,img:null},
  {id:'abnegacion',typ:{es:'Ensayo',en:'Essay'},title:{es:'La abnegación más pura',en:'The purest devotion'},d:'2025-04-05',min:4,img:'img/salo-2.jpg'},
@@ -731,6 +843,27 @@ const IRA_URL='https://ira-index.vercel.app/';
 
 
 const ART={
+ vizcaya:{d:'2026-06-16',slug:'vizcaya',layout:'reportaje',kicker:{es:'Fotorreportaje, vida universitaria',en:'Photo essay, university life'},title:{es:'Vizcaya',en:'Vizcaya'},deck:{es:'Diez miradas a lo que significa estudiar, lejos de Madrid, en el Parque de Vizcaya, Miami.',en:'Ten looks at what it means to study far from Madrid, at Vizcaya, Miami.'},min:4,next:'kali',
+ hero:['img/viz-01.jpg',{es:'La entrada. Vizcaya Museum & Gardens, Miami.',en:'The entrance. Vizcaya Museum & Gardens, Miami.'}],
+ body:[
+  ['p','Este reportaje se hizo en Vizcaya Museum & Gardens, en Miami, durante mi etapa de estudios lejos de Madrid. El encargo era retratar la vida universitaria, y elegí hacerlo en un lugar que no tiene aulas ni horarios. Estudiar fuera me enseñó que la universidad no se queda en el campus: viaja contigo, en la forma de mirar.'],
+  ['p','Las diez fotografías siguen el recorrido de un día, de la entrada a la última luz. No buscan la imagen de postal, aunque al final también aparece. Buscan lo que se queda al margen del recorrido oficial: un busto sin nombre, un patio que recuerda a otro, una ventana que da al mar.'],
+  ['p','Tener aún más ganas de estudiar hace que la universidad aporte en todo. Eso es, al final, lo que aprendí mirando un jardín.']
+ ],
+ st:[
+  {kind:'single',h:{es:'El primer trayecto',en:'The first stretch'},f:[['02',{es:'Busto sobre el muro de coral.',en:'Bust on the coral wall.'}]],
+   tx:['Lleva décadas en el mismo muro. Sin cartel, sin luz, sin pedestal. Alguien lo puso ahí antes de que existieras y nadie desde entonces ha sentido la necesidad de explicarlo.','La universidad funciona igual: hay presencias que lo sostienen todo sin que nadie te las presente. Aprendes a verlas, o las pasas sin notarlas.']},
+  {kind:'pair',h:{es:'Entre clases',en:'Between classes'},f:[['03',{es:'Un rostro sin nombre, entre la escalinata y las flores.',en:'A nameless face, between the stairway and the flowers.'}],['04',{es:'Alguien cruza el arco.',en:'Someone walks through the arch.'}]],
+   tx:['Un rostro sin nombre lleva décadas en el mismo muro. A pocos metros, alguien cruza un arco cargado de historia sin detenerse a leerla.','Las dos imágenes dicen lo mismo: el lugar guarda más de lo que muestra, y la mayoría del tiempo simplemente lo atravesamos.']},
+  {kind:'spiral',h:{es:'La pausa larga',en:'The long pause'},f:[['05',{es:'La escalera de caracol, desde arriba.',en:'The spiral staircase, from above.'}]],q:'Solo desde arriba se entiende la forma que tenía el camino.',
+   tx:['Esta escalera no lleva a ningún aula. Pero la imagen que produce, mirando hacia abajo y viendo la forma completa de algo que acabas de recorrer, es la misma que deja un año estudiando fuera.','No la entiendes mientras la vives. Solo cuando ya estás arriba.']},
+  {kind:'duo',h:{es:'Detalles del día',en:'Details of the day'},f:[['06',{es:'Frente a la barcaza de piedra.',en:'Facing the stone barge.'}],['07',{es:'El patio.',en:'The courtyard.'}]],
+   tx:[['Todos fotografían lo mismo. La diferencia no está en el objeto, sino en lo que decides dejar fuera del encuadre.','Eso también se aprende en un aula, no solo parado frente a algo que no entiendes del todo y disparando de todas formas.'],['Todo campus tiene un patio como este. Sillas, algo verde, gente que pasa. No es el de mi facultad en Madrid, pero cumple lo mismo.']]},
+  {kind:'window',h:{es:'La hora dorada',en:'Golden hour'},f:[['08',{es:'Una ventana a la bahía de Biscayne.',en:'A window onto Biscayne Bay.'}]],
+   tx:['Desde aquí Madrid queda al otro lado del agua. Un edificio europeo trasplantado en Florida, una ventana que enmarca el horizonte, y tú adentro, en la sombra, mirando hacia fuera.','La reja no te impide ver: solo te recuerda que todavía hay distancia. Estudiar lejos tiene exactamente esta forma.']},
+  {kind:'pair',h:{es:'Última luz',en:'Last light'},f:[['09',{es:'La fuente de los nenúfares.',en:'The water-lily fountain.'}],['10',{es:'El palacio, desde otra ventana.',en:'The palace, through another window.'}]],
+   tx:['Dos imágenes para cerrar el día. La primera: el agua quieta, los nenúfares, la pausa que no produces ni justificas, solo habitas. La segunda: la fachada del palacio enmarcada por una ventana, la foto que todos se llevan, vista desde adentro.','Eso es lo que queda después de un día así: la certeza de que estuviste en un lugar que existía mucho antes que tú y que seguirá existiendo cuando te vayas. Como la universidad.'],last:'Ojalá que algún día me recuerde.'}
+ ]},
  engano:{d:'2025-04-05',slug:'poder-mentira',kicker:{es:'Opinión',en:'Opinion'},title:{es:'La política del engaño',en:'The politics of deception'},deck:{es:'¿Puede sobrevivir la democracia a la desinformación?',en:'Can democracy survive disinformation?'},min:6,hero:null,next:'abnegacion',
  body:[
   ['p','Vivimos saturados de datos y, aun así, la verdad ya no parece ser suficiente. La desinformación —alimentada por inteligencia artificial, algoritmos y manipulación emocional— ha convertido el acceso a la información en una batalla permanente.'],
@@ -787,7 +920,7 @@ const ART={
   ['v','En una industria donde todo parece urgente, Sincerely se permite ser lento, amoroso y necesario. No quiere ser tendencia: quiere ser refugio. Y lo logra.']
  ]},
  arte:{d:'2025-04-04',slug:'arte-naturaleza',layout:'expo',kicker:{es:'Reseña, exposición',en:'Review, exhibition'},title:{es:'Arte y naturaleza',en:'Art and nature'},deck:{es:'Del surrealismo a la crisis ecológica: un siglo de biomorfismo en CaixaForum Madrid.',en:'From Surrealism to the ecological crisis: a century of biomorphism at CaixaForum Madrid.'},min:5,
- hero:['img/portadaarte.jpg',{es:'«Arte y naturaleza. Un siglo de biomorfismo». CaixaForum Madrid, 2024.',en:'“Art and Nature. A Century of Biomorphism”. CaixaForum Madrid, 2024.'}],next:'kali',
+ hero:['img/portadaarte.jpg',{es:'«Arte y naturaleza. Un siglo de biomorfismo». CaixaForum Madrid, 2024.',en:'“Art and Nature. A Century of Biomorphism”. CaixaForum Madrid, 2024.'}],next:'vizcaya',
  body:[
   ['p','Madrid se convierte en un oasis de vitalismo con la exposición "Arte y naturaleza. Un siglo de biomorfismo". A través de obras de grandes artistas como Pablo Picasso, Salvador Dalí o Charles Le Corbusier, la muestra invita a reflexionar sobre cómo la naturaleza ha inspirado a los artistas a lo largo de un siglo. El comisariado estuvo a cargo de Angela Lampe, doctora en Historia del Arte por la Universidad La Sorbona de París.'],
   ['p','La muestra representa una reflexión entre el arte y la naturaleza, entre cultura y ciencia, principalmente a través del surrealismo. La mayoría de las obras son préstamos del Centre Pompidou, tanto el parisino como el malagueño. Esta masiva exposición cuenta con obras de artistas tan imponentes como Georgia O\'Keeffe, Vasili Kandinski, Jean Dubuffet o Max Ernst. Aunque la mayoría de la exposición está liderada por la pintura, encontramos diferentes soportes que la hacen dinámica, divertida y profunda. Cuatro conceptos la ordenan: metamorfosis, mimetismo, creación y amenaza.'],
@@ -857,8 +990,80 @@ function footer(){
  <div class="foot"><span class="foot-l"><span class="foot-firma">${FIRMA}</span>${t('foot1')}</span><span>${t('foot2')}</span></div>`;
 }
 
+/* ---------- fotorreportaje: un día en Vizcaya ---------- */
+const repPh=(n,cap,cls='')=>`<button type="button" class="rep-ph develop ${cls}" data-lb="${n}" aria-label="${esc(cap)}"><img src="img/viz-${n}.jpg" alt="${esc(cap)}" loading="lazy"></button>`;
+const repFig=(n,cap,cls='')=>`<figure id="viz-${n}">${repPh(n,cap,cls)}<figcaption class="rep-cap"><b>${n}</b><span>${esc(cap)}</span></figcaption></figure>`;
+function repArticle(id){
+ const a=ART[id],es=lang==='es',nx=ART[a.next];
+ const ps=xs=>xs.map(x=>`<p>${esc(x)}</p>`).join('');
+ const all=[['01',L(a.hero[1])],...a.st.flatMap(s=>s.f.map(([n,c])=>[n,L(c)]))];
+ const st=a.st.map((s,i)=>{
+  const k=`<div class="rep-k">${s.f.length>1?(es?'Fotos ':'Photos ')+s.f.map(f=>f[0]).join(' y '):(es?'Foto ':'Photo ')+s.f[0][0]}</div>`;
+  const h=`<h2>${esc(L(s.h))}</h2>`,c=n=>L(s.f[n][1]);
+  if(s.kind==='single')return `<section class="rep-st rep-single" data-h="${esc(L(s.h))}">${repFig(s.f[0][0],c(0))}<div class="rep-tx">${k}${h}${ps(s.tx)}</div></section>`;
+  if(s.kind==='spiral')return `<section class="rep-st rep-spiral" data-h="${esc(L(s.h))}"><figure id="viz-${s.f[0][0]}" style="margin:0"><button type="button" class="rep-orb develop" data-lb="${s.f[0][0]}" aria-label="${esc(c(0))}"><img src="img/viz-${s.f[0][0]}.jpg" alt="${esc(c(0))}" loading="lazy"></button><figcaption class="rep-cap" style="justify-content:center"><b>${s.f[0][0]}</b><span>${esc(c(0))}</span></figcaption></figure><div>${k}<p class="rep-q">${esc(s.q)}</p><div class="rep-tx"><h2 style="font-size:clamp(30px,2.6vw,40px)">${esc(L(s.h))}</h2>${ps(s.tx)}</div></div></section>`;
+  if(s.kind==='duo')return `<section class="rep-st rep-duo" data-h="${esc(L(s.h))}"><div class="a">${repFig(s.f[0][0],c(0))}</div><div class="ta rep-tx"><div class="rep-k">${es?'Foto':'Photo'} ${s.f[0][0]}</div>${h}${ps(s.tx[0])}</div><div class="b">${repFig(s.f[1][0],c(1))}</div><div class="tb rep-tx"><div class="rep-k">${es?'Foto':'Photo'} ${s.f[1][0]}</div>${ps(s.tx[1])}</div></section>`;
+  if(s.kind==='window')return `<section class="rep-st rep-window" data-h="${esc(L(s.h))}" id="repWin">${repFig(s.f[0][0],c(0))}<div class="rep-tx">${k}${h}${ps(s.tx)}</div></section>`;
+  return `<section class="rep-st rep-pair" data-h="${esc(L(s.h))}"><div class="rep-two">${repFig(s.f[0][0],c(0))}<div data-sp=".12">${repFig(s.f[1][0],c(1))}</div></div><div class="rep-txw"><div>${k}${h}</div><div class="rep-tx" style="max-width:620px">${ps(s.tx)}${s.last?`<p class="rep-last">${esc(s.last)}</p>`:''}</div></div></section>`;
+ }).join('');
+ return `<article class="art rep">
+  <header class="art-head"><div class="kicker">${L(a.kicker)}</div><h1 style="view-transition-name:headline">${L(a.title)}</h1><p class="deck">${L(a.deck)}</p>
+  <a class="byline" href="#sobre-mi" data-id="sobre-mi">${PHOTO('sm')}<div style="text-align:left"><div class="who">${t('by')}</div><div class="what">${longD(a.d)}. ${es?'10 fotografías':'10 photographs'}</div></div></a></header>
+  <figure class="rep-hero" id="viz-01">${repPh('01',L(a.hero[1]))}<figcaption class="rep-cap"><b>01</b><span>${esc(L(a.hero[1]))}</span></figcaption></figure>
+  ${lang==='en'?`<p class="only-es">${t('onlyEs')}</p>`:''}
+  <div class="body rep-note">${ps(a.body.map(b=>b[1]))}</div>
+  <div class="rep-sheet"><div class="rep-sheet-h"><b>${es?'Hoja de contactos':'Contact sheet'}</b><span>${es?'Toca una foto para ir a ella':'Tap a frame to jump to it'}</span></div>
+   <div class="rep-strip">${all.map(([n,c])=>`<button type="button" class="rep-th" data-go="viz-${n}" aria-label="${esc(c)}"><img src="img/viz-${n}.jpg" alt="" loading="lazy"><span>${n}</span></button>`).join('')}</div>
+   <p class="rep-sheet-f">${es?'Las diez siguen el orden de un día: de la entrada a la última luz.':'The ten follow the order of a day: from the entrance to the last light.'}</p></div>
+  <div class="rep-walk" id="repWalk">${st}</div>
+  <div class="fin" aria-hidden="true"></div>
+  <div class="cite"><div class="lbl"><span>${t('citeL')}</span><button type="button" id="citeBtn">${t('copy')}</button></div><p id="citeTxt">Grisales Ramírez, R. (${a.d.slice(0,4)}, ${longD(a.d).replace(/ de \d{4}$/,'').replace(/, \d{4}$/,'')}). <i>${L(a.title)}</i> [${es?'fotorreportaje':'photo essay'}]. Ricardo Grisales Ramírez. https://oranrick.com/${a.slug}</p></div>
+  <a class="next" href="#${a.next}" data-id="${a.next}"><span class="mono" style="font-size:12px;color:var(--muted)">${t('nextL')}</span><b><span class="ink" data-vt="${a.next}">${L(nx.title)}</span></b></a>
+  ${footer()}
+ </article>
+ <div class="rep-sun" id="repSun" aria-hidden="true"><svg viewBox="0 0 120 60"><line class="hz" x1="2" y1="56" x2="118" y2="56"/><path class="arc" d="M8 56 A52 52 0 0 1 112 56"/><path class="arc-done" id="repArc" d="M8 56 A52 52 0 0 1 112 56" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><circle class="sol" id="repSol" cx="8" cy="56" r="6"/></svg><span class="rep-sun-l" id="repSunL"></span><span class="rep-sun-k" id="repSunK"></span></div>
+ <div class="rep-lb" id="repLb" role="dialog" aria-modal="true" aria-label="${es?'Visor de fotos':'Photo viewer'}"><img alt=""><p></p><button type="button" class="x">${es?'Cerrar':'Close'}</button><button type="button" class="pv" aria-label="${es?'Anterior':'Previous'}">‹</button><button type="button" class="nx" aria-label="${es?'Siguiente':'Next'}">›</button></div>`;
+}
+const REP_SKY={day:[[0,[255,255,255,0]],[.35,[255,246,222,.35]],[.72,[240,178,96,.26]],[1,[150,92,70,.2]]],night:[[0,[0,0,0,0]],[.35,[60,48,30,.22]],[.72,[150,82,30,.2]],[1,[46,36,70,.32]]]};
+function repSky(p){const S=REP_SKY[document.documentElement.dataset.theme==='night'?'night':'day'];let i=1;while(i<S.length-1&&p>S[i][0])i++;const [p0,a]=S[i-1],[p1,b]=S[i];const t=Math.max(0,Math.min(1,(p-p0)/(p1-p0)));const c=a.map((v,k)=>v+(b[k]-v)*t);return `rgba(${c[0]|0},${c[1]|0},${c[2]|0},${c[3].toFixed(3)})`}
+let repList=[];
+function repMount(){
+ const w=document.getElementById('repWalk');if(!w)return;
+ document.documentElement.style.setProperty('--sbw',(innerWidth-document.documentElement.clientWidth)+'px');
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.22});
+ view.querySelectorAll('.develop').forEach(e=>io.observe(e));
+ view.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{const el=document.getElementById(b.dataset.go);if(!el)return;el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});view.querySelectorAll('.rep-th').forEach(x=>x.classList.toggle('on',x===b))});
+ repList=[...view.querySelectorAll('[data-lb]')].map(b=>({n:b.dataset.lb,src:b.querySelector('img').src,cap:b.getAttribute('aria-label')}));
+ const lb=document.getElementById('repLb'),li=lb.querySelector('img'),lp=lb.querySelector('p');let cur=0,back=null;
+ const show=i=>{cur=(i+repList.length)%repList.length;const r=repList[cur];li.src=r.src;li.alt=r.cap;lp.innerHTML=`<b>${r.n}</b>${esc(r.cap)}`};
+ const open=i=>{back=document.activeElement;show(i);lb.classList.add('on');lb.querySelector('.x').focus()};
+ const close=()=>{lb.classList.remove('on');if(back)back.focus()};
+ view.querySelectorAll('[data-lb]').forEach((b,i)=>b.onclick=()=>open(i));
+ lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=()=>show(cur-1);lb.querySelector('.nx').onclick=()=>show(cur+1);
+ lb.onclick=e=>{if(e.target===lb)close()};
+ lb.onkeydown=e=>{if(e.key==='Escape')close();if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)};
+ repScroll();
+}
+function repScroll(){
+ const w=document.getElementById('repWalk');if(!w)return;
+ const quiet=matchMedia('(prefers-reduced-motion: reduce)').matches,vh=innerHeight,b=w.getBoundingClientRect();
+ const p=Math.max(0,Math.min(1,(vh*.5-b.top)/b.height));
+ w.style.setProperty('--sky',repSky(p));
+ const sun=document.getElementById('repSun');
+ if(sun){sun.classList.toggle('on',b.top<vh*.5&&b.bottom>vh*.5);
+  const ang=Math.PI*(1-p),x=60+52*Math.cos(ang),y=56-52*Math.sin(ang);const s=document.getElementById('repSol');s.setAttribute('cx',x.toFixed(1));s.setAttribute('cy',y.toFixed(1));
+  document.getElementById('repArc').setAttribute('stroke-dashoffset',(1-p).toFixed(3));
+  const sts=[...w.querySelectorAll('.rep-st')];let k=0;sts.forEach((s,i)=>{if(s.getBoundingClientRect().top<vh*.6)k=i});
+  const L1=document.getElementById('repSunL');if(sts[k]&&L1.textContent!==sts[k].dataset.h){L1.textContent=sts[k].dataset.h;document.getElementById('repSunK').textContent=`${k+1} / ${sts.length}`}}
+ if(quiet)return;
+ w.querySelectorAll('[data-sp]').forEach(el=>{const r=el.getBoundingClientRect(),c=r.top+r.height/2-vh/2;el.style.transform=`translateY(${Math.max(-70,Math.min(70,-c*+el.dataset.sp)).toFixed(1)}px)`});
+ const orb=w.querySelector('.rep-orb');if(orb){const r=orb.getBoundingClientRect(),c=(r.top+r.height/2-vh/2)/vh;orb.style.setProperty('--rot',(c*-70).toFixed(2)+'deg')}
+ const win=document.getElementById('repWin');if(win){const r=win.getBoundingClientRect(),q=Math.max(0,Math.min(1,(vh*.85-r.top)/(vh*.75)));win.style.setProperty('--w',(1-q).toFixed(3))}
+}
+addEventListener('scroll',repScroll,{passive:true});addEventListener('resize',repScroll);
+
 function article(id){
- const a=ART[id];
+ const a=ART[id];if(a.layout==='reportaje')return repArticle(id);
  let nI=0;const body=a.body.map(([k,x,y])=>k==='p'?`<p>${esc(x)}</p>`:k==='q'?`<blockquote class="pull">${esc(x)}</blockquote>`:k==='t'?`<div class="trip"><div class="trip-title"><span>${lang==='es'?'El triángulo de luz':'The triangle of light'}</span><span>${lang==='es'?'Detalles':'Details'}</span></div>${x.map((f,i)=>`<figure><div class="fr"><img src="${f[0]}" alt="${esc(f[1])}" loading="lazy"></div><figcaption><b>${i+1}</b><span>${esc(f[1])}</span></figcaption></figure>`).join('')}</div>`:k==='h'?`<h2 class="ladillo">${esc(x)}</h2>`:k==='v'?`<div class="verdict"><span>${lang==='es'?'Veredicto':'Verdict'}</span><p>${esc(x)}</p></div>`:k==='sala'?`<div class="sala"><span class="sala-n">${lang==='es'?'Sala':'Room'} ${y}</span><h2>${esc(x)}</h2></div>`:k==='cartela'?`<figure class="cartela-fig"><img src="${x}" alt="${esc(y.t)}, ${esc(y.a)}" loading="lazy"><figcaption class="cartela"><b>${esc(y.a)}</b><i>${esc(y.t)}</i>${y.y?`<span>${y.y}</span>`:''}<span>${esc(y.m)}</span></figcaption></figure>`:k==='ticket'?`<div class="ticket"><div class="tk-main"><div class="tk-h">${lang==='es'?'Entrada':'Ticket'}</div><div class="tk-t">Arte y naturaleza</div>${x.map(([a,b])=>`<div class="tk-r"><span>${a}</span>${b}</div>`).join('')}</div></div>`:k==='f'?`<figure><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`:`<figure class="narrow ${(nI++)%2?'r':''}"><img src="${x}" alt="${esc(y)}" loading="lazy"><figcaption>${esc(y)}</figcaption></figure>`).join('');
  const nx=ART[a.next];
  return `<article class="art">
@@ -891,12 +1096,12 @@ const CV={
 const cvRows=list=>list.map(([w,a,b,c])=>`<div class="cv-row"><div class="when">${typeof w==='string'?w:L(w)}</div><div><div class="what">${typeof a==='string'?a:L(a)}</div><div class="where">${L(b)}</div><p>${L(c)}</p></div></div>`).join('');
 
 /* ---------- corpus y concordancia ---------- */
-const PG={engano:2,abnegacion:3,arte:4,kali:5};const SHORT={engano:'Engaño',abnegacion:'Salomón',arte:'Arte',kali:'Kali'};
+const PG={engano:2,abnegacion:3,arte:4,kali:5,vizcaya:6};const SHORT={engano:'Engaño',abnegacion:'Salomón',arte:'Arte',kali:'Kali',vizcaya:'Vizcaya'};
 const STOP=new Set('encontramos podemos vemos ninguna ninguno siempre nunca hacen convertido convierte encontrar llega llegar quiere quieren mejor menos mayor mayoría diferentes diferente a al algo algunas algunos ante antes aquel aquella aquellas aquello aquellos aqui aquí asi así aun aún cada casi como con contra cual cuales cualquier cuando cuanto de del desde donde dos el él ella ellas ello ellos en entre era eran es esa esas ese eso esos esta está están estaba estas este esto estos fue fueron ha han hace hacen hacer hacia hasta hay la las le les lo los mas más me mi mientras misma mismo muy nada ni no nos nosotros o otra otras otro otros para pero poco por porque que qué quien quienes se sea según ser si sí sido sin sino sobre solo sólo son su sus tal también tan tanto te tiene tienen todo todos toda todas tras tu tú un una uno unos unas usted y ya yo él cuya cuyo vez veces aunque además entonces sin embargo mucho muchos mucha muchas otro cómo donde dónde cual puede pueden parte forma través través hecho hacía haber había habían ante bien cada vez sus tras esta estas este esto lado tipo tipos ahora aquí allí cual cuál fue ser será sido tenía tener mismo misma esa ese eso estos estas así decir dice dijo entre durante incluso sobre todo cosa cosas manera nuevo nueva nuevas nuevos gran grandes primera primer primero sido mientras momento solo sola alguna alguno algunas sea siendo tienen hacia toda'.split(' '));
 let CORP=null,selWord=null,pendingWord=null;
 function corpus(){
  if(CORP)return CORP;
- const docs=Object.entries(ART).map(([id,a])=>({id,text:a.body.filter(b=>['p','v'].includes(b[0])).map(b=>b[1]).join(' ')}));
+ const docs=Object.entries(ART).map(([id,a])=>({id,text:[...a.body.filter(b=>['p','v'].includes(b[0])).map(b=>b[1]),...(a.st||[]).flatMap(x=>x.tx.flat())].join(' ')}));
  const cnt={},where={};
  docs.forEach(d=>{(d.text.match(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g)||[]).forEach(w=>{const k=w.toLowerCase();if(k.length<4||STOP.has(k))return;cnt[k]=(cnt[k]||0)+1;(where[k]=where[k]||new Set()).add(d.id)})});
  Object.keys(cnt).forEach(k=>{if(k.endsWith('s')&&cnt[k.slice(0,-1)]){const b=k.slice(0,-1);cnt[b]+=cnt[k];where[k].forEach(x=>where[b].add(x));delete cnt[k]}});
@@ -922,7 +1127,7 @@ function archivePage(){
  const idx=sorted.map(o=>{const L0=o.w[0].toUpperCase().normalize('NFD')[0];const head=L0!==letter?(letter=L0,`<div class="ix-letter">${L0}</div>`):'';return head+`<button class="ix" data-w="${o.w}" type="button"><span class="ix-w">${o.w}</span><span class="ix-d"></span><span class="ix-p">${o.c}</span></button>`}).join('');
  return `<header class="page-head"><div class="kicker">${es?'Hemeroteca':'Archive'}</div><h1 style="view-transition-name:headline">${es?'Todo lo publicado':'Everything published'}</h1><p class="deck">${es?`${PIECES.length} textos y unas ${Math.round(c.words/100)*100} palabras. Búscalos por fecha o por las palabras que más repito.`:`${PIECES.length} pieces and about ${Math.round(c.words/100)*100} words. Browse them by date or by the words I repeat the most.`}</p></header>
  <section class="research">
-  <div class="section-bar"><h2>2025</h2><span>${es?'Recortes, del más reciente al primero':'Clippings, newest first'}</span></div>
+  <div class="section-bar"><h2>2026 · 2025</h2><span>${es?'Recortes, del más reciente al primero':'Clippings, newest first'}</span></div>
   ${clips()}
   <div class="section-bar" id="indice-palabras"><h2>${es?'Índice analítico':'Index of words'}</h2><span>${es?'Toca una palabra: la concordancia muestra cada vez que la uso':'Tap a word: the concordance shows every time I use it'}</span></div>
   <div class="ix-grid">${idx}</div>
@@ -1020,6 +1225,8 @@ function clips(){
    ${meta('engano')}<blockquote>${es?'La verdad se vuelve escurridiza y poco atractiva.':'Truth becomes slippery and unappealing.'}</blockquote><h3 data-vt="engano">${L(P.engano.title)}</h3><p>${es?'¿Puede sobrevivir la democracia a la desinformación?':'Can democracy survive disinformation?'}</p>${pg('engano')}</a>
   <a class="clip clip-abnegacion" href="#abnegacion" data-id="abnegacion"><span class="tape t3"></span>
    <div class="clip-img"><img src="img/salo-2.jpg" alt="" loading="lazy"></div>${meta('abnegacion')}<h3 data-vt="abnegacion">${L(P.abnegacion.title)}</h3><p>${es?'La maternidad en El juicio de Salomón, de Luca Giordano.':'Motherhood in Luca Giordano’s The Judgement of Solomon.'}</p>${pg('abnegacion')}</a>
+  <a class="clip clip-vizcaya" href="#vizcaya" data-id="vizcaya"><span class="tape t2"></span>
+   <div class="fan" aria-hidden="true"><img src="img/viz-02.jpg" alt="" loading="lazy"><img src="img/viz-05.jpg" alt="" loading="lazy"><img src="img/viz-08.jpg" alt="" loading="lazy"></div>${meta('vizcaya')}<h3 data-vt="vizcaya">Vizcaya</h3><p>${es?'Un día de estudios lejos de Madrid, en diez fotos.':'A day of studying far from Madrid, in ten photos.'}</p>${pg('vizcaya')}</a>
   <a class="clip clip-arte" href="#arte" data-id="arte"><span class="tape t4"></span>
    <div class="clip-img"><img src="img/portadaarte.jpg" alt="" loading="lazy"><span class="mini-ticket">${es?'Entrada':'Ticket'}<b>CaixaForum</b></span></div>${meta('arte')}<h3 data-vt="arte">${L(P.arte.title)}</h3><p>${es?'Un siglo de biomorfismo, sala por sala.':'A century of biomorphism, room by room.'}</p>${pg('arte')}</a>
  </div>`;
@@ -1149,6 +1356,7 @@ function setI18n(){document.querySelectorAll('[data-i]').forEach(el=>{const k=el
   ['IRA',es?'Metodología 2.0: cerrado el P1, la frontera del nosotros':'Methodology 2.0: P1, the boundary of “us”, is closed','investigacion'],
   ['IRA',es?'En revisión el P2: las metáforas y a quién apuntan':'P2 under review: metaphors and who they target','investigacion'],
   ...IRA_EJ.map(r=>[es?'Índice':'Index',`${r.n}, ${iraFmt(r.s)} ${es?'sobre 10':'out of 10'}`,'ext']),
+  [es?'Hemeroteca':'Archive',es?'Vizcaya, fotorreportaje en diez fotos':'Vizcaya, a photo essay in ten frames','vizcaya'],
   [es?'Hemeroteca':'Archive',es?'La abnegación más pura, sobre Luca Giordano':'The purest devotion, on Luca Giordano','abnegacion'],
   [es?'Fe de erratas':'Corrections',es?'El P1 de IRA ya solo mide la frontera del nosotros':'IRA’s P1 now measures only the boundary of “us”','fe-de-erratas']];
  const one=items.map(([a,b,h])=>h==='ext'?`<a href="${IRA_URL}" target="_blank" rel="noopener"><b>${a}</b> ${b}</a>`:h.startsWith('go:')?`<a href="#" data-goto="${h.slice(3)}"><b>${a}</b> ${b}</a>`:`<a href="#${h}" data-id="${h}"><b>${a}</b> ${b}</a>`).join('');
@@ -1168,6 +1376,7 @@ function render(){
  if(sw&&!played){played=true;try{localStorage.setItem('rgr-titular-v3','1')}catch(e){}playSwap(sw,runId)}
  wire();
  iraMontar();
+ repMount();
  if(document.getElementById('route'))requestAnimationFrame(()=>setTimeout(layoutRoute,60));
  document.querySelectorAll('.icard').forEach(c=>c.onclick=()=>{document.querySelectorAll('.icard').forEach(x=>x.classList.remove('top'));c.classList.add('top')});
 }

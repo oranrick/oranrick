@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "redirects": [
+    { "source": "/vizcaya(.html)?", "destination": "/#vizcaya", "permanent": true },
     { "source": "/poder-mentira(.html)?", "destination": "/#engano", "permanent": true },
     { "source": "/salomon(.html)?", "destination": "/#abnegacion", "permanent": true },
     { "source": "/arte-naturaleza(.html)?", "destination": "/#arte", "permanent": true },
