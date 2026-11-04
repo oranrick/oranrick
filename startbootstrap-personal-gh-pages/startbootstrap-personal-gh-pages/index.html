@@ -813,7 +813,6 @@ function home(){
   <a href="#abnegacion" data-id="abnegacion"><figure><div class="frame"><img src="img/portada-salo.jpg" alt="${t('fCap')}"></div><figcaption>${t('fCap')}</figcaption></figure></a>
   <div><div class="kicker">${t('fKicker')}</div><h3><a href="#abnegacion" data-id="abnegacion"><span data-vt="abnegacion">${t('fTitle')}</span></a></h3><p class="deck">${t('fDeck')}</p><p>${t('fText')}</p><a class="jump" href="#abnegacion" data-id="abnegacion"><span class="ink">${t('read')}</span></a></div>
  </article>
- ${wordBand()}
  <div class="section-bar reveal" id="hemeroteca-portada"><h2><a href="#hemeroteca" data-id="hemeroteca"><span class="ink">${t('archive')}</span></a></h2><span>${t('archiveSub')}</span></div>
  <div class="reveal">${clips()}</div>
  ${footer()}`;
@@ -821,7 +820,7 @@ function home(){
 
 function footer(){
  return `<footer class="colophon reveal">
-  <section id="erratas-pie"><h3><a href="#fe-de-erratas" data-id="fe-de-erratas"><span class="ink">${t('erratas')}</span></a></h3><ul><li><span class="d">${t('e1d')}</span>${t('e1')}<br><button class="replay" id="replayBtn"><span class="ink">${t('replay')}</span></button></li><li><span class="d">${t('e2d')}</span>${t('e2')}</li><li><span class="d">${t('e3d')}</span>${t('e3')}</li></ul></section>
+  <section id="erratas-pie"><h3><a href="#fe-de-erratas" data-id="fe-de-erratas"><span class="ink">${t('erratas')}</span></a></h3><ul><li><span class="d">${t('e2d')}</span>${t('e2')}</li><li><span class="d">${t('e3d')}</span>${t('e3')}</li></ul></section>
   <section id="contacto" class="contact"><h3><a href="#cartas" data-id="cartas"><span class="ink">${t('cartas')}</span></a></h3><p>${t('cartasP')}</p>
    <div class="mail"><a href="mailto:oranrick@gmail.com" style="border:0;padding:0"><span class="ink">oranrick@gmail.com</span></a><button id="copyMail" type="button">${t('copy')}</button></div>
    <div class="links"><a href="https://www.linkedin.com/in/ricardo-grisales-ramirez-49a322232/" target="_blank" rel="noopener"><span class="ink on">LinkedIn</span></a><a href="https://github.com/oranrick" target="_blank" rel="noopener"><span class="ink on">GitHub</span></a><a href="${IRA_URL}" target="_blank" rel="noopener"><span class="ink on">IRA</span></a></div>
@@ -949,7 +948,6 @@ function about(){
 function erratasPage(){
  const es=lang==='es';
  const E=[
-  ['2026',es?'Portada':'Front page','Analizo el palabras','Analizo las palabras',es?'Error de concordancia en el titular de la web anterior.':'Agreement error in the old site’s headline.'],
   ['2026',es?'Redacción':'Newsroom',es?'Plantilla Bootstrap, 2.500 líneas de CSS':'Bootstrap template, 2,500 lines of CSS',es?'Web compuesta a mano':'Site set by hand',es?'La web anterior se parecía a cualquier otra.':'The old site looked like any other.'],
   ['2026','IRA',es?'Análisis automáticos diarios':'Daily automatic analyses',es?'Solo análisis revisados a mano':'Hand-reviewed analyses only',es?'Más vale poco y revisado.':'Better few and checked.'],
   ['2026',es?'IRA, P1':'IRA, P1',es?'P1 mezclaba pronombres con verbos bélicos y cooperativos':'P1 mixed pronouns with war-like and cooperative verbs',es?'P1 mide solo la frontera del nosotros':'P1 measures only the boundary of “us”',es?'Los verbos ya los cubren otros parámetros.':'Other parameters already cover the verbs.'],
@@ -1119,7 +1117,7 @@ function setI18n(){document.querySelectorAll('[data-i]').forEach(el=>{const k=el
   ['IRA',es?'En revisión el P2: las metáforas y a quién apuntan':'P2 under review: metaphors and who they target','investigacion'],
   ...IRA_EJ.map(r=>[es?'Índice':'Index',`${r.n}, ${iraFmt(r.s)} ${es?'sobre 10':'out of 10'}`,'ext']),
   [es?'Hemeroteca':'Archive',es?'La abnegación más pura, sobre Luca Giordano':'The purest devotion, on Luca Giordano','abnegacion'],
-  [es?'Fe de erratas':'Corrections',es?'La portada ya dice «las palabras»':'The front page now reads “las palabras”','fe-de-erratas']];
+  [es?'Fe de erratas':'Corrections',es?'El P1 de IRA ya solo mide la frontera del nosotros':'IRA’s P1 now measures only the boundary of “us”','fe-de-erratas']];
  const one=items.map(([a,b,h])=>h==='ext'?`<a href="${IRA_URL}" target="_blank" rel="noopener"><b>${a}</b> ${b}</a>`:h.startsWith('go:')?`<a href="#" data-goto="${h.slice(3)}"><b>${a}</b> ${b}</a>`:`<a href="#${h}" data-id="${h}"><b>${a}</b> ${b}</a>`).join('');
  const line=one;document.getElementById('tickerLine').innerHTML=line+line.replace(/<a /g,'<a aria-hidden="true" tabindex="-1" ');
 }
