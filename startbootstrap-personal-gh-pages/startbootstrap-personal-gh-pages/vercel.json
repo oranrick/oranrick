@@ -5,6 +5,7 @@
     { "source": "/salomon(.html)?", "destination": "/#abnegacion", "permanent": true },
     { "source": "/arte-naturaleza(.html)?", "destination": "/#arte", "permanent": true },
     { "source": "/kali-uchis(.html)?", "destination": "/#kali", "permanent": true },
+    { "source": "/alberto-barreiro(.html)?", "destination": "/#barreiro", "permanent": true },
     { "source": "/resume(.html)?", "destination": "/#sobre-mi", "permanent": true },
     { "source": "/contact(.html)?", "destination": "/#cartas", "permanent": true },
     { "source": "/gracias(.html)?", "destination": "/#cartas", "permanent": true },
